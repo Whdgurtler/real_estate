@@ -1,0 +1,8 @@
+{
+    "chat.tools.terminal.autoApprove": {
+        "/^Get-ChildItem -Force \\| Format-Table -AutoSize \\| Out-String; python --version; node --version; npm --version$/": {
+            "approve": true,
+            "matchCommandLine": true
+        }
+    }
+}
