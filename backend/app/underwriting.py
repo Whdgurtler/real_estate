@@ -16,6 +16,15 @@ def _annual_tax_estimate(property_record: Property) -> tuple[float | None, str |
 def _scenario(rent: float | None, rent_basis: str, property_record: Property, assumptions):
     annual_tax, tax_method = _annual_tax_estimate(property_record)
     annual_insurance = property_record.annual_insurance_estimate
+    capital_basis = None
+    capital_basis_note = "asking price not supplied"
+    if property_record.asking_price is not None:
+        capital_basis = property_record.asking_price + (property_record.estimated_repairs or 0)
+        capital_basis_note = (
+            "asking price plus supplied repair estimate"
+            if property_record.estimated_repairs is not None
+            else "asking price only; one-time repair costs not supplied"
+        )
     missing = []
     if rent is None:
         missing.append("rent benchmark")
@@ -43,8 +52,8 @@ def _scenario(rent: float | None, rent_basis: str, property_record: Property, as
     if not missing:
         monthly_cash_flow = rent - sum(costs.values())
         annual_noi = monthly_cash_flow * 12
-        if property_record.asking_price:
-            cap_rate_percent = annual_noi / property_record.asking_price * 100
+        if capital_basis:
+            cap_rate_percent = annual_noi / capital_basis * 100
 
     return {
         "rent_monthly": rent,
@@ -56,13 +65,15 @@ def _scenario(rent: float | None, rent_basis: str, property_record: Property, as
         "monthly_operating_cash_flow_before_financing_and_hoa": monthly_cash_flow,
         "annual_noi_before_financing_and_hoa": annual_noi,
         "cap_rate_percent_before_financing_and_hoa": cap_rate_percent,
+        "capital_basis_for_cap_rate": capital_basis,
+        "capital_basis_note": capital_basis_note,
         "missing_inputs": missing,
         "complete_for_displayed_costs": not missing,
         "excludes": [
             "mortgage principal and interest",
             "utilities",
             "HOA or other property-specific fees",
-            "closing costs and one-time repairs",
+            "closing costs; one-time repairs are included in the capital basis only when supplied",
         ],
     }
 

@@ -8,9 +8,19 @@ export type Property = {
   county_fips: string | null;
   latitude: number | null;
   longitude: number | null;
-  source_type: "conventional" | "tax_sale" | "code_enforcement" | "other";
+  source_type:
+    | "conventional"
+    | "tax_sale"
+    | "code_enforcement"
+    | "foreclosure"
+    | "pre_foreclosure"
+    | "other";
   source_name: string | null;
   source_url: string | null;
+  source_metadata: Record<
+    string,
+    { source_name: string; source_url: string | null; confidence: string }
+  >;
   asking_price: number | null;
   estimated_repairs: number | null;
   bedrooms: number | null;
@@ -59,6 +69,129 @@ export type DataSource = {
   url: string | null;
 };
 
+export type DataFeed = {
+  id: number;
+  name: string;
+  connector: "socrata" | "arcgis" | "json_api";
+  target: "property_leads" | "property_enrichment";
+  source_category: DataFeedInput["source_category"];
+  source_type: Property["source_type"];
+  county_fips: string | null;
+  enabled: boolean;
+  source_url: string;
+  field_mapping: Record<string, string>;
+  max_records: number;
+  created_at: string;
+  updated_at: string;
+};
+
+export type DataFeedInput = {
+  name: string;
+  connector: DataFeed["connector"];
+  target: DataFeed["target"];
+  source_category:
+    | "assessor"
+    | "tax_sale"
+    | "code_enforcement"
+    | "foreclosure"
+    | "pre_foreclosure"
+    | "crime"
+    | "population"
+    | "pha"
+    | "other";
+  source_type: Property["source_type"];
+  county_fips?: string;
+  enabled: boolean;
+  confidence: string;
+  field_mapping: Record<string, string>;
+  domain?: string;
+  dataset_id?: string;
+  query_url?: string;
+  where?: string;
+  max_records: number;
+  record_id_field?: string;
+  records_path?: string;
+  query_params: Record<string, string>;
+  auth_env_var?: string;
+  auth_query_param?: string;
+};
+
+export type CountySource = {
+  status: string;
+  directory_name: string;
+  directory_url: string;
+  source_url: string;
+  search_url: string;
+  note: string;
+  endpoint_url?: string;
+  endpoint_info_url?: string;
+  endpoint_status?: string;
+  endpoint_last_verified?: string;
+  endpoint_record_count?: number;
+  endpoint_scope?: string;
+  endpoint_note?: string;
+  additional_endpoints?: Array<{
+    name: string;
+    url: string;
+    info_url?: string;
+    last_verified: string;
+    record_count?: number;
+    scope?: string;
+    note: string;
+  }>;
+  configured: boolean;
+  feeds: Array<{ id: number; name: string; category: string; enabled: boolean }>;
+};
+
+export type PriorityJurisdiction = {
+  state: string;
+  state_name: string;
+  county: string;
+  county_fips: string;
+  sources: Record<
+    "assessor" | "tax_sale" | "code_enforcement" | "foreclosure" | "pre_foreclosure",
+    CountySource
+  >;
+};
+
+export type PriorityJurisdictions = {
+  county_equivalent_count: number;
+  jurisdictions: PriorityJurisdiction[];
+};
+
+export type SyncSourceResult = {
+  source_id: number | string;
+  source_name: string;
+  source_category?: string;
+  county_fips?: string | null;
+  status: "success" | "partial" | "failed" | "skipped";
+  inserted: number;
+  updated: number;
+  skipped: number;
+  message?: string;
+  error?: string;
+  warnings?: string[];
+};
+
+export type SyncRun = {
+  id: number;
+  trigger: "scheduled" | "manual";
+  status: "queued" | "running" | "success" | "partial" | "failed";
+  scheduled_date: string | null;
+  started_at: string;
+  completed_at: string | null;
+  source_results: SyncSourceResult[];
+  error: string | null;
+};
+
+export type SyncStatus = {
+  enabled: boolean;
+  daily_time: string;
+  timezone: string;
+  next_run_at: string | null;
+  runs: SyncRun[];
+};
+
 export type Scenario = {
   rent_monthly: number | null;
   rent_basis: string;
@@ -69,6 +202,8 @@ export type Scenario = {
   monthly_operating_cash_flow_before_financing_and_hoa: number | null;
   annual_noi_before_financing_and_hoa: number | null;
   cap_rate_percent_before_financing_and_hoa: number | null;
+  capital_basis_for_cap_rate: number | null;
+  capital_basis_note: string;
   missing_inputs: string[];
   complete_for_displayed_costs: boolean;
   excludes: string[];
@@ -111,6 +246,8 @@ export type Underwriting = {
   };
 };
 
+export type UnderwritingAssumptions = Underwriting["assumptions"];
+
 export type PortfolioSummary = {
   property_count: number;
   states: Record<string, number>;
@@ -135,10 +272,35 @@ async function request<T>(url: string, options?: RequestInit): Promise<T> {
 export const api = {
   properties: () => request<Property[]>("/api/properties?limit=1000"),
   dataSources: () => request<DataSource[]>("/api/data-sources"),
+  dataFeeds: () => request<DataFeed[]>("/api/data-feeds"),
+  jurisdictions: () => request<PriorityJurisdictions>("/api/jurisdictions"),
+  syncStatus: () => request<SyncStatus>("/api/sync/status"),
   summary: () => request<PortfolioSummary>("/api/portfolio/summary"),
+  createDataFeed: (payload: DataFeedInput) =>
+    request<DataFeed>("/api/data-feeds", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    }),
+  updateDataFeed: (id: number, enabled: boolean) =>
+    request<DataFeed>(`/api/data-feeds/${id}`, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ enabled }),
+    }),
+  deleteDataFeed: (id: number) =>
+    request<void>(`/api/data-feeds/${id}`, { method: "DELETE" }),
+  runSync: () =>
+    request<{ run_id: number; status: string }>("/api/sync/run", { method: "POST" }),
   createProperty: (payload: Record<string, unknown>) =>
     request<Property>("/api/properties", {
       method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    }),
+  updateProperty: (id: number, payload: Record<string, unknown>) =>
+    request<Property>(`/api/properties/${id}`, {
+      method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload),
     }),
@@ -148,11 +310,11 @@ export const api = {
       headers: { "Content-Type": "text/csv" },
       body: csv,
     }),
-  underwriting: (id: number) =>
+  underwriting: (id: number, assumptions: UnderwritingAssumptions) =>
     request<Underwriting>(`/api/properties/${id}/underwriting`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({}),
+      body: JSON.stringify(assumptions),
     }),
   census: (id: number) =>
     request<Property>(`/api/properties/${id}/enrich/census`, {

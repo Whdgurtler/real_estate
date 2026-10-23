@@ -1,6 +1,18 @@
 from datetime import datetime, timezone
 
-from sqlalchemy import Boolean, Column, DateTime, Float, ForeignKey, Integer, String, Text
+from sqlalchemy import (
+    JSON,
+    Boolean,
+    Column,
+    Date,
+    DateTime,
+    Float,
+    ForeignKey,
+    Integer,
+    String,
+    Text,
+    UniqueConstraint,
+)
 from sqlalchemy.orm import relationship
 
 from .db import Base
@@ -26,6 +38,7 @@ class Property(Base):
     source_type = Column(String(32), nullable=False, default="conventional", index=True)
     source_name = Column(String(200), nullable=True)
     source_url = Column(Text, nullable=True)
+    source_metadata = Column(JSON, nullable=False, default=dict)
 
     asking_price = Column(Float, nullable=True)
     estimated_repairs = Column(Float, nullable=True)
@@ -79,3 +92,45 @@ class DataEvidence(Base):
     observed_at = Column(DateTime(timezone=True), nullable=False, default=utc_now)
 
     property = relationship("Property", back_populates="evidence")
+
+
+class DataFeed(Base):
+    __tablename__ = "data_feeds"
+
+    id = Column(Integer, primary_key=True, index=True)
+    name = Column(String(200), nullable=False)
+    connector = Column(String(32), nullable=False)
+    source_category = Column(String(32), nullable=False, default="other")
+    source_type = Column(String(32), nullable=False)
+    county_fips = Column(String(5), nullable=True, index=True)
+    config = Column(JSON, nullable=False)
+    enabled = Column(Boolean, nullable=False, default=True)
+    created_at = Column(DateTime(timezone=True), nullable=False, default=utc_now)
+    updated_at = Column(DateTime(timezone=True), nullable=False, default=utc_now, onupdate=utc_now)
+
+
+class DataFeedRecord(Base):
+    __tablename__ = "data_feed_records"
+    __table_args__ = (
+        UniqueConstraint("data_feed_id", "external_key", name="uq_data_feed_record_external"),
+    )
+
+    id = Column(Integer, primary_key=True, index=True)
+    data_feed_id = Column(Integer, ForeignKey("data_feeds.id", ondelete="CASCADE"), nullable=False)
+    property_id = Column(Integer, ForeignKey("properties.id", ondelete="CASCADE"), nullable=False)
+    external_key = Column(String(64), nullable=False)
+    last_seen_at = Column(DateTime(timezone=True), nullable=False, default=utc_now)
+
+
+class SyncRun(Base):
+    __tablename__ = "sync_runs"
+
+    id = Column(Integer, primary_key=True, index=True)
+    trigger = Column(String(20), nullable=False)
+    status = Column(String(20), nullable=False, default="queued")
+    scheduled_date = Column(Date, nullable=True, unique=True)
+    active_slot = Column(String(32), nullable=True, unique=True)
+    started_at = Column(DateTime(timezone=True), nullable=False, default=utc_now)
+    completed_at = Column(DateTime(timezone=True), nullable=True)
+    source_results = Column(JSON, nullable=False, default=list)
+    error = Column(Text, nullable=True)
