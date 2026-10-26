@@ -530,6 +530,11 @@ function DataSourcePanel({
                       <a href={source.source_url} target="_blank" rel="noreferrer">
                         Open {source.directory_name} ↗
                       </a>
+                      {source.reports_url && (
+                        <a href={source.reports_url} target="_blank" rel="noreferrer">
+                          Open County Reports ↗
+                        </a>
+                      )}
                       <a href={source.search_url} target="_blank" rel="noreferrer">
                         Search this county ↗
                       </a>

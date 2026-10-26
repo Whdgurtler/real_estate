@@ -53,7 +53,7 @@ COUNTY_SOURCE_DIRECTORIES = {
         "tax_sale": (
             "Arkansas Commissioner of State Lands public auction catalog",
             "https://cosl.org/Home/Contents",
-            "The Commissioner of State Lands handles tax-delinquent property certified to the state. The public auction catalog and post-auction list are statewide. On 2026-10-19, the post-auction list reported 3,036 parcels in 53 of 75 counties, with ongoing bids in 40 counties; the 2026-11-10 catalog download contained no parcel rows. The JSON grid route is undocumented, the listings lack situs addresses, and no commercial scraping terms were found. This source is verified for discovery, not ready for automated ingestion.",
+            "The County Reports selector includes all 75 Arkansas counties and years 2013–2026. For Arkansas County, the 2025 Tax Turnback page listed monthly Sales and Redemption reports; the October sales file was offered as PDF and XLS, and its XLS download returned HTTP 200 on 2026-10-26. These are monthly reports, distinct from the upcoming-auction catalog; their parcel-level contents and countywide completeness are not verified. On 2026-10-19, the statewide post-auction list reported 3,036 parcels in 53 of 75 counties, with ongoing bids in 40 counties; the 2026-11-10 Sharp County catalog link said to check back closer to the sale date. The JSON grid route is undocumented, listings lack situs addresses, and permission for automated weekly downloads was not verified.",
             "needs_feed_verification",
         ),
         "code_enforcement": (
@@ -65,13 +65,13 @@ COUNTY_SOURCE_DIRECTORIES = {
         "foreclosure": (
             "Arkansas Press Association public notices",
             "https://www.arkansaspublicnotices.com/",
-            "The statewide search offers a Foreclosure category and says newspapers upload notices daily, but not all newspapers must upload and its database is not the official publication. Terms restrict use to personal, non-commercial purposes and prohibit copying or replication; do not ingest for this commercial platform without written permission. Verify any county source independently.",
+            "The statewide search offers a Foreclosure category and says newspapers upload notices daily, but not all newspapers must upload and its database is not the official publication. Terms restrict use to personal, non-commercial purposes and separately prohibit copying or replicating site functionality. Manual personal searches are possible; automated weekly collection or building a searchable copy is not authorized by those terms. Verify any county source independently.",
             "needs_feed_verification",
         ),
         "pre_foreclosure": (
             "Arkansas Judiciary and county offices",
             "https://arcourts.gov/",
-            "No complete statewide pre-foreclosure feed was verified. Arkansas Public Notices contains newspaper legal notices but is not a substitute for official publication and its terms prohibit commercial copying; verify county recorder/court sources and access rights independently.",
+            "No complete statewide pre-foreclosure feed was verified. Arkansas Public Notices contains newspaper legal notices but is not a substitute for official publication; its terms allow personal, non-commercial use but separately prohibit replication of site functionality. Automated collection or a searchable copy is not authorized by those terms; verify county recorder/court sources independently.",
             "needs_feed_verification",
         ),
     },
@@ -97,7 +97,7 @@ COUNTY_SOURCE_DIRECTORIES = {
         "foreclosure": (
             "Public Notices Ohio | Ohio News Media Association",
             "https://www.publicnoticesohio.com/",
-            "The site has Foreclosure and Sheriff's Sales searches and says newspapers upload notices daily, but also says its goal is to carry every Ohio public notice in the future; completeness is not established. Its Terms limit use to personal, non-commercial use. The State-contracted Realauction portal at https://franklin.sheriffsaleauction.ohio.gov/ showed a selector for 87 other county portals; a Franklin jump from Medina resolved, but this does not establish all destinations are active feeds. The Franklin User Agreement limits licensed information use to purchasing property and prohibits use, alteration, sale, or distribution without express written consent. Do not ingest without written authorization and county-specific terms review. The Buckeye State Sheriffs' Association says it has no foreclosure or sheriff-sale information.",
+            "The site has Foreclosure and Sheriff's Sales searches and says newspapers upload notices daily, but also says its goal is to carry every Ohio public notice in the future; completeness is not established. Its county filter displayed all 88 county names on 2026-10-23. Its Terms limit use to personal, non-commercial use. The State-contracted Realauction portal at https://franklin.sheriffsaleauction.ohio.gov/ showed a selector for 87 other county portals; a Franklin jump from Medina resolved, but this does not establish all destinations are active feeds. The Franklin User Agreement limits licensed information use to purchasing property and prohibits use, alteration, sale, or distribution without express written consent. Do not ingest without written authorization and county-specific terms review. The Buckeye State Sheriffs' Association says it has no foreclosure or sheriff-sale information.",
             "needs_feed_verification",
         ),
         "pre_foreclosure": (
@@ -149,7 +149,7 @@ COUNTY_SOURCE_DIRECTORIES = {
         "tax_sale": (
             "Texas Association of Counties",
             "https://www.county.org/",
-            "Delinquent-property sales are handled locally by county officials. Texas Public Notices is a statewide newspaper-notice search, not a tax-auction calendar; its filter exposed 249 named counties plus Unknown on 2026-10-19, omitting Glasscock, King, Loving, McMullen, and Terrell. Its Terms prohibit scraping, all automated collection, and commercial reuse, with stated liquidated damages. Verify the county's official sale source.",
+            "Delinquent-property sales are handled locally by county officials. Texas Public Notices is a statewide newspaper-notice search, not a tax-auction calendar; its filter exposed 249 named counties plus Unknown on 2026-10-19, omitting Glasscock, King, Loving, McMullen, and Terrell. Terms checked on 2026-10-26 allow personal, non-commercial viewing and downloading or printing individual pages, but prohibit adding content to a database, compilation, archive, or cache and prohibit scraping or other automated collection. Personal use does not authorize weekly automated ingestion. Verify the county's official sale source.",
             "needs_feed_verification",
         ),
         "code_enforcement": (
@@ -161,7 +161,7 @@ COUNTY_SOURCE_DIRECTORIES = {
         "foreclosure": (
             "Texas Public Notices and local trustee/sheriff offices",
             "https://www.county.org/",
-            "Texas Public Notices provides a statewide newspaper-notice search and a county filter, but Glasscock, King, Loving, McMullen, and Terrell were absent from its selector on 2026-10-19; this does not prove complete sale coverage. Its Terms limit use to personal, non-commercial use and prohibit automated collection, scraping, and database reuse; do not ingest without written authorization. Confirm each county's official trustee, sheriff, or constable sale source.",
+            "Texas Public Notices provides a statewide newspaper-notice search and a county filter, but Glasscock, King, Loving, McMullen, and Terrell were absent from its selector on 2026-10-19; this does not prove complete sale coverage. Terms checked on 2026-10-26 permit personal, non-commercial viewing and downloading or printing individual pages only, while prohibiting database/archive/cache reuse, scraping, and other automated collection. Do not ingest or store its notices in this app without written authorization. Confirm each county's official trustee, sheriff, or constable sale source.",
             "needs_feed_verification",
         ),
         "pre_foreclosure": (
@@ -611,6 +611,10 @@ def county_source_links(
             "foreclosure": "https://www.publicnoticesohio.com/",
         },
         "TX": {
+            "assessor": (
+                "https://comptroller.texas.gov/taxes/property-tax/county-directory/"
+                f"{'dimmitt' if county_name == 'Dimmit' else county_name.lower().replace(' ', '')}.php"
+            ),
             "tax_sale": "https://www.texaspublicnotices.com/",
             "foreclosure": "https://www.texaspublicnotices.com/",
         },
@@ -637,6 +641,54 @@ def county_source_links(
             and missouri_county_profile_url
         ):
             directory_url = missouri_county_profile_url
+        if state == "MO" and category == "assessor" and missouri_county_profile_url:
+            directory_url = missouri_county_profile_url
+        if state == "MO" and category == "tax_sale":
+            note += (
+                " County-specific source-discovery links were checked on 2026-10-23 "
+                "for all 115 Missouri county-equivalents: 114 returned HTTP 200 and "
+                "included the county name; the Platte County site returned HTTP 403. "
+                "A county office/profile page is not a tax-sale calendar or feed."
+            )
+        if state == "TX" and category == "tax_sale":
+            directory_url = county_profiles["TX"]["assessor"]
+            note += (
+                " The county-specific Texas Comptroller page links the local Tax "
+                "Assessor-Collector office for manual sale-source discovery; it is "
+                "not a tax-sale calendar or feed. Texas Public Notices' county "
+                "selector omitted five counties on 2026-10-19. Its terms prohibit "
+                "automated collection and database/archive/cache reuse even for "
+                "personal use."
+            )
+        if state == "TX" and county_name == "Harris" and category == "tax_sale":
+            directory_name = "Harris County Tax Office sale property listings"
+            source_url = "https://www.hctax.net/Property/listings/taxsalelisting"
+            note += (
+                " The official Tax Office describes monthly delinquent-property "
+                "auctions and links this live sale list. The listing is rendered "
+                "as HTML with account/cause numbers, adjudged values, and minimum "
+                "bids; no CSV, XLS, PDF, or export control was found. The County "
+                "warns the list is updated regularly but may not reflect final "
+                "sale-day availability and recommends other sources for a complete "
+                "list. No permission for automated weekly collection was verified."
+            )
+        if state == "OH" and category == "assessor":
+            note += (
+                " The county-specific County Auditors' Association of Ohio profile "
+                "returned HTTP 200 and its page title matched the county when checked "
+                "on 2026-10-23 for all 88 counties. It is an office/contact directory, "
+                "not a parcel data feed; the separate statewide parcel endpoint is "
+                "historical and not a verified daily source."
+            )
+        if state == "TX" and category == "assessor":
+            note += (
+                " All 254 official Texas Comptroller county pages returned HTTP 200 "
+                "and included the county name, an Appraisal District section, and a "
+                "Tax Assessor/Collector section when checked on 2026-10-23. The "
+                "Dimmit page is filed as Dimmitt. These are directory records, not "
+                "parcel APIs; page update dates vary and no daily assessor feed is "
+                "established by this listing."
+            )
         if state == "AL" and category == "tax_sale":
             transcript_code = ALABAMA_TAX_TRANSCRIPT_CODES.get(county_name.upper())
             if transcript_code:
@@ -5482,9 +5534,11 @@ def county_source_links(
                     "catalog here. This is a state-held tax-sale source, "
                     "not an Arkansas County auction calendar. The "
                     "retrieval did not expose an Arkansas County-specific "
-                    "current sale date/list or a machine-readable feed; "
-                    "update cadence and permission for daily/commercial "
-                    "automation were not verified."
+                    "upcoming sale date or parcel catalog. The separate "
+                    "County Reports archive provides monthly Tax Turnback "
+                    "Sales and Redemption downloads, but their parcel-level "
+                    "contents and completeness are unverified; permission "
+                    "for automated weekly access was not verified."
                 )
             elif category == "code_enforcement":
                 directory_name = "Association of Arkansas Counties | Arkansas County"
@@ -12381,6 +12435,10 @@ def county_source_links(
             ),
             "note": note,
         }
+        if state == "AR" and category == "tax_sale":
+            sources[category]["reports_url"] = (
+                "https://cosl.org/Countyfiles/CountyReports"
+            )
     tested_endpoints = dict(TESTED_STATEWIDE_ENDPOINTS.get(state, {}))
     if county_fips:
         tested_endpoints.update(TESTED_PUBLIC_ENDPOINTS_BY_FIPS.get(county_fips, {}))

@@ -121,6 +121,7 @@ export type CountySource = {
   directory_name: string;
   directory_url: string;
   source_url: string;
+  reports_url?: string;
   search_url: string;
   note: string;
   endpoint_url?: string;

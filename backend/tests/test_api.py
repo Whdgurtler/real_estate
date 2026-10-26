@@ -321,13 +321,28 @@ class DataFeedApiTests(unittest.TestCase):
         transcript_urls = [
             row["sources"]["tax_sale"]["source_url"] for row in alabama_counties
         ]
-        self.assertEqual(sum(url.endswith(".PDF") for url in transcript_urls), 66)
+        self.assertEqual(sum(url.endswith(".PDF") for url in transcript_urls), 64)
         jefferson_alabama = next(
             row for row in alabama_counties if row["county_fips"] == "01073"
         )
         self.assertIn(
             "tax-delinquent-property-and-land-sales",
             jefferson_alabama["sources"]["tax_sale"]["source_url"],
+        )
+        tuscaloosa_alabama = next(
+            row for row in alabama_counties if row["county_fips"] == "01125"
+        )
+        self.assertTrue(
+            tuscaloosa_alabama["sources"]["tax_sale"]["source_url"].endswith(
+                "Copy-of-List-for-IT-2025-Tax-Year-Prop-did-not-sell-002.pdf"
+            )
+        )
+        walker_alabama = next(
+            row for row in alabama_counties if row["county_fips"] == "01127"
+        )
+        self.assertEqual(
+            walker_alabama["sources"]["tax_sale"]["source_url"],
+            "https://www.walkercountyrevenue.com/tax-sale/",
         )
         jefferson = next(
             row for row in national_data["jurisdictions"] if row["county_fips"] == "01073"

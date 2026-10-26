@@ -50,6 +50,11 @@ class PriorityJurisdictionDirectoryTests(unittest.TestCase):
                     )
                     self.assertTrue(source["search_url"].startswith("https://www.google.com/"))
                     self.assertTrue(source["note"])
+                if county["state"] == "AR":
+                    self.assertEqual(
+                        sources["tax_sale"]["reports_url"],
+                        "https://cosl.org/Countyfiles/CountyReports",
+                    )
                 self.assertEqual(sources["code_enforcement"]["status"], "municipal_scope")
                 self.assertEqual(sources["foreclosure"]["status"], "needs_feed_verification")
                 self.assertEqual(
@@ -66,7 +71,14 @@ class PriorityJurisdictionDirectoryTests(unittest.TestCase):
             arkansas["tax_sale"]["source_url"],
             "https://cosl.org/Home/Contents",
         )
+        self.assertEqual(
+            arkansas["tax_sale"]["reports_url"],
+            "https://cosl.org/Countyfiles/CountyReports",
+        )
         self.assertIn("3,036 parcels in 53 of 75 counties", arkansas["tax_sale"]["note"])
+        self.assertIn("includes all 75 Arkansas counties", arkansas["tax_sale"]["note"])
+        self.assertIn("monthly Sales and Redemption reports", arkansas["tax_sale"]["note"])
+        self.assertIn("permission for automated weekly downloads was not verified", arkansas["tax_sale"]["note"])
         self.assertEqual(
             arkansas["foreclosure"]["source_url"],
             "https://www.arkansaspublicnotices.com/",
@@ -1247,16 +1259,31 @@ class PriorityJurisdictionDirectoryTests(unittest.TestCase):
             ohio["assessor"]["source_url"],
             "https://caao.org/auditors-directory/name/franklin-county/",
         )
+        self.assertIn("all 88 counties", ohio["assessor"]["note"])
+        self.assertIn("page title matched the county", ohio["assessor"]["note"])
         self.assertTrue(alabama["assessor"]["source_url"].endswith("#Jefferson"))
         self.assertEqual(
             texas["assessor"]["directory_url"],
             "https://comptroller.texas.gov/taxes/property-tax/county-directory/",
         )
+        self.assertEqual(
+            texas["assessor"]["source_url"],
+            "https://comptroller.texas.gov/taxes/property-tax/county-directory/harris.php",
+        )
+        self.assertIn(
+            "All 254 official Texas Comptroller county pages",
+            texas["assessor"]["note"],
+        )
+        self.assertEqual(
+            county_source_links("TX", "Dimmit County")["assessor"]["source_url"],
+            "https://comptroller.texas.gov/taxes/property-tax/county-directory/dimmitt.php",
+        )
 
     def test_public_notice_discovery_sources_record_scope_and_reuse_limits(self):
         missouri = county_source_links("MO", "Boone County")
         ohio = county_source_links("OH", "Franklin County")
-        texas = county_source_links("TX", "Harris County")
+        texas = county_source_links("TX", "Travis County")
+        harris = county_source_links("TX", "Harris County")
 
         self.assertEqual(
             missouri["tax_sale"]["source_url"],
@@ -1270,6 +1297,16 @@ class PriorityJurisdictionDirectoryTests(unittest.TestCase):
         self.assertEqual(
             missouri["tax_sale"]["directory_url"],
             "https://www.boonemo.gov/collector/",
+        )
+        self.assertEqual(
+            county_source_links("MO", "McDonald County")["assessor"][
+                "directory_url"
+            ],
+            "https://www.mocounties.com/mcdonald-county",
+        )
+        self.assertIn(
+            "114 returned HTTP 200",
+            county_source_links("MO", "McDonald County")["tax_sale"]["note"],
         )
         self.assertEqual(
             county_source_links("MO", "St. Louis County", "29189")["tax_sale"][
@@ -1294,6 +1331,7 @@ class PriorityJurisdictionDirectoryTests(unittest.TestCase):
             "https://www.publicnoticesohio.com/",
         )
         self.assertIn("personal, non-commercial", ohio["foreclosure"]["note"])
+        self.assertIn("county filter displayed all 88", ohio["foreclosure"]["note"])
         self.assertIn("87 other county portals", ohio["foreclosure"]["note"])
         self.assertIn("express written consent", ohio["foreclosure"]["note"])
         ohio_pre_foreclosure = ohio["pre_foreclosure"]
@@ -1317,8 +1355,22 @@ class PriorityJurisdictionDirectoryTests(unittest.TestCase):
             texas["tax_sale"]["source_url"],
             "https://www.texaspublicnotices.com/",
         )
+        self.assertEqual(
+            texas["tax_sale"]["directory_url"],
+            "https://comptroller.texas.gov/taxes/property-tax/county-directory/travis.php",
+        )
         self.assertIn("249 named counties plus Unknown", texas["tax_sale"]["note"])
-        self.assertIn("prohibit automated collection", texas["foreclosure"]["note"])
+        self.assertIn("personal, non-commercial viewing", texas["tax_sale"]["note"])
+        self.assertIn("prohibit adding content to a database", texas["tax_sale"]["note"])
+        self.assertIn("prohibiting database/archive/cache reuse", texas["foreclosure"]["note"])
+        self.assertIn("automated collection", texas["foreclosure"]["note"])
+        self.assertEqual(
+            harris["tax_sale"]["source_url"],
+            "https://www.hctax.net/Property/listings/taxsalelisting",
+        )
+        self.assertIn("monthly delinquent-property auctions", harris["tax_sale"]["note"])
+        self.assertIn("no CSV, XLS, PDF, or export control", harris["tax_sale"]["note"])
+        self.assertIn("may not reflect final sale-day availability", harris["tax_sale"]["note"])
 
     def test_alabama_tax_transcripts_cover_all_counties_and_jefferson_split(self):
         counties = [
@@ -4015,11 +4067,21 @@ class PriorityJurisdictionDirectoryTests(unittest.TestCase):
         self.assertIn("permission for commercial daily extraction was verified", assessor["note"])
 
         tax_sale = sources["tax_sale"]
-        self.assertEqual(tax_sale["directory_url"], "https://cosl.org/Home/RealEstate")
+        self.assertEqual(
+            tax_sale["directory_url"],
+            "https://cosl.org/Home/RealEstate",
+        )
+        self.assertEqual(
+            tax_sale["reports_url"],
+            "https://cosl.org/Countyfiles/CountyReports",
+        )
         self.assertEqual(tax_sale["source_url"], "https://cosl.org/Home/Contents")
         self.assertIn("not an Arkansas County auction calendar", tax_sale["note"])
-        self.assertIn("did not expose an Arkansas County-specific current sale date/list", tax_sale["note"])
-        self.assertIn("permission for daily/commercial automation were not verified", tax_sale["note"])
+        self.assertIn(
+            "did not expose an Arkansas County-specific upcoming sale date or parcel catalog",
+            tax_sale["note"],
+        )
+        self.assertIn("automated weekly access was not verified", tax_sale["note"])
 
         code = sources["code_enforcement"]
         self.assertEqual(
