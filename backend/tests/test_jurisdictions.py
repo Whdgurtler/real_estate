@@ -1279,6 +1279,248 @@ class PriorityJurisdictionDirectoryTests(unittest.TestCase):
             "https://comptroller.texas.gov/taxes/property-tax/county-directory/dimmitt.php",
         )
 
+    def test_first_five_texas_counties_record_county_specific_sources(self):
+        counties = ("Anderson", "Andrews", "Angelina", "Aransas", "Archer")
+        for county in counties:
+            with self.subTest(county=county):
+                sources = county_source_links("TX", f"{county} County")
+                self.assertEqual(
+                    set(sources),
+                    {
+                        "assessor",
+                        "tax_sale",
+                        "code_enforcement",
+                        "foreclosure",
+                        "pre_foreclosure",
+                    },
+                )
+                for source in sources.values():
+                    self.assertIn(
+                        "County-specific source review checked 2026-11-02",
+                        source["note"],
+                    )
+                self.assertEqual(
+                    sources["code_enforcement"]["status"], "municipal_scope"
+                )
+
+        anderson = county_source_links("TX", "Anderson County")
+        self.assertEqual(
+            anderson["tax_sale"]["source_url"],
+            "http://tax.co.anderson.tx.us",
+        )
+        self.assertIn("general public-record search", anderson["foreclosure"]["note"])
+
+        andrews = county_source_links("TX", "Andrews County")
+        self.assertIn("returned 404", andrews["foreclosure"]["note"])
+        self.assertIn("timed out", andrews["tax_sale"]["note"])
+
+        angelina = county_source_links("TX", "Angelina County")
+        self.assertEqual(
+            angelina["tax_sale"]["source_url"],
+            "https://www.angelinacounty.net/files/pdf/tax/Delinquent/trwfile.110125.zip",
+        )
+        self.assertIn("11/04/2025", angelina["tax_sale"]["note"])
+        self.assertIn("deed-of-trust lender foreclosure", angelina["foreclosure"]["note"])
+
+        aransas = county_source_links("TX", "Aransas County")
+        self.assertIn("December 1, 2026", aransas["tax_sale"]["note"])
+        self.assertIn("returned 404", aransas["foreclosure"]["note"])
+
+        archer = county_source_links("TX", "Archer County")
+        self.assertIn("no extractable text", archer["foreclosure"]["note"])
+        self.assertIn("No current tax-sale list", archer["tax_sale"]["note"])
+
+    def test_next_five_texas_counties_record_county_specific_sources(self):
+        counties = ("Armstrong", "Atascosa", "Austin", "Bailey", "Bandera")
+        for county in counties:
+            with self.subTest(county=county):
+                sources = county_source_links("TX", f"{county} County")
+                self.assertEqual(len(sources), 5)
+                for source in sources.values():
+                    self.assertIn(
+                        "County-specific source review checked 2026-11-02",
+                        source["note"],
+                    )
+
+        armstrong = county_source_links("TX", "Armstrong County")
+        self.assertIn("interactive search", armstrong["assessor"]["note"])
+        self.assertIn("dated through 2024", armstrong["foreclosure"]["note"])
+
+        atascosa = county_source_links("TX", "Atascosa County")
+        self.assertEqual(
+            atascosa["pre_foreclosure"]["source_url"],
+            "https://atascosa-tx-pa.iharriscomputer.com/",
+        )
+        self.assertIn("deed-of-trust", atascosa["foreclosure"]["note"])
+
+        austin = county_source_links("TX", "Austin County")
+        self.assertEqual(
+            austin["tax_sale"]["source_url"],
+            "http://www.pbfcm.com/index.html",
+        )
+        self.assertIn("November 2026", austin["foreclosure"]["note"])
+
+        bailey = county_source_links("TX", "Bailey County")
+        self.assertIn("no property-level notices", bailey["foreclosure"]["note"])
+
+        bandera = county_source_links("TX", "Bandera County")
+        self.assertIn("403/Cloudflare", bandera["tax_sale"]["note"])
+        self.assertIn(
+            "dedicated lis-pendens/default feed",
+            bandera["pre_foreclosure"]["note"],
+        )
+
+    def test_following_five_texas_counties_record_county_specific_sources(self):
+        counties = ("Bastrop", "Baylor", "Bee", "Bell", "Bexar")
+        for county in counties:
+            with self.subTest(county=county):
+                sources = county_source_links("TX", f"{county} County")
+                self.assertEqual(
+                    set(sources),
+                    {
+                        "assessor",
+                        "tax_sale",
+                        "code_enforcement",
+                        "foreclosure",
+                        "pre_foreclosure",
+                    },
+                )
+                for source in sources.values():
+                    self.assertIn(
+                        "County-specific source review checked 2026-11-02",
+                        source["note"],
+                    )
+                self.assertEqual(
+                    sources["code_enforcement"]["status"], "municipal_scope"
+                )
+
+        bastrop = county_source_links("TX", "Bastrop County")
+        self.assertIn("12 TAB data tables", bastrop["assessor"]["note"])
+        self.assertIn("November 3", bastrop["foreclosure"]["note"])
+        self.assertIn("no current tax-sale date", bastrop["tax_sale"]["note"])
+
+        baylor = county_source_links("TX", "Baylor County")
+        self.assertIn("one 2025", baylor["foreclosure"]["note"])
+        self.assertIn("no current tax-sale date", baylor["tax_sale"]["note"])
+
+        bee = county_source_links("TX", "Bee County")
+        self.assertEqual(bee["tax_sale"]["source_url"], "https://taxsales.lgbs.com/")
+        self.assertIn("failed to load", bee["tax_sale"]["note"])
+        self.assertIn("open-records request forms", bee["pre_foreclosure"]["note"])
+
+        bell = county_source_links("TX", "Bell County")
+        self.assertIn("November 3, 2026", bell["tax_sale"]["note"])
+        self.assertIn("9-page Bell PDF", bell["tax_sale"]["note"])
+
+        bexar = county_source_links("TX", "Bexar County")
+        self.assertIn("Export All/Selected to CSV", bexar["foreclosure"]["note"])
+        self.assertIn("delivery remains unverified", bexar["foreclosure"]["note"])
+        self.assertIn(
+            "October 10, 2024",
+            bexar["tax_sale"]["note"],
+        )
+
+    def test_next_five_texas_counties_record_county_specific_sources(self):
+        counties = ("Borden", "Bosque", "Bowie", "Brazoria", "Brazos")
+        for county in counties:
+            with self.subTest(county=county):
+                sources = county_source_links("TX", f"{county} County")
+                self.assertEqual(
+                    set(sources),
+                    {
+                        "assessor",
+                        "tax_sale",
+                        "code_enforcement",
+                        "foreclosure",
+                        "pre_foreclosure",
+                    },
+                )
+                for source in sources.values():
+                    self.assertIn(
+                        "County-specific source review checked 2026-11-02",
+                        source["note"],
+                    )
+                self.assertEqual(
+                    sources["code_enforcement"]["status"], "municipal_scope"
+                )
+
+        borden = county_source_links("TX", "Borden County")
+        self.assertEqual(
+            borden["assessor"]["source_url"],
+            "https://esearch.bordencad.org/",
+        )
+        self.assertIn("two-page, image-only", borden["foreclosure"]["note"])
+        self.assertIn("does not conduct real-property searches", borden["pre_foreclosure"]["note"])
+
+        bosque = county_source_links("TX", "Bosque County")
+        self.assertEqual(
+            bosque["tax_sale"]["source_url"],
+            "https://www.bosquecountytaxoffice.com/search",
+        )
+        self.assertIn("parked for sale", bosque["foreclosure"]["note"])
+
+        bowie = county_source_links("TX", "Bowie County")
+        self.assertIn("37 pages", bowie["foreclosure"]["note"])
+        self.assertIn("general Real Property/Public Record Search", bowie["pre_foreclosure"]["note"])
+
+        brazoria = county_source_links("TX", "Brazoria County")
+        self.assertIn("273,093,564 bytes; 28 files", brazoria["assessor"]["note"])
+        self.assertIn("HTTP 403", brazoria["foreclosure"]["note"])
+
+        brazos = county_source_links("TX", "Brazos County")
+        self.assertIn("351,512,148 bytes; 47 archive entries", brazos["assessor"]["note"])
+        self.assertIn("no Brazos-specific sale listing", brazos["tax_sale"]["note"])
+        self.assertIn("HTTP 403", brazos["foreclosure"]["note"])
+
+    def test_following_five_texas_counties_record_county_specific_sources(self):
+        counties = ("Brewster", "Briscoe", "Brooks", "Brown", "Burleson")
+        for county in counties:
+            with self.subTest(county=county):
+                sources = county_source_links("TX", f"{county} County")
+                self.assertEqual(
+                    set(sources),
+                    {
+                        "assessor",
+                        "tax_sale",
+                        "code_enforcement",
+                        "foreclosure",
+                        "pre_foreclosure",
+                    },
+                )
+                for source in sources.values():
+                    self.assertIn(
+                        "County-specific source review checked 2026-11-02",
+                        source["note"],
+                    )
+                self.assertEqual(
+                    sources["code_enforcement"]["status"], "municipal_scope"
+                )
+
+        brewster = county_source_links("TX", "Brewster County")
+        self.assertIn("11,680,827 bytes; 20 entries", brewster["assessor"]["note"])
+        self.assertIn("deed-of-trust language", brewster["foreclosure"]["note"])
+        self.assertIn("1998 to present", brewster["pre_foreclosure"]["note"])
+
+        briscoe = county_source_links("TX", "Briscoe County")
+        self.assertIn("1,542,382 bytes", briscoe["assessor"]["note"])
+        self.assertIn("not a current tax-sale date", briscoe["tax_sale"]["note"])
+
+        brooks = county_source_links("TX", "Brooks County")
+        self.assertIn("three-page PDF", brooks["tax_sale"]["note"])
+        self.assertIn("four individual foreclosure notices", brooks["foreclosure"]["note"])
+        self.assertIn("Probate, Civil, and Criminal Records", brooks["pre_foreclosure"]["note"])
+
+        brown = county_source_links("TX", "Brown County")
+        self.assertIn("8,453,744 bytes", brown["assessor"]["note"])
+        self.assertIn("HTTP 403", brown["tax_sale"]["note"])
+        self.assertIn("32 individual notices", brown["foreclosure"]["note"])
+        self.assertIn("general real-property records search", brown["pre_foreclosure"]["note"])
+
+        burleson = county_source_links("TX", "Burleson County")
+        self.assertIn("two or three times per year", burleson["tax_sale"]["note"])
+        self.assertIn("first Tuesday monthly", burleson["foreclosure"]["note"])
+        self.assertIn("1940 to present", burleson["pre_foreclosure"]["note"])
+
     def test_public_notice_discovery_sources_record_scope_and_reuse_limits(self):
         missouri = county_source_links("MO", "Boone County")
         ohio = county_source_links("OH", "Franklin County")
