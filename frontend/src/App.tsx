@@ -11,6 +11,7 @@ import {
   api,
   DataFeed,
   DataFeedInput,
+  DataFeedRecordPage,
   DataSource,
   PortfolioSummary,
   Property,
@@ -84,11 +85,11 @@ function isSourceType(value: string): value is Property["source_type"] {
 }
 
 function isDataFeedConnector(value: string): value is DataFeedInput["connector"] {
-  return ["socrata", "arcgis", "json_api"].includes(value);
+  return ["socrata", "arcgis", "json_api", "csv_file", "csv_zip", "pdf_text"].includes(value);
 }
 
 function isDataFeedTarget(value: string): value is DataFeedInput["target"] {
-  return ["property_leads", "property_enrichment"].includes(value);
+  return ["property_leads", "property_enrichment", "source_records"].includes(value);
 }
 
 function isDataFeedCategory(
@@ -181,6 +182,7 @@ type DataSourcePanelProps = {
   onCreateFeed: (event: FormEvent<HTMLFormElement>) => void;
   onToggleFeed: (feedId: number, enabled: boolean) => void;
   onDeleteFeed: (feedId: number) => void;
+  onLoadFeedRecords: (feedId: number) => Promise<DataFeedRecordPage>;
 };
 
 function DataSourcePanel({
@@ -193,8 +195,12 @@ function DataSourcePanel({
   onCreateFeed,
   onToggleFeed,
   onDeleteFeed,
+  onLoadFeedRecords,
 }: DataSourcePanelProps) {
   const [feedTarget, setFeedTarget] = useState<DataFeed["target"]>("property_leads");
+  const [feedRecords, setFeedRecords] = useState<Record<number, DataFeedRecordPage>>({});
+  const [feedRecordErrors, setFeedRecordErrors] = useState<Record<number, string>>({});
+  const [loadingFeedRecords, setLoadingFeedRecords] = useState<number | null>(null);
   const [coverageState, setCoverageState] = useState("ALL");
   const [coverageSearch, setCoverageSearch] = useState("");
   const latestRun = syncStatus?.runs[0] ?? null;
@@ -291,11 +297,55 @@ function DataSourcePanel({
                     {" "}{feed.source_category.replaceAll("_", " ")} ·
                     {" "}{feed.county_fips ? `county FIPS ${feed.county_fips} · ` : ""}
                     {feed.source_type.replaceAll("_", " ")} ·
-                    {" "}{feed.max_records.toLocaleString()} records/run
+                    {" "}{feed.max_records.toLocaleString()} records/run · every{" "}
+                    {feed.refresh_interval_days} days
                   </span>
+                  {feed.last_synced_at && (
+                    <span>Last pulled: {new Date(feed.last_synced_at).toLocaleString()}</span>
+                  )}
                   <a href={feed.source_url} target="_blank" rel="noreferrer">{feed.source_url}</a>
+                  {feed.target === "source_records" && feedRecords[feed.id] && (
+                    <div className="source-record-preview">
+                      <strong>
+                        Latest snapshot: {feedRecords[feed.id].total.toLocaleString()} records
+                      </strong>
+                      {feedRecords[feed.id].records.map((record) => (
+                        <pre key={record.id}>{JSON.stringify(record.payload, null, 2)}</pre>
+                      ))}
+                    </div>
+                  )}
+                  {feedRecordErrors[feed.id] && (
+                    <span role="alert">{feedRecordErrors[feed.id]}</span>
+                  )}
                 </div>
                 <div className="feed-actions">
+                  {feed.target === "source_records" && (
+                    <button
+                      className="button button-outline"
+                      disabled={loadingFeedRecords === feed.id}
+                      onClick={async () => {
+                        setLoadingFeedRecords(feed.id);
+                        try {
+                          const page = await onLoadFeedRecords(feed.id);
+                          setFeedRecords((current) => ({ ...current, [feed.id]: page }));
+                          setFeedRecordErrors((current) => {
+                            const next = { ...current };
+                            delete next[feed.id];
+                            return next;
+                          });
+                        } catch (error) {
+                          setFeedRecordErrors((current) => ({
+                            ...current,
+                            [feed.id]: error instanceof Error ? error.message : "Could not load records.",
+                          }));
+                        } finally {
+                          setLoadingFeedRecords(null);
+                        }
+                      }}
+                    >
+                      {loadingFeedRecords === feed.id ? "Loading" : "View latest"}
+                    </button>
+                  )}
                   <button
                     className="button button-outline"
                     onClick={() => onToggleFeed(feed.id, !feed.enabled)}
@@ -316,7 +366,7 @@ function DataSourcePanel({
           <p className="empty-feed-note">No jurisdiction-specific feeds configured yet.</p>
         )}
         <details className="feed-form-details">
-          <summary>Add a Socrata, ArcGIS, or JSON API feed</summary>
+          <summary>Add an API, CSV/ZIP download, or PDF text feed</summary>
           <form className="feed-form" onSubmit={onCreateFeed}>
             <div className="form-grid">
               <label className="form-field">
@@ -329,6 +379,9 @@ function DataSourcePanel({
                   <option value="socrata">Socrata / Open Data</option>
                   <option value="arcgis">ArcGIS FeatureServer</option>
                   <option value="json_api">JSON API</option>
+                  <option value="csv_file">Direct CSV download</option>
+                  <option value="csv_zip">ZIP containing one CSV</option>
+                  <option value="pdf_text">PDF text pages</option>
                 </select>
               </label>
               <label className="form-field">
@@ -343,6 +396,7 @@ function DataSourcePanel({
                 >
                   <option value="property_leads">Property leads (address-level)</option>
                   <option value="property_enrichment">Area enrichment (county/ZIP-level)</option>
+                  <option value="source_records">Retain raw source records</option>
                 </select>
               </label>
               <label className="form-field">
@@ -392,7 +446,11 @@ function DataSourcePanel({
               </label>
               <label className="form-field">
                 <span>Maximum records per run</span>
-                <input name="max_records" type="number" min="1" max="5000" defaultValue="1000" />
+                <input name="max_records" type="number" min="1" max="100000" defaultValue="1000" />
+              </label>
+              <label className="form-field">
+                <span>Refresh interval (days)</span>
+                <input name="refresh_interval_days" type="number" min="1" max="365" defaultValue="7" />
               </label>
               <label className="form-field">
                 <span>Socrata domain</span>
@@ -403,8 +461,21 @@ function DataSourcePanel({
                 <input name="dataset_id" placeholder="abcd-1234" />
               </label>
               <label className="form-field wide">
-                <span>ArcGIS layer or JSON endpoint URL</span>
+                <span>Direct source URL (API, CSV, ZIP, or PDF)</span>
                 <input name="query_url" type="url" placeholder="https://" />
+              </label>
+              <label className="form-field">
+                <span>CSV file inside ZIP (optional)</span>
+                <input name="archive_member" placeholder="folder/records.csv" />
+              </label>
+              <label className="form-field">
+                <span>CSV text encoding</span>
+                <select name="file_encoding" defaultValue="utf-8-sig">
+                  <option value="utf-8-sig">UTF-8 (BOM-aware)</option>
+                  <option value="utf-8">UTF-8</option>
+                  <option value="cp1252">Windows-1252</option>
+                  <option value="latin-1">Latin-1</option>
+                </select>
               </label>
               <label className="form-field wide">
                 <span>Optional source filter (SoQL or ArcGIS where clause)</span>
@@ -414,13 +485,15 @@ function DataSourcePanel({
                 <span>Field mapping JSON *</span>
                 <textarea
                   name="field_mapping"
-                  required
+                  required={feedTarget !== "source_records"}
                   rows={4}
                   key={feedTarget}
                   defaultValue={
                     feedTarget === "property_leads"
                       ? '{"address":"address","city":"city","state":"state"}'
-                      : '{"county_fips":"county_fips","violent_crime_rate_per_100k":"violent_crime_rate_per_100k"}'
+                      : feedTarget === "property_enrichment"
+                        ? '{"county_fips":"county_fips","violent_crime_rate_per_100k":"violent_crime_rate_per_100k"}'
+                        : "{}"
                   }
                 />
               </label>
@@ -447,10 +520,16 @@ function DataSourcePanel({
             </div>
             <p className="feed-form-note">
               Lead feeds need address, city, and state. Area enrichment needs county FIPS, ZIP plus
-              state, or county plus state, and may only update area-level rent, PHA, crime, or
-              population metrics. JSON API pagination uses limit/offset when supported. Validate
-              licensing and source terms before enabling a feed.
+              state, or county plus state. Raw source records are retained by snapshot and can be
+              viewed after a successful pull. PDFs must contain selectable text; OCR is not used.
+              Confirm recurring automated access is permitted by the source before saving.
             </p>
+            <label className="form-field wide">
+              <span>
+                <input name="automation_authorized" type="checkbox" required />
+                I verified this source permits recurring automated downloads and local retention.
+              </span>
+            </label>
             <button className="button button-primary" type="submit">Save feed</button>
           </form>
         </details>
@@ -889,8 +968,17 @@ function App() {
         throw new Error("Select a supported property lead type.");
       }
       const maxRecords = Number(text("max_records"));
-      if (!Number.isInteger(maxRecords) || maxRecords < 1 || maxRecords > 5000) {
-        throw new Error("Maximum records must be an integer from 1 to 5,000.");
+      const maxAllowed = connectorValue === "pdf_text"
+        ? 500
+        : connectorValue === "csv_file" || connectorValue === "csv_zip"
+          ? 100000
+          : 5000;
+      if (!Number.isInteger(maxRecords) || maxRecords < 1 || maxRecords > maxAllowed) {
+        throw new Error(`Maximum records must be an integer from 1 to ${maxAllowed.toLocaleString()}.`);
+      }
+      const refreshInterval = Number(text("refresh_interval_days"));
+      if (!Number.isInteger(refreshInterval) || refreshInterval < 1 || refreshInterval > 365) {
+        throw new Error("Refresh interval must be from 1 to 365 days.");
       }
       const payload: DataFeedInput = {
         name: text("name"),
@@ -900,7 +988,11 @@ function App() {
         source_type: sourceTypeValue,
         enabled: true,
         confidence: text("confidence"),
-        field_mapping: parseStringRecord(text("field_mapping"), "Field mapping"),
+        automation_authorized: form.get("automation_authorized") === "on",
+        refresh_interval_days: refreshInterval,
+        field_mapping: targetValue === "source_records"
+          ? {}
+          : parseStringRecord(text("field_mapping"), "Field mapping"),
         max_records: maxRecords,
         query_params: parseStringRecord(text("query_params") || "{}", "Query parameters"),
       };
@@ -911,6 +1003,7 @@ function App() {
         "where",
         "record_id_field",
         "records_path",
+        "archive_member",
         "auth_env_var",
         "auth_query_param",
         "county_fips",
@@ -919,10 +1012,14 @@ function App() {
         const value = text(field);
         if (value) payload[field] = value;
       }
+      const encoding = text("file_encoding");
+      if (["utf-8-sig", "utf-8", "cp1252", "latin-1"].includes(encoding)) {
+        payload.file_encoding = encoding as DataFeedInput["file_encoding"];
+      }
       await api.createDataFeed(payload);
       await refreshDashboard();
       formElement.reset();
-      setNotice("Daily data feed saved. It will run on the configured schedule.");
+      setNotice("Feed saved. It will run when its refresh interval is due.");
     } catch (reason) {
       setError(reason instanceof Error ? reason.message : "Could not save the data feed.");
     }
@@ -1207,6 +1304,7 @@ function App() {
                   onCreateFeed={(event) => void handleCreateFeed(event)}
                   onToggleFeed={(feedId, enabled) => void handleToggleFeed(feedId, enabled)}
                   onDeleteFeed={(feedId) => void handleDeleteFeed(feedId)}
+                  onLoadFeedRecords={(feedId) => api.dataFeedRecords(feedId)}
                 />
               </div>
             ) : activeView === "map" ? (

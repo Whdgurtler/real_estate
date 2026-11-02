@@ -1,9 +1,14 @@
 import asyncio
+import csv
 import hashlib
 import ipaddress
+import io
+import json
 import logging
 import os
 import re
+import tempfile
+import zipfile
 from datetime import date, datetime, timedelta, timezone
 from urllib.parse import urlparse
 from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
@@ -15,7 +20,15 @@ from sqlalchemy import func
 from sqlalchemy.exc import IntegrityError
 from sqlalchemy.orm import sessionmaker
 
-from .models import DataEvidence, DataFeed, DataFeedRecord, Property, SyncRun, utc_now
+from .models import (
+    DataEvidence,
+    DataFeed,
+    DataFeedRecord,
+    DataFeedSourceRecord,
+    Property,
+    SyncRun,
+    utc_now,
+)
 from .schemas import DataFeedCreate, PropertyCreate
 from .sources import fetch_acs_population
 
@@ -23,6 +36,9 @@ from .sources import fetch_acs_population
 LOGGER = logging.getLogger(__name__)
 HUD_FMR_ENDPOINT = "https://www.huduser.gov/hudapi/public/fmr"
 MAX_RESPONSE_BYTES = 10_000_000
+MAX_DOWNLOAD_BYTES = 250_000_000
+MAX_PDF_BYTES = 25_000_000
+MAX_CSV_UNCOMPRESSED_BYTES = 250_000_000
 MAX_AUTOMATED_COUNTIES = 1000
 MAX_HUD_ZIP_BEDROOM_GROUPS = 500
 STATE_FIPS = {"AL": "01", "AR": "05", "MO": "29", "OH": "39", "TX": "48"}
@@ -94,9 +110,12 @@ def serialize_data_feed(feed: DataFeed) -> dict:
         "source_type": feed.source_type,
         "county_fips": feed.county_fips,
         "enabled": feed.enabled,
+        "automation_authorized": bool(config.get("automation_authorized")),
         "source_url": data_feed_source_url(feed),
         "field_mapping": config.get("field_mapping", {}),
         "max_records": config.get("max_records", 1000),
+        "refresh_interval_days": feed.refresh_interval_days,
+        "last_synced_at": feed.last_synced_at,
         "created_at": feed.created_at,
         "updated_at": feed.updated_at,
     }
@@ -112,6 +131,7 @@ def data_feed_config(data: DataFeedCreate) -> dict:
             "county_fips",
             "enabled",
             "confidence",
+            "refresh_interval_days",
         },
         mode="json",
     ) | {"confidence": data.confidence}
@@ -251,13 +271,14 @@ def execute_sync_job(session_factory: sessionmaker, run_id: int) -> None:
         run = session.get(SyncRun, run_id)
         if run is None or run.status != "queued":
             return
+        force = run.trigger == "manual"
         run.status = "running"
         session.commit()
     finally:
         session.close()
 
     try:
-        source_results = asyncio.run(sync_all_sources(session_factory))
+        source_results = asyncio.run(sync_all_sources(session_factory, force=force))
         errors = [
             item.get("error")
             for item in source_results
@@ -288,7 +309,11 @@ def execute_sync_job(session_factory: sessionmaker, run_id: int) -> None:
         mark_sync_run_failed(session_factory, run_id, str(error)[:5000])
 
 
-async def sync_all_sources(session_factory: sessionmaker) -> list[dict]:
+async def sync_all_sources(
+    session_factory: sessionmaker,
+    force: bool = False,
+) -> list[dict]:
+    checked_at = utc_now()
     session = session_factory()
     try:
         feeds = [
@@ -300,6 +325,8 @@ async def sync_all_sources(session_factory: sessionmaker) -> list[dict]:
                 "county_fips": feed.county_fips,
                 "source_type": feed.source_type,
                 "config": dict(feed.config or {}),
+                "refresh_interval_days": feed.refresh_interval_days,
+                "last_synced_at": feed.last_synced_at,
             }
             for feed in session.query(DataFeed).filter(DataFeed.enabled.is_(True)).all()
         ]
@@ -313,8 +340,55 @@ async def sync_all_sources(session_factory: sessionmaker) -> list[dict]:
         headers={"User-Agent": "Groundwork-Property-Data/1.0"},
     ) as client:
         for feed in feeds:
+            if not feed["config"].get("automation_authorized"):
+                results.append(
+                    {
+                        "source_id": feed["id"],
+                        "source_name": feed["name"],
+                        "source_category": feed["source_category"],
+                        "county_fips": feed["county_fips"],
+                        "status": "skipped",
+                        "inserted": 0,
+                        "updated": 0,
+                        "skipped": 0,
+                        "message": (
+                            "Recurring access is paused until the source's "
+                            "automation terms are confirmed."
+                        ),
+                    }
+                )
+                continue
+            last_synced_at = feed["last_synced_at"]
+            if last_synced_at is not None and last_synced_at.tzinfo is None:
+                last_synced_at = last_synced_at.replace(tzinfo=timezone.utc)
+            if (
+                not force
+                and last_synced_at is not None
+                and checked_at - last_synced_at
+                < timedelta(days=feed["refresh_interval_days"])
+            ):
+                results.append(
+                    {
+                        "source_id": feed["id"],
+                        "source_name": feed["name"],
+                        "source_category": feed["source_category"],
+                        "county_fips": feed["county_fips"],
+                        "status": "skipped",
+                        "inserted": 0,
+                        "updated": 0,
+                        "skipped": 0,
+                        "message": (
+                            f"Next scheduled refresh is after "
+                            f"{feed['refresh_interval_days']} days."
+                        ),
+                    }
+                )
+                continue
             try:
-                results.append(await sync_configured_feed(session_factory, client, feed))
+                result = await sync_configured_feed(session_factory, client, feed)
+                results.append(result)
+                if result["status"] in {"success", "partial"}:
+                    _mark_feed_synced(session_factory, feed["id"])
             except Exception as error:
                 LOGGER.exception("Data feed %s (%s) failed", feed["id"], feed["name"])
                 results.append(
@@ -363,6 +437,17 @@ async def sync_all_sources(session_factory: sessionmaker) -> list[dict]:
     return results
 
 
+def _mark_feed_synced(session_factory: sessionmaker, feed_id: int) -> None:
+    session = session_factory()
+    try:
+        feed = session.get(DataFeed, feed_id)
+        if feed is not None:
+            feed.last_synced_at = utc_now()
+            session.commit()
+    finally:
+        session.close()
+
+
 async def sync_configured_feed(
     session_factory: sessionmaker,
     client: httpx.AsyncClient,
@@ -370,6 +455,8 @@ async def sync_configured_feed(
 ) -> dict:
     records = await fetch_feed_records(client, feed)
     source_url = data_feed_source_url(feed)
+    if feed["config"].get("target") == "source_records":
+        return sync_source_records(session_factory, feed, records)
     if feed["config"].get("target") == "property_enrichment":
         return sync_property_enrichment_feed(
             session_factory,
@@ -676,7 +763,201 @@ async def fetch_feed_records(client: httpx.AsyncClient, feed: dict) -> list[dict
         return await _fetch_arcgis_records(client, config, limit)
     if connector == "json_api":
         return await _fetch_json_api_records(client, config, limit)
+    if connector in {"csv_file", "csv_zip"}:
+        return await _fetch_csv_file_records(client, config, limit, connector)
+    if connector == "pdf_text":
+        return await _fetch_pdf_text_records(client, config, limit)
     raise ValueError(f"Unsupported data feed connector: {connector}")
+
+
+async def _fetch_csv_file_records(
+    client: httpx.AsyncClient,
+    config: dict,
+    max_records: int,
+    connector: str,
+) -> list[dict]:
+    url = config["query_url"]
+    _validate_remote_url(url)
+    with tempfile.SpooledTemporaryFile(max_size=10_000_000, mode="w+b") as download:
+        async with client.stream("GET", url) as response:
+            response.raise_for_status()
+            content_length = response.headers.get("content-length")
+            if content_length and int(content_length) > MAX_DOWNLOAD_BYTES:
+                raise ValueError("Source file exceeded the 250 MB download limit")
+            downloaded = 0
+            async for chunk in response.aiter_bytes(chunk_size=64_000):
+                downloaded += len(chunk)
+                if downloaded > MAX_DOWNLOAD_BYTES:
+                    raise ValueError("Source file exceeded the 250 MB download limit")
+                download.write(chunk)
+        download.seek(0)
+        if connector == "csv_zip":
+            with zipfile.ZipFile(download) as archive:
+                csv_members = [
+                    item
+                    for item in archive.infolist()
+                    if not item.is_dir() and item.filename.lower().endswith(".csv")
+                ]
+                requested_member = config.get("archive_member")
+                if requested_member:
+                    csv_members = [
+                        item for item in csv_members if item.filename == requested_member
+                    ]
+                if len(csv_members) != 1:
+                    raise ValueError(
+                        "ZIP source must contain exactly one CSV, or specify its archive member"
+                    )
+                member = csv_members[0]
+                if member.file_size > MAX_CSV_UNCOMPRESSED_BYTES:
+                    raise ValueError("Uncompressed CSV exceeded the 250 MB limit")
+                if member.compress_size and member.file_size / member.compress_size > 100:
+                    raise ValueError("ZIP CSV compression ratio exceeded the safe limit")
+                with archive.open(member) as csv_file:
+                    text_file = io.TextIOWrapper(
+                        csv_file,
+                        encoding=config.get("file_encoding", "utf-8-sig"),
+                        newline="",
+                    )
+                    return _read_csv_records(text_file, max_records)
+        text_file = io.TextIOWrapper(
+            download,
+            encoding=config.get("file_encoding", "utf-8-sig"),
+            newline="",
+        )
+        return _read_csv_records(text_file, max_records)
+
+
+def _read_csv_records(text_file, max_records: int) -> list[dict]:
+    reader = csv.DictReader(text_file)
+    if not reader.fieldnames or any(not field.strip() for field in reader.fieldnames):
+        raise ValueError("CSV source must include non-empty column headers")
+    if len(set(reader.fieldnames)) != len(reader.fieldnames):
+        raise ValueError("CSV source contains duplicate column headers")
+    records = []
+    for row in reader:
+        if len(records) >= max_records:
+            raise ValueError(
+                f"CSV source contains more than the configured {max_records} record limit"
+            )
+        records.append(
+            {
+                field.strip(): value
+                for field, value in row.items()
+                if field and value is not None
+            }
+        )
+    if not records:
+        raise ValueError("CSV source did not contain any data rows")
+    return records
+
+
+async def _fetch_pdf_text_records(
+    client: httpx.AsyncClient,
+    config: dict,
+    max_pages: int,
+) -> list[dict]:
+    url = config["query_url"]
+    _validate_remote_url(url)
+    with tempfile.SpooledTemporaryFile(max_size=10_000_000, mode="w+b") as download:
+        async with client.stream("GET", url) as response:
+            response.raise_for_status()
+            content_length = response.headers.get("content-length")
+            if content_length and int(content_length) > MAX_PDF_BYTES:
+                raise ValueError("PDF source exceeded the 25 MB download limit")
+            downloaded = 0
+            async for chunk in response.aiter_bytes(chunk_size=64_000):
+                downloaded += len(chunk)
+                if downloaded > MAX_PDF_BYTES:
+                    raise ValueError("PDF source exceeded the 25 MB download limit")
+                download.write(chunk)
+        download.seek(0)
+        from pypdf import PdfReader
+
+        reader = PdfReader(download, strict=False)
+        if reader.is_encrypted:
+            raise ValueError("Encrypted PDFs are not supported")
+        if len(reader.pages) > max_pages:
+            raise ValueError(
+                f"PDF contains more than the configured {max_pages} page limit"
+            )
+        records = []
+        for page_number, page in enumerate(reader.pages, start=1):
+            text = page.extract_text()
+            if not text or not text.strip():
+                raise ValueError(
+                    f"PDF page {page_number} has no extractable text; OCR is not enabled"
+                )
+            records.append({"page_number": page_number, "text": text.strip()})
+        if not records:
+            raise ValueError("PDF source contains no pages")
+        return records
+
+
+def sync_source_records(
+    session_factory: sessionmaker,
+    feed: dict,
+    records: list[dict],
+) -> dict:
+    config = feed["config"]
+    session = session_factory()
+    inserted = updated = unchanged = 0
+    observed_at = utc_now()
+    try:
+        for index, payload in enumerate(records):
+            source_id = (
+                _lookup_source_field(payload, config.get("record_id_field"))
+                if config.get("record_id_field")
+                else payload.get("page_number")
+            )
+            stable_value = (
+                str(source_id)
+                if source_id not in (None, "")
+                else json.dumps(payload, sort_keys=True, ensure_ascii=False)
+            )
+            record_key = hashlib.sha256(stable_value.encode("utf-8")).hexdigest()
+            stored = (
+                session.query(DataFeedSourceRecord)
+                .filter(
+                    DataFeedSourceRecord.data_feed_id == feed["id"],
+                    DataFeedSourceRecord.record_key == record_key,
+                )
+                .first()
+            )
+            if stored is None:
+                session.add(
+                    DataFeedSourceRecord(
+                        data_feed_id=feed["id"],
+                        record_key=record_key,
+                        payload=payload,
+                        first_seen_at=observed_at,
+                        last_seen_at=observed_at,
+                    )
+                )
+                inserted += 1
+            else:
+                if stored.payload != payload:
+                    stored.payload = payload
+                    updated += 1
+                else:
+                    unchanged += 1
+                stored.last_seen_at = observed_at
+        session.commit()
+    except Exception:
+        session.rollback()
+        raise
+    finally:
+        session.close()
+    return {
+        "source_id": feed["id"],
+        "source_name": feed["name"],
+        "source_category": feed.get("source_category", "other"),
+        "county_fips": feed.get("county_fips"),
+        "status": "success",
+        "inserted": inserted,
+        "updated": updated,
+        "skipped": 0,
+        "unchanged": unchanged,
+    }
 
 
 async def _fetch_socrata_records(

@@ -55,7 +55,40 @@ class PriorityJurisdictionDirectoryTests(unittest.TestCase):
                         sources["tax_sale"]["reports_url"],
                         "https://cosl.org/Countyfiles/CountyReports",
                     )
-                self.assertEqual(sources["code_enforcement"]["status"], "municipal_scope")
+                expected_code_status = (
+                    "needs_feed_verification"
+                    if county["state"] == "TX"
+                    and county["county"]
+                    in {
+                        "Caldwell County",
+                        "Clay County",
+                        "Colorado County",
+                        "Comal County",
+                        "Ector County",
+                        "Edwards County",
+                        "Falls County",
+                        "Fayette County",
+                        "Fort Bend County",
+                        "Freestone County",
+                        "Galveston County",
+                        "Kaufman County",
+                        "McCulloch County",
+                        "Newton County",
+                        "Nueces County",
+                        "Pecos County",
+                        "Palo Pinto County",
+                        "Parker County",
+                        "Rains County",
+                        "Reagan County",
+                        "Reeves County",
+                        "Robertson County",
+                        "Rockwall County",
+                    }
+                    else "municipal_scope"
+                )
+                self.assertEqual(
+                    sources["code_enforcement"]["status"], expected_code_status
+                )
                 self.assertEqual(sources["foreclosure"]["status"], "needs_feed_verification")
                 self.assertEqual(
                     sources["pre_foreclosure"]["status"], "needs_feed_verification"
@@ -1264,11 +1297,11 @@ class PriorityJurisdictionDirectoryTests(unittest.TestCase):
         self.assertTrue(alabama["assessor"]["source_url"].endswith("#Jefferson"))
         self.assertEqual(
             texas["assessor"]["directory_url"],
-            "https://comptroller.texas.gov/taxes/property-tax/county-directory/",
+            "https://hcad.org/pdata/pdata-property-downloads.html",
         )
         self.assertEqual(
             texas["assessor"]["source_url"],
-            "https://comptroller.texas.gov/taxes/property-tax/county-directory/harris.php",
+            "https://download.hcad.org/data/CAMA/2026/Real_acct_owner.zip",
         )
         self.assertIn(
             "All 254 official Texas Comptroller county pages",
@@ -1520,6 +1553,2035 @@ class PriorityJurisdictionDirectoryTests(unittest.TestCase):
         self.assertIn("two or three times per year", burleson["tax_sale"]["note"])
         self.assertIn("first Tuesday monthly", burleson["foreclosure"]["note"])
         self.assertIn("1940 to present", burleson["pre_foreclosure"]["note"])
+
+    def test_caldwell_through_camp_record_county_specific_sources(self):
+        counties = ("Caldwell", "Calhoun", "Callahan", "Cameron", "Camp")
+        for county in counties:
+            with self.subTest(county=county):
+                sources = county_source_links("TX", f"{county} County")
+                self.assertEqual(
+                    set(sources),
+                    {
+                        "assessor",
+                        "tax_sale",
+                        "code_enforcement",
+                        "foreclosure",
+                        "pre_foreclosure",
+                    },
+                )
+                for source in sources.values():
+                    self.assertIn(
+                        "County-specific source review checked 2026-11-02",
+                        source["note"],
+                    )
+
+        caldwell = county_source_links("TX", "Caldwell County")
+        self.assertEqual(
+            caldwell["tax_sale"]["source_url"],
+            "https://caldwellcad.org/wp-content/uploads/2026/10/"
+            "Sheriffs-Tax-Sale.pdf",
+        )
+        self.assertIn("2,641,983 bytes; 9 pages", caldwell["tax_sale"]["note"])
+        self.assertEqual(
+            caldwell["code_enforcement"]["status"], "needs_feed_verification"
+        )
+        self.assertIn("complaint form", caldwell["code_enforcement"]["note"])
+        self.assertIn("free registration", caldwell["pre_foreclosure"]["note"])
+
+        calhoun = county_source_links("TX", "Calhoun County")
+        self.assertEqual(
+            calhoun["assessor"]["source_url"],
+            "https://esearch.calhouncad.org/",
+        )
+        self.assertIn("does not collect property taxes", calhoun["tax_sale"]["note"])
+        self.assertIn(
+            "No current delinquent-sale date", calhoun["tax_sale"]["note"]
+        )
+
+        callahan = county_source_links("TX", "Callahan County")
+        self.assertIn("hostname mismatch", callahan["tax_sale"]["note"])
+        self.assertIn("no current tax-sale date", callahan["tax_sale"]["note"])
+        self.assertIn("no online real-property-record search", callahan["pre_foreclosure"]["note"])
+
+        cameron = county_source_links("TX", "Cameron County")
+        self.assertIn(
+            "66,947,386 bytes; 8 entries; ZIP integrity passed",
+            cameron["assessor"]["note"],
+        )
+        self.assertIn("HTTP 403", cameron["tax_sale"]["note"])
+        self.assertIn("browser navigation failed", cameron["tax_sale"]["note"])
+        self.assertIn("Foreclosure Sales", cameron["foreclosure"]["note"])
+
+        camp = county_source_links("TX", "Camp County")
+        self.assertIn("dated September 2, 2025", camp["tax_sale"]["note"])
+        self.assertIn("122,308 bytes", camp["tax_sale"]["note"])
+        self.assertIn("no current property-sale notices", camp["foreclosure"]["note"])
+        self.assertIn("legacy HTTP address", camp["pre_foreclosure"]["note"])
+
+    def test_carson_through_cherokee_record_county_specific_sources(self):
+        counties = ("Carson", "Cass", "Castro", "Chambers", "Cherokee")
+        for county in counties:
+            with self.subTest(county=county):
+                sources = county_source_links("TX", f"{county} County")
+                self.assertEqual(
+                    set(sources),
+                    {
+                        "assessor",
+                        "tax_sale",
+                        "code_enforcement",
+                        "foreclosure",
+                        "pre_foreclosure",
+                    },
+                )
+                for source in sources.values():
+                    self.assertIn(
+                        "County-specific source review checked 2026-11-02",
+                        source["note"],
+                    )
+                self.assertEqual(
+                    sources["code_enforcement"]["status"], "municipal_scope"
+                )
+
+        carson = county_source_links("TX", "Carson County")
+        self.assertIn("Agent", carson["assessor"]["note"])
+        self.assertIn("transport retrieval", carson["assessor"]["note"])
+        self.assertIn("HTTP 403", carson["foreclosure"]["note"])
+        self.assertIn("no duty to search public records", carson["pre_foreclosure"]["note"])
+
+        cass = county_source_links("TX", "Cass County")
+        self.assertIn("preliminary 2026 values", cass["assessor"]["note"])
+        self.assertIn("November/December 2026 MVBA", cass["tax_sale"]["note"])
+        self.assertIn("January 5, 2027", cass["foreclosure"]["note"])
+        self.assertIn("image-only", cass["foreclosure"]["note"])
+        self.assertIn("general record portal", cass["pre_foreclosure"]["note"])
+
+        castro = county_source_links("TX", "Castro County")
+        self.assertIn(
+            "not intended to support electronic data transfer",
+            castro["assessor"]["note"],
+        )
+        self.assertIn("does not collect property taxes", castro["tax_sale"]["note"])
+        self.assertIn("October 2022 lightbox demo", castro["foreclosure"]["note"])
+
+        chambers = county_source_links("TX", "Chambers County")
+        self.assertIn("Agent", chambers["assessor"]["note"])
+        self.assertIn("widget-configuration data", chambers["tax_sale"]["note"])
+        self.assertIn(
+            "No current foreclosure calendar", chambers["foreclosure"]["note"]
+        )
+
+        cherokee = county_source_links("TX", "Cherokee County")
+        self.assertEqual(
+            cherokee["tax_sale"]["source_url"],
+            "https://www.mvbataxsales.com/auction/"
+            "cherokee-county-online-property-tax-sale-november-3-2026-186/"
+            "bidgallery/",
+        )
+        self.assertIn("19 lots", cherokee["tax_sale"]["note"])
+        self.assertIn("No CSV/PDF lot export", cherokee["tax_sale"]["note"])
+        self.assertIn("Commissioners Court agendas", cherokee["foreclosure"]["note"])
+
+    def test_childress_through_coleman_record_county_specific_sources(self):
+        counties = ("Childress", "Clay", "Cochran", "Coke", "Coleman")
+        for county in counties:
+            with self.subTest(county=county):
+                sources = county_source_links("TX", f"{county} County")
+                self.assertEqual(
+                    set(sources),
+                    {
+                        "assessor",
+                        "tax_sale",
+                        "code_enforcement",
+                        "foreclosure",
+                        "pre_foreclosure",
+                    },
+                )
+                for source in sources.values():
+                    self.assertIn(
+                        "County-specific source review checked 2026-11-02",
+                        source["note"],
+                    )
+                expected_code_status = (
+                    "needs_feed_verification"
+                    if county == "Clay"
+                    else "municipal_scope"
+                )
+                self.assertEqual(
+                    sources["code_enforcement"]["status"], expected_code_status
+                )
+
+        childress = county_source_links("TX", "Childress County")
+        self.assertEqual(
+            childress["assessor"]["source_url"],
+            "https://www.childresscad.org/",
+        )
+        self.assertIn("interactive owner, property", childress["assessor"]["note"])
+        self.assertIn(
+            "does not collect property taxes", childress["tax_sale"]["note"]
+        )
+        self.assertIn("returned HTTP 404", childress["foreclosure"]["note"])
+
+        clay = county_source_links("TX", "Clay County")
+        self.assertEqual(
+            clay["foreclosure"]["source_url"],
+            "http://216.213.122.247/foreclosures/index.asp",
+        )
+        self.assertIn("October 28", clay["foreclosure"]["note"])
+        self.assertIn("262,453 bytes", clay["foreclosure"]["note"])
+        self.assertIn("not available online", clay["pre_foreclosure"]["note"])
+        self.assertEqual(
+            clay["code_enforcement"]["status"], "needs_feed_verification"
+        )
+
+        cochran = county_source_links("TX", "Cochran County")
+        self.assertEqual(
+            cochran["assessor"]["source_url"],
+            "https://esearch.co.cochran.tx.us/",
+        )
+        self.assertIn("no current tax-sale date", cochran["tax_sale"]["note"])
+        self.assertIn("HTTP 403", cochran["foreclosure"]["note"])
+
+        coke = county_source_links("TX", "Coke County")
+        self.assertIn("185,494 bytes", coke["foreclosure"]["note"])
+        self.assertIn("no extractable text", coke["foreclosure"]["note"])
+        self.assertEqual(
+            coke["pre_foreclosure"]["source_url"],
+            "https://countyfusion1.kofiletech.us/",
+        )
+        self.assertIn("bulk-property-record request form", coke["pre_foreclosure"]["note"])
+
+        coleman = county_source_links("TX", "Coleman County")
+        self.assertIn("'Agent' placeholder", coleman["assessor"]["note"])
+        self.assertIn(
+            "does not collect property taxes", coleman["tax_sale"]["note"]
+        )
+        self.assertIn("no current foreclosure", coleman["foreclosure"]["note"])
+
+    def test_collin_through_comanche_record_verified_source_availability(self):
+        counties = ("Collin", "Collingsworth", "Colorado", "Comal", "Comanche")
+        for county in counties:
+            with self.subTest(county=county):
+                sources = county_source_links("TX", f"{county} County")
+                self.assertEqual(
+                    set(sources),
+                    {
+                        "assessor",
+                        "tax_sale",
+                        "code_enforcement",
+                        "foreclosure",
+                        "pre_foreclosure",
+                    },
+                )
+                for source in sources.values():
+                    self.assertIn(
+                        "County-specific source review checked 2026-11-02",
+                        source["note"],
+                    )
+                expected_code_status = (
+                    "needs_feed_verification"
+                    if county in {"Colorado", "Comal"}
+                    else "municipal_scope"
+                )
+                self.assertEqual(
+                    sources["code_enforcement"]["status"], expected_code_status
+                )
+
+        collin = county_source_links("TX", "Collin County")
+        self.assertIn("160,703,674 bytes", collin["assessor"]["note"])
+        self.assertIn("application/zip", collin["assessor"]["note"])
+        self.assertIn("no items", collin["tax_sale"]["note"])
+        self.assertIn("January 5, 2027", collin["foreclosure"]["note"])
+        self.assertIn("may not be the complete official record", collin["pre_foreclosure"]["note"])
+
+        collingsworth = county_source_links("TX", "Collingsworth County")
+        self.assertIn(
+            "Notice%20of%20Substitute%20Trustee%20Sale.pdf",
+            collingsworth["foreclosure"]["source_url"],
+        )
+        self.assertIn("April 7, 2026", collingsworth["foreclosure"]["note"])
+        self.assertIn("June 9, 2021", collingsworth["foreclosure"]["note"])
+
+        colorado = county_source_links("TX", "Colorado County")
+        self.assertEqual(
+            colorado["foreclosure"]["source_url"],
+            "https://www.co.colorado.tx.us/page/colorado.PublicNotices",
+        )
+        self.assertIn("November 3, 2026", colorado["foreclosure"]["note"])
+        self.assertIn("6,336,116 bytes", colorado["foreclosure"]["note"])
+        self.assertEqual(
+            colorado["code_enforcement"]["status"], "needs_feed_verification"
+        )
+
+        comal = county_source_links("TX", "Comal County")
+        self.assertIn("15 lots", comal["tax_sale"]["note"])
+        self.assertIn("no CSV/PDF bulk export", comal["tax_sale"]["note"])
+        self.assertIn("emailed after payment", comal["tax_sale"]["note"])
+        self.assertEqual(
+            comal["code_enforcement"]["status"], "needs_feed_verification"
+        )
+        self.assertIn("full-field search", comal["pre_foreclosure"]["note"])
+
+        comanche = county_source_links("TX", "Comanche County")
+        self.assertIn("two November 3, 2026 trustee sales", comanche["foreclosure"]["note"])
+        self.assertIn("no extractable text", comanche["foreclosure"]["note"])
+        self.assertIn("2,779 documents for 2026", comanche["pre_foreclosure"]["note"])
+
+    def test_concho_through_crane_record_verified_source_availability(self):
+        counties = ("Concho", "Cooke", "Coryell", "Cottle", "Crane")
+        for county in counties:
+            with self.subTest(county=county):
+                sources = county_source_links("TX", f"{county} County")
+                self.assertEqual(
+                    set(sources),
+                    {
+                        "assessor",
+                        "tax_sale",
+                        "code_enforcement",
+                        "foreclosure",
+                        "pre_foreclosure",
+                    },
+                )
+                for source in sources.values():
+                    self.assertIn(
+                        "County-specific source review checked 2026-11-02",
+                        source["note"],
+                    )
+                self.assertEqual(
+                    sources["code_enforcement"]["status"], "municipal_scope"
+                )
+
+        concho = county_source_links("TX", "Concho County")
+        self.assertIn("1,259,128 bytes", concho["tax_sale"]["note"])
+        self.assertIn("November 3 notice is a trustee sale", concho["tax_sale"]["note"])
+        self.assertIn("updated nightly", concho["pre_foreclosure"]["note"])
+
+        cooke = county_source_links("TX", "Cooke County")
+        self.assertIn("does not collect property taxes", cooke["tax_sale"]["note"])
+        self.assertIn("seven November 3, 2026 sales", cooke["foreclosure"]["note"])
+        self.assertIn("January 5, 2027", cooke["foreclosure"]["note"])
+        self.assertEqual(
+            cooke["pre_foreclosure"]["source_url"],
+            "https://i2i.uslandrecords.com/TX/Cooke/D/Default.aspx",
+        )
+
+        coryell = county_source_links("TX", "Coryell County")
+        self.assertIn("7,160,617 bytes", coryell["assessor"]["note"])
+        self.assertIn("not listed for the November 3", coryell["tax_sale"]["note"])
+        self.assertIn("eight properties", coryell["foreclosure"]["note"])
+        self.assertIn("49,620 bytes", coryell["foreclosure"]["note"])
+
+        cottle = county_source_links("TX", "Cottle County")
+        self.assertEqual(
+            cottle["assessor"]["source_url"], "https://www.cottlecad.org/"
+        )
+        self.assertIn("March 26, 2025", cottle["foreclosure"]["note"])
+        self.assertIn("unrelated 2022 lightbox demo", cottle["foreclosure"]["note"])
+        self.assertIn("no online real-property search", cottle["pre_foreclosure"]["note"])
+
+        crane = county_source_links("TX", "Crane County")
+        self.assertIn("2,369,865 bytes", crane["assessor"]["note"])
+        self.assertIn(
+            "20260716_204247.csv", crane["assessor"]["source_url"]
+        )
+        self.assertIn("October 6, now past", crane["foreclosure"]["note"])
+        self.assertIn("only a guide to documents", crane["pre_foreclosure"]["note"])
+
+    def test_crockett_through_dallas_record_verified_source_availability(self):
+        counties = ("Crockett", "Crosby", "Culberson", "Dallam", "Dallas")
+        for county in counties:
+            with self.subTest(county=county):
+                sources = county_source_links("TX", f"{county} County")
+                self.assertEqual(
+                    set(sources),
+                    {
+                        "assessor",
+                        "tax_sale",
+                        "code_enforcement",
+                        "foreclosure",
+                        "pre_foreclosure",
+                    },
+                )
+                for source in sources.values():
+                    self.assertIn(
+                        "County-specific source review checked 2026-11-02",
+                        source["note"],
+                    )
+                self.assertEqual(
+                    sources["code_enforcement"]["status"], "municipal_scope"
+                )
+
+        crockett = county_source_links("TX", "Crockett County")
+        self.assertIn("4,053,966 bytes", crockett["assessor"]["note"])
+        self.assertIn("October 13, 2022 lightbox demo", crockett["foreclosure"]["note"])
+        self.assertIn("no online real-property search", crockett["pre_foreclosure"]["note"])
+
+        crosby = county_source_links("TX", "Crosby County")
+        self.assertIn("2,707,429 bytes", crosby["assessor"]["note"])
+        self.assertIn("does not collect property taxes", crosby["tax_sale"]["note"])
+        self.assertIn("December 1, 2026", crosby["foreclosure"]["note"])
+        self.assertIn("216,256 bytes", crosby["foreclosure"]["note"])
+
+        culberson = county_source_links("TX", "Culberson County")
+        self.assertIn("5,231,474 bytes", culberson["assessor"]["note"])
+        self.assertIn("collecting unit", culberson["tax_sale"]["note"])
+        self.assertIn("no current foreclosure notice inventory", culberson["foreclosure"]["note"])
+
+        dallam = county_source_links("TX", "Dallam County")
+        self.assertEqual(
+            dallam["assessor"]["source_url"],
+            "https://texascountygisdata.com/product/"
+            "dallam-county-shapefile-and-property-data/",
+        )
+        self.assertIn("$275", dallam["assessor"]["note"])
+        self.assertIn("October 2026", dallam["tax_sale"]["note"])
+        self.assertIn("no public online search portal", dallam["pre_foreclosure"]["note"])
+
+        dallas = county_source_links("TX", "Dallas County")
+        self.assertIn("171,638,690 bytes", dallas["assessor"]["note"])
+        self.assertIn("275,724,261 bytes", dallas["tax_sale"]["note"])
+        self.assertIn("not an auction lot list", dallas["tax_sale"]["note"])
+        self.assertIn("sale-date/city filters", dallas["foreclosure"]["note"])
+        self.assertIn("not a dedicated lis-pendens/default index", dallas["pre_foreclosure"]["note"])
+
+    def test_dawson_through_dewitt_record_verified_source_availability(self):
+        counties = ("Dawson", "Deaf Smith", "Delta", "Denton", "DeWitt")
+        for county in counties:
+            with self.subTest(county=county):
+                sources = county_source_links("TX", f"{county} County")
+                self.assertEqual(
+                    set(sources),
+                    {
+                        "assessor",
+                        "tax_sale",
+                        "code_enforcement",
+                        "foreclosure",
+                        "pre_foreclosure",
+                    },
+                )
+                for source in sources.values():
+                    self.assertIn(
+                        "County-specific source review checked 2026-11-02",
+                        source["note"],
+                    )
+                self.assertEqual(
+                    sources["code_enforcement"]["status"], "municipal_scope"
+                )
+
+        dawson = county_source_links("TX", "Dawson County")
+        self.assertIn("interactive owner and property searches", dawson["assessor"]["note"])
+        self.assertIn("does not collect property taxes", dawson["tax_sale"]["note"])
+        self.assertIn("no online real-property search", dawson["pre_foreclosure"]["note"])
+
+        deaf_smith = county_source_links("TX", "Deaf Smith County")
+        self.assertEqual(
+            deaf_smith["assessor"]["source_url"],
+            "https://esearch.deafsmithcad.org/",
+        )
+        self.assertIn("does not collect property taxes", deaf_smith["tax_sale"]["note"])
+        self.assertIn("October 13, 2022 lightbox demo", deaf_smith["foreclosure"]["note"])
+        self.assertIn("LGS Public Online Access", deaf_smith["pre_foreclosure"]["note"])
+
+        delta = county_source_links("TX", "Delta County")
+        self.assertIn("April 1, 2025", delta["tax_sale"]["note"])
+        self.assertIn("HTTP 403", delta["tax_sale"]["note"])
+        self.assertIn("September 3, 2024 PDF", delta["foreclosure"]["note"])
+        self.assertIn("no public real-property records search", delta["pre_foreclosure"]["note"])
+
+        denton = county_source_links("TX", "Denton County")
+        self.assertEqual(
+            denton["pre_foreclosure"]["source_url"],
+            "https://dentontx.search.kofile.com/48121/Home/Index/1",
+        )
+        self.assertIn("Orders of Sale", denton["tax_sale"]["note"])
+        self.assertIn("GovEase", denton["tax_sale"]["note"])
+        self.assertIn("trustee-run sales", denton["tax_sale"]["note"])
+        self.assertIn("not a dedicated lis-pendens/default index", denton["pre_foreclosure"]["note"])
+
+        dewitt = county_source_links("TX", "DeWitt County")
+        self.assertIn("mass-appraisal reports", dewitt["assessor"]["note"])
+        self.assertIn("collecting unit", dewitt["tax_sale"]["note"])
+        self.assertIn("Official Public Records index", dewitt["foreclosure"]["note"])
+        self.assertIn("not a dedicated lis-pendens/default index", dewitt["pre_foreclosure"]["note"])
+
+    def test_donley_through_edwards_record_verified_source_availability(self):
+        counties = ("Donley", "Duval", "Eastland", "Ector", "Edwards")
+        for county in counties:
+            with self.subTest(county=county):
+                sources = county_source_links("TX", f"{county} County")
+                self.assertEqual(
+                    set(sources),
+                    {
+                        "assessor",
+                        "tax_sale",
+                        "code_enforcement",
+                        "foreclosure",
+                        "pre_foreclosure",
+                    },
+                )
+                for source in sources.values():
+                    self.assertIn(
+                        "County-specific source review checked 2026-11-02",
+                        source["note"],
+                    )
+
+        donley = county_source_links("TX", "Donley County")
+        self.assertIn("loading placeholder", donley["assessor"]["note"])
+        self.assertIn("does not collect property taxes", donley["tax_sale"]["note"])
+        self.assertIn("HTTP 403", donley["foreclosure"]["note"])
+        self.assertIn("HTTP 403", donley["pre_foreclosure"]["note"])
+
+        duval = county_source_links("TX", "Duval County")
+        self.assertEqual(
+            duval["assessor"]["source_url"],
+            "https://esearch.duvalcad.org/",
+        )
+        self.assertIn("preliminary", duval["assessor"]["note"])
+        self.assertIn("collecting unit", duval["tax_sale"]["note"])
+        self.assertIn("HTTP 403", duval["pre_foreclosure"]["note"])
+
+        eastland = county_source_links("TX", "Eastland County")
+        self.assertIn(
+            "159,173 and 95,617 bytes", eastland["foreclosure"]["note"]
+        )
+        self.assertIn("November", eastland["foreclosure"]["note"])
+        self.assertIn("1870-1982", eastland["pre_foreclosure"]["note"])
+        self.assertIn("1983-current", eastland["pre_foreclosure"]["note"])
+        self.assertIn("no current delinquent-tax sale", eastland["tax_sale"]["note"])
+
+        ector = county_source_links("TX", "Ector County")
+        self.assertEqual(
+            ector["assessor"]["source_url"],
+            "https://www.ectorcad.org/search/re_name",
+        )
+        self.assertIn("GIS", ector["assessor"]["note"])
+        self.assertIn("not an auction-lot list", ector["tax_sale"]["note"])
+        self.assertEqual(
+            ector["code_enforcement"]["status"], "needs_feed_verification"
+        )
+        self.assertIn("registered permit portal", ector["code_enforcement"]["note"])
+
+        edwards = county_source_links("TX", "Edwards County")
+        self.assertEqual(
+            edwards["assessor"]["source_url"],
+            "https://esearch.edwardscad.org/",
+        )
+        self.assertIn("collecting unit", edwards["tax_sale"]["note"])
+        self.assertEqual(
+            edwards["code_enforcement"]["status"], "needs_feed_verification"
+        )
+        self.assertIn("no current notices", edwards["foreclosure"]["note"])
+        self.assertIn("no public online real-property search", edwards["pre_foreclosure"]["note"])
+
+    def test_el_paso_through_fannin_record_verified_source_availability(self):
+        counties = ("El Paso", "Ellis", "Erath", "Falls", "Fannin")
+        for county in counties:
+            with self.subTest(county=county):
+                sources = county_source_links("TX", f"{county} County")
+                self.assertEqual(
+                    set(sources),
+                    {
+                        "assessor",
+                        "tax_sale",
+                        "code_enforcement",
+                        "foreclosure",
+                        "pre_foreclosure",
+                    },
+                )
+                for source in sources.values():
+                    self.assertIn(
+                        "County-specific source review checked 2026-11-02",
+                        source["note"],
+                    )
+
+        el_paso = county_source_links("TX", "El Paso County")
+        self.assertIn("weekly ZIP datasets", el_paso["assessor"]["note"])
+        self.assertIn("HTTP 403", el_paso["assessor"]["note"])
+        self.assertIn(
+            "prohibits automated scraping",
+            el_paso["assessor"]["note"],
+        )
+        self.assertIn("does not collect property taxes", el_paso["tax_sale"]["note"])
+        self.assertIn("no public searchable Official Public Records index", el_paso["pre_foreclosure"]["note"])
+
+        ellis = county_source_links("TX", "Ellis County")
+        self.assertEqual(
+            ellis["assessor"]["source_url"],
+            "https://www.elliscad.com/gis-data/",
+        )
+        self.assertIn("ellis_parcels.zip", ellis["assessor"]["note"])
+        self.assertIn("15.7 MB", ellis["assessor"]["note"])
+        self.assertIn("local download was not confirmed", ellis["assessor"]["note"])
+        self.assertIn("not a tax-sale docket", ellis["tax_sale"]["note"])
+        self.assertIn("District Clerk court records", ellis["pre_foreclosure"]["note"])
+
+        erath = county_source_links("TX", "Erath County")
+        self.assertEqual(
+            erath["assessor"]["source_url"],
+            "https://esearch.erath-cad.com/",
+        )
+        self.assertIn("interactive owner, address, ID", erath["assessor"]["note"])
+        self.assertIn("HTTP 403", erath["tax_sale"]["note"])
+        self.assertIn("HTTP 403", erath["foreclosure"]["note"])
+
+        falls = county_source_links("TX", "Falls County")
+        self.assertEqual(
+            falls["pre_foreclosure"]["source_url"],
+            "https://www.edoctecinc.com/fallspublicrecords",
+        )
+        self.assertIn("deeds, mortgages, and liens", falls["pre_foreclosure"]["note"])
+        self.assertIn("not a dedicated", falls["pre_foreclosure"]["note"])
+        self.assertEqual(
+            falls["code_enforcement"]["status"], "needs_feed_verification"
+        )
+        self.assertIn("HTTP 403", falls["code_enforcement"]["note"])
+
+        fannin = county_source_links("TX", "Fannin County")
+        self.assertEqual(
+            fannin["pre_foreclosure"]["source_url"],
+            "https://ava.fidlar.com/TXFannin/AvaWeb/",
+        )
+        self.assertIn("mid-1970s", fannin["pre_foreclosure"]["note"])
+        self.assertIn("Trenton Tribune", fannin["tax_sale"]["note"])
+        self.assertIn(
+            "not a foreclosure inventory", fannin["foreclosure"]["note"]
+        )
+
+    def test_fayette_through_fort_bend_record_verified_source_availability(self):
+        counties = ("Fayette", "Fisher", "Floyd", "Foard", "Fort Bend")
+        for county in counties:
+            with self.subTest(county=county):
+                sources = county_source_links("TX", f"{county} County")
+                self.assertEqual(
+                    set(sources),
+                    {
+                        "assessor",
+                        "tax_sale",
+                        "code_enforcement",
+                        "foreclosure",
+                        "pre_foreclosure",
+                    },
+                )
+                for source in sources.values():
+                    self.assertIn(
+                        "County-specific source review checked 2026-11-02",
+                        source["note"],
+                    )
+
+        fayette = county_source_links("TX", "Fayette County")
+        self.assertEqual(
+            fayette["assessor"]["source_url"],
+            "https://esearch.fayettecad.org/",
+        )
+        self.assertIn("interactive Owner, Address, ID", fayette["assessor"]["note"])
+        self.assertIn("does not collect property taxes", fayette["tax_sale"]["note"])
+        self.assertEqual(
+            fayette["code_enforcement"]["status"], "needs_feed_verification"
+        )
+        self.assertIn(
+            "Oil, Gas & Pipeline", fayette["code_enforcement"]["note"]
+        )
+        self.assertIn("HTTP 403", fayette["foreclosure"]["note"])
+
+        fisher = county_source_links("TX", "Fisher County")
+        self.assertIn("only the text", fisher["assessor"]["note"])
+        self.assertIn("HTTP 403", fisher["tax_sale"]["note"])
+        self.assertIn("deeds", fisher["pre_foreclosure"]["note"])
+
+        floyd = county_source_links("TX", "Floyd County")
+        self.assertIn("DNS/connection error", floyd["assessor"]["note"])
+        self.assertIn("does not collect property taxes", floyd["tax_sale"]["note"])
+        self.assertIn("HTTP 403", floyd["foreclosure"]["note"])
+
+        foard = county_source_links("TX", "Foard County")
+        self.assertIn("interactive searches by owner", foard["assessor"]["note"])
+        self.assertIn("does not collect property taxes", foard["tax_sale"]["note"])
+        self.assertIn("deed recording", foard["pre_foreclosure"]["note"])
+
+        fort_bend = county_source_links("TX", "Fort Bend County")
+        self.assertEqual(
+            fort_bend["foreclosure"]["source_url"],
+            "https://www.fortbendcountytx.gov/sites/default/files/"
+            "document-central/document-central/county-clerk-documents/"
+            "home-page-county-clerk/research-foreclosures/November-2026.pdf",
+        )
+        self.assertIn("monthly foreclosure-list PDFs", fort_bend["foreclosure"]["note"])
+        self.assertIn("to the Constables", fort_bend["tax_sale"]["note"])
+        self.assertIn("mortgage documents", fort_bend["pre_foreclosure"]["note"])
+        self.assertEqual(
+            fort_bend["code_enforcement"]["status"], "needs_feed_verification"
+        )
+
+    def test_franklin_through_galveston_record_verified_source_availability(self):
+        counties = ("Franklin", "Freestone", "Frio", "Gaines", "Galveston")
+        for county in counties:
+            with self.subTest(county=county):
+                sources = county_source_links("TX", f"{county} County")
+                self.assertEqual(
+                    set(sources),
+                    {
+                        "assessor",
+                        "tax_sale",
+                        "code_enforcement",
+                        "foreclosure",
+                        "pre_foreclosure",
+                    },
+                )
+                for source in sources.values():
+                    self.assertIn(
+                        "County-specific source review checked 2026-11-02",
+                        source["note"],
+                    )
+
+        franklin = county_source_links("TX", "Franklin County")
+        self.assertIn("interactive property searches", franklin["assessor"]["note"])
+        self.assertIn("1843", franklin["pre_foreclosure"]["note"])
+        self.assertIn("general records index", franklin["pre_foreclosure"]["note"])
+        self.assertIn("HTTP 403", franklin["foreclosure"]["note"])
+
+        freestone = county_source_links("TX", "Freestone County")
+        self.assertIn("DNS/connection error", freestone["assessor"]["note"])
+        self.assertIn("special-road-use, pipeline", freestone["code_enforcement"]["note"])
+        self.assertEqual(
+            freestone["code_enforcement"]["status"], "needs_feed_verification"
+        )
+        self.assertIn("HTTP 403", freestone["foreclosure"]["note"])
+
+        frio = county_source_links("TX", "Frio County")
+        self.assertIn("text \"Agent\"", frio["assessor"]["note"])
+        self.assertIn("HTTP 403", frio["tax_sale"]["note"])
+        self.assertIn("could not be confirmed", frio["pre_foreclosure"]["note"])
+
+        gaines = county_source_links("TX", "Gaines County")
+        self.assertEqual(
+            gaines["assessor"]["source_url"],
+            "https://esearch.gainescad.org/",
+        )
+        self.assertIn("September 2018", gaines["foreclosure"]["note"])
+        self.assertIn("does not collect property taxes", gaines["tax_sale"]["note"])
+
+        galveston = county_source_links("TX", "Galveston County")
+        self.assertIn("46,661,881 bytes", galveston["assessor"]["note"])
+        self.assertIn("27,469,539 bytes", galveston["assessor"]["note"])
+        self.assertIn("parcel_data.dbf inside", galveston["assessor"]["note"])
+        self.assertIn("HTTP 403", galveston["tax_sale"]["note"])
+        self.assertEqual(
+            galveston["code_enforcement"]["status"], "needs_feed_verification"
+        )
+
+    def test_garza_through_gonzales_record_verified_source_availability(self):
+        counties = ("Garza", "Gillespie", "Glasscock", "Goliad", "Gonzales")
+        for county in counties:
+            with self.subTest(county=county):
+                sources = county_source_links("TX", f"{county} County")
+                self.assertEqual(
+                    set(sources),
+                    {
+                        "assessor",
+                        "tax_sale",
+                        "code_enforcement",
+                        "foreclosure",
+                        "pre_foreclosure",
+                    },
+                )
+                for source in sources.values():
+                    self.assertIn(
+                        "County-specific source review checked 2026-11-02",
+                        source["note"],
+                    )
+
+        garza = county_source_links("TX", "Garza County")
+        self.assertIn("preliminary 2026 values", garza["assessor"]["note"])
+        self.assertIn("HTTP 403", garza["tax_sale"]["note"])
+
+        gillespie = county_source_links("TX", "Gillespie County")
+        self.assertIn("interactive Owner, Address, ID", gillespie["assessor"]["note"])
+        self.assertIn("does not collect property taxes", gillespie["tax_sale"]["note"])
+        self.assertIn("no dedicated", gillespie["foreclosure"]["note"])
+
+        glasscock = county_source_links("TX", "Glasscock County")
+        self.assertIn("only the text", glasscock["assessor"]["note"])
+        self.assertIn("did not resolve", glasscock["assessor"]["note"])
+        self.assertIn("HTTP 403", glasscock["foreclosure"]["note"])
+
+        goliad = county_source_links("TX", "Goliad County")
+        self.assertIn("interactive Basic, Owner, Property", goliad["assessor"]["note"])
+        self.assertIn("general Fair Housing notice", goliad["foreclosure"]["note"])
+        self.assertIn("real-property filing fees", goliad["pre_foreclosure"]["note"])
+
+        gonzales = county_source_links("TX", "Gonzales County")
+        self.assertIn("DNS/connection error", gonzales["assessor"]["note"])
+        self.assertIn("HTTP 403", gonzales["foreclosure"]["note"])
+        self.assertIn("Tyler portal", gonzales["pre_foreclosure"]["note"])
+
+    def test_gray_through_guadalupe_record_verified_source_availability(self):
+        counties = ("Gray", "Grayson", "Gregg", "Grimes", "Guadalupe")
+        for county in counties:
+            with self.subTest(county=county):
+                sources = county_source_links("TX", f"{county} County")
+                self.assertEqual(
+                    set(sources),
+                    {
+                        "assessor",
+                        "tax_sale",
+                        "code_enforcement",
+                        "foreclosure",
+                        "pre_foreclosure",
+                    },
+                )
+                for source in sources.values():
+                    self.assertIn(
+                        "County-specific source review checked 2026-11-02",
+                        source["note"],
+                    )
+
+        gray = county_source_links("TX", "Gray County")
+        self.assertIn("interactive Owner, Address, ID", gray["assessor"]["note"])
+        self.assertIn("Tax Sale Bid Form", gray["tax_sale"]["note"])
+        self.assertIn("2022 lightbox demo", gray["foreclosure"]["note"])
+        self.assertIn(
+            "no public searchable real-property record portal",
+            gray["pre_foreclosure"]["note"],
+        )
+
+        grayson = county_source_links("TX", "Grayson County")
+        self.assertIn("interactive Owner, Address, ID", grayson["assessor"]["note"])
+        self.assertIn("payment/contact landing page", grayson["tax_sale"]["note"])
+        self.assertIn("court-ordered real estate sales", grayson["foreclosure"]["note"])
+        self.assertIn("certified through 10/27/2026", grayson["pre_foreclosure"]["note"])
+
+        gregg = county_source_links("TX", "Gregg County")
+        self.assertIn("DNS/connection error", gregg["assessor"]["note"])
+        self.assertIn("29,601,145-byte", gregg["foreclosure"]["note"])
+        self.assertEqual(
+            gregg["foreclosure"]["source_url"],
+            "https://greggcounty.texas.gov/assets/main/"
+            "november-2026-foreclosure.pdf",
+        )
+        self.assertIn(
+            "not verified as a tax-sale list",
+            gregg["tax_sale"]["note"],
+        )
+        self.assertIn(
+            "did not expose a direct public search link",
+            gregg["pre_foreclosure"]["note"],
+        )
+
+        grimes = county_source_links("TX", "Grimes County")
+        self.assertIn("DNS/connection error", grimes["assessor"]["note"])
+        self.assertIn("does not collect property taxes", grimes["tax_sale"]["note"])
+        self.assertIn("includes foreclosures", grimes["foreclosure"]["note"])
+        self.assertIn(
+            "certified through 10/28/2026",
+            grimes["pre_foreclosure"]["note"],
+        )
+
+        guadalupe = county_source_links("TX", "Guadalupe County")
+        self.assertIn("interactive Owner, Address, ID", guadalupe["assessor"]["note"])
+        self.assertIn("Fair Housing notice", guadalupe["tax_sale"]["note"])
+        self.assertIn("HTTP 404", guadalupe["pre_foreclosure"]["note"])
+
+    def test_hale_through_hardeman_record_verified_source_availability(self):
+        counties = ("Hale", "Hall", "Hamilton", "Hansford", "Hardeman")
+        for county in counties:
+            with self.subTest(county=county):
+                sources = county_source_links("TX", f"{county} County")
+                self.assertEqual(
+                    set(sources),
+                    {
+                        "assessor",
+                        "tax_sale",
+                        "code_enforcement",
+                        "foreclosure",
+                        "pre_foreclosure",
+                    },
+                )
+                for source in sources.values():
+                    self.assertIn(
+                        "County-specific source review checked 2026-11-02",
+                        source["note"],
+                    )
+
+        hale = county_source_links("TX", "Hale County")
+        self.assertIn("preliminary 2026 values", hale["assessor"]["note"])
+        self.assertIn("does not collect property taxes", hale["tax_sale"]["note"])
+        self.assertIn("HTTP 403", hale["foreclosure"]["note"])
+
+        hall = county_source_links("TX", "Hall County")
+        self.assertIn("Basic, Owner, Property", hall["assessor"]["note"])
+        self.assertIn("null.trim error", hall["assessor"]["note"])
+        self.assertIn("does not collect property taxes", hall["tax_sale"]["note"])
+        self.assertIn("HTTP 403", hall["pre_foreclosure"]["note"])
+
+        hamilton = county_source_links("TX", "Hamilton County")
+        self.assertIn("quick property search", hamilton["assessor"]["note"])
+        self.assertIn("year", hamilton["tax_sale"]["note"])
+        self.assertIn("130,186-byte", hamilton["tax_sale"]["note"])
+        self.assertEqual(
+            hamilton["tax_sale"]["source_url"],
+            "https://hamiltoncad.southwestdatasolutions.com/c/tax-sale",
+        )
+        self.assertIn("HTTP 403", hamilton["foreclosure"]["note"])
+
+        hansford = county_source_links("TX", "Hansford County")
+        self.assertIn("interactive Basic, Owner", hansford["assessor"]["note"])
+        self.assertIn("Foreclosure Notices", hansford["foreclosure"]["note"])
+        self.assertIn("no public searchable", hansford["pre_foreclosure"]["note"])
+
+        hardeman = county_source_links("TX", "Hardeman County")
+        self.assertIn("only 'Agent'", hardeman["assessor"]["note"])
+        self.assertIn(
+            "October 31, 2006 to current",
+            hardeman["pre_foreclosure"]["note"],
+        )
+        self.assertIn(
+            "general contact page",
+            hardeman["pre_foreclosure"]["note"],
+        )
+
+    def test_hardin_through_haskell_record_verified_source_availability(self):
+        counties = ("Hardin", "Harris", "Harrison", "Hartley", "Haskell")
+        for county in counties:
+            with self.subTest(county=county):
+                sources = county_source_links("TX", f"{county} County")
+                self.assertEqual(
+                    set(sources),
+                    {
+                        "assessor",
+                        "tax_sale",
+                        "code_enforcement",
+                        "foreclosure",
+                        "pre_foreclosure",
+                    },
+                )
+                for source in sources.values():
+                    self.assertIn(
+                        "County-specific source review checked 2026-11-02",
+                        source["note"],
+                    )
+
+        hardin = county_source_links("TX", "Hardin County")
+        self.assertIn("preliminary 2026 values", hardin["assessor"]["note"])
+        self.assertIn("14,569,902-byte", hardin["assessor"]["note"])
+        self.assertIn("2023-07-02", hardin["assessor"]["note"])
+        self.assertIn("HTTP 403", hardin["tax_sale"]["note"])
+        self.assertIn("administrator contact", hardin["code_enforcement"]["note"])
+        self.assertIn("courthouse address", hardin["foreclosure"]["note"])
+        self.assertIn("no public real-property search", hardin["pre_foreclosure"]["note"])
+
+        harris = county_source_links("TX", "Harris County")
+        self.assertEqual(
+            harris["assessor"]["source_url"],
+            "https://download.hcad.org/data/CAMA/2026/Real_acct_owner.zip",
+        )
+        self.assertIn("212,021,338 bytes", harris["assessor"]["note"])
+        self.assertIn("212,259,011 bytes", harris["assessor"]["note"])
+        self.assertEqual(
+            harris["tax_sale"]["directory_url"],
+            "https://www.hctax.net/Property/TaxSales",
+        )
+        self.assertIn("November 3, 2026", harris["tax_sale"]["note"])
+        self.assertIn("2,701,910 bytes", harris["tax_sale"]["note"])
+        self.assertIn("no CSV, XLS, PDF, or export control", harris["tax_sale"]["note"])
+        self.assertIn("840 rows", harris["foreclosure"]["note"])
+        self.assertIn("paginated document IDs", harris["foreclosure"]["note"])
+        self.assertIn("Bulk data/FTP access", harris["pre_foreclosure"]["note"])
+
+        harrison = county_source_links("TX", "Harrison County")
+        self.assertIn("interactive Property Search", harrison["assessor"]["note"])
+        self.assertIn("HTTP 403", harrison["tax_sale"]["note"])
+        self.assertIn("HTTP 403", harrison["foreclosure"]["note"])
+
+        hartley = county_source_links("TX", "Hartley County")
+        self.assertIn("$275", hartley["assessor"]["note"])
+        self.assertIn("updated nightly", hartley["assessor"]["note"])
+        self.assertIn("does not collect property taxes", hartley["tax_sale"]["note"])
+
+        haskell = county_source_links("TX", "Haskell County")
+        self.assertIn("haskellcad.com", haskell["assessor"]["note"])
+        self.assertIn("interactive Basic/Owner/Property/Advanced", haskell["assessor"]["note"])
+        self.assertIn("collects for its taxing entities", haskell["tax_sale"]["note"])
+        self.assertIn("Hardin County menu content", haskell["foreclosure"]["note"])
+        self.assertIn("HTTP 403", haskell["pre_foreclosure"]["note"])
+
+    def test_hays_through_hill_record_verified_source_availability(self):
+        counties = ("Hays", "Hemphill", "Henderson", "Hidalgo", "Hill")
+        for county in counties:
+            with self.subTest(county=county):
+                sources = county_source_links("TX", f"{county} County")
+                self.assertEqual(
+                    set(sources),
+                    {
+                        "assessor",
+                        "tax_sale",
+                        "code_enforcement",
+                        "foreclosure",
+                        "pre_foreclosure",
+                    },
+                )
+                for source in sources.values():
+                    self.assertIn(
+                        "County-specific source review checked 2026-11-02",
+                        source["note"],
+                    )
+
+        hays = county_source_links("TX", "Hays County")
+        self.assertIn("Property Search and Interactive Map", hays["assessor"]["note"])
+        self.assertIn("HTTP 403", hays["tax_sale"]["note"])
+        self.assertIn("DNS/connection layer", hays["tax_sale"]["note"])
+        self.assertIn("HTTP 403", hays["foreclosure"]["note"])
+
+        hemphill = county_source_links("TX", "Hemphill County")
+        self.assertIn("By Owner", hemphill["assessor"]["note"])
+        self.assertIn("courthouse address", hemphill["tax_sale"]["note"])
+        self.assertIn("2026 tax-rate worksheets", hemphill["tax_sale"]["note"])
+        self.assertIn("iDoc Market", hemphill["pre_foreclosure"]["note"])
+        self.assertIn("grantor", hemphill["pre_foreclosure"]["note"])
+
+        henderson = county_source_links("TX", "Henderson County")
+        self.assertIn("estimated-tax notice", henderson["assessor"]["note"])
+        self.assertIn("HTTP 404", henderson["tax_sale"]["note"])
+        self.assertIn("HTTP 404", henderson["foreclosure"]["note"])
+
+        hidalgo = county_source_links("TX", "Hidalgo County")
+        self.assertIn("JavaScript React Public Portal", hidalgo["assessor"]["note"])
+        self.assertIn("DNS/connection layer", hidalgo["tax_sale"]["note"])
+        self.assertIn("lis-pendens search", hidalgo["pre_foreclosure"]["note"])
+
+        hill = county_source_links("TX", "Hill County")
+        self.assertEqual(
+            hill["tax_sale"]["source_url"],
+            "https://mvbalaw.com/wp-content/TaxUploads/1126_Hill.pdf",
+        )
+        self.assertIn("November 3 Hill County sale", hill["tax_sale"]["note"])
+        self.assertIn("449,781 bytes", hill["tax_sale"]["note"])
+        self.assertIn("HTTP 206", hill["tax_sale"]["note"])
+        self.assertNotIn("Texas Public Notices", hill["tax_sale"]["note"])
+        self.assertIn("$2 fee", hill["foreclosure"]["note"])
+        self.assertIn("2026 values", hill["assessor"]["note"])
+        harris = county_source_links("TX", "Harris County")
+        self.assertNotIn("Texas Public Notices", harris["tax_sale"]["note"])
+
+    def test_houston_through_hutchinson_record_source_download_limits(self):
+        counties = ("Houston", "Howard", "Hudspeth", "Hunt", "Hutchinson")
+        for county in counties:
+            with self.subTest(county=county):
+                sources = county_source_links("TX", f"{county} County")
+                self.assertEqual(
+                    set(sources),
+                    {
+                        "assessor",
+                        "tax_sale",
+                        "code_enforcement",
+                        "foreclosure",
+                        "pre_foreclosure",
+                    },
+                )
+                for source in sources.values():
+                    self.assertIn(
+                        "County-specific source review checked 2026-11-02",
+                        source["note"],
+                    )
+
+        houston = county_source_links("TX", "Houston County")
+        self.assertIn("Records/Data/Reports", houston["assessor"]["note"])
+        self.assertIn("Bidder Registration", houston["tax_sale"]["note"])
+        self.assertIn("required login", houston["tax_sale"]["note"])
+        self.assertEqual(
+            houston["code_enforcement"]["status"],
+            "municipal_scope",
+        )
+
+        howard = county_source_links("TX", "Howard County")
+        self.assertIn("Foreclosure Notices page displayed courthouse", howard["foreclosure"]["note"])
+        self.assertIn("Tyler self-service records portal", howard["pre_foreclosure"]["note"])
+        self.assertIn("general document index", howard["pre_foreclosure"]["note"])
+
+        hudspeth = county_source_links("TX", "Hudspeth County")
+        self.assertIn("Owner, Address, ID", hudspeth["assessor"]["note"])
+        self.assertIn("does not collect property taxes", hudspeth["tax_sale"]["note"])
+        self.assertIn("Index Books and Land Records", hudspeth["pre_foreclosure"]["note"])
+
+        hunt = county_source_links("TX", "Hunt County")
+        self.assertIn("JavaScript public portal shell", hunt["assessor"]["note"])
+        self.assertIn("did not include Hunt County", hunt["tax_sale"]["note"])
+        self.assertEqual(
+            hunt["code_enforcement"]["status"],
+            "municipal_scope",
+        )
+
+        hutchinson = county_source_links("TX", "Hutchinson County")
+        self.assertIn("Basic, Owner, Property", hutchinson["assessor"]["note"])
+        self.assertIn("Public Tax Notices page showed no posts", hutchinson["tax_sale"]["note"])
+        self.assertIn("Deed Records / Foreclosure Search", hutchinson["foreclosure"]["note"])
+        self.assertIn("available individually", hutchinson["foreclosure"]["note"])
+
+    def test_irion_through_jeff_davis_record_source_download_limits(self):
+        counties = ("Irion", "Jack", "Jackson", "Jasper", "Jeff Davis")
+        for county in counties:
+            with self.subTest(county=county):
+                sources = county_source_links("TX", f"{county} County")
+                self.assertEqual(
+                    set(sources),
+                    {
+                        "assessor",
+                        "tax_sale",
+                        "code_enforcement",
+                        "foreclosure",
+                        "pre_foreclosure",
+                    },
+                )
+                for source in sources.values():
+                    self.assertIn(
+                        "County-specific source review checked 2026-11-02",
+                        source["note"],
+                    )
+
+        irion = county_source_links("TX", "Irion County")
+        self.assertIn("Parcel ID", irion["assessor"]["note"])
+        self.assertIn("did not include Irion", irion["tax_sale"]["note"])
+        self.assertEqual(
+            irion["foreclosure"]["source_url"],
+            "https://www.co.irion.tx.us/DocumentCenter/View/443/"
+            "Notice-of-Foreclosure-Sale-11-3-2026-PDF",
+        )
+        self.assertIn("8,398 characters", irion["foreclosure"]["note"])
+
+        jack = county_source_links("TX", "Jack County")
+        self.assertIn("By Owner", jack["assessor"]["note"])
+        self.assertIn("DNS/connection layer", jack["foreclosure"]["note"])
+
+        jackson = county_source_links("TX", "Jackson County")
+        self.assertIn("returned a disclaimer", jackson["assessor"]["note"])
+        self.assertIn("HTTP 403", jackson["tax_sale"]["note"])
+        self.assertIn("vital-record services", jackson["foreclosure"]["note"])
+
+        jasper = county_source_links("TX", "Jasper County")
+        self.assertIn("Interactive Map", jasper["assessor"]["note"])
+        self.assertIn("HTTP 403", jasper["tax_sale"]["note"])
+        self.assertEqual(
+            jasper["code_enforcement"]["status"],
+            "municipal_scope",
+        )
+
+        jeff_davis = county_source_links("TX", "Jeff Davis County")
+        self.assertIn("All Criteria", jeff_davis["assessor"]["note"])
+        self.assertIn("did not include Jeff Davis", jeff_davis["tax_sale"]["note"])
+        self.assertIn("1879-1997", jeff_davis["pre_foreclosure"]["note"])
+
+    def test_jim_hogg_through_karnes_record_source_download_limits(self):
+        counties = ("Jim Hogg", "Jim Wells", "Johnson", "Jones", "Karnes")
+        for county in counties:
+            with self.subTest(county=county):
+                sources = county_source_links("TX", f"{county} County")
+                self.assertEqual(
+                    set(sources),
+                    {
+                        "assessor",
+                        "tax_sale",
+                        "code_enforcement",
+                        "foreclosure",
+                        "pre_foreclosure",
+                    },
+                )
+                for source in sources.values():
+                    self.assertIn(
+                        "County-specific source review checked 2026-11-02",
+                        source["note"],
+                    )
+
+        jim_hogg = county_source_links("TX", "Jim Hogg County")
+        self.assertIn("Basic, By Owner", jim_hogg["assessor"]["note"])
+        self.assertIn("did not include Jim Hogg", jim_hogg["tax_sale"]["note"])
+        self.assertIn("no extractable text", jim_hogg["foreclosure"]["note"])
+        self.assertIn("1913-1997", jim_hogg["pre_foreclosure"]["note"])
+
+        jim_wells = county_source_links("TX", "Jim Wells County")
+        self.assertIn("React Public Portal shell", jim_wells["assessor"]["note"])
+        self.assertIn(
+            "does not collect property taxes",
+            jim_wells["tax_sale"]["note"],
+        )
+        self.assertIn("HTTP 403", jim_wells["foreclosure"]["note"])
+
+        johnson = county_source_links("TX", "Johnson County")
+        self.assertIn("tab-delimited tables", johnson["assessor"]["note"])
+        self.assertIn("externalnal_N.tab", johnson["assessor"]["note"])
+        self.assertIn("did not include Johnson", johnson["tax_sale"]["note"])
+
+        jones = county_source_links("TX", "Jones County")
+        self.assertIn(
+            "property table with parcel, owner",
+            jones["assessor"]["note"],
+        )
+        self.assertIn("does not collect property taxes", jones["tax_sale"]["note"])
+        self.assertIn(
+            "rendered only the County logo",
+            jones["foreclosure"]["note"],
+        )
+        self.assertIn("will not conduct searches", jones["pre_foreclosure"]["note"])
+
+        karnes = county_source_links("TX", "Karnes County")
+        self.assertIn("By Owner", karnes["assessor"]["note"])
+        self.assertIn("Karnes was not on MVBA", karnes["tax_sale"]["note"])
+        self.assertIn(
+            "abandoned/unclaimed-property",
+            karnes["foreclosure"]["note"],
+        )
+
+    def test_kenedy_through_king_record_source_download_limits(self):
+        counties = ("Kenedy", "Kent", "Kerr", "Kimble", "King")
+        for county in counties:
+            with self.subTest(county=county):
+                sources = county_source_links("TX", f"{county} County")
+                self.assertEqual(
+                    set(sources),
+                    {
+                        "assessor",
+                        "tax_sale",
+                        "code_enforcement",
+                        "foreclosure",
+                        "pre_foreclosure",
+                    },
+                )
+                for source in sources.values():
+                    self.assertIn(
+                        "County-specific source review checked 2026-11-02",
+                        source["note"],
+                    )
+
+        kenedy = county_source_links("TX", "Kenedy County")
+        self.assertIn("Property Search", kenedy["assessor"]["note"])
+        self.assertIn("did not expose", kenedy["code_enforcement"]["note"])
+        self.assertIn("2022 lightbox demo", kenedy["foreclosure"]["note"])
+        self.assertIn("no online real-property index", kenedy["pre_foreclosure"]["note"])
+
+        kent = county_source_links("TX", "Kent County")
+        self.assertIn("dynamic account shell", kent["assessor"]["note"])
+        self.assertIn("does not collect property taxes", kent["tax_sale"]["note"])
+        self.assertIn("courthouse location information only", kent["foreclosure"]["note"])
+        self.assertIn("no online real-property index", kent["pre_foreclosure"]["note"])
+
+        kerr = county_source_links("TX", "Kerr County")
+        self.assertIn("22,074,329 bytes", kerr["foreclosure"]["note"])
+        self.assertIn("145 did not", kerr["foreclosure"]["note"])
+        self.assertIn("Laredo is subscription only", kerr["pre_foreclosure"]["note"])
+
+        kimble = county_source_links("TX", "Kimble County")
+        self.assertIn("does not collect property taxes", kimble["tax_sale"]["note"])
+        self.assertIn("courthouse address only", kimble["foreclosure"]["note"])
+        self.assertIn("office contact information only", kimble["pre_foreclosure"]["note"])
+
+        king = county_source_links("TX", "King County")
+        self.assertIn("interactive Property Search", king["assessor"]["note"])
+        self.assertIn("LGS Online Records Search", king["pre_foreclosure"]["note"])
+        self.assertIn("no current foreclosure notices", king["foreclosure"]["note"])
+
+    def test_kaufman_through_knox_record_source_download_limits(self):
+        counties = ("Kaufman", "Kendall", "Kinney", "Kleberg", "Knox")
+        for county in counties:
+            with self.subTest(county=county):
+                sources = county_source_links("TX", f"{county} County")
+                self.assertEqual(
+                    set(sources),
+                    {
+                        "assessor",
+                        "tax_sale",
+                        "code_enforcement",
+                        "foreclosure",
+                        "pre_foreclosure",
+                    },
+                )
+                for source in sources.values():
+                    self.assertIn(
+                        "County-specific source review checked 2026-11-02",
+                        source["note"],
+                    )
+
+        kaufman = county_source_links("TX", "Kaufman County")
+        self.assertIn("Property Search", kaufman["assessor"]["note"])
+        self.assertIn("HTTP 404", kaufman["code_enforcement"]["note"])
+        self.assertEqual(
+            kaufman["code_enforcement"]["status"],
+            "needs_feed_verification",
+        )
+        self.assertIn("no public online real-property index", kaufman["pre_foreclosure"]["note"])
+
+        kendall = county_source_links("TX", "Kendall County")
+        self.assertIn("Interactive Map", kendall["assessor"]["note"])
+        self.assertIn("does not collect property taxes", kendall["tax_sale"]["note"])
+        self.assertIn("redirected to a Probate page", kendall["foreclosure"]["note"])
+
+        kinney = county_source_links("TX", "Kinney County")
+        self.assertIn("Property Search & Pay Taxes Online", kinney["assessor"]["note"])
+        self.assertIn("does not collect property taxes", kinney["tax_sale"]["note"])
+        self.assertIn("courthouse address", kinney["foreclosure"]["note"])
+
+        kleberg = county_source_links("TX", "Kleberg County")
+        self.assertIn("current HTML list", kleberg["foreclosure"]["note"])
+        self.assertIn("no selectable text", kleberg["foreclosure"]["note"])
+        self.assertIn("not verified as a delinquent-tax-sale roster", kleberg["tax_sale"]["note"])
+
+        knox = county_source_links("TX", "Knox County")
+        self.assertIn("login-based portal", knox["assessor"]["note"])
+        self.assertIn("Hardin County content", knox["foreclosure"]["note"])
+        self.assertIn("HTTP 403", knox["pre_foreclosure"]["note"])
+
+    def test_la_salle_through_lavaca_source_access_and_download_limits(self):
+        counties = ("La Salle", "Lamar", "Lamb", "Lampasas", "Lavaca")
+        for county in counties:
+            with self.subTest(county=county):
+                sources = county_source_links("TX", f"{county} County")
+                self.assertEqual(
+                    set(sources),
+                    {
+                        "assessor",
+                        "tax_sale",
+                        "code_enforcement",
+                        "foreclosure",
+                        "pre_foreclosure",
+                    },
+                )
+                for source in sources.values():
+                    self.assertIn(
+                        "County-specific source review checked 2026-11-02",
+                        source["note"],
+                    )
+
+        la_salle = county_source_links("TX", "La Salle County")
+        self.assertIn("transport-level retrieval", la_salle["assessor"]["note"])
+        self.assertIn("payment status updates weekly", la_salle["tax_sale"]["note"])
+        self.assertIn("HTTP 404", la_salle["foreclosure"]["note"])
+
+        lamar = county_source_links("TX", "Lamar County")
+        self.assertIn("interactive GIS app", lamar["assessor"]["note"])
+        self.assertIn("does not collect property taxes", lamar["tax_sale"]["note"])
+        self.assertIn("no public real-property index", lamar["pre_foreclosure"]["note"])
+
+        lamb = county_source_links("TX", "Lamb County")
+        self.assertIn("January 1, 2017", lamb["foreclosure"]["note"])
+        self.assertIn("withdrawals are not reflected", lamb["foreclosure"]["note"])
+        self.assertIn("paid day pass or subscription", lamb["pre_foreclosure"]["note"])
+
+        lampasas = county_source_links("TX", "Lampasas County")
+        self.assertIn("Hardin County content", lampasas["foreclosure"]["note"])
+        self.assertIn("lis pendens (1910-1984)", lampasas["pre_foreclosure"]["note"])
+        self.assertIn("within 24 hours", lampasas["pre_foreclosure"]["note"])
+
+        lavaca = county_source_links("TX", "Lavaca County")
+        self.assertIn("HTTP 403", lavaca["tax_sale"]["note"])
+        self.assertIn("Records Public Access", lavaca["pre_foreclosure"]["note"])
+        self.assertIn("may be incomplete or redacted", lavaca["pre_foreclosure"]["note"])
+
+    def test_lee_through_lipscomb_source_access_and_download_limits(self):
+        counties = ("Lee", "Leon", "Liberty", "Limestone", "Lipscomb")
+        for county in counties:
+            with self.subTest(county=county):
+                sources = county_source_links("TX", f"{county} County")
+                self.assertEqual(
+                    set(sources),
+                    {
+                        "assessor",
+                        "tax_sale",
+                        "code_enforcement",
+                        "foreclosure",
+                        "pre_foreclosure",
+                    },
+                )
+                for source in sources.values():
+                    self.assertIn(
+                        "County-specific source review checked 2026-11-02",
+                        source["note"],
+                    )
+
+        lee = county_source_links("TX", "Lee County")
+        self.assertIn("data scrubbing", lee["assessor"]["note"])
+        self.assertIn("all pages had no selectable text", lee["foreclosure"]["note"])
+        self.assertIn("LGS Online Records Search", lee["pre_foreclosure"]["note"])
+
+        leon = county_source_links("TX", "Leon County")
+        self.assertIn("interactive basic, owner, property, and advanced", leon["assessor"]["note"])
+        self.assertIn("Hardin County content", leon["foreclosure"]["note"])
+        self.assertIn("Official Records Search", leon["pre_foreclosure"]["note"])
+
+        liberty = county_source_links("TX", "Liberty County")
+        self.assertIn("HTTP 403", liberty["tax_sale"]["note"])
+        self.assertIn("Hardin County content", liberty["foreclosure"]["note"])
+        self.assertIn("no public real-property search", liberty["pre_foreclosure"]["note"])
+
+        limestone = county_source_links("TX", "Limestone County")
+        self.assertIn("client-rendered Public Portal", limestone["assessor"]["note"])
+        self.assertIn("Hardin County content", limestone["tax_sale"]["note"])
+        self.assertIn("HTTP 403", limestone["pre_foreclosure"]["note"])
+
+        lipscomb = county_source_links("TX", "Lipscomb County")
+        self.assertIn("transport-level retrieval", lipscomb["assessor"]["note"])
+        self.assertIn("no selectable text", lipscomb["foreclosure"]["note"])
+        self.assertIn("Bulk Data Request form", lipscomb["pre_foreclosure"]["note"])
+
+    def test_live_oak_through_lynn_source_access_and_download_limits(self):
+        counties = ("Live Oak", "Llano", "Loving", "Lubbock", "Lynn")
+        for county in counties:
+            with self.subTest(county=county):
+                sources = county_source_links("TX", f"{county} County")
+                self.assertEqual(
+                    set(sources),
+                    {
+                        "assessor",
+                        "tax_sale",
+                        "code_enforcement",
+                        "foreclosure",
+                        "pre_foreclosure",
+                    },
+                )
+                for source in sources.values():
+                    self.assertIn(
+                        "County-specific source review checked 2026-11-02",
+                        source["note"],
+                    )
+
+        live_oak = county_source_links("TX", "Live Oak County")
+        self.assertIn("null.trim error", live_oak["assessor"]["note"])
+        self.assertIn("19 pages", live_oak["tax_sale"]["note"])
+        self.assertIn("no extractable text", live_oak["tax_sale"]["note"])
+        self.assertNotIn("Texas Public Notices", live_oak["tax_sale"]["note"])
+        self.assertIn("2027 notices", live_oak["foreclosure"]["note"])
+        self.assertIn("Official Records Search", live_oak["pre_foreclosure"]["note"])
+        self.assertIn("grantor/grantee", live_oak["pre_foreclosure"]["note"])
+
+        llano = county_source_links("TX", "Llano County")
+        self.assertIn("JavaScript Public Portal", llano["assessor"]["note"])
+        self.assertIn("collecting unit", llano["tax_sale"]["note"])
+        self.assertIn("redirected", llano["foreclosure"]["note"])
+        self.assertIn("did not expose a public", llano["pre_foreclosure"]["note"])
+
+        loving = county_source_links("TX", "Loving County")
+        self.assertIn("interactive Property Search", loving["assessor"]["note"])
+        self.assertIn("does not collect property taxes", loving["tax_sale"]["note"])
+        self.assertIn("2022 demo event", loving["foreclosure"]["note"])
+        self.assertIn(
+            "did not expose a public searchable",
+            loving["pre_foreclosure"]["note"],
+        )
+
+        lubbock = county_source_links("TX", "Lubbock County")
+        self.assertIn("Advanced Search", lubbock["assessor"]["note"])
+        self.assertIn("September 1, 2026", lubbock["tax_sale"]["note"])
+        self.assertNotIn("Texas Public Notices", lubbock["tax_sale"]["note"])
+        self.assertIn("general document center", lubbock["foreclosure"]["note"])
+        self.assertIn("criminal cases", lubbock["pre_foreclosure"]["note"])
+
+        lynn = county_source_links("TX", "Lynn County")
+        self.assertIn("Basic, Owner, Property, and Advanced", lynn["assessor"]["note"])
+        self.assertIn("does not collect property taxes", lynn["tax_sale"]["note"])
+        self.assertIn("two 2026 foreclosure notices", lynn["foreclosure"]["note"])
+        self.assertIn("no extractable text", lynn["foreclosure"]["note"])
+        self.assertIn(
+            "no searchable real-property index",
+            lynn["pre_foreclosure"]["note"],
+        )
+
+    def test_mcculloch_through_marion_source_access_and_download_limits(self):
+        counties = ("McCulloch", "McLennan", "McMullen", "Madison", "Marion")
+        for county in counties:
+            with self.subTest(county=county):
+                sources = county_source_links("TX", f"{county} County")
+                self.assertEqual(
+                    set(sources),
+                    {
+                        "assessor",
+                        "tax_sale",
+                        "code_enforcement",
+                        "foreclosure",
+                        "pre_foreclosure",
+                    },
+                )
+                for source in sources.values():
+                    self.assertIn(
+                        "County-specific source review checked 2026-11-02",
+                        source["note"],
+                    )
+
+        mcculloch = county_source_links("TX", "McCulloch County")
+        self.assertIn("Pritchard & Abbott", mcculloch["assessor"]["note"])
+        self.assertIn("does not collect property taxes", mcculloch["tax_sale"]["note"])
+        self.assertIn("Nuisance Abatement Procedures", mcculloch["code_enforcement"]["note"])
+        self.assertIn("individual trustees conduct sales", mcculloch["foreclosure"]["note"])
+        self.assertIn("lis pendens", mcculloch["pre_foreclosure"]["note"])
+
+        mclennan = county_source_links("TX", "McLennan County")
+        self.assertIn("JavaScript Public Portal", mclennan["assessor"]["note"])
+        self.assertIn("collecting unit", mclennan["tax_sale"]["note"])
+        self.assertIn("GovEase", mclennan["tax_sale"]["note"])
+        self.assertIn("account login", mclennan["tax_sale"]["note"])
+        self.assertIn("HTTP 403", mclennan["foreclosure"]["note"])
+        self.assertIn("does not establish that records do not exist", mclennan["pre_foreclosure"]["note"])
+
+        mcmullen = county_source_links("TX", "McMullen County")
+        self.assertIn("data scrubbing", mcmullen["assessor"]["note"])
+        self.assertIn("Linebarger", mcmullen["tax_sale"]["note"])
+        self.assertIn("transport-level retrieval", mcmullen["tax_sale"]["note"])
+        self.assertIn("no extractable text", mcmullen["foreclosure"]["note"])
+        self.assertIn("USLandRecords", mcmullen["pre_foreclosure"]["note"])
+
+        madison = county_source_links("TX", "Madison County")
+        self.assertIn("data scrubbing", madison["assessor"]["note"])
+        self.assertIn("collecting unit", madison["tax_sale"]["note"])
+        self.assertIn("timed out", madison["foreclosure"]["note"])
+        self.assertIn("does not establish that records do not exist", madison["pre_foreclosure"]["note"])
+
+        marion = county_source_links("TX", "Marion County")
+        self.assertIn("Pritchard & Abbott", marion["assessor"]["note"])
+        self.assertIn("December 5, 2023", marion["tax_sale"]["note"])
+        self.assertIn("eight properties", marion["tax_sale"]["note"])
+        self.assertIn("no extractable text", marion["foreclosure"]["note"])
+        self.assertIn("1955", marion["pre_foreclosure"]["note"])
+
+    def test_martin_through_medina_source_access_and_download_limits(self):
+        counties = ("Martin", "Mason", "Matagorda", "Maverick", "Medina")
+        for county in counties:
+            with self.subTest(county=county):
+                sources = county_source_links("TX", f"{county} County")
+                self.assertEqual(
+                    set(sources),
+                    {
+                        "assessor",
+                        "tax_sale",
+                        "code_enforcement",
+                        "foreclosure",
+                        "pre_foreclosure",
+                    },
+                )
+                for source in sources.values():
+                    self.assertIn(
+                        "County-specific source review checked 2026-11-02",
+                        source["note"],
+                    )
+
+        martin = county_source_links("TX", "Martin County")
+        self.assertIn("interactive Basic, Owner, Property", martin["assessor"]["note"])
+        self.assertIn("HTTP 404", martin["foreclosure"]["note"])
+        self.assertIn("route failure does not establish", martin["pre_foreclosure"]["note"])
+
+        mason = county_source_links("TX", "Mason County")
+        self.assertIn("data scrubbing", mason["assessor"]["note"])
+        self.assertIn("does not collect property taxes", mason["tax_sale"]["note"])
+        self.assertIn("Hardin County", mason["foreclosure"]["note"])
+        self.assertIn("jury-service information", mason["pre_foreclosure"]["note"])
+
+        matagorda = county_source_links("TX", "Matagorda County")
+        self.assertIn("data scrubbing", matagorda["assessor"]["note"])
+        self.assertIn("HTTP 403", matagorda["tax_sale"]["note"])
+        self.assertIn("birth, death, and marriage records", matagorda["pre_foreclosure"]["note"])
+
+        maverick = county_source_links("TX", "Maverick County")
+        self.assertIn("JavaScript Public Portal", maverick["assessor"]["note"])
+        self.assertIn("HTTP 404", maverick["tax_sale"]["note"])
+        self.assertIn("does not establish that no", maverick["foreclosure"]["note"])
+
+        medina = county_source_links("TX", "Medina County")
+        self.assertIn("data scrubbing", medina["assessor"]["note"])
+        self.assertIn("HTTP 403", medina["tax_sale"]["note"])
+        self.assertIn("campaign-finance instructions", medina["pre_foreclosure"]["note"])
+
+    def test_menard_through_mitchell_source_access_and_download_limits(self):
+        counties = ("Menard", "Midland", "Milam", "Mills", "Mitchell")
+        for county in counties:
+            with self.subTest(county=county):
+                sources = county_source_links("TX", f"{county} County")
+                self.assertEqual(
+                    set(sources),
+                    {
+                        "assessor",
+                        "tax_sale",
+                        "code_enforcement",
+                        "foreclosure",
+                        "pre_foreclosure",
+                    },
+                )
+                for source in sources.values():
+                    self.assertIn(
+                        "County-specific source review checked 2026-11-02",
+                        source["note"],
+                    )
+
+        menard = county_source_links("TX", "Menard County")
+        self.assertIn("interactive Basic, Owner, Property", menard["assessor"]["note"])
+        self.assertIn("Hardin County content", menard["tax_sale"]["note"])
+        self.assertIn("Hardin County", menard["foreclosure"]["note"])
+        self.assertIn("off-site for digitization", menard["pre_foreclosure"]["note"])
+
+        midland = county_source_links("TX", "Midland County")
+        self.assertIn("tax-transparency", midland["assessor"]["note"])
+        self.assertIn("not on MVBA", midland["tax_sale"]["note"])
+        self.assertIn("city-scoped", midland["code_enforcement"]["note"])
+        self.assertIn("October 29, 2026", midland["pre_foreclosure"]["note"])
+
+        milam = county_source_links("TX", "Milam County")
+        self.assertIn("JavaScript Public Portal", milam["assessor"]["note"])
+        self.assertIn("HTTP 403", milam["tax_sale"]["note"])
+        self.assertIn("No dedicated county sale-list page", milam["foreclosure"]["note"])
+
+        mills = county_source_links("TX", "Mills County")
+        self.assertIn("July 1, 2025", mills["tax_sale"]["note"])
+        self.assertIn("no extractable text", mills["tax_sale"]["note"])
+        self.assertIn("business personal property", mills["tax_sale"]["note"])
+        self.assertIn("No searchable public real-property index", mills["pre_foreclosure"]["note"])
+
+        mitchell = county_source_links("TX", "Mitchell County")
+        self.assertIn("Blazor Public Portal", mitchell["assessor"]["note"])
+        self.assertIn("HTTP 403", mitchell["tax_sale"]["note"])
+        self.assertIn("contact information only", mitchell["pre_foreclosure"]["note"])
+
+    def test_montague_through_motley_source_access_and_download_limits(self):
+        counties = ("Montague", "Montgomery", "Moore", "Morris", "Motley")
+        for county in counties:
+            with self.subTest(county=county):
+                sources = county_source_links("TX", f"{county} County")
+                self.assertEqual(
+                    set(sources),
+                    {
+                        "assessor",
+                        "tax_sale",
+                        "code_enforcement",
+                        "foreclosure",
+                        "pre_foreclosure",
+                    },
+                )
+                for source in sources.values():
+                    self.assertIn(
+                        "County-specific source review checked 2026-11-02",
+                        source["note"],
+                    )
+
+        montague = county_source_links("TX", "Montague County")
+        self.assertIn("Blazor Public Portal", montague["assessor"]["note"])
+        self.assertIn("HTTP 403", montague["tax_sale"]["note"])
+        self.assertIn("HTTP 403", montague["foreclosure"]["note"])
+        self.assertIn("login frame", montague["pre_foreclosure"]["note"])
+
+        montgomery = county_source_links("TX", "Montgomery County")
+        self.assertIn("first Tuesday monthly", montgomery["tax_sale"]["note"])
+        self.assertIn("monthly", montgomery["tax_sale"]["note"])
+        self.assertIn("HTTP 403", montgomery["tax_sale"]["note"])
+        self.assertIn("removed after the sale", montgomery["foreclosure"]["note"])
+        self.assertIn("October 23, 2026", montgomery["pre_foreclosure"]["note"])
+
+        moore = county_source_links("TX", "Moore County")
+        self.assertIn("Interactive Map", moore["assessor"]["note"])
+        self.assertIn("HTTP 403", moore["tax_sale"]["note"])
+        self.assertIn("HTTP 403", moore["foreclosure"]["note"])
+        self.assertIn("transport retrieval", moore["pre_foreclosure"]["note"])
+
+        morris = county_source_links("TX", "Morris County")
+        self.assertIn("August 4, 2026", morris["tax_sale"]["note"])
+        self.assertIn("one-page scanned PDF", morris["tax_sale"]["note"])
+        self.assertIn("no notices", morris["foreclosure"]["note"])
+        self.assertIn("1965", morris["pre_foreclosure"]["note"])
+
+        motley = county_source_links("TX", "Motley County")
+        self.assertIn("Floyd County Appraisal District", motley["assessor"]["note"])
+        self.assertIn("January 6, 2026", motley["tax_sale"]["note"])
+        self.assertIn("image-only", motley["tax_sale"]["note"])
+        self.assertIn("September 1", motley["foreclosure"]["note"])
+
+    def test_nacogdoches_through_nueces_source_access_and_download_limits(self):
+        counties = ("Nacogdoches", "Navarro", "Newton", "Nolan", "Nueces")
+        for county in counties:
+            with self.subTest(county=county):
+                sources = county_source_links("TX", f"{county} County")
+                self.assertEqual(
+                    set(sources),
+                    {
+                        "assessor",
+                        "tax_sale",
+                        "code_enforcement",
+                        "foreclosure",
+                        "pre_foreclosure",
+                    },
+                )
+                for source in sources.values():
+                    self.assertIn(
+                        "County-specific source review checked 2026-11-02",
+                        source["note"],
+                    )
+
+        nacogdoches = county_source_links("TX", "Nacogdoches County")
+        self.assertIn("no countywide parcel CSV/ZIP download", nacogdoches["assessor"]["note"])
+        self.assertIn("does not collect property taxes", nacogdoches["tax_sale"]["note"])
+        self.assertIn("October 26, 2026", nacogdoches["pre_foreclosure"]["note"])
+
+        navarro = county_source_links("TX", "Navarro County")
+        self.assertIn("interactive map", navarro["assessor"]["note"])
+        self.assertIn("HTTP 403", navarro["tax_sale"]["note"])
+        self.assertIn("site footer", navarro["tax_sale"]["note"])
+        self.assertIn("HTTP 403", navarro["foreclosure"]["note"])
+
+        newton = county_source_links("TX", "Newton County")
+        self.assertIn(
+            "not intended to support electronic data transfer",
+            newton["assessor"]["note"],
+        )
+        self.assertEqual(
+            newton["code_enforcement"]["status"],
+            "needs_feed_verification",
+        )
+        self.assertIn("HTTP 403", newton["foreclosure"]["note"])
+        self.assertIn("TexasOnlineRecords", newton["pre_foreclosure"]["note"])
+
+        nolan = county_source_links("TX", "Nolan County")
+        self.assertIn("Advanced searches", nolan["assessor"]["note"])
+        self.assertIn("does not collect property taxes", nolan["tax_sale"]["note"])
+        self.assertIn("2022 demo event", nolan["foreclosure"]["note"])
+        self.assertIn("no public real-property index", nolan["pre_foreclosure"]["note"])
+
+        nueces = county_source_links("TX", "Nueces County")
+        self.assertIn("business personal property", nueces["assessor"]["note"])
+        self.assertIn("HTTP 403", nueces["tax_sale"]["note"])
+        self.assertEqual(
+            nueces["code_enforcement"]["status"],
+            "needs_feed_verification",
+        )
+        self.assertIn("October 30, 2026", nueces["pre_foreclosure"]["note"])
+
+    def test_ochiltree_sources_distinguish_search_from_downloadable_data(self):
+        sources = county_source_links("TX", "Ochiltree County")
+        self.assertEqual(
+            set(sources),
+            {
+                "assessor",
+                "tax_sale",
+                "code_enforcement",
+                "foreclosure",
+                "pre_foreclosure",
+            },
+        )
+        for source in sources.values():
+            self.assertIn(
+                "County-specific source review checked 2026-11-02",
+                source["note"],
+            )
+
+        self.assertIn("Advanced searches", sources["assessor"]["note"])
+        self.assertIn(
+            "No countywide parcel CSV/ZIP download",
+            sources["assessor"]["note"],
+        )
+        self.assertIn(
+            "does not collect property taxes",
+            sources["tax_sale"]["note"],
+        )
+        self.assertIn("10/13/2022 demo event", sources["tax_sale"]["note"])
+        self.assertEqual(
+            sources["code_enforcement"]["status"],
+            "municipal_scope",
+        )
+        self.assertIn("10/13/2022", sources["foreclosure"]["note"])
+        self.assertIn(
+            "does not link a public real-property index",
+            sources["pre_foreclosure"]["note"],
+        )
+
+    def test_palo_pinto_sources_record_interactive_and_unavailable_feeds(self):
+        sources = county_source_links("TX", "Palo Pinto County")
+        self.assertEqual(
+            set(sources),
+            {
+                "assessor",
+                "tax_sale",
+                "code_enforcement",
+                "foreclosure",
+                "pre_foreclosure",
+            },
+        )
+        for source in sources.values():
+            self.assertIn(
+                "County-specific source review checked 2026-11-02",
+                source["note"],
+            )
+
+        self.assertIn("Geographic ID", sources["assessor"]["note"])
+        self.assertIn("No countywide parcel download", sources["assessor"]["note"])
+        self.assertIn("no delinquent-tax-sale inventory", sources["tax_sale"]["note"])
+        self.assertEqual(
+            sources["code_enforcement"]["status"],
+            "needs_feed_verification",
+        )
+        self.assertIn("Flood Plain Administrator", sources["code_enforcement"]["note"])
+        self.assertIn("no sale calendar", sources["foreclosure"]["note"])
+        self.assertIn(
+            "palopinto.tx.publicsearch.us",
+            sources["pre_foreclosure"]["note"],
+        )
+
+    def test_oldham_orange_panola_parker_sources_and_automation_limits(self):
+        counties = ("Oldham", "Orange", "Panola", "Parker")
+        for county in counties:
+            with self.subTest(county=county):
+                sources = county_source_links("TX", f"{county} County")
+                self.assertEqual(
+                    set(sources),
+                    {
+                        "assessor",
+                        "tax_sale",
+                        "code_enforcement",
+                        "foreclosure",
+                        "pre_foreclosure",
+                    },
+                )
+                for source in sources.values():
+                    self.assertIn(
+                        "County-specific source review checked 2026-11-02",
+                        source["note"],
+                    )
+
+        oldham = county_source_links("TX", "Oldham County")
+        self.assertIn("data scrubbing", oldham["assessor"]["note"])
+        self.assertIn("does not collect property taxes", oldham["tax_sale"]["note"])
+        self.assertIn("Emergency Management", oldham["code_enforcement"]["note"])
+        self.assertIn("no current postings", oldham["foreclosure"]["note"])
+        self.assertIn("marks and brands", oldham["pre_foreclosure"]["note"])
+
+        orange = county_source_links("TX", "Orange County")
+        self.assertIn("2026", orange["assessor"]["note"])
+        self.assertIn("data scrubbing", orange["assessor"]["note"])
+        self.assertIn("first Tuesday", orange["tax_sale"]["note"])
+        self.assertIn("HTTP 403", orange["tax_sale"]["note"])
+        self.assertEqual(
+            orange["code_enforcement"]["status"],
+            "municipal_scope",
+        )
+        self.assertIn("failed DNS/transport", orange["foreclosure"]["note"])
+        self.assertIn("legacy records-search host", orange["pre_foreclosure"]["note"])
+
+        panola = county_source_links("TX", "Panola County")
+        self.assertIn("JavaScript-dependent ASP.NET MVC-grid", panola["assessor"]["note"])
+        self.assertIn("pay/view-tax portal", panola["tax_sale"]["note"])
+        self.assertEqual(
+            panola["code_enforcement"]["status"],
+            "municipal_scope",
+        )
+        self.assertIn("HTTP 404", panola["foreclosure"]["note"])
+        self.assertIn("no online real-property index", panola["pre_foreclosure"]["note"])
+
+        parker = county_source_links("TX", "Parker County")
+        self.assertIn("Name, Address, Legal, GeoID", parker["assessor"]["note"])
+        self.assertIn("robots.txt", parker["assessor"]["note"])
+        self.assertIn("email/SMS", parker["tax_sale"]["note"])
+        self.assertEqual(
+            parker["code_enforcement"]["status"],
+            "needs_feed_verification",
+        )
+        self.assertIn("requires login", parker["foreclosure"]["note"])
+        self.assertIn("not accessed past the login", parker["pre_foreclosure"]["note"])
+
+    def test_parmer_through_presidio_source_access_and_download_limits(self):
+        counties = ("Parmer", "Pecos", "Polk", "Potter", "Presidio")
+        for county in counties:
+            with self.subTest(county=county):
+                sources = county_source_links("TX", f"{county} County")
+                self.assertEqual(
+                    set(sources),
+                    {
+                        "assessor",
+                        "tax_sale",
+                        "code_enforcement",
+                        "foreclosure",
+                        "pre_foreclosure",
+                    },
+                )
+                for source in sources.values():
+                    self.assertIn(
+                        "County-specific source review checked 2026-11-02",
+                        source["note"],
+                    )
+
+        parmer = county_source_links("TX", "Parmer County")
+        self.assertIn("data scrubbing", parmer["assessor"]["note"])
+        self.assertIn("automated access is not permitted", parmer["assessor"]["note"])
+        self.assertIn("no delinquent resale list", parmer["tax_sale"]["note"])
+        self.assertIn("failed DNS", parmer["foreclosure"]["note"])
+
+        pecos = county_source_links("TX", "Pecos County")
+        self.assertIn("HTTP 503", pecos["assessor"]["note"])
+        self.assertIn("redirects to a payment processor", pecos["tax_sale"]["note"])
+        self.assertEqual(
+            pecos["code_enforcement"]["status"],
+            "needs_feed_verification",
+        )
+        self.assertIn("November 3, 2026", pecos["foreclosure"]["note"])
+        self.assertIn("December 1, 2026", pecos["foreclosure"]["note"])
+        self.assertIn("not an online records search", pecos["pre_foreclosure"]["note"])
+
+        polk = county_source_links("TX", "Polk County")
+        self.assertIn("Excel", polk["assessor"]["note"])
+        self.assertIn("shapefiles", polk["assessor"]["note"])
+        self.assertIn("2022-2026", polk["assessor"]["note"])
+        self.assertIn("automated-access terms", polk["assessor"]["note"])
+        self.assertIn("HTTP 404", polk["tax_sale"]["note"])
+        self.assertIn("failed DNS resolution", polk["foreclosure"]["note"])
+
+        potter = county_source_links("TX", "Potter County")
+        self.assertIn("client-rendered React app shell", potter["assessor"]["note"])
+        self.assertIn("HTTP 404", potter["tax_sale"]["note"])
+        self.assertIn("Amarillo is an independent city", potter["code_enforcement"]["note"])
+        self.assertIn("interactive Quick and Advanced searches", potter["foreclosure"]["note"])
+        self.assertIn("automated-access permission is unverified", potter["foreclosure"]["note"])
+
+        presidio = county_source_links("TX", "Presidio County")
+        self.assertIn("data scrubbing", presidio["assessor"]["note"])
+        self.assertIn("automated access is not permitted", presidio["assessor"]["note"])
+        self.assertIn("Reverse-911", presidio["tax_sale"]["note"])
+        self.assertIn("failed DNS resolution", presidio["foreclosure"]["note"])
+
+    def test_rains_through_red_river_source_access_and_download_limits(self):
+        counties = ("Rains", "Randall", "Reagan", "Real", "Red River")
+        for county in counties:
+            with self.subTest(county=county):
+                sources = county_source_links("TX", f"{county} County")
+                self.assertEqual(
+                    set(sources),
+                    {
+                        "assessor",
+                        "tax_sale",
+                        "code_enforcement",
+                        "foreclosure",
+                        "pre_foreclosure",
+                    },
+                )
+                for source in sources.values():
+                    self.assertIn(
+                        "County-specific source review checked 2026-11-02",
+                        source["note"],
+                    )
+
+        rains = county_source_links("TX", "Rains County")
+        self.assertIn("client-rendered truth-in-taxation", rains["assessor"]["note"])
+        self.assertIn("does not collect property taxes", rains["tax_sale"]["note"])
+        self.assertEqual(
+            rains["code_enforcement"]["status"],
+            "needs_feed_verification",
+        )
+        self.assertIn("HTTP 403", rains["foreclosure"]["note"])
+        self.assertIn("birth and death certificates", rains["pre_foreclosure"]["note"])
+
+        randall = county_source_links("TX", "Randall County")
+        self.assertIn("client-rendered React Public Portal", randall["assessor"]["note"])
+        self.assertIn("Trustee Property", randall["tax_sale"]["note"])
+        self.assertIn("downloaded by GET", randall["tax_sale"]["note"])
+        self.assertIn("permitting", randall["code_enforcement"]["note"])
+        self.assertIn("embedded text objects", randall["foreclosure"]["note"])
+        self.assertIn("contact information only", randall["pre_foreclosure"]["note"])
+
+        reagan = county_source_links("TX", "Reagan County")
+        self.assertIn("no interactive parcel search", reagan["assessor"]["note"])
+        self.assertIn("HTTP 403", reagan["tax_sale"]["note"])
+        self.assertEqual(
+            reagan["code_enforcement"]["status"],
+            "needs_feed_verification",
+        )
+        self.assertIn("HTTP 403", reagan["foreclosure"]["note"])
+        self.assertIn("HTTP 403", reagan["pre_foreclosure"]["note"])
+
+        real = county_source_links("TX", "Real County")
+        self.assertIn("penalty information", real["assessor"]["note"])
+        self.assertIn("voter-registration content", real["tax_sale"]["note"])
+        self.assertEqual(
+            real["code_enforcement"]["status"],
+            "municipal_scope",
+        )
+        self.assertIn("10/13/2022", real["foreclosure"]["note"])
+        self.assertIn("office and fee information only", real["pre_foreclosure"]["note"])
+
+        red_river = county_source_links("TX", "Red River County")
+        self.assertIn("Blazor/Radzen", red_river["assessor"]["note"])
+        self.assertEqual(
+            red_river["tax_sale"]["source_url"],
+            "https://taxsales.lgbs.com/",
+        )
+        self.assertIn("Linebarger LGBS map", red_river["tax_sale"]["note"])
+        self.assertIn("failed DNS/connection/TLS", red_river["tax_sale"]["note"])
+        self.assertEqual(
+            red_river["code_enforcement"]["status"],
+            "municipal_scope",
+        )
+        self.assertIn("10/13/2022", red_river["foreclosure"]["note"])
+        self.assertIn(
+            "explicitly disallows crawling",
+            red_river["pre_foreclosure"]["note"],
+        )
+
+    def test_reeves_through_rockwall_source_access_and_download_limits(self):
+        counties = ("Reeves", "Refugio", "Roberts", "Robertson", "Rockwall")
+        for county in counties:
+            with self.subTest(county=county):
+                sources = county_source_links("TX", f"{county} County")
+                self.assertEqual(
+                    set(sources),
+                    {
+                        "assessor",
+                        "tax_sale",
+                        "code_enforcement",
+                        "foreclosure",
+                        "pre_foreclosure",
+                    },
+                )
+                for source in sources.values():
+                    self.assertIn(
+                        "County-specific source review checked 2026-11-02",
+                        source["note"],
+                    )
+
+        reeves = county_source_links("TX", "Reeves County")
+        self.assertIn("client-rendered React Public Portal", reeves["assessor"]["note"])
+        self.assertIn("HTTP 403", reeves["tax_sale"]["note"])
+        self.assertEqual(
+            reeves["code_enforcement"]["status"],
+            "needs_feed_verification",
+        )
+        self.assertIn("HTTP 403", reeves["foreclosure"]["note"])
+        self.assertIn("HTTP 403", reeves["pre_foreclosure"]["note"])
+
+        refugio = county_source_links("TX", "Refugio County")
+        self.assertIn("interactive Property Search", refugio["assessor"]["note"])
+        self.assertIn("two tax-rate PDFs", refugio["tax_sale"]["note"])
+        self.assertEqual(
+            refugio["code_enforcement"]["status"],
+            "municipal_scope",
+        )
+        self.assertIn("HTTP 403", refugio["foreclosure"]["note"])
+        self.assertIn("office only", refugio["pre_foreclosure"]["note"])
+
+        roberts = county_source_links("TX", "Roberts County")
+        self.assertIn("reference use", roberts["assessor"]["note"])
+        self.assertIn("contact/address information only", roberts["tax_sale"]["note"])
+        self.assertEqual(
+            roberts["code_enforcement"]["status"],
+            "municipal_scope",
+        )
+        self.assertIn("10/13/2022 demo event", roberts["foreclosure"]["note"])
+        self.assertIn("office contact information only", roberts["pre_foreclosure"]["note"])
+
+        robertson = county_source_links("TX", "Robertson County")
+        self.assertIn("Property Search", robertson["assessor"]["note"])
+        self.assertIn("Linebarger", robertson["tax_sale"]["note"])
+        self.assertIn("failed DNS/connection/TLS", robertson["tax_sale"]["note"])
+        self.assertEqual(
+            robertson["code_enforcement"]["status"],
+            "needs_feed_verification",
+        )
+        self.assertIn("HTTP 403", robertson["foreclosure"]["note"])
+        self.assertIn("HTTP 403", robertson["pre_foreclosure"]["note"])
+
+        rockwall = county_source_links("TX", "Rockwall County")
+        self.assertIn("React Public Portal", rockwall["assessor"]["note"])
+        self.assertIn("first Tuesday", rockwall["tax_sale"]["note"])
+        self.assertEqual(
+            rockwall["code_enforcement"]["status"],
+            "needs_feed_verification",
+        )
+        self.assertIn("dynamic widget", rockwall["foreclosure"]["note"])
+        self.assertIn("Tyler Technologies", rockwall["pre_foreclosure"]["note"])
+        self.assertIn("redacted", rockwall["pre_foreclosure"]["note"])
 
     def test_public_notice_discovery_sources_record_scope_and_reuse_limits(self):
         missouri = county_source_links("MO", "Boone County")

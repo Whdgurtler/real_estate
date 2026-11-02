@@ -1,8 +1,10 @@
 import asyncio
+import io
 import os
 import unittest
-from datetime import date
-from unittest.mock import patch
+import zipfile
+from datetime import date, datetime, timedelta, timezone
+from unittest.mock import AsyncMock, patch
 
 import httpx
 from sqlalchemy.orm import Session
@@ -15,10 +17,19 @@ from app.automation import (
     fetch_hud_fmr,
     fetch_feed_records,
     schedule_settings,
+    sync_all_sources,
+    sync_source_records,
     sync_configured_feed,
 )
 from app.db import Base, create_database, create_session_factory
-from app.models import DataEvidence, DataFeed, DataFeedRecord, Property, SyncRun
+from app.models import (
+    DataEvidence,
+    DataFeed,
+    DataFeedRecord,
+    DataFeedSourceRecord,
+    Property,
+    SyncRun,
+)
 from app.jurisdictions import county_jurisdictions
 from app.schemas import DataFeedCreate
 
@@ -40,6 +51,7 @@ class DataAutomationTests(unittest.TestCase):
             name="County code violations",
             connector="socrata",
             source_type="code_enforcement",
+            automation_authorized=True,
             domain="data.county.gov",
             dataset_id="abcd-1234",
             record_id_field="case_id",
@@ -111,6 +123,172 @@ class DataAutomationTests(unittest.TestCase):
         self.assertEqual(evidence[-1].source_name, "County code violations")
         session.close()
 
+    def test_csv_and_csv_zip_connectors_download_bounded_tabular_records(self):
+        csv_body = b"parcel_id,address,bid\np-1,12 Oak Street,45000\n"
+        zip_buffer = io.BytesIO()
+        with zipfile.ZipFile(zip_buffer, "w", zipfile.ZIP_DEFLATED) as archive:
+            archive.writestr("sales.csv", csv_body)
+        responses = {
+            "/sales.csv": csv_body,
+            "/sales.zip": zip_buffer.getvalue(),
+        }
+
+        def handler(request):
+            return httpx.Response(200, content=responses[request.url.path])
+
+        async def run(connector, path):
+            feed = {
+                "connector": connector,
+                "config": {
+                    "query_url": f"https://county.example{path}",
+                    "max_records": 10,
+                },
+            }
+            async with httpx.AsyncClient(transport=httpx.MockTransport(handler)) as client:
+                return await fetch_feed_records(client, feed)
+
+        expected = [{"parcel_id": "p-1", "address": "12 Oak Street", "bid": "45000"}]
+        self.assertEqual(asyncio.run(run("csv_file", "/sales.csv")), expected)
+        self.assertEqual(asyncio.run(run("csv_zip", "/sales.zip")), expected)
+
+    def test_pdf_text_connector_returns_page_records_without_ocr(self):
+        class FakePage:
+            def extract_text(self):
+                return "Parcel 12; minimum bid $45,000"
+
+        class FakeReader:
+            def __init__(self, _file, strict=False):
+                self.is_encrypted = False
+                self.pages = [FakePage()]
+
+        feed = {
+            "connector": "pdf_text",
+            "config": {
+                "query_url": "https://county.example/sales.pdf",
+                "max_records": 5,
+            },
+        }
+
+        async def run():
+            async with httpx.AsyncClient(
+                transport=httpx.MockTransport(
+                    lambda _request: httpx.Response(200, content=b"pdf")
+                )
+            ) as client:
+                return await fetch_feed_records(client, feed)
+
+        with patch("pypdf.PdfReader", FakeReader):
+            self.assertEqual(
+                asyncio.run(run()),
+                [{"page_number": 1, "text": "Parcel 12; minimum bid $45,000"}],
+            )
+
+    def test_source_record_snapshots_insert_update_and_preserve_ids(self):
+        session = self.session_factory()
+        stored_feed = DataFeed(
+            name="County foreclosure notices",
+            connector="csv_file",
+            source_type="foreclosure",
+            config={},
+        )
+        session.add(stored_feed)
+        session.commit()
+        feed = {
+            "id": stored_feed.id,
+            "name": stored_feed.name,
+            "source_category": "foreclosure",
+            "county_fips": "48201",
+            "config": {"record_id_field": "case_id"},
+        }
+        session.close()
+
+        first = sync_source_records(
+            self.session_factory, feed, [{"case_id": "case-1", "bid": 45000}]
+        )
+        unchanged = sync_source_records(
+            self.session_factory, feed, [{"case_id": "case-1", "bid": 45000}]
+        )
+        changed = sync_source_records(
+            self.session_factory, feed, [{"case_id": "case-1", "bid": 47000}]
+        )
+
+        self.assertEqual(first["inserted"], 1)
+        self.assertEqual(unchanged["unchanged"], 1)
+        self.assertEqual(changed["updated"], 1)
+        session = self.session_factory()
+        records = session.query(DataFeedSourceRecord).all()
+        self.assertEqual(len(records), 1)
+        self.assertEqual(records[0].payload["bid"], 47000)
+        session.close()
+
+    def test_recurring_sync_requires_authorization_and_honors_refresh_interval(self):
+        now = datetime.now(timezone.utc)
+        session = self.session_factory()
+        unauthorized = DataFeed(
+            name="Unauthorized",
+            connector="csv_file",
+            source_type="tax_sale",
+            config={"automation_authorized": False},
+        )
+        recently_synced = DataFeed(
+            name="Recent",
+            connector="csv_file",
+            source_type="tax_sale",
+            config={"automation_authorized": True},
+            refresh_interval_days=7,
+            last_synced_at=now - timedelta(days=1),
+        )
+        overdue = DataFeed(
+            name="Overdue",
+            connector="csv_file",
+            source_type="tax_sale",
+            config={"automation_authorized": True},
+            refresh_interval_days=7,
+            last_synced_at=now - timedelta(days=8),
+        )
+        session.add_all([unauthorized, recently_synced, overdue])
+        session.commit()
+        overdue_id = overdue.id
+        session.close()
+
+        async def successful_sync(_session_factory, _client, feed):
+            return {"source_id": feed["id"], "status": "success"}
+
+        async def auxiliary_result(_session_factory, _client):
+            return {"status": "success"}
+
+        with (
+            patch(
+                "app.automation.sync_configured_feed",
+                new_callable=AsyncMock,
+                side_effect=successful_sync,
+            ) as configured_sync,
+            patch(
+                "app.automation.sync_census_population",
+                new_callable=AsyncMock,
+                side_effect=auxiliary_result,
+            ),
+            patch(
+                "app.automation.sync_hud_fmr",
+                new_callable=AsyncMock,
+                side_effect=auxiliary_result,
+            ),
+        ):
+            scheduled = asyncio.run(sync_all_sources(self.session_factory))
+            self.assertEqual(configured_sync.await_count, 1)
+            self.assertEqual(
+                {row["status"] for row in scheduled if "source_id" in row},
+                {"success", "skipped"},
+            )
+
+            configured_sync.reset_mock()
+            forced = asyncio.run(sync_all_sources(self.session_factory, force=True))
+            self.assertEqual(configured_sync.await_count, 2)
+            self.assertEqual(
+                next(row for row in forced if row.get("source_id") == overdue_id)["status"],
+                "success",
+            )
+
     def test_hud_fmr_adapter_uses_bearer_key_and_bedroom_specific_estimate(self):
         def handler(request):
             self.assertEqual(request.url.path, "/hudapi/public/fmr")
@@ -140,6 +318,7 @@ class DataAutomationTests(unittest.TestCase):
             connector="socrata",
             target="property_enrichment",
             source_type="other",
+            automation_authorized=True,
             domain="data.county.gov",
             dataset_id="crime-123",
             field_mapping={

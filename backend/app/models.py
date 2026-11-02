@@ -105,8 +105,33 @@ class DataFeed(Base):
     county_fips = Column(String(5), nullable=True, index=True)
     config = Column(JSON, nullable=False)
     enabled = Column(Boolean, nullable=False, default=True)
+    refresh_interval_days = Column(Integer, nullable=False, default=7)
+    last_synced_at = Column(DateTime(timezone=True), nullable=True)
     created_at = Column(DateTime(timezone=True), nullable=False, default=utc_now)
     updated_at = Column(DateTime(timezone=True), nullable=False, default=utc_now, onupdate=utc_now)
+
+
+class DataFeedSourceRecord(Base):
+    __tablename__ = "data_feed_source_records"
+    __table_args__ = (
+        UniqueConstraint(
+            "data_feed_id",
+            "record_key",
+            name="uq_data_feed_source_record_key",
+        ),
+    )
+
+    id = Column(Integer, primary_key=True, index=True)
+    data_feed_id = Column(
+        Integer,
+        ForeignKey("data_feeds.id", ondelete="CASCADE"),
+        nullable=False,
+        index=True,
+    )
+    record_key = Column(String(64), nullable=False)
+    payload = Column(JSON, nullable=False)
+    first_seen_at = Column(DateTime(timezone=True), nullable=False, default=utc_now)
+    last_seen_at = Column(DateTime(timezone=True), nullable=False, default=utc_now)
 
 
 class DataFeedRecord(Base):

@@ -341,6 +341,11 @@ a { color: var(--green); }
 .configured-feed strong { color: #30443d; font-size: 11px; }
 .configured-feed span { margin-top: 4px; color: #7b8881; font-size: 9px; text-transform: capitalize; }
 .configured-feed a { margin-top: 4px; font-size: 9px; }
+.source-record-preview { margin-top: 10px; }
+.source-record-preview pre {
+  max-height: 220px; overflow: auto; margin: 6px 0; padding: 8px; border-radius: 5px;
+  background: #f2f5f2; color: #42544e; font-size: 9px; white-space: pre-wrap; overflow-wrap: anywhere;
+}
 .feed-actions { display: flex; flex: 0 0 auto; gap: 6px; }
 .feed-actions .button { padding: 7px 9px; font-size: 9px; }
 .empty-feed-note { margin: 16px 0; color: #829088; font-size: 11px; }

@@ -72,17 +72,36 @@ export type DataSource = {
 export type DataFeed = {
   id: number;
   name: string;
-  connector: "socrata" | "arcgis" | "json_api";
-  target: "property_leads" | "property_enrichment";
+  connector: "socrata" | "arcgis" | "json_api" | "csv_file" | "csv_zip" | "pdf_text";
+  target: "property_leads" | "property_enrichment" | "source_records";
   source_category: DataFeedInput["source_category"];
   source_type: Property["source_type"];
   county_fips: string | null;
   enabled: boolean;
+  automation_authorized: boolean;
   source_url: string;
   field_mapping: Record<string, string>;
   max_records: number;
+  refresh_interval_days: number;
+  last_synced_at: string | null;
   created_at: string;
   updated_at: string;
+};
+
+export type DataFeedRecord = {
+  id: number;
+  payload: Record<string, unknown>;
+  first_seen_at: string;
+  last_seen_at: string;
+};
+
+export type DataFeedRecordPage = {
+  feed_id: number;
+  records: DataFeedRecord[];
+  total: number;
+  limit: number;
+  offset: number;
+  snapshot_at?: string;
 };
 
 export type DataFeedInput = {
@@ -103,6 +122,8 @@ export type DataFeedInput = {
   county_fips?: string;
   enabled: boolean;
   confidence: string;
+  automation_authorized: boolean;
+  refresh_interval_days: number;
   field_mapping: Record<string, string>;
   domain?: string;
   dataset_id?: string;
@@ -111,6 +132,8 @@ export type DataFeedInput = {
   max_records: number;
   record_id_field?: string;
   records_path?: string;
+  archive_member?: string;
+  file_encoding?: "utf-8-sig" | "utf-8" | "cp1252" | "latin-1";
   query_params: Record<string, string>;
   auth_env_var?: string;
   auth_query_param?: string;
@@ -274,6 +297,8 @@ export const api = {
   properties: () => request<Property[]>("/api/properties?limit=1000"),
   dataSources: () => request<DataSource[]>("/api/data-sources"),
   dataFeeds: () => request<DataFeed[]>("/api/data-feeds"),
+  dataFeedRecords: (id: number) =>
+    request<DataFeedRecordPage>(`/api/data-feeds/${id}/records?limit=100`),
   jurisdictions: () => request<PriorityJurisdictions>("/api/jurisdictions"),
   syncStatus: () => request<SyncStatus>("/api/sync/status"),
   summary: () => request<PortfolioSummary>("/api/portfolio/summary"),

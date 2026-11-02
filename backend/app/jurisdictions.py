@@ -1743,6 +1743,11434 @@ TEXAS_COUNTY_SOURCE_OVERRIDES = {
             ),
         },
     },
+    "Caldwell": {
+        "assessor": {
+            "directory_name": "Caldwell County Appraisal District public data",
+            "directory_url": "https://caldwellcad.org/publicly-available-data/",
+            "source_url": "https://esearch.caldwellcad.org/",
+            "note": (
+                "The CAD provides interactive eSearch and a map; its public-data "
+                "page exposed no free bulk parcel export. No authorized automated "
+                "refresh was verified. County-specific source review checked "
+                "2026-11-02."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Caldwell CAD sheriff's tax-sale listings",
+            "directory_url": "https://caldwellcad.org/sheriffs-tax-sale/",
+            "source_url": (
+                "https://caldwellcad.org/wp-content/uploads/2026/10/"
+                "Sheriffs-Tax-Sale.pdf"
+            ),
+            "note": (
+                "The CAD labels this the current Sheriff's Tax Sale List with Maps. "
+                "The October 2026 PDF downloaded successfully (2,641,983 bytes; "
+                "9 pages; extractable text). The linked struck-off/resale list is "
+                "dated June 2024. The auction portal returned HTTP 403 and failed "
+                "in the browser, but the official list PDF was accessible. No "
+                "refresh cadence or automated-access authorization was confirmed. "
+                "County-specific source review checked 2026-11-02."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Caldwell County Code Enforcement",
+            "directory_url": "https://www.co.caldwell.tx.us/page/Code",
+            "source_url": "https://www.co.caldwell.tx.us/page/Code",
+            "status": "needs_feed_verification",
+            "note": (
+                "The County describes enforcement of county sanitation and "
+                "development codes and provides a complaint form. This is complaint "
+                "intake, not a public property-level violations list or feed; no "
+                "refresh cadence or automated-access authorization was confirmed. "
+                "County-specific source review checked 2026-11-02."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Caldwell County foreclosure notices",
+            "directory_url": "https://www.co.caldwell.tx.us/page/Foreclosures",
+            "source_url": "https://www.co.caldwell.tx.us/page/Foreclosures",
+            "note": (
+                "The County's Foreclosures page exposed courthouse addresses but "
+                "no current notice calendar, parcel list, or downloadable lender-"
+                "foreclosure inventory. No sale feed or refresh cadence was "
+                "confirmed. County-specific source review checked 2026-11-02."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Caldwell County Clerk official public records",
+            "directory_url": "https://www.co.caldwell.tx.us/page/County.Clerk",
+            "source_url": "https://tx.countygovernmentrecords.com/texas/web/",
+            "note": (
+                "The Clerk links official public records from 1990 to present. "
+                "Tyler's portal requires free registration; document images cost "
+                "per document or by subscription. This is general recorded-document "
+                "search, not a dedicated lis-pendens or pre-foreclosure index. No "
+                "bulk export or automated-access authorization was confirmed. "
+                "County-specific source review checked 2026-11-02."
+            ),
+        },
+    },
+    "Calhoun": {
+        "assessor": {
+            "directory_name": "Calhoun County Appraisal District property search",
+            "directory_url": "https://calhouncad.org/",
+            "source_url": "https://esearch.calhouncad.org/",
+            "note": (
+                "The CAD eSearch is interactive and identifies its displayed values "
+                "as certified for 2026. No bulk parcel export or authorized automated "
+                "refresh was verified. County-specific source review checked "
+                "2026-11-02."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Calhoun County Appraisal District consolidated tax office",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/calhoun.php"
+            ),
+            "source_url": "https://calhouncad.org/",
+            "note": (
+                "The Comptroller says the County Tax Assessor-Collector does not "
+                "collect property taxes; Calhoun CAD says it serves as consolidated "
+                "tax office. No current delinquent-sale date, parcel list, or "
+                "download was found on the County/CAD pages reviewed. No tax-sale "
+                "feed or authorized automated access was confirmed. County-specific "
+                "source review checked 2026-11-02."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Calhoun County code-enforcement source discovery",
+            "directory_url": "https://www.calhouncotx.org/",
+            "source_url": "https://www.calhouncotx.org/",
+            "note": (
+                "The County pages reviewed exposed no countywide property-level "
+                "code-enforcement list or feed. Code enforcement is generally "
+                "municipal; no city-specific provider or update cadence was "
+                "confirmed. County-specific source review checked 2026-11-02."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Calhoun County public notices",
+            "directory_url": (
+                "https://www.calhouncotx.org/calhoun-county-public-notices-resolutions/"
+            ),
+            "source_url": (
+                "https://www.calhouncotx.org/calhoun-county-public-notices-resolutions/"
+            ),
+            "note": (
+                "The County's public-notice page lists grant, complaint, and "
+                "resolution materials; no current foreclosure-sale calendar, "
+                "parcel list, or downloadable inventory was found. No sale feed "
+                "or refresh cadence was confirmed. County-specific source review "
+                "checked 2026-11-02."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Calhoun County Clerk public property records",
+            "directory_url": "https://www.calhouncotx.org/",
+            "source_url": "https://tx.countygovernmentrecords.com/texas/web/",
+            "note": (
+                "The County links a public property-record search through Tyler. "
+                "The portal requires free registration and charges for document "
+                "images; it is a general recorded-document search, not a verified "
+                "lis-pendens/default index. No bulk export or automated-access "
+                "authorization was confirmed. County-specific source review "
+                "checked 2026-11-02."
+            ),
+        },
+    },
+    "Callahan": {
+        "assessor": {
+            "directory_name": "Callahan Central Appraisal District property search",
+            "directory_url": "https://callahancad.org/",
+            "source_url": "https://esearch.callahancad.org/",
+            "note": (
+                "The CAD links an interactive eSearch property portal. No bulk "
+                "parcel export or authorized automated refresh was verified. "
+                "County-specific source review checked 2026-11-02."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Callahan County Tax Assessor-Collector",
+            "directory_url": (
+                "https://www.callahancounty.org/page/callahan.County.Assessor.Collector"
+            ),
+            "source_url": (
+                "https://www.callahancounty.org/page/callahan.County.Assessor.Collector"
+            ),
+            "note": (
+                "The Tax Assessor-Collector page offers online tax payments but no "
+                "current tax-sale date, parcel list, or download. The Comptroller-"
+                "listed www.co.callahan.tx.us host had a TLS hostname mismatch; the "
+                "alternate official callahancounty.org site loaded. No sale feed or "
+                "automated-access authorization was confirmed. County-specific "
+                "source review checked 2026-11-02."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Callahan County code-enforcement source discovery",
+            "directory_url": "https://www.callahancounty.org/",
+            "source_url": "https://www.callahancounty.org/",
+            "note": (
+                "The County pages reviewed exposed no countywide property-level "
+                "code-enforcement list or feed. Code enforcement is generally "
+                "municipal; no city-specific provider or update cadence was "
+                "confirmed. County-specific source review checked 2026-11-02."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Callahan County Clerk and county notices",
+            "directory_url": "https://www.callahancounty.org/page/callahan.County.Clerk",
+            "source_url": "https://www.callahancounty.org/",
+            "note": (
+                "The Clerk page provides office contacts; the County's current "
+                "notices were unrelated to property sales, and its Foreclosure, "
+                "Notices & News link resolved to the County homepage. No current "
+                "foreclosure calendar, parcel list, or downloadable inventory was "
+                "found. County-specific source review checked 2026-11-02."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Callahan County Clerk records discovery",
+            "directory_url": "https://www.callahancounty.org/page/callahan.County.Clerk",
+            "source_url": "https://www.callahancounty.org/page/callahan.County.Clerk",
+            "note": (
+                "The Clerk page provides contact information but no online "
+                "real-property-record search or dedicated lis-pendens/default index "
+                "was verified. No bulk export, refresh cadence, or automated-access "
+                "authorization was confirmed. County-specific source review checked "
+                "2026-11-02."
+            ),
+        },
+    },
+    "Cameron": {
+        "assessor": {
+            "directory_name": "Cameron Appraisal District data and GIS downloads",
+            "directory_url": "https://www.cameroncad.org/Pages/Data",
+            "source_url": (
+                "https://www.cameroncad.org/cad/exports/GIS/parcels_public.zip"
+            ),
+            "note": (
+                "The CAD Data page lists 2026 certified appraisal exports and a "
+                "September 15, 2026 GIS parcel export. The public GIS ZIP downloaded "
+                "successfully (66,947,386 bytes; 8 entries; ZIP integrity passed). "
+                "This is parcel/appraisal data, not sale inventory. No automated "
+                "refresh authorization was verified. County-specific source review "
+                "checked 2026-11-02."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Cameron County Tax Assessor-Collector tax sales",
+            "directory_url": "https://www.cameroncountytx.gov/tac/",
+            "source_url": "https://cameron.texas.sheriffsaleauctions.com/",
+            "note": (
+                "The County Tax Assessor-Collector links its sheriff-sale auction "
+                "portal, but direct retrieval returned HTTP 403 and browser "
+                "navigation failed. No current county-specific sale list or "
+                "download was verified. No refresh cadence or automated-access "
+                "authorization was confirmed. County-specific source review "
+                "checked 2026-11-02."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Cameron County code-enforcement source discovery",
+            "directory_url": "https://www.cameroncountytx.gov/",
+            "source_url": "https://www.cameroncountytx.gov/",
+            "note": (
+                "The County pages reviewed exposed no countywide property-level "
+                "code-enforcement list or feed. Code enforcement is generally "
+                "municipal; no city-specific provider or update cadence was "
+                "confirmed. County-specific source review checked 2026-11-02."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Cameron County Clerk foreclosure-sales search",
+            "directory_url": "https://www.cameroncountytx.gov/county-clerk/",
+            "source_url": "https://cameron.tx.publicsearch.us/",
+            "note": (
+                "The Clerk page labels a County Public Search link as Foreclosure "
+                "Sales. Direct browser navigation to that portal failed, and no "
+                "dedicated sale calendar, parcel list, or downloadable inventory "
+                "was verified. County-specific source review checked 2026-11-02."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Cameron County Clerk official-records search",
+            "directory_url": "https://www.cameroncountytx.gov/county-clerk/",
+            "source_url": "https://cameron.tx.publicsearch.us/",
+            "note": (
+                "The Clerk's linked public-search portal was not reachable in the "
+                "browser check. No dedicated lis-pendens/default index, bulk export, "
+                "refresh cadence, or automated-access authorization was confirmed. "
+                "County-specific source review checked 2026-11-02."
+            ),
+        },
+    },
+    "Camp": {
+        "assessor": {
+            "directory_name": "Camp County Appraisal District property search",
+            "directory_url": "https://campcad.org/downloads/",
+            "source_url": "https://esearch.campcad.org/",
+            "note": (
+                "The CAD offers interactive eSearch and a map. Its site links GIS "
+                "data for purchase; no free bulk parcel export or authorized "
+                "automated refresh was verified. County-specific source review "
+                "checked 2026-11-02."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Camp County Appraisal District tax-sale properties",
+            "directory_url": "https://campcad.org/downloads/",
+            "source_url": (
+                "https://campcad.org/wp-content/uploads/2025/11/"
+                "09-02-2025-Camp-Struck-Off-List.pdf"
+            ),
+            "note": (
+                "The CAD links a one-page struck-off property PDF dated September 2, "
+                "2025; it downloaded successfully (122,308 bytes) but is not a "
+                "current 2026 auction list. A separate Tax Sales link to "
+                "taxsales.lgbs.com failed DNS/connection retrieval. No current "
+                "sale date or downloadable list was verified. County-specific "
+                "source review checked 2026-11-02."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Camp County code-enforcement source discovery",
+            "directory_url": "https://www.co.camp.tx.us/",
+            "source_url": "https://www.co.camp.tx.us/",
+            "note": (
+                "The County pages reviewed exposed no countywide property-level "
+                "code-enforcement list or feed. Code enforcement is generally "
+                "municipal; no city-specific provider or update cadence was "
+                "confirmed. County-specific source review checked 2026-11-02."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Camp County Clerk foreclosure-notice calendar",
+            "directory_url": (
+                "https://www.co.camp.tx.us/page/"
+                "camp.NOTICEOFFORECLOSURESALEFILEDWITHCOUNTYCLERK"
+            ),
+            "source_url": (
+                "https://www.co.camp.tx.us/page/"
+                "camp.NOTICEOFFORECLOSURESALEFILEDWITHCOUNTYCLERK"
+            ),
+            "note": (
+                "The Clerk's page is a calendar; the November 2026 view had no "
+                "current property-sale notices, and the only surfaced event was an "
+                "unrelated 2022 lightbox demo. No current notice PDF or downloadable "
+                "foreclosure inventory was found. County-specific source review "
+                "checked 2026-11-02."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Camp County Clerk official public-record search",
+            "directory_url": "https://www.co.camp.tx.us/page/camp.County.Clerk",
+            "source_url": "http://24.173.220.152",
+            "note": (
+                "The Clerk page links an Official Public Record Search at a legacy "
+                "HTTP address. No dedicated lis-pendens/default index, bulk export, "
+                "refresh cadence, or automated-access authorization was verified. "
+                "County-specific source review checked 2026-11-02."
+            ),
+        },
+    },
+    "Carson": {
+        "assessor": {
+            "directory_name": "Carson County Appraisal District property search",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/carson.php"
+            ),
+            "source_url": "https://esearch.carsoncad.org/",
+            "note": (
+                "The Comptroller links the Carson CAD site, which returned only an "
+                "'Agent' placeholder; the eSearch host failed transport retrieval. "
+                "No usable property search, bulk export, or refresh cadence was "
+                "verified. County-specific source review checked 2026-11-02."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Carson County Tax Assessor-Collector",
+            "directory_url": (
+                "https://www.co.carson.tx.us/page/"
+                "carson.County.Assessor.Collector"
+            ),
+            "source_url": "https://www.carsoncountytax.org/",
+            "note": (
+                "The County Tax Assessor-Collector links carsoncountytax.org for "
+                "property-tax information, but the portal returned only an 'Agent' "
+                "placeholder. No current tax-sale date, parcel list, or download "
+                "was verified. No sale feed or automated-access authorization was "
+                "confirmed. County-specific source review checked 2026-11-02."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Carson County code-enforcement source discovery",
+            "directory_url": "https://www.co.carson.tx.us/",
+            "source_url": "https://www.co.carson.tx.us/",
+            "note": (
+                "The County pages reviewed exposed no countywide property-level "
+                "code-enforcement list or feed. Code enforcement is generally "
+                "municipal; no city-specific provider or update cadence was "
+                "confirmed. County-specific source review checked 2026-11-02."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Carson County foreclosure notices",
+            "directory_url": "https://www.co.carson.tx.us/page/carson.County.Clerk",
+            "source_url": (
+                "https://www.co.carson.tx.us/page/carson.ForeclosureNotices"
+            ),
+            "note": (
+                "The County's foreclosure-notices route returned HTTP 403. The "
+                "Clerk page provides office information and states it has no duty "
+                "to search public records; no current foreclosure notice list or "
+                "downloadable inventory could be verified. County-specific source "
+                "review checked 2026-11-02."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Carson County Clerk records discovery",
+            "directory_url": "https://www.co.carson.tx.us/page/carson.County.Clerk",
+            "source_url": "https://www.co.carson.tx.us/page/carson.County.Clerk",
+            "note": (
+                "The Clerk page provides office information and states it has no "
+                "duty to search public records. No online real-property-record "
+                "search, dedicated lis-pendens/default index, or bulk export was "
+                "verified. County-specific source review checked 2026-11-02."
+            ),
+        },
+    },
+    "Cass": {
+        "assessor": {
+            "directory_name": "Cass County Appraisal District property search",
+            "directory_url": "https://casscad.org/",
+            "source_url": "https://esearch.casscad.org/",
+            "note": (
+                "The CAD eSearch is interactive and displayed preliminary 2026 "
+                "values. No bulk parcel export or authorized automated refresh "
+                "was verified. County-specific source review checked 2026-11-02."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Cass County Tax Assessor-Collector property-tax portal",
+            "directory_url": (
+                "https://www.co.cass.tx.us/page/cass.County.Assessor.Collector"
+            ),
+            "source_url": "https://actweb.acttax.com/cass/cass/index.jsp",
+            "note": (
+                "The Tax Assessor-Collector page links an online property-tax "
+                "payment portal but no current tax-sale date or parcel list. Cass "
+                "was not listed on the reviewed November/December 2026 MVBA monthly "
+                "schedule. No downloadable county-specific sale inventory, feed, "
+                "or automated-access authorization was confirmed. County-specific "
+                "source review checked 2026-11-02."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Cass County code-enforcement source discovery",
+            "directory_url": "https://www.co.cass.tx.us/",
+            "source_url": "https://www.co.cass.tx.us/",
+            "note": (
+                "The County pages reviewed exposed no countywide property-level "
+                "code-enforcement list or feed. Code enforcement is generally "
+                "municipal; no city-specific provider or update cadence was "
+                "confirmed. County-specific source review checked 2026-11-02."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Cass County Clerk foreclosure and trustee notices",
+            "directory_url": "https://www.co.cass.tx.us/page/cass.Foreclosures",
+            "source_url": "https://www.co.cass.tx.us/page/cass.Foreclosures",
+            "note": (
+                "The Clerk page lists individual foreclosure/trustee notice PDFs "
+                "through January 5, 2027. November and January samples downloaded "
+                "successfully (3 and 4 pages) but were image-only, so sale type "
+                "could not be confirmed. The Clerk says it has no information about "
+                "courthouse-step sales; no complete sale inventory or structured "
+                "feed was verified. County-specific source review checked "
+                "2026-11-02."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Cass County Clerk public-record search",
+            "directory_url": "https://www.co.cass.tx.us/page/cass.County.Clerk",
+            "source_url": "https://cc.co.cass.tx.us/",
+            "note": (
+                "The Clerk links an online public-record search. It is a general "
+                "record portal, not a verified lis-pendens/default index; the "
+                "Clerk says records not online must be searched in person. No bulk "
+                "export or automated-access authorization was confirmed. "
+                "County-specific source review checked 2026-11-02."
+            ),
+        },
+    },
+    "Castro": {
+        "assessor": {
+            "directory_name": "Castro County Appraisal District property search",
+            "directory_url": "https://castrocad.org/",
+            "source_url": "https://esearch.castrocad.org/",
+            "note": (
+                "The CAD provides interactive eSearch and a map. Its disclaimer "
+                "states the service is for public interactive use and is not "
+                "intended to support electronic data transfer; no bulk export was "
+                "verified. County-specific source review checked 2026-11-02."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Castro County Tax Assessor-Collector",
+            "directory_url": (
+                "https://www.co.castro.tx.us/page/castro.County.Assessor.Collector"
+            ),
+            "source_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/castro.php"
+            ),
+            "note": (
+                "The Comptroller says the County Tax Assessor-Collector does not "
+                "collect property taxes. The County/CAD pages reviewed exposed no "
+                "current tax-sale date, parcel list, or download. No sale feed or "
+                "automated-access authorization was confirmed. County-specific "
+                "source review checked 2026-11-02."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Castro County code-enforcement source discovery",
+            "directory_url": "https://www.co.castro.tx.us/",
+            "source_url": "https://www.co.castro.tx.us/",
+            "note": (
+                "The County pages reviewed exposed no countywide property-level "
+                "code-enforcement list or feed. Code enforcement is generally "
+                "municipal; no city-specific provider or update cadence was "
+                "confirmed. County-specific source review checked 2026-11-02."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Castro County foreclosure-notice calendar",
+            "directory_url": (
+                "https://www.co.castro.tx.us/page/castro.ForeclosureNotices"
+            ),
+            "source_url": (
+                "https://www.co.castro.tx.us/page/castro.ForeclosureNotices"
+            ),
+            "note": (
+                "The County's Foreclosure Notices page showed a November 2026 "
+                "calendar without current property-sale notices; the surfaced "
+                "event was an unrelated October 2022 lightbox demo. No current "
+                "notice PDF or downloadable inventory was found. County-specific "
+                "source review checked 2026-11-02."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Castro County Clerk records discovery",
+            "directory_url": "https://www.co.castro.tx.us/page/castro.County.Clerk",
+            "source_url": "https://www.co.castro.tx.us/page/castro.County.Clerk",
+            "note": (
+                "The Clerk page provides office contacts but no online "
+                "real-property-record search or dedicated lis-pendens/default "
+                "index was verified. No bulk export or automated-access "
+                "authorization was confirmed. County-specific source review "
+                "checked 2026-11-02."
+            ),
+        },
+    },
+    "Chambers": {
+        "assessor": {
+            "directory_name": "Chambers County Appraisal District property search",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/chambers.php"
+            ),
+            "source_url": "https://esearch.chamberscad.org/",
+            "note": (
+                "The CAD homepage returned only an 'Agent' placeholder and the "
+                "eSearch host failed transport retrieval. No usable search portal, "
+                "bulk export, or refresh cadence was verified. County-specific "
+                "source review checked 2026-11-02."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Chambers County Tax Assessor-Collector",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/chambers.php"
+            ),
+            "source_url": "https://www.chamberscountytx.gov/",
+            "note": (
+                "The Comptroller lists the County as a collecting unit, but the "
+                "County website returned widget-configuration data rather than a "
+                "usable tax-office page; the tested common tax-office route "
+                "returned 404. No current tax-sale date, parcel list, or download "
+                "was verified. County-specific source review checked 2026-11-02."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Chambers County code-enforcement source discovery",
+            "directory_url": "https://www.chamberscountytx.gov/",
+            "source_url": "https://www.chamberscountytx.gov/",
+            "note": (
+                "The accessible County/CAD pages exposed no countywide "
+                "property-level code-enforcement list or feed. Code enforcement "
+                "is generally municipal; no city-specific provider or update "
+                "cadence was confirmed. County-specific source review checked "
+                "2026-11-02."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Chambers County foreclosure source discovery",
+            "directory_url": "https://www.chamberscountytx.gov/",
+            "source_url": "https://www.chamberscountytx.gov/",
+            "note": (
+                "The County website did not render a usable notice or Clerk page "
+                "in this check. No current foreclosure calendar, notice list, "
+                "downloadable inventory, or structured feed was verified. "
+                "County-specific source review checked 2026-11-02."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Chambers County Clerk records discovery",
+            "directory_url": "https://www.chamberscountytx.gov/",
+            "source_url": "https://www.chamberscountytx.gov/",
+            "note": (
+                "The accessible County site exposed no Clerk public-record search "
+                "or dedicated lis-pendens/default index. No bulk export, refresh "
+                "cadence, or automated-access authorization was confirmed. "
+                "County-specific source review checked 2026-11-02."
+            ),
+        },
+    },
+    "Cherokee": {
+        "assessor": {
+            "directory_name": "Cherokee County Appraisal District property search",
+            "directory_url": "https://cherokeecad.com/",
+            "source_url": "https://esearch.cherokeecad.com/",
+            "note": (
+                "The CAD eSearch is interactive and displayed preliminary 2026 "
+                "values. No bulk parcel export or authorized automated refresh "
+                "was verified. County-specific source review checked 2026-11-02."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Cherokee County November 2026 MVBA online tax auction",
+            "directory_url": "https://cherokeecad.com/",
+            "source_url": (
+                "https://www.mvbataxsales.com/auction/"
+                "cherokee-county-online-property-tax-sale-november-3-2026-186/"
+                "bidgallery/"
+            ),
+            "note": (
+                "The CAD directs tax-sale inquiries to MVBA. The November 3, 2026 "
+                "online auction page showed 19 lots in a searchable, two-page bid "
+                "gallery; bidding starts at 10:00 a.m. and bidder registration is "
+                "required at least 24 hours beforehand. No CSV/PDF lot export or "
+                "automated-access authorization was found. County-specific source "
+                "review checked 2026-11-02."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Cherokee County code-enforcement source discovery",
+            "directory_url": "https://www.co.cherokee.tx.us/ips/cms/index.html",
+            "source_url": "https://www.co.cherokee.tx.us/ips/cms/index.html",
+            "note": (
+                "The County pages reviewed exposed no countywide property-level "
+                "code-enforcement list or feed. Code enforcement is generally "
+                "municipal; no city-specific provider or update cadence was "
+                "confirmed. County-specific source review checked 2026-11-02."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Cherokee County public notices and events",
+            "directory_url": "https://www.co.cherokee.tx.us/ips/cms/index.html",
+            "source_url": "https://www.co.cherokee.tx.us/ips/cms/events.html",
+            "note": (
+                "The County's public-notices page lists general notices and "
+                "Commissioners Court agendas; no current foreclosure or trustee-sale "
+                "inventory was found. No downloadable sale list or structured feed "
+                "was verified. County-specific source review checked 2026-11-02."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Cherokee County Clerk records discovery",
+            "directory_url": "https://www.co.cherokee.tx.us/ips/cms/index.html",
+            "source_url": "https://www.co.cherokee.tx.us/ips/cms/index.html",
+            "note": (
+                "The County office-directory routes redirected to the public "
+                "homepage. No online real-property-record search or dedicated "
+                "lis-pendens/default index was verified. No bulk export or "
+                "automated-access authorization was confirmed. County-specific "
+                "source review checked 2026-11-02."
+            ),
+        },
+    },
+    "Childress": {
+        "assessor": {
+            "directory_name": "Childress County Appraisal District property search",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/childress.php"
+            ),
+            "source_url": "https://www.childresscad.org/",
+            "note": (
+                "The Comptroller links this CAD site. Its Property Search page "
+                "provides interactive owner, property, and advanced searches, "
+                "but no bulk parcel export, refresh cadence, or automated-access "
+                "authorization was verified. County-specific source review "
+                "checked 2026-11-02."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Childress County Tax Assessor-Collector",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/childress.php"
+            ),
+            "source_url": "https://www.childresstx.us/",
+            "note": (
+                "The Comptroller says the County Tax Assessor-Collector does "
+                "not collect property taxes. The CAD and County pages exposed "
+                "no current delinquent-sale date, parcel list, or downloadable "
+                "sale file. County-specific source review checked 2026-11-02."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Childress County code-enforcement source discovery",
+            "directory_url": "https://www.childresstx.us/",
+            "source_url": "https://www.childresstx.us/",
+            "note": (
+                "The County site is a courthouse landing page and exposed no "
+                "countywide property-level code-enforcement list or permit "
+                "feed. Code enforcement is generally municipal; no city-specific "
+                "provider or update cadence was confirmed. County-specific "
+                "source review checked 2026-11-02."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Childress County foreclosure notice source discovery",
+            "directory_url": "https://www.childresstx.us/",
+            "source_url": "https://www.childresstx.us/",
+            "note": (
+                "The official County site exposed no Clerk foreclosure or "
+                "trustee-sale notice list; the tested Clerk route returned "
+                "HTTP 404. No current downloadable sale inventory or structured "
+                "feed was verified. County-specific source review checked "
+                "2026-11-02."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Childress County Clerk records source discovery",
+            "directory_url": "https://www.childresstx.us/",
+            "source_url": "https://www.childresstx.us/",
+            "note": (
+                "No online County Clerk real-property search or dedicated "
+                "lis-pendens/default index was found. No bulk export, refresh "
+                "cadence, or automated-access authorization was verified. "
+                "County-specific source review checked 2026-11-02."
+            ),
+        },
+    },
+    "Clay": {
+        "assessor": {
+            "directory_name": "Clay County Appraisal District property search",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/clay.php"
+            ),
+            "source_url": "https://www.claycad.org/",
+            "note": (
+                "The Comptroller links the CAD site, which returned HTTP 503; "
+                "its eSearch hostname failed DNS/host retrieval. No usable "
+                "property search, bulk export, or refresh cadence was verified. "
+                "County-specific source review checked 2026-11-02."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Clay County Tax Assessor-Collector",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/clay.php"
+            ),
+            "source_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/clay.php"
+            ),
+            "note": (
+                "The Comptroller says the County Tax Assessor-Collector does "
+                "not collect property taxes. No current delinquent-sale date, "
+                "parcel list, or downloadable tax-sale inventory was found. "
+                "County-specific source review checked 2026-11-02."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Clay County unincorporated zoning and building permits",
+            "directory_url": "https://www.claycountytx.net/county-clerk",
+            "source_url": (
+                "https://www.claycountytx.net/_files/ugd/"
+                "cb6725_4ec75839a27d4489a02552015790c25e.pdf"
+            ),
+            "status": "needs_feed_verification",
+            "note": (
+                "The County Clerk provides a zoning/building-permit document "
+                "for unincorporated areas, confirming county-level permit "
+                "activity, but no property-level code-violation or case feed "
+                "was found. County-specific source review checked 2026-11-02."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Clay County Clerk foreclosure notices",
+            "directory_url": "https://www.claycountytx.net/county-clerk",
+            "source_url": "http://216.213.122.247/foreclosures/index.asp",
+            "note": (
+                "The County Clerk's year-indexed portal lists individual "
+                "foreclosure notices for 2017-2026. The 2026 list includes "
+                "notices through October 28; a sample PDF downloaded as "
+                "262,453 bytes and two scanned, non-text-searchable pages. "
+                "No CSV or bulk export was found. County-specific source review "
+                "checked 2026-11-02."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Clay County Clerk real-property records",
+            "directory_url": "https://www.claycountytx.net/county-clerk",
+            "source_url": "https://www.claycountytx.net/county-clerk",
+            "note": (
+                "The Clerk says deed records are digitized back to the 1960s "
+                "but property records are currently not available online. The "
+                "foreclosure-notice portal is not a dedicated lis-pendens/"
+                "default index; no online pre-foreclosure search or bulk export "
+                "was verified. County-specific source review checked 2026-11-02."
+            ),
+        },
+    },
+    "Cochran": {
+        "assessor": {
+            "directory_name": "Cochran County Appraisal District property search",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/cochran.php"
+            ),
+            "source_url": "https://esearch.co.cochran.tx.us/",
+            "note": (
+                "The County Tax Assessor-Collector links an interactive "
+                "Property Search by owner, address, ID, or advanced criteria. "
+                "No bulk parcel export, refresh cadence, or automated-access "
+                "authorization was verified. County-specific source review "
+                "checked 2026-11-02."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Cochran County Tax Assessor-Collector",
+            "directory_url": (
+                "https://www.co.cochran.tx.us/page/"
+                "cochran.County.Assessor.Collector"
+            ),
+            "source_url": (
+                "https://www.co.cochran.tx.us/page/"
+                "cochran.County.Assessor.Collector"
+            ),
+            "note": (
+                "The County collects property taxes and its page links online "
+                "payments and the interactive property search, but no current "
+                "tax-sale date, parcel list, or downloadable sale file was "
+                "found. County-specific source review checked 2026-11-02."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Cochran County code-enforcement source discovery",
+            "directory_url": "https://www.co.cochran.tx.us/",
+            "source_url": "https://www.co.cochran.tx.us/",
+            "note": (
+                "The County pages reviewed exposed no countywide "
+                "property-level code-enforcement list or feed. Code enforcement "
+                "is generally municipal; no city-specific provider or update "
+                "cadence was confirmed. County-specific source review checked "
+                "2026-11-02."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Cochran County public notices and foreclosure source",
+            "directory_url": "https://www.co.cochran.tx.us/",
+            "source_url": "https://www.co.cochran.tx.us/",
+            "note": (
+                "The November 2026 County public-notices calendar showed no "
+                "foreclosure or trustee-sale listing; the tested Foreclosures "
+                "route returned HTTP 403. No current downloadable sale list or "
+                "structured feed was verified. County-specific source review "
+                "checked 2026-11-02."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Cochran County Clerk records source discovery",
+            "directory_url": (
+                "https://www.co.cochran.tx.us/page/cochran.County.Clerk"
+            ),
+            "source_url": "https://www.co.cochran.tx.us/page/cochran.County.Clerk",
+            "note": (
+                "The Clerk page provides office contacts only. No online "
+                "real-property-record search, dedicated lis-pendens/default "
+                "index, or bulk export was verified. County-specific source "
+                "review checked 2026-11-02."
+            ),
+        },
+    },
+    "Coke": {
+        "assessor": {
+            "directory_name": "Coke County Appraisal District property search",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/coke.php"
+            ),
+            "source_url": "https://cokecad.org/",
+            "note": (
+                "The CAD site loads a tax-transparency page and a search "
+                "loading placeholder, but no usable parcel search or bulk "
+                "export was verified. County-specific source review checked "
+                "2026-11-02."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Coke County Tax Assessor-Collector",
+            "directory_url": (
+                "https://www.co.coke.tx.us/page/"
+                "coke.County.Assessor.Collector"
+            ),
+            "source_url": (
+                "https://www.co.coke.tx.us/page/"
+                "coke.County.Assessor.Collector"
+            ),
+            "note": (
+                "The Comptroller lists the County as a collecting unit. The "
+                "Tax Assessor-Collector page provides office contacts but no "
+                "current tax-sale date, parcel list, or downloadable inventory. "
+                "County-specific source review checked 2026-11-02."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Coke County code-enforcement source discovery",
+            "directory_url": "https://www.co.coke.tx.us/",
+            "source_url": "https://www.co.coke.tx.us/",
+            "note": (
+                "The County pages reviewed exposed no countywide "
+                "property-level code-enforcement list or feed. Code enforcement "
+                "is generally municipal; no city-specific provider or update "
+                "cadence was confirmed. County-specific source review checked "
+                "2026-11-02."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Coke County Clerk foreclosure and trustee notices",
+            "directory_url": "https://www.co.coke.tx.us/page/coke.County.Clerk",
+            "source_url": "https://www.co.coke.tx.us/page/coke.County.Clerk",
+            "note": (
+                "The Clerk page links one Notice of Foreclosure Sale dated "
+                "October 6, 2026. Its PDF downloaded (185,494 bytes, four "
+                "scanned pages with no extractable text); that sale date had "
+                "passed by the review date. No current/future sale inventory "
+                "or structured export was verified. County-specific source "
+                "review checked 2026-11-02."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Coke County Clerk online property-record search",
+            "directory_url": "https://www.co.coke.tx.us/page/coke.County.Clerk",
+            "source_url": "https://countyfusion1.kofiletech.us/",
+            "note": (
+                "The Clerk page advertises online record search and a separate "
+                "bulk-property-record request form. The linked CountyFusion "
+                "landing page did not expose a Coke-specific search tenant; no "
+                "dedicated lis-pendens/default index, direct bulk download, or "
+                "automated-access authorization was verified. County-specific "
+                "source review checked 2026-11-02."
+            ),
+        },
+    },
+    "Coleman": {
+        "assessor": {
+            "directory_name": "Coleman County Appraisal District property search",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/coleman.php"
+            ),
+            "source_url": "https://colemancad.net/",
+            "note": (
+                "The Comptroller-linked CAD site returned an 'Agent' "
+                "placeholder and its eSearch host failed transport retrieval. "
+                "No usable property search, bulk export, or refresh cadence "
+                "was verified. County-specific source review checked "
+                "2026-11-02."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Coleman County Tax Assessor-Collector",
+            "directory_url": (
+                "https://www.colemancounty.gov/page/County.Assessor.Collector"
+            ),
+            "source_url": (
+                "https://www.colemancounty.gov/page/County.Assessor.Collector"
+            ),
+            "note": (
+                "The Comptroller says the County Tax Assessor-Collector does "
+                "not collect property taxes. Its County page provides office "
+                "contacts but no current tax-sale date, parcel list, or "
+                "downloadable inventory. County-specific source review checked "
+                "2026-11-02."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Coleman County code-enforcement source discovery",
+            "directory_url": "https://www.colemancounty.gov/",
+            "source_url": "https://www.colemancounty.gov/",
+            "note": (
+                "The County pages reviewed exposed no countywide "
+                "property-level code-enforcement list or permit feed. Code "
+                "enforcement is generally municipal; no city-specific provider "
+                "or update cadence was confirmed. County-specific source review "
+                "checked 2026-11-02."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Coleman County Clerk foreclosure source discovery",
+            "directory_url": "https://www.colemancounty.gov/page/County.Clerk",
+            "source_url": "https://www.colemancounty.gov/page/County.Clerk",
+            "note": (
+                "The Clerk page provides office contacts and property-filing "
+                "instructions but no current foreclosure/trustee-sale notice "
+                "list or downloadable inventory. County-specific source review "
+                "checked 2026-11-02."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Coleman County Clerk real-property records",
+            "directory_url": "https://www.colemancounty.gov/page/County.Clerk",
+            "source_url": "https://www.colemancounty.gov/page/County.Clerk",
+            "note": (
+                "The County Clerk page exposes no online real-property-record "
+                "search or dedicated lis-pendens/default index. No bulk export, "
+                "refresh cadence, or automated-access authorization was "
+                "verified. County-specific source review checked 2026-11-02."
+            ),
+        },
+    },
+    "Collin": {
+        "assessor": {
+            "directory_name": "Collin Central Appraisal District appraisal and GIS data",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/collin.php"
+            ),
+            "source_url": "https://collincad.org/open-data-portal/",
+            "note": (
+                "The CAD's Open Data page links to a downloadable parcel "
+                "shapefile with appraisal data; the ZIP endpoint returned "
+                "HTTP 200, application/zip, 160,703,674 bytes. A separate "
+                "80,766,747-byte property/ownership database ZIP is marked "
+                "for retirement. The Texas.gov catalog's filtered browse "
+                "view returned zero results, and the interactive eSearch "
+                "returned HTTP 403. The parcel download is verified, but "
+                "its update cadence and permission for automated access "
+                "were not documented."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Collin County Tax Assessor properties for sale",
+            "directory_url": (
+                "https://www.collincountytx.gov/tax-assessor/properties-for-sale"
+            ),
+            "source_url": (
+                "https://www.collincountytx.gov/courts/constables/constable-sales"
+            ),
+            "note": (
+                "The Tax Assessor directs users to monthly Constable Sales "
+                "notices. The Current Sales list said there were no items "
+                "at review; archived individual notices are listed from "
+                "2015. Sales are scheduled for the first Tuesday monthly. "
+                "No CSV or bulk sale-list download was verified."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Collin County code-enforcement source discovery",
+            "directory_url": "https://www.collincountytx.gov/",
+            "source_url": "https://www.collincountytx.gov/",
+            "note": (
+                "The County pages reviewed exposed no countywide "
+                "property-level code-enforcement case list or bulk feed. "
+                "Code enforcement is generally municipal; no countywide "
+                "provider, update cadence, or export was verified."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Collin County Clerk foreclosure notices",
+            "directory_url": "https://www.collincountytx.gov/county-clerk",
+            "source_url": "https://apps2.collincountytx.gov/ForeclosureNotices",
+            "note": (
+                "The Clerk's current HTML notice list shows property "
+                "addresses, recording dates, and sale dates, including "
+                "November 3 and December 1, 2026 and January 5, 2027. "
+                "The page exposed no CSV, spreadsheet, or bulk-download "
+                "link. No automated-access authorization was verified."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Collin County Clerk land-record search",
+            "directory_url": (
+                "https://www.collincountytx.gov/county-clerk/land-recordings"
+            ),
+            "source_url": "https://collin.tx.publicsearch.us/",
+            "note": (
+                "The Clerk links a general grantor/grantee, subdivision, "
+                "document-type, and document-number search, certified "
+                "through October 29, 2026. The County warns this online "
+                "database is a subset and may not be the complete official "
+                "record. No dedicated lis-pendens/default index or bulk "
+                "export was verified."
+            ),
+        },
+    },
+    "Collingsworth": {
+        "assessor": {
+            "directory_name": "Collingsworth County Appraisal District property search",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/collingsworth.php"
+            ),
+            "source_url": "https://www.collingsworthcad.org/",
+            "note": (
+                "The CAD offers interactive basic, property, and advanced "
+                "searches. Its Records | Data | Reports page showed only "
+                "a generic heading, with no bulk parcel file or export "
+                "verified. No data-refresh cadence or automated-access "
+                "authorization was documented."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Collingsworth County Tax Assessor-Collector",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/collingsworth.php"
+            ),
+            "source_url": "https://www.co.collingsworth.tx.us/",
+            "note": (
+                "The Comptroller says the County Tax Assessor-Collector "
+                "does not collect property taxes and directs users to the "
+                "CAD for collection details. County and CAD pages reviewed "
+                "showed no current tax-sale date, parcel list, or "
+                "downloadable inventory."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Collingsworth County code-enforcement source discovery",
+            "directory_url": "https://www.co.collingsworth.tx.us/",
+            "source_url": "https://www.co.collingsworth.tx.us/",
+            "note": (
+                "The County pages reviewed exposed no countywide "
+                "property-level code-enforcement list or permit feed. "
+                "Code enforcement is generally municipal; no city-specific "
+                "provider, case inventory, or update cadence was verified."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Collingsworth County foreclosure notices",
+            "directory_url": "https://www.co.collingsworth.tx.us/",
+            "source_url": (
+                "https://www.co.collingsworth.tx.us/upload/page/8123/"
+                "Notice%20of%20Substitute%20Trustee%20Sale.pdf"
+            ),
+            "note": (
+                "The County home page links a text-searchable substitute-"
+                "trustee notice PDF with a sale date of April 7, 2026, "
+                "which has passed. The Clerk page's 'Foreclosures-None' "
+                "statement is dated June 9, 2021. No current consolidated "
+                "sale list or CSV export was found."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Collingsworth County Clerk public records",
+            "directory_url": (
+                "https://www.co.collingsworth.tx.us/page/"
+                "collingsworth.County.Clerk"
+            ),
+            "source_url": (
+                "https://www.co.collingsworth.tx.us/page/"
+                "collingsworth.County.Clerk"
+            ),
+            "note": (
+                "The Clerk page provides recording contacts and fees but "
+                "no online real-property search or dedicated "
+                "lis-pendens/default index. No bulk export, refresh "
+                "cadence, or automated-access authorization was verified."
+            ),
+        },
+    },
+    "Colorado": {
+        "assessor": {
+            "directory_name": "Colorado County Appraisal District property search",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/colorado.php"
+            ),
+            "source_url": "https://esearch.coloradocad.org/",
+            "note": (
+                "The CAD's interactive eSearch displayed preliminary "
+                "2027 values. No bulk parcel download, documented export "
+                "endpoint, or automated-access authorization was verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Colorado County Tax Assessor-Collector",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/colorado.php"
+            ),
+            "source_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/colorado.php"
+            ),
+            "note": (
+                "The Comptroller says the County Tax Assessor-Collector "
+                "does not collect property taxes and directs users to the "
+                "CAD for collection details. No current tax-sale date, "
+                "parcel list, or downloadable sale inventory was found."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Colorado County Development, Floodplain, and Septic Permits",
+            "directory_url": (
+                "https://www.co.colorado.tx.us/page/"
+                "colorado.Permitting.Development.Floodplain.911RA.Septic"
+            ),
+            "source_url": (
+                "https://www.co.colorado.tx.us/page/"
+                "colorado.Permitting.Development.Floodplain.911RA.Septic"
+            ),
+            "status": "needs_feed_verification",
+            "note": (
+                "The County requires permits, inspections, and approval "
+                "for on-site sewage facilities, but the page provides "
+                "forms and office contacts rather than a property-level "
+                "violation or case list. No searchable enforcement feed "
+                "or bulk export was verified."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Colorado County foreclosure notices",
+            "directory_url": "https://www.co.colorado.tx.us/",
+            "source_url": (
+                "https://www.co.colorado.tx.us/page/colorado.PublicNotices"
+            ),
+            "note": (
+                "The County's Posted Notices page lists two November 3, "
+                "2026 foreclosure PDFs and a combined December 1 notice "
+                "PDF. Sample PDFs downloaded (978,736 bytes/3 pages and "
+                "6,336,116 bytes/60 pages) with extractable text. Notices "
+                "are individual PDFs; no CSV or bulk download was found."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Colorado County Clerk real-property records",
+            "directory_url": (
+                "https://www.co.colorado.tx.us/page/colorado.County.Clerk"
+            ),
+            "source_url": (
+                "https://www.co.colorado.tx.us/page/colorado.County.Clerk"
+            ),
+            "note": (
+                "The County Clerk page provides office and recording "
+                "information, but the links reviewed exposed no online "
+                "real-property-record search or dedicated "
+                "lis-pendens/default index. No bulk export was verified."
+            ),
+        },
+    },
+    "Comal": {
+        "assessor": {
+            "directory_name": "Comal County Appraisal District property search",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/comal.php"
+            ),
+            "source_url": "https://esearch.comalad.org/",
+            "note": (
+                "The CAD says its property site is updated each business "
+                "day and provides interactive property searches. No bulk "
+                "parcel export or automated-access authorization was "
+                "verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Comal County online delinquent tax sales",
+            "directory_url": "https://www.comalcounty.gov/371/Tax-Sales",
+            "source_url": (
+                "https://www.mvbataxsales.com/auction/"
+                "comal-county-online-property-tax-sale-november-3-2026-185/"
+                "bidgallery/"
+            ),
+            "note": (
+                "The County lists its last 2026 sale on November 3 and "
+                "tentative 2027 dates of March 2, June 1, August 3, and "
+                "November 2. MVBA's public searchable gallery showed 15 "
+                "lots (12 per page), including one withdrawn entry, but "
+                "no CSV/PDF bulk export. Registration is due by 5 p.m. "
+                "the prior day. A separate $40 delinquent-tax roll is "
+                "emailed after payment; it is not a direct download."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Comal County Environmental Enforcement",
+            "directory_url": (
+                "https://www.comalcounty.gov/812/Environmental-Enforcement"
+            ),
+            "source_url": (
+                "https://www.comalcounty.gov/274/Environmental-Health"
+            ),
+            "status": "needs_feed_verification",
+            "note": (
+                "County Environmental Enforcement handles sanitation "
+                "nuisances, public nuisances, litter, and on-site sewage "
+                "cases. Environmental Health provides public OSSF permit "
+                "and inspection searches, but no property-level violation "
+                "case list or bulk enforcement export was found."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Comal County Clerk foreclosure sales",
+            "directory_url": (
+                "https://www.comalcounty.gov/213/Foreclosure-Sales"
+            ),
+            "source_url": (
+                "https://www.comalcounty.gov/213/Foreclosure-Sales"
+            ),
+            "note": (
+                "The County page gives the first-Tuesday sale schedule "
+                "and designated locations but does not publish a current "
+                "property notice inventory or downloadable sale list. "
+                "No consolidated CSV or bulk notice export was verified."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Comal County Clerk Land Records Online",
+            "directory_url": "https://comal.landrecordsonline.com/",
+            "source_url": "https://comal.landrecordsonline.com/",
+            "note": (
+                "The Clerk's general land-record portal offers full-field "
+                "search and records from sovereignty to present. Pay-as-"
+                "you-go access is listed at $0 per month; official images "
+                "cost $1 per page. The portal is not a dedicated "
+                "lis-pendens/default index, and no bulk export was "
+                "verified."
+            ),
+        },
+    },
+    "Comanche": {
+        "assessor": {
+            "directory_name": "Comanche County Appraisal District property search",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/comanche.php"
+            ),
+            "source_url": "https://esearch.comanchecad.org/",
+            "note": (
+                "The CAD eSearch provides interactive owner, address, ID, "
+                "and advanced searches. No bulk parcel export, documented "
+                "refresh cadence, or automated-access authorization was "
+                "verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Comanche County Tax Assessor-Collector",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/comanche.php"
+            ),
+            "source_url": "https://www.comanchecountytx.gov/",
+            "note": (
+                "The Comptroller identifies Comanche County as a collecting "
+                "unit. The County pages reviewed exposed no current "
+                "delinquent-tax sale date, lot list, or downloadable tax-sale "
+                "roll. The November 3 calendar items are trustee sales, not "
+                "a verified tax-sale inventory."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Comanche County code-enforcement source discovery",
+            "directory_url": "https://www.comanchecountytx.gov/",
+            "source_url": "https://www.comanchecountytx.gov/",
+            "note": (
+                "The County pages reviewed exposed no countywide "
+                "property-level code-enforcement list or permit feed. "
+                "Code enforcement is generally municipal; no provider, "
+                "case inventory, or update cadence was verified."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Comanche County trustee-sale calendar",
+            "directory_url": (
+                "https://www.comanchecountytx.gov/210/Foreclosure-Notices"
+            ),
+            "source_url": (
+                "https://www.comanchecountytx.gov/calendar.aspx?"
+                "view=list&year=2026&month=11&day=3&CID=22,14"
+            ),
+            "note": (
+                "The County calendar showed two November 3, 2026 trustee "
+                "sales, each with an individual PDF notice. Sample "
+                "two-page and six-page PDFs downloaded (105,482 and "
+                "203,252 bytes) but contained no extractable text. The "
+                "Foreclosure Notices page provides sale-location details "
+                "only; no combined inventory or bulk export was found."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Comanche County Clerk Land Records",
+            "directory_url": "https://www.comanchecountytx.gov/",
+            "source_url": "https://www.edoctecinc.com/Comanche",
+            "note": (
+                "The County Clerk's public-service portal provides a "
+                "general year-indexed document search from 1977 through "
+                "2026; the landing page showed 2,779 documents for 2026. "
+                "Certified copies cost $1 per page plus $5 per document. "
+                "No dedicated lis-pendens/default index or bulk export "
+                "was verified."
+            ),
+        },
+    },
+    "Concho": {
+        "assessor": {
+            "directory_name": "Concho County Appraisal District property search",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/concho.php"
+            ),
+            "source_url": "https://esearch.conchocad.org/",
+            "note": (
+                "The CAD eSearch offers interactive owner, address, ID, and "
+                "advanced searches and showed preliminary 2026 values. No "
+                "bulk parcel export, documented refresh cadence, or "
+                "automated-access authorization was verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Concho County Foreclosures/Tax/Trustee Sales",
+            "directory_url": (
+                "https://www.co.concho.tx.us/page/"
+                "concho.foreclosures.tax.trustee%20sales"
+            ),
+            "source_url": (
+                "https://www.co.concho.tx.us/page/"
+                "concho.foreclosures.tax.trustee%20sales"
+            ),
+            "note": (
+                "The Comptroller says the County Tax Assessor-Collector "
+                "does not collect property taxes. The County page posted an "
+                "October 6, 2026 tax-sale PDF (1,259,128 bytes, three "
+                "largely image-only pages), which has passed. No current "
+                "tax-sale inventory or combined export was found. The "
+                "November 3 notice is a trustee sale, not a tax sale."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Concho County code-enforcement source discovery",
+            "directory_url": "https://www.co.concho.tx.us/",
+            "source_url": "https://www.co.concho.tx.us/",
+            "status": "municipal_scope",
+            "note": (
+                "The County pages reviewed exposed no countywide "
+                "property-level code-enforcement list or permit feed. "
+                "No case inventory, public export, or update cadence was "
+                "verified."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Concho County substitute-trustee sale notices",
+            "directory_url": (
+                "https://www.co.concho.tx.us/page/"
+                "concho.foreclosures.tax.trustee%20sales"
+            ),
+            "source_url": (
+                "https://www.co.concho.tx.us/page/"
+                "concho.foreclosures.tax.trustee%20sales"
+            ),
+            "note": (
+                "The County page posted a November 3, 2026 substitute-"
+                "trustee-sale PDF (52,113 bytes, three image-only pages) "
+                "and older notices. No consolidated foreclosure inventory "
+                "or bulk export was found. The October 6 notice is a tax "
+                "sale and is tracked separately."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Concho County Clerk online records",
+            "directory_url": (
+                "https://www.co.concho.tx.us/page/concho.County.Clerk"
+            ),
+            "source_url": "https://public.lgsonlinesolutions.com/ors.html",
+            "note": (
+                "The Clerk says digital records are online and updated "
+                "nightly; bulk data images or indexes require a request "
+                "form. This is a general records search, not a dedicated "
+                "lis-pendens/default index, and no public direct bulk "
+                "export was verified."
+            ),
+        },
+    },
+    "Cooke": {
+        "assessor": {
+            "directory_name": "Cooke County Appraisal District property search",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/cooke.php"
+            ),
+            "source_url": "https://cookecad.org/",
+            "note": (
+                "The CAD's public property-search app is reachable for "
+                "owner, address, or property-ID searches. No bulk parcel "
+                "download or export control, documented refresh cadence, "
+                "or automated-access authorization was verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Cooke County Tax Assessor-Collector",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/cooke.php"
+            ),
+            "source_url": "https://www.co.cooke.tx.us/page/cooke.TAC",
+            "note": (
+                "The Comptroller says the County Tax Assessor-Collector "
+                "does not collect property taxes; the County directs "
+                "property-tax payments to the CAD. County and CAD pages "
+                "reviewed exposed no current tax-sale list or downloadable "
+                "inventory."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Cooke County OSSF permits and inspections",
+            "directory_url": "https://www.co.cooke.tx.us/page/cooke.Septic",
+            "source_url": "https://www.co.cooke.tx.us/page/cooke.Septic",
+            "status": "municipal_scope",
+            "note": (
+                "The County's OSSF page provides permit-process forms and "
+                "an inspector contact, but no property-level case or "
+                "violation list. No countywide code-enforcement feed, "
+                "public export, or update cadence was verified."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Cooke County Clerk foreclosure notices",
+            "directory_url": (
+                "https://www.co.cooke.tx.us/page/cooke.County.Clerk"
+            ),
+            "source_url": (
+                "https://www.co.cooke.tx.us/page/cooke.ForeclosureNotices"
+            ),
+            "note": (
+                "The Clerk lists individual PDFs for seven November 3, "
+                "2026 sales, two December 1 sales, and one January 5, 2027 "
+                "sale. A November sample downloaded (807,880 bytes; "
+                "extractable text). No combined inventory or bulk export "
+                "was found."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Cooke County Clerk real-property search",
+            "directory_url": (
+                "https://www.co.cooke.tx.us/page/cooke.County.Clerk"
+            ),
+            "source_url": (
+                "https://i2i.uslandrecords.com/TX/Cooke/D/Default.aspx"
+            ),
+            "note": (
+                "The Clerk links a free general real-property/land-record "
+                "search. No dedicated lis-pendens/default index, bulk "
+                "export, or automated-access authorization was verified."
+            ),
+        },
+    },
+    "Coryell": {
+        "assessor": {
+            "directory_name": "Coryell Central Appraisal District parcel data",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/coryell.php"
+            ),
+            "source_url": (
+                "https://coryellcad.org/wp-content/uploads/2026/02/Parcels.zip"
+            ),
+            "note": (
+                "The CAD's parcel ZIP downloaded successfully (7,160,617 "
+                "bytes); ZIP integrity passed and it contains eight "
+                "shapefile components. The CAD also links an interactive "
+                "eSearch. No documented refresh cadence or authorization "
+                "for automated downloads was verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Coryell County Tax Office monthly sale schedule",
+            "directory_url": "https://coryellcountytax.com/",
+            "source_url": "https://mvbalaw.com/tax-sales/month-sales/",
+            "note": (
+                "The County Tax Office links MVBA's monthly schedule. "
+                "Coryell was not listed for the November 3 or December 1, "
+                "2026 sales; no current Coryell tax-sale list or "
+                "downloadable lot inventory was found."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Coryell County development and permit source discovery",
+            "directory_url": "https://www.coryellcounty.org/",
+            "source_url": "https://www.coryellcounty.org/",
+            "status": "municipal_scope",
+            "note": (
+                "County development and permitting pages cover subdivision, "
+                "fence, mailbox, culvert/driveway, and utility-excavation "
+                "permits, but no property-level code case or violation feed "
+                "was found."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Coryell County Clerk foreclosure sales",
+            "directory_url": "https://coryellcountyclerk.com/foreclosure-sales/",
+            "source_url": "https://coryellcountyclerk.com/2026-foreclosure-sales/",
+            "note": (
+                "The monthly Clerk pages list individual notice PDFs. The "
+                "November 2026 page was empty; the December page listed "
+                "eight properties, and a sample notice downloaded "
+                "(49,620 bytes). No combined CSV or bulk export was found."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Coryell County Clerk public records search",
+            "directory_url": "https://coryellcountyclerk.com/",
+            "source_url": "http://24.173.220.132/CoryellPublicRecords",
+            "note": (
+                "The Clerk links a general record search advertised as "
+                "available 24/7, with documents downloadable after "
+                "purchase. No dedicated lis-pendens/default index or bulk "
+                "export was verified."
+            ),
+        },
+    },
+    "Cottle": {
+        "assessor": {
+            "directory_name": "Cottle County Appraisal District property search",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/cottle.php"
+            ),
+            "source_url": "https://www.cottlecad.org/",
+            "note": (
+                "The CAD site provides interactive owner, address, ID, "
+                "and advanced property searches. No bulk parcel download "
+                "or export control, documented refresh cadence, or "
+                "automated-access authorization was verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Cottle County Tax Assessor-Collector",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/cottle.php"
+            ),
+            "source_url": (
+                "https://www.cottlecountytx.gov/page/County.Assessor.Collector"
+            ),
+            "note": (
+                "The Comptroller says the County Tax Assessor-Collector "
+                "does not collect property taxes. County and CAD pages "
+                "reviewed showed no current tax-sale date, lot list, or "
+                "downloadable inventory."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Cottle County code-enforcement source discovery",
+            "directory_url": "https://www.cottlecountytx.gov/",
+            "source_url": "https://www.cottlecountytx.gov/",
+            "status": "municipal_scope",
+            "note": (
+                "The County pages reviewed exposed no countywide "
+                "property-level code-enforcement list or permit feed. "
+                "No case inventory or public export was verified."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Cottle County Clerk foreclosure notices",
+            "directory_url": (
+                "https://www.cottlecountytx.gov/page/County.Clerk"
+            ),
+            "source_url": (
+                "https://www.cottlecountytx.gov/page/County.Clerk"
+            ),
+            "note": (
+                "The Clerk page links an individual March 26, 2025 "
+                "foreclosure notice and an April 14, 2023 sale posting; "
+                "both are stale. The public calendar showed only an "
+                "unrelated 2022 lightbox demo. No current sale list or "
+                "combined export was found."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Cottle County Clerk public records discovery",
+            "directory_url": (
+                "https://www.cottlecountytx.gov/page/County.Clerk"
+            ),
+            "source_url": (
+                "https://www.cottlecountytx.gov/page/County.Clerk"
+            ),
+            "note": (
+                "The Clerk page provides office contact details and "
+                "foreclosure notices, but no online real-property search "
+                "or dedicated lis-pendens/default index was found."
+            ),
+        },
+    },
+    "Crane": {
+        "assessor": {
+            "directory_name": "Crane County Appraisal District data records",
+            "directory_url": "https://www.cranecad.org/home/DataRecords",
+            "source_url": (
+                "https://www.cranecad.org/Forms/ExcelDownload?"
+                "subPath=Data%20Records&fileName=1784721768_2026+Crane+CAD+"
+                "Certified+Appraisal+Roll+-+Real-Personal++-+Excel+-+"
+                "20260716_204247.csv"
+            ),
+            "note": (
+                "The CAD public search offers result and grid CSV exports. "
+                "Its 2026 certified real/personal appraisal-roll CSV also "
+                "downloaded directly (2,369,865 bytes; application/vnd.ms-"
+                "excel). This is a parcel/appraisal roll, not sale data; "
+                "no automated-access authorization was documented."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Crane County Tax Assessor-Collector",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/crane.php"
+            ),
+            "source_url": (
+                "https://www.co.crane.tx.us/page/"
+                "crane.County.Assessor.Collector"
+            ),
+            "note": (
+                "The Comptroller identifies Crane County as a collecting "
+                "unit. The Tax Office page offers online tax payments, "
+                "but no current tax-sale list, auction date, or "
+                "downloadable inventory was found."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Crane County code-enforcement source discovery",
+            "directory_url": "https://www.co.crane.tx.us/",
+            "source_url": "https://www.co.crane.tx.us/",
+            "status": "municipal_scope",
+            "note": (
+                "The County pages reviewed exposed no countywide "
+                "property-level code-enforcement list or permit feed. "
+                "No case inventory, public export, or update cadence was "
+                "verified."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Crane County Clerk foreclosure notices",
+            "directory_url": (
+                "https://www.co.crane.tx.us/page/crane.County.Clerk"
+            ),
+            "source_url": (
+                "https://www.co.crane.tx.us/page/crane.County.Clerk"
+            ),
+            "note": (
+                "The Clerk lists individual 2026 foreclosure PDFs through "
+                "October 6, now past. A sample downloaded (751,054 bytes, "
+                "one page, with extractable text). No current November/"
+                "December list or combined export was found."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Crane County Clerk online records",
+            "directory_url": (
+                "https://www.co.crane.tx.us/page/crane.County.Clerk"
+            ),
+            "source_url": (
+                "https://cranetx.countygovernmentrecords.com/CraneTX/web/"
+            ),
+            "note": (
+                "The Clerk links a general records-search portal; its "
+                "disclaimer says the index is only a guide to documents. "
+                "No dedicated lis-pendens/default index or bulk export "
+                "was verified."
+            ),
+        },
+    },
+    "Crockett": {
+        "assessor": {
+            "directory_name": "Crockett County Appraisal District data records",
+            "directory_url": "https://www.crockettcad.org/home/DataRecords",
+            "source_url": (
+                "https://www.crockettcad.org/Forms/ExcelDownload?"
+                "subPath=Data%20Records&fileName=1784308207_2026+Crockett+"
+                "CAD+Certified+Appraisal+Roll+-+Real-Personal++-+Excel+-+"
+                "20260715_150157.csv"
+            ),
+            "note": (
+                "The CAD offers interactive property search and a 2026 "
+                "certified real/personal appraisal-roll CSV. The CSV "
+                "downloaded directly (4,053,966 bytes; application/vnd.ms-"
+                "excel). No documented refresh cadence or authorization "
+                "for automated downloads was found."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Crockett County Tax Assessor-Collector",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/crockett.php"
+            ),
+            "source_url": "https://www.crockettcountytax.org/",
+            "note": (
+                "The Comptroller identifies Crockett County as a collecting "
+                "unit. The County Tax Office portal provides property "
+                "search and tax payment, but County/CAD pages reviewed "
+                "showed no current tax-sale date, lot list, or "
+                "downloadable auction inventory."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Crockett County code-enforcement source discovery",
+            "directory_url": "https://www.co.crockett.tx.us/",
+            "source_url": (
+                "https://www.co.crockett.tx.us/page/crockett.PublicNotices"
+            ),
+            "status": "municipal_scope",
+            "note": (
+                "The County publishes a floodplain-development permit "
+                "application, but no property-level code case or violation "
+                "list, countywide enforcement feed, or public export was "
+                "found."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Crockett County Clerk foreclosure notices",
+            "directory_url": (
+                "https://www.co.crockett.tx.us/page/crockett.CountyClerk"
+            ),
+            "source_url": (
+                "https://www.co.crockett.tx.us/page/crockett.PublicNotices"
+            ),
+            "note": (
+                "The County Clerk page provides office contacts but no "
+                "current foreclosure inventory. The public-notices calendar "
+                "showed only an unrelated October 13, 2022 lightbox demo; "
+                "no current notices or downloadable sale list were found."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Crockett County Clerk property records",
+            "directory_url": (
+                "https://www.co.crockett.tx.us/page/crockett.CountyClerk"
+            ),
+            "source_url": (
+                "https://www.co.crockett.tx.us/page/crockett.CountyClerk"
+            ),
+            "note": (
+                "The County Clerk page provides office contacts but no "
+                "online real-property search. No dedicated lis-pendens/"
+                "default index or bulk-record export was verified."
+            ),
+        },
+    },
+    "Crosby": {
+        "assessor": {
+            "directory_name": "Crosby Central Appraisal District data records",
+            "directory_url": "https://crosbycentral.org/home/DataRecords",
+            "source_url": (
+                "https://crosbycentral.org/Forms/ExcelDownload?"
+                "subPath=Data%20Records&fileName=1784555049_2026+Crosby+"
+                "CAD+Certified+Appraisal+Roll+-+Real-Personal++-+Excel+-+"
+                "20260714_091028.csv"
+            ),
+            "note": (
+                "The CAD provides interactive property search and a 2026 "
+                "certified real/personal appraisal-roll CSV. The CSV "
+                "downloaded directly (2,707,429 bytes; application/vnd.ms-"
+                "excel). No documented refresh cadence or authorization "
+                "for automated downloads was found."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Crosby County Tax Assessor-Collector",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/crosby.php"
+            ),
+            "source_url": "https://crosbycentral.org/",
+            "note": (
+                "The Comptroller says the County Tax Assessor-Collector "
+                "does not collect property taxes; the CAD offers online "
+                "payment. County/CAD pages reviewed showed no current "
+                "tax-sale date, lot list, or downloadable sale inventory."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Crosby County code-enforcement source discovery",
+            "directory_url": "https://www.co.crosby.tx.us/",
+            "source_url": "https://www.co.crosby.tx.us/page/crosby.Public.Notices",
+            "status": "municipal_scope",
+            "note": (
+                "County public notices and office pages reviewed exposed no "
+                "countywide property-level code-enforcement list, violation "
+                "feed, or public export."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Crosby County Clerk foreclosure notices",
+            "directory_url": (
+                "https://www.co.crosby.tx.us/page/crosby.County.Clerk"
+            ),
+            "source_url": (
+                "https://www.co.crosby.tx.us/page/crosby.County.Clerk"
+            ),
+            "note": (
+                "The Clerk lists a December 1, 2026 substitute-trustee "
+                "notice PDF and individual earlier 2026 notices. The "
+                "December PDF downloaded (216,256 bytes); no combined "
+                "foreclosure inventory or bulk export was found."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Crosby County Clerk public records discovery",
+            "directory_url": (
+                "https://www.co.crosby.tx.us/page/crosby.County.Clerk"
+            ),
+            "source_url": (
+                "https://www.co.crosby.tx.us/page/crosby.County.Clerk"
+            ),
+            "note": (
+                "The County Clerk page provides office contacts and "
+                "individual foreclosure notices, but no online real-property "
+                "search or dedicated lis-pendens/default index was found."
+            ),
+        },
+    },
+    "Culberson": {
+        "assessor": {
+            "directory_name": "Culberson County Appraisal District data records",
+            "directory_url": "https://www.culbersoncad.org/home/DataRecords",
+            "source_url": (
+                "https://www.culbersoncad.org/Forms/ExcelDownload?"
+                "subPath=Data%20Records&fileName=1784130610_2026+Culberson+"
+                "CAD+Certified+Appraisal+Roll+-+Real-Personal++-+Excel+-+"
+                "20260710_092122.csv"
+            ),
+            "note": (
+                "The CAD offers interactive property search and a 2026 "
+                "certified real/personal appraisal-roll CSV. The CSV "
+                "downloaded directly (5,231,474 bytes; application/vnd.ms-"
+                "excel); a separate certified mineral-roll ZIP is also "
+                "listed. No automated-access authorization was documented."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Culberson County Tax Assessor-Collector",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/culberson.php"
+            ),
+            "source_url": (
+                "https://www.co.culberson.tx.us/page/County.Assessor.Collector"
+            ),
+            "note": (
+                "The Comptroller identifies Culberson County as a collecting "
+                "unit, and the CAD links online tax payment. County and CAD "
+                "pages reviewed exposed no current tax-sale date, property "
+                "list, or downloadable auction inventory."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Culberson County code-enforcement source discovery",
+            "directory_url": "https://www.co.culberson.tx.us/",
+            "source_url": "https://www.co.culberson.tx.us/page/PublicNotices",
+            "status": "municipal_scope",
+            "note": (
+                "The County public-notices page showed only an unrelated "
+                "October 13, 2022 lightbox demo. No countywide property-level "
+                "code-enforcement list, permit feed, or public export was "
+                "found."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Culberson County Clerk foreclosure notices",
+            "directory_url": "https://www.co.culberson.tx.us/page/County.Clerk",
+            "source_url": "https://www.co.culberson.tx.us/page/PublicNotices",
+            "note": (
+                "The Clerk and public-notices pages reviewed exposed no "
+                "current foreclosure notice inventory or downloadable sale "
+                "list. The calendar page showed only an unrelated 2022 "
+                "lightbox demo."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Culberson County Clerk property records",
+            "directory_url": "https://www.co.culberson.tx.us/page/County.Clerk",
+            "source_url": "https://www.co.culberson.tx.us/page/County.Clerk",
+            "note": (
+                "The County Clerk page provides office information but no "
+                "online real-property search. No dedicated lis-pendens/"
+                "default index or bulk-record export was verified."
+            ),
+        },
+    },
+    "Dallam": {
+        "assessor": {
+            "directory_name": "Dallam County Appraisal District property data",
+            "directory_url": "https://dallamcad.org/",
+            "source_url": "https://texascountygisdata.com/product/dallam-county-shapefile-and-property-data/",
+            "note": (
+                "The CAD links an interactive eSearch and a third-party "
+                "GIS product with parcel ownership and boundaries listed "
+                "for $275. No free CAD bulk parcel download or export was "
+                "verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Dallam County appraisal-district tax collection",
+            "directory_url": "https://www.dallam.org/",
+            "source_url": "https://dallamcad.org/tax-information-2/",
+            "note": (
+                "The County homepage states that beginning in October 2026 "
+                "the CAD manages Dallam County tax collections; this updates "
+                "the older Comptroller listing. CAD tax pages show rates "
+                "and statutory deadlines, not a current tax-sale date, "
+                "property list, or downloadable auction inventory."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Dallam County code-enforcement source discovery",
+            "directory_url": "https://www.dallam.org/",
+            "source_url": "https://www.dallam.org/county/main.shtml",
+            "status": "municipal_scope",
+            "note": (
+                "The County site lists subdivision regulations but no "
+                "property-level code case or violation list, countywide "
+                "enforcement feed, or public export."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Dallam County Clerk foreclosure notices",
+            "directory_url": "https://www.dallam.org/county/clerk.shtml",
+            "source_url": "https://www.dallam.org/county/clerk.shtml",
+            "note": (
+                "The Clerk describes foreclosure notices among its filing "
+                "responsibilities, but the County site exposes no current "
+                "notice inventory, sale calendar, or downloadable list."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Dallam County Clerk real-estate records",
+            "directory_url": "https://www.dallam.org/county/clerk.shtml",
+            "source_url": "https://www.dallam.org/county/clerk.shtml",
+            "note": (
+                "The Clerk records and indexes real-estate instruments, "
+                "but its website links no public online search portal. "
+                "No dedicated lis-pendens/default index or bulk-record "
+                "export was verified."
+            ),
+        },
+    },
+    "Dallas": {
+        "assessor": {
+            "directory_name": "Dallas Central Appraisal District data products",
+            "directory_url": "https://www.dallascad.org/DataProducts.aspx",
+            "source_url": "https://www.dallascad.org/DataProducts.aspx",
+            "note": (
+                "The CAD lists a current 2027-ownership ZIP and certified "
+                "roll files. The 2027 data ZIP returned HTTP 200 with a "
+                "ZIP signature (171,638,690 bytes); property search is also "
+                "available by owner, account, or address. No automated-"
+                "access authorization was documented."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Dallas County Tax Office weekly tax roll",
+            "directory_url": "https://www.dallascounty.org/departments/tax/tax-roll.php",
+            "source_url": (
+                "https://www.dallascounty.org/Assets/uploads/docs/tax/trw/"
+                "trwfile.757477.zip"
+            ),
+            "note": (
+                "The Tax Office says its ASCII Tax Roll (TRW) includes "
+                "current and delinquent accounts and is posted weekly. The "
+                "ZIP downloaded (275,724,261 bytes). This is an account "
+                "roll, not an auction lot list; no separate current tax-sale "
+                "inventory was found on the County Tax Office pages reviewed."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Dallas County Unincorporated Area Services",
+            "directory_url": "https://www.dallascounty.org/departments/duas/",
+            "source_url": (
+                "https://www.dallascounty.org/departments/duas/applications-permits.php"
+            ),
+            "status": "municipal_scope",
+            "note": (
+                "DUAS administers regulations in unincorporated areas and "
+                "publishes development, floodplain, and driveway/culvert "
+                "permit applications. No property-level code-violation "
+                "inventory, public export, or update cadence was found."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Dallas County Clerk foreclosure notices",
+            "directory_url": (
+                "https://www.dallascounty.org/government/county-clerk/"
+                "recording/foreclosures.php"
+            ),
+            "source_url": "https://dallas.tx.publicsearch.us/",
+            "note": (
+                "The Clerk directs users to Official Records Search for "
+                "notices filed on or after February 24, 2026; it supports "
+                "the Foreclosure filter and sale-date/city filters. The "
+                "interactive search exposes no combined sale download or "
+                "CSV export."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Dallas County Clerk Official Records Search",
+            "directory_url": (
+                "https://www.dallascounty.org/government/county-clerk/recording/"
+            ),
+            "source_url": "https://dallas.tx.publicsearch.us/",
+            "note": (
+                "The Clerk's general property-record search supports "
+                "grantor/grantee, subdivision, document type, and document "
+                "number searches, with index-only or OCR search. It is not "
+                "a dedicated lis-pendens/default index and no bulk export "
+                "was verified."
+            ),
+        },
+    },
+    "Dawson": {
+        "assessor": {
+            "directory_name": "Dawson County Central Appraisal District data and records",
+            "directory_url": "https://www.dawsoncad.org/home/DataRecords",
+            "source_url": "https://www.dawsoncad.org/home",
+            "note": (
+                "The CAD provides interactive owner and property searches. Its "
+                "Data and Records page lists notices and reports, but no current "
+                "certified parcel-roll CSV/ZIP or bulk export/API was verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Dawson County Tax Assessor-Collector",
+            "directory_url": (
+                "https://www.co.dawson.tx.us/page/dawson.County.Assessor.Collector"
+            ),
+            "source_url": (
+                "https://www.co.dawson.tx.us/page/dawson.County.Assessor.Collector"
+            ),
+            "note": (
+                "The Comptroller says the County Tax Assessor-Collector does not "
+                "collect property taxes; the County page provides office and "
+                "vehicle-registration information. No current delinquent-tax "
+                "auction date, property list, or downloadable sale inventory was "
+                "found in the County/CAD pages reviewed."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Dawson County code-enforcement source discovery",
+            "directory_url": "https://www.co.dawson.tx.us/",
+            "source_url": "https://www.co.dawson.tx.us/",
+            "status": "municipal_scope",
+            "note": (
+                "The County site provides courthouse and office information but "
+                "no property-level code case list or countywide enforcement feed. "
+                "Code enforcement is generally municipal; no public export or "
+                "update cadence was verified."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Dawson County Clerk foreclosure notices",
+            "directory_url": "https://www.co.dawson.tx.us/page/dawson.County.Clerk",
+            "source_url": "https://www.co.dawson.tx.us/page/dawson.County.Clerk",
+            "note": (
+                "The County Clerk page provides office contacts but no current "
+                "foreclosure notice inventory, sale calendar, or downloadable "
+                "list. No county-hosted bulk feed was verified."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Dawson County Clerk real-property records",
+            "directory_url": "https://www.co.dawson.tx.us/page/dawson.County.Clerk",
+            "source_url": "https://www.co.dawson.tx.us/page/dawson.County.Clerk",
+            "note": (
+                "The County Clerk page exposes contact information but no online "
+                "real-property search. No dedicated lis-pendens/default index, "
+                "bulk export, or refresh cadence was verified."
+            ),
+        },
+    },
+    "Deaf Smith": {
+        "assessor": {
+            "directory_name": "Deaf Smith County Appraisal District property search",
+            "directory_url": "https://deafsmithcad.org/",
+            "source_url": "https://esearch.deafsmithcad.org/",
+            "note": (
+                "The CAD eSearch supports interactive owner, address, ID, and "
+                "advanced searches. No countywide parcel-roll CSV/ZIP, bulk "
+                "export, or public API was verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Deaf Smith County tax collection and sale discovery",
+            "directory_url": (
+                "https://www.co.deaf-smith.tx.us/page/deafsmith.County.Assessor.Collector"
+            ),
+            "source_url": "https://deafsmithcad.org/",
+            "note": (
+                "The Comptroller says the County Tax Assessor-Collector does not "
+                "collect property taxes; the CAD says it collects for several "
+                "local taxing units. No current delinquent-tax sale date, lot "
+                "list, or downloadable auction inventory was found on the "
+                "County/CAD pages reviewed."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Deaf Smith County code-enforcement source discovery",
+            "directory_url": "https://www.co.deaf-smith.tx.us/",
+            "source_url": "https://www.co.deaf-smith.tx.us/page/deafsmith.County.Clerk",
+            "status": "municipal_scope",
+            "note": (
+                "The County Clerk page provides on-site sewage permit forms, "
+                "not a property-level code-violation search or case feed. Code "
+                "enforcement is generally municipal; no countywide public export "
+                "or update cadence was verified."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Deaf Smith County public notices",
+            "directory_url": (
+                "https://www.co.deaf-smith.tx.us/page/deafsmith.Public.Notices"
+            ),
+            "source_url": (
+                "https://www.co.deaf-smith.tx.us/page/deafsmith.Public.Notices"
+            ),
+            "note": (
+                "The County public-notices calendar showed an unrelated October "
+                "13, 2022 lightbox demo, not current foreclosure notices. No "
+                "current countywide sale list, downloadable inventory, or "
+                "recurring notice feed was found."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Deaf Smith County Clerk official-records access",
+            "directory_url": "https://www.co.deaf-smith.tx.us/page/deafsmith.County.Clerk",
+            "source_url": "https://public.lgsonlinesolutions.com/ors.html",
+            "note": (
+                "The Clerk links LGS Public Online Access and other deed-record "
+                "services. This is general official-record search, not a "
+                "dedicated lis-pendens/default index; no bulk export or "
+                "automated-access authorization was verified."
+            ),
+        },
+    },
+    "Delta": {
+        "assessor": {
+            "directory_name": "Delta County Appraisal District property search",
+            "directory_url": "https://delta-cad.org/",
+            "source_url": "https://esearch.delta-cad.org/",
+            "note": (
+                "The CAD eSearch supports interactive owner, address, ID, and "
+                "advanced searches. No countywide parcel-roll CSV/ZIP, bulk "
+                "export, or public API was verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Delta County delinquent tax sales",
+            "directory_url": (
+                "https://www.deltacountytx.com/tax-assessor-collector/"
+                "page/delinquent-tax-sales-0"
+            ),
+            "source_url": (
+                "https://www.deltacountytx.com/tax-assessor-collector/"
+                "page/delinquent-tax-sales-0"
+            ),
+            "note": (
+                "The County says sale lists are advertised in The Cooper Review "
+                "and posted at the courthouse and on its Public Notices page. "
+                "The sale page currently shows an April 1, 2025 sale and links "
+                "2025/2024 notice PDFs, with no current auction list or data "
+                "feed. A direct PDF request returned HTTP 403 (Cloudflare "
+                "challenge), so file retrieval was not verified."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Delta County code-enforcement source discovery",
+            "directory_url": "https://www.deltacountytx.com/",
+            "source_url": "https://www.deltacountytx.com/public-notices",
+            "status": "municipal_scope",
+            "note": (
+                "The County public-notices page lists general notices but no "
+                "property-level code cases or countywide enforcement feed. "
+                "Code enforcement is generally municipal; no public export or "
+                "update cadence was verified."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Delta County public notices",
+            "directory_url": "https://www.deltacountytx.com/public-notices",
+            "source_url": "https://www.deltacountytx.com/public-notices",
+            "note": (
+                "The County's public-notices page includes archived tax-sale "
+                "notices, including a September 3, 2024 PDF, but no current "
+                "mortgage-foreclosure inventory or combined sale export was "
+                "verified. The tax-sale page's latest listed date is April 1, "
+                "2025."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Delta County Clerk records discovery",
+            "directory_url": "https://www.deltacountytx.com/",
+            "source_url": "https://www.deltacountytx.com/public-notices",
+            "note": (
+                "The accessible County pages reviewed exposed no public "
+                "real-property records search or dedicated lis-pendens/default "
+                "index. No bulk-record export or refresh cadence was verified."
+            ),
+        },
+    },
+    "Denton": {
+        "assessor": {
+            "directory_name": "Denton Central Appraisal District property search",
+            "directory_url": "https://www.dentoncad.com/",
+            "source_url": "https://www.dentoncad.com/",
+            "note": (
+                "The CAD's current site links an interactive property search "
+                "for values, ownership, tax information, and history. No "
+                "countywide appraisal-roll download, bulk export, or public "
+                "API was verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Denton County tax sales and Sheriff auction information",
+            "directory_url": "https://www.dentoncounty.gov/293/Foreclosure-Information",
+            "source_url": "https://www.dentoncounty.gov/Faq.aspx?QID=294",
+            "note": (
+                "The County says delinquent-tax sales occur only when court "
+                "Orders of Sale are issued and are advertised in the Denton "
+                "Record-Chronicle and GovEase; the auction is online/live. "
+                "The County Tax Office account search is interactive, not a "
+                "sale-lot list. No downloadable auction inventory or recurring "
+                "feed was verified. Mortgage foreclosures are separate "
+                "trustee-run sales."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Denton County Development Services",
+            "directory_url": "https://www.dentoncounty.gov/667/Development-Services",
+            "source_url": "https://www.dentoncounty.gov/667/Development-Services",
+            "status": "municipal_scope",
+            "note": (
+                "County Development Services handles residential property and "
+                "permitting questions, but the pages reviewed exposed no "
+                "property-level code-violation inventory or case feed. Code "
+                "enforcement is generally municipal; no countywide public "
+                "export or update cadence was verified."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Denton County Clerk foreclosure information",
+            "directory_url": "https://www.dentoncounty.gov/293/Foreclosure-Information",
+            "source_url": "https://www.dentoncounty.gov/293/Foreclosure-Information",
+            "note": (
+                "The Clerk says mortgage foreclosures are conducted by "
+                "individual trustees on the first Tuesday and notices are "
+                "posted at the Courts Building. The page links general real-"
+                "property records, not a consolidated sale list; no notice "
+                "download, CSV export, or recurring feed was verified."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Denton County real-property records",
+            "directory_url": "https://www.dentoncounty.gov/293/Foreclosure-Information",
+            "source_url": "https://dentontx.search.kofile.com/48121/Home/Index/1",
+            "note": (
+                "The Clerk links a free general real-property-record search "
+                "that requires an owner name or legal description. It is not a "
+                "dedicated lis-pendens/default index; no bulk export or "
+                "automated-access authorization was verified."
+            ),
+        },
+    },
+    "DeWitt": {
+        "assessor": {
+            "directory_name": "DeWitt County Appraisal District data records",
+            "directory_url": "https://www.dewittcad.org/home/DataRecords",
+            "source_url": "https://www.dewittcad.org/home",
+            "note": (
+                "The CAD provides interactive property search; its Data "
+                "Records page lists mass-appraisal reports and meeting records "
+                "but no current certified parcel-roll CSV/ZIP. No bulk "
+                "export or public API was verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "DeWitt County Tax Assessor-Collector",
+            "directory_url": "https://www.co.dewitt.tx.us/page/County.Assessor.Collector",
+            "source_url": "https://www.co.dewitt.tx.us/page/County.Assessor.Collector",
+            "note": (
+                "The Comptroller identifies DeWitt County as a collecting "
+                "unit. The County Tax Office page discusses delinquent-account "
+                "collection but exposes no current tax-sale date, property "
+                "list, or downloadable auction inventory. No recurring feed "
+                "was verified."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "DeWitt County code-enforcement source discovery",
+            "directory_url": "https://www.co.dewitt.tx.us/",
+            "source_url": "https://www.co.dewitt.tx.us/",
+            "status": "municipal_scope",
+            "note": (
+                "The County pages reviewed exposed no property-level "
+                "code-violation inventory or countywide enforcement feed. "
+                "Code enforcement is generally municipal; no public export or "
+                "update cadence was verified."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "DeWitt County Clerk official records",
+            "directory_url": "https://www.co.dewitt.tx.us/page/County.Clerk",
+            "source_url": "https://www.co.dewitt.tx.us/page/County.Clerk",
+            "note": (
+                "The Clerk provides an online Official Public Records index "
+                "and most document images, but no current foreclosure notice "
+                "inventory, sale calendar, or combined download was found."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "DeWitt County Clerk Official Public Records",
+            "directory_url": "https://www.co.dewitt.tx.us/page/County.Clerk",
+            "source_url": "https://public.lgsonlinesolutions.com/ors.html",
+            "note": (
+                "The LGS portal provides general Official Public Records "
+                "search, not a dedicated lis-pendens/default index. No bulk "
+                "export, refresh cadence, or automated-access authorization "
+                "was verified."
+            ),
+        },
+    },
+    "Donley": {
+        "assessor": {
+            "directory_name": "Donley County Appraisal District data and property search",
+            "directory_url": "https://www.donleycad.org/home/DataRecords",
+            "source_url": "https://www.donleycad.org/home/",
+            "note": (
+                "The CAD home page shows a property-search loading placeholder, "
+                "and its Data and Records page exposes no parcel-roll download. "
+                "No functional public search, certified CSV/ZIP, bulk export, "
+                "or API was verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Donley County Tax Assessor-Collector",
+            "directory_url": (
+                "https://www.co.donley.tx.us/page/donley.County.Assessor.Collector"
+            ),
+            "source_url": (
+                "https://www.co.donley.tx.us/page/donley.County.Assessor.Collector"
+            ),
+            "note": (
+                "The Comptroller says the County Tax Assessor-Collector does not "
+                "collect property taxes. The County tax-office page returned "
+                "HTTP 403 during this check, so no current tax-sale date, lot "
+                "list, or downloadable auction inventory could be verified."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Donley County code-enforcement source discovery",
+            "directory_url": "https://www.co.donley.tx.us/",
+            "source_url": "https://www.co.donley.tx.us/",
+            "status": "municipal_scope",
+            "note": (
+                "The County pages reviewed exposed no property-level code-case "
+                "list or countywide enforcement feed. Code enforcement is "
+                "generally municipal; no public export or update cadence was "
+                "verified."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Donley County Clerk foreclosure notices",
+            "directory_url": "https://www.co.donley.tx.us/page/donley.County.Clerk",
+            "source_url": "https://www.co.donley.tx.us/page/donley.County.Clerk",
+            "note": (
+                "The County Clerk page returned HTTP 403 during this check. "
+                "No current foreclosure notice list, sale calendar, downloadable "
+                "inventory, or countywide feed could be verified."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Donley County Clerk real-property records",
+            "directory_url": "https://www.co.donley.tx.us/page/donley.County.Clerk",
+            "source_url": "https://www.co.donley.tx.us/page/donley.County.Clerk",
+            "note": (
+                "The County Clerk page returned HTTP 403, so an online "
+                "real-property search could not be confirmed. No dedicated "
+                "lis-pendens/default index, bulk export, or refresh cadence "
+                "was verified."
+            ),
+        },
+    },
+    "Duval": {
+        "assessor": {
+            "directory_name": "Duval County Appraisal District property search",
+            "directory_url": "https://duvalcad.org/",
+            "source_url": "https://esearch.duvalcad.org/",
+            "note": (
+                "The CAD eSearch supports interactive owner, address, ID, and "
+                "advanced searches and labels 2026 values preliminary. No "
+                "countywide parcel-roll CSV/ZIP, bulk export, or public API "
+                "was verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Duval County Tax Assessor-Collector",
+            "directory_url": (
+                "https://www.co.duval.tx.us/page/duval.County.Assessor.Collector"
+            ),
+            "source_url": (
+                "https://www.co.duval.tx.us/page/duval.County.Assessor.Collector"
+            ),
+            "note": (
+                "The Comptroller identifies Duval County as a collecting unit, "
+                "but its County tax-office page returned HTTP 403. The CAD site "
+                "lists tax-collection contacts, not an auction docket; no "
+                "current tax-sale date, lot list, or downloadable inventory "
+                "was verified."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Duval County code-enforcement source discovery",
+            "directory_url": "https://www.co.duval.tx.us/",
+            "source_url": "https://www.co.duval.tx.us/",
+            "status": "municipal_scope",
+            "note": (
+                "The County pages reviewed exposed no property-level code-case "
+                "list or countywide enforcement feed. Code enforcement is "
+                "generally municipal; no public export or update cadence was "
+                "verified."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Duval County Clerk foreclosure notices",
+            "directory_url": "https://www.co.duval.tx.us/page/duval.County.Clerk",
+            "source_url": "https://www.co.duval.tx.us/page/duval.County.Clerk",
+            "note": (
+                "The County Clerk page returned HTTP 403 during this check. "
+                "No current foreclosure notice inventory, sale calendar, "
+                "downloadable list, or countywide feed could be verified."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Duval County Clerk real-property records",
+            "directory_url": "https://www.co.duval.tx.us/page/duval.County.Clerk",
+            "source_url": "https://www.co.duval.tx.us/page/duval.County.Clerk",
+            "note": (
+                "The County Clerk page returned HTTP 403, so an online "
+                "real-property search could not be confirmed. No dedicated "
+                "lis-pendens/default index, bulk export, or refresh cadence "
+                "was verified."
+            ),
+        },
+    },
+    "Eastland": {
+        "assessor": {
+            "directory_name": "Eastland County Appraisal District data records",
+            "directory_url": "https://www.eastlandcad.org/home/DataRecords",
+            "source_url": "https://www.eastlandcad.org/home",
+            "note": (
+                "The CAD provides interactive property search. Its Data "
+                "Records page lists appraisal-review-board agendas and reports "
+                "but no certified parcel-roll CSV/ZIP. No bulk export or "
+                "public API was verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Eastland County Tax Assessor-Collector",
+            "directory_url": "https://www.eastlandcounty.gov/1244/Tax-Assessor-Collector",
+            "source_url": "https://www.eastlandcounty.gov/1244/Tax-Assessor-Collector",
+            "note": (
+                "The Comptroller identifies Eastland County as a collecting "
+                "unit. The County Tax Office page lists registration services "
+                "and tax-rate worksheets, but no current delinquent-tax sale "
+                "date, lot list, or downloadable auction inventory. No "
+                "recurring sale feed was verified."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Eastland County code-enforcement source discovery",
+            "directory_url": "https://www.eastlandcounty.gov/",
+            "source_url": "https://www.eastlandcounty.gov/",
+            "status": "municipal_scope",
+            "note": (
+                "The County pages reviewed exposed no property-level code-case "
+                "list or countywide enforcement feed. Code enforcement is "
+                "generally municipal; no public export or update cadence was "
+                "verified."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Eastland County 2026 foreclosure listings",
+            "directory_url": "https://www.eastlandcounty.gov/1220/Foreclosure-Listings",
+            "source_url": "https://www.eastlandcounty.gov/1221/2026-Foreclosure-Listings",
+            "note": (
+                "The County Clerk organizes 2026 foreclosure notices by month "
+                "as individual PDFs. November samples returned HTTP 200 as "
+                "application/pdf (159,173 and 95,617 bytes). These are "
+                "downloadable individual notices, not a combined CSV or bulk "
+                "sale list; no automated feed was verified."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Eastland County Clerk real-property records",
+            "directory_url": "https://www.eastlandcounty.gov/1218/County-Clerk",
+            "source_url": "https://eastlandcotx-web.tylerhost.net/web/user/disclaimer",
+            "note": (
+                "The Clerk links general online index searches for 1870-1982 "
+                "and 1983-current records. These are document indexes, not a "
+                "dedicated lis-pendens/default feed; no bulk export or "
+                "automated-access authorization was verified."
+            ),
+        },
+    },
+    "Ector": {
+        "assessor": {
+            "directory_name": "Ector County Appraisal District property records search",
+            "directory_url": "https://www.ectorcad.org/",
+            "source_url": "https://www.ectorcad.org/search/re_name",
+            "note": (
+                "The CAD offers interactive owner, business, address, account, "
+                "GIS, and subdivision searches. No countywide parcel-roll "
+                "CSV/ZIP, bulk export, or public API was verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Ector County Appraisal District collection-record search",
+            "directory_url": "https://www.ectorcountytx.gov/189/County-Tax-Assessor-Collector",
+            "source_url": "https://actweb.acttax.com/ectorcad/ectorcad/index.jsp",
+            "note": (
+                "The Comptroller says the County Tax Assessor-Collector does "
+                "not collect property taxes. The CAD's online portal searches "
+                "accounts it collects for and accepts payments, but is not an "
+                "auction-lot list. No current tax-sale calendar, downloadable "
+                "inventory, or recurring feed was verified."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Ector County Development Services permitting",
+            "directory_url": "https://www.ectorcountytx.gov/265/Permitting",
+            "source_url": "https://www.ectorcountytx.gov/265/Permitting",
+            "status": "needs_feed_verification",
+            "note": (
+                "County Development Services requires permits for development "
+                "structures, driveways, septic systems, rights-of-way, and cell "
+                "towers; applications use a registered permit portal. The page "
+                "says the County enforces regulations but provides no "
+                "property-level violation list, public case export, or update "
+                "cadence."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Ector County Clerk and Sheriff's Office",
+            "directory_url": "https://www.ectorcountytx.gov/172/County-Clerk",
+            "source_url": "https://www.ectorcountytx.gov/220/Sheriff",
+            "note": (
+                "The County Clerk page provides office information and the "
+                "Sheriff's page directs public-record requests to the office; "
+                "neither exposes a current foreclosure notice inventory, "
+                "sale calendar, or downloadable list. No countywide feed was "
+                "verified."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Ector County Clerk real-property records",
+            "directory_url": "https://www.ectorcountytx.gov/172/County-Clerk",
+            "source_url": "https://www.ectorcountytx.gov/172/County-Clerk",
+            "note": (
+                "The County Clerk page provides contact information but no "
+                "public real-property-record search. No dedicated "
+                "lis-pendens/default index, bulk export, or refresh cadence "
+                "was verified."
+            ),
+        },
+    },
+    "Edwards": {
+        "assessor": {
+            "directory_name": "Edwards County Appraisal District property search",
+            "directory_url": "https://www.edwardscad.org/",
+            "source_url": "https://esearch.edwardscad.org/",
+            "note": (
+                "The CAD eSearch supports interactive owner, address, ID, and "
+                "advanced searches. No countywide parcel-roll CSV/ZIP, bulk "
+                "export, or public API was verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Edwards County Tax Assessor-Collector",
+            "directory_url": "https://www.co.edwards.tx.us/page/County.Assessor.Collector",
+            "source_url": "https://www.co.edwards.tx.us/page/County.Assessor.Collector",
+            "note": (
+                "The Comptroller identifies Edwards County as a collecting "
+                "unit. The County Tax Assessor-Collector page provides office "
+                "information but no current tax-sale date, property list, or "
+                "downloadable auction inventory. No recurring feed was "
+                "verified."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Edwards County septic and land-development regulations",
+            "directory_url": "https://www.co.edwards.tx.us/page/septic",
+            "source_url": (
+                "https://www.co.edwards.tx.us/page/"
+                "Subdivision%20and%20Land%20Development%20Regulations"
+            ),
+            "status": "needs_feed_verification",
+            "note": (
+                "The County site lists septic inspections and subdivision "
+                "land-development regulations, but no property-level "
+                "violation inventory, public case export, or update cadence. "
+                "County enforcement scope warrants follow-up."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Edwards County foreclosure notices and trustee sales",
+            "directory_url": "https://www.co.edwards.tx.us/page/Foreclosures",
+            "source_url": "https://www.co.edwards.tx.us/page/Foreclosures",
+            "note": (
+                "The County page is titled Foreclosure Notices and Trustee's "
+                "Sales but contains only the page heading and no current "
+                "notices or downloadable sale list. No combined inventory or "
+                "recurring feed was verified."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Edwards County Clerk real-property records",
+            "directory_url": "https://www.co.edwards.tx.us/page/County.Clerk",
+            "source_url": "https://www.co.edwards.tx.us/page/County.Clerk",
+            "note": (
+                "The County Clerk page contains office navigation but no "
+                "public online real-property search. No dedicated "
+                "lis-pendens/default index, bulk export, or refresh cadence "
+                "was verified."
+            ),
+        },
+    },
+    "El Paso": {
+        "assessor": {
+            "directory_name": "El Paso Central Appraisal District CAMA datasets",
+            "directory_url": "https://epcad.org/OpenGovernment",
+            "source_url": "https://epcad.org/OpenGovernment#cama",
+            "note": (
+                "EPCAD lists weekly ZIP datasets for deeds, improvements, "
+                "lands, owners, properties, rolls, tax jurisdictions, and "
+                "values, plus a 2026 Certified Export ZIP. Its policy directs "
+                "bulk users to these official files and prohibits automated "
+                "scraping of the interactive search without written "
+                "authorization. The certified-export endpoint returned HTTP "
+                "403 with a Cloudflare challenge during this check, so file "
+                "transfer was not confirmed. These appraisal datasets are not "
+                "a tax-sale lot list."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "El Paso County Tax Assessor-Collector",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/elpaso.php"
+            ),
+            "source_url": "https://www.epcounty.com/taxoffice/",
+            "note": (
+                "The Comptroller says the County Tax Assessor-Collector does "
+                "not collect property taxes; the County tax-office route "
+                "returned HTTP 404. EPCAD's data exports are appraisal records, "
+                "not delinquent-tax auction lots. No current County tax-sale "
+                "calendar, itemized lot list, or downloadable sale inventory "
+                "was verified."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "El Paso County Community Development",
+            "directory_url": "https://www.epcounty.com/27/Government",
+            "source_url": "https://www.epcounty.com/266/Community-Development",
+            "status": "municipal_scope",
+            "note": (
+                "The County's Community Development Division describes rural "
+                "community and grant programs, not property-level code-case "
+                "tracking. No countywide code-enforcement violations search, "
+                "public case export, or update cadence was found."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "El Paso County Clerk services",
+            "directory_url": (
+                "https://www.epcounty.com/1127/El-Paso-County-Clerks-Mobile-Unit"
+            ),
+            "source_url": (
+                "https://www.epcounty.com/1127/El-Paso-County-Clerks-Mobile-Unit"
+            ),
+            "note": (
+                "The current County Clerk page describes mobile, in-person "
+                "services but no mortgage foreclosure notice docket, sale "
+                "calendar, or downloadable list. The legacy County Clerk route "
+                "returned HTTP 404; no countywide foreclosure feed was "
+                "verified."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "El Paso County Clerk property records",
+            "directory_url": (
+                "https://www.epcounty.com/1127/El-Paso-County-Clerks-Mobile-Unit"
+            ),
+            "source_url": (
+                "https://www.epcounty.com/1127/El-Paso-County-Clerks-Mobile-Unit"
+            ),
+            "note": (
+                "The County Clerk page mentions property-record services, but "
+                "no public searchable Official Public Records index, dedicated "
+                "lis-pendens/default search, bulk export, or refresh cadence "
+                "could be verified."
+            ),
+        },
+    },
+    "Ellis": {
+        "assessor": {
+            "directory_name": "Ellis County Appraisal District GIS data downloads",
+            "directory_url": (
+                "https://www.elliscountytx.gov/1090/"
+                "Parcel-Data-from-the-Ellis-County-Appraisal-District-ECAD"
+            ),
+            "source_url": "https://www.elliscad.com/gis-data/",
+            "note": (
+                "The County links to ECAD's GIS Data Downloads page, which "
+                "offers a Shapefile ZIP containing ownership, city, ESD, "
+                "parcel, and street data. The public Drive folder lists "
+                "ellis_parcels.zip (15.7 MB) and ellis_ownership.zip "
+                "(34.3 MB), among other files. The download action started "
+                "preparing an archive, but the file transfer was aborted "
+                "during this check; a complete local download was not "
+                "confirmed. This is appraisal/GIS data, not an auction list."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Ellis County Tax Office tax account search",
+            "directory_url": "https://ellistaxoffice.com/",
+            "source_url": "https://actweb.acttax.com/ellis/ellis/index.jsp",
+            "note": (
+                "The Comptroller identifies Ellis County as a collecting "
+                "unit. ECAD links the Tax Office's current and delinquent "
+                "account lookup; this is an individual tax-account search, not "
+                "a tax-sale docket. No current auction date, itemized lot list, "
+                "or downloadable sale inventory was verified."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Ellis County code-enforcement source discovery",
+            "directory_url": "https://www.elliscountytx.gov/",
+            "source_url": "https://www.elliscountytx.gov/74/County-Clerk",
+            "status": "municipal_scope",
+            "note": (
+                "The County Clerk's page describes recording duties but no "
+                "property-level code-case list or countywide enforcement "
+                "feed. Code enforcement is generally municipal; no public "
+                "county export or update cadence was verified."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Ellis County Clerk foreclosure notices",
+            "directory_url": "https://www.elliscountytx.gov/74/County-Clerk",
+            "source_url": "https://www.elliscountytx.gov/74/County-Clerk",
+            "note": (
+                "The County Clerk's page describes recording and court duties "
+                "but exposes no current mortgage-foreclosure notice list, "
+                "sale calendar, or downloadable inventory. The County's online "
+                "records-search information page is for District Clerk court "
+                "records, not a foreclosure-sale feed."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Ellis County Clerk real-property records",
+            "directory_url": "https://www.elliscountytx.gov/74/County-Clerk",
+            "source_url": "https://www.elliscountytx.gov/956/New-Online-Records-Search-Information",
+            "note": (
+                "The County Clerk records real and personal property, but its "
+                "page did not link a public Official Public Records search. "
+                "The County's documented new online search is under District "
+                "Clerk court records; no dedicated real-property "
+                "lis-pendens/default index, bulk export, or refresh cadence "
+                "was verified."
+            ),
+        },
+    },
+    "Erath": {
+        "assessor": {
+            "directory_name": "Erath County Appraisal District property search",
+            "directory_url": "https://erath-cad.com/",
+            "source_url": "https://esearch.erath-cad.com/",
+            "note": (
+                "The CAD eSearch supports interactive owner, address, ID, and "
+                "advanced searches. No countywide parcel-roll CSV/ZIP, bulk "
+                "export, or public API was verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Erath County Tax Assessor-Collector",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/erath.php"
+            ),
+            "source_url": "https://www.co.erath.tx.us/175/Tax-Assessor-Collector",
+            "note": (
+                "The Comptroller identifies Erath County as a collecting "
+                "unit. The County Tax Assessor-Collector page returned HTTP "
+                "403 during this check, so no current sale date, itemized "
+                "tax-sale list, or downloadable auction inventory could be "
+                "verified."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Erath County code-enforcement source discovery",
+            "directory_url": "https://www.co.erath.tx.us/",
+            "source_url": "https://www.co.erath.tx.us/",
+            "status": "municipal_scope",
+            "note": (
+                "No countywide property-level code-case list or enforcement "
+                "feed was identified. The County website pages reviewed "
+                "returned HTTP 403; this is an access limitation, not proof "
+                "that no records exist. No public export or update cadence "
+                "was verified."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Erath County Clerk online services",
+            "directory_url": "https://www.co.erath.tx.us/35/Online-Services",
+            "source_url": "https://www.co.erath.tx.us/35/Online-Services",
+            "note": (
+                "The County's online-services page returned HTTP 403 during "
+                "this check. No current mortgage foreclosure notice list, "
+                "sale calendar, downloadable inventory, or countywide feed "
+                "could be verified."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Erath County Clerk real-property records",
+            "directory_url": "https://www.co.erath.tx.us/35/Online-Services",
+            "source_url": "https://www.co.erath.tx.us/35/Online-Services",
+            "note": (
+                "The County's online-services page returned HTTP 403, so a "
+                "public real-property-record search could not be confirmed. "
+                "No dedicated lis-pendens/default index, bulk export, or "
+                "refresh cadence was verified."
+            ),
+        },
+    },
+    "Falls": {
+        "assessor": {
+            "directory_name": "Falls County Central Appraisal District property search",
+            "directory_url": "https://fallscad.net/",
+            "source_url": "https://fallscad.net/",
+            "note": (
+                "The CAD website offers interactive property search and map "
+                "tools for property information. No countywide parcel-roll "
+                "CSV/ZIP, bulk export, or public API was verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Falls County Tax Assessor-Collector",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/falls.php"
+            ),
+            "source_url": "https://www.co.falls.tx.us/page/Tax.Assessor.Collector",
+            "note": (
+                "The Comptroller identifies Falls County as a collecting "
+                "unit. The County Tax Assessor-Collector page returned HTTP "
+                "403 during this check; no current tax-sale date, itemized "
+                "lot list, or downloadable auction inventory could be "
+                "verified."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Falls County floodplain administration",
+            "directory_url": "https://www.co.falls.tx.us/",
+            "source_url": "https://www.co.falls.tx.us/page/FloodplainAdmin",
+            "status": "needs_feed_verification",
+            "note": (
+                "The County floodplain-administration route returned HTTP 403 "
+                "during this check. County permitting scope warrants follow-up, "
+                "but no property-level code or inspection case list, public "
+                "export, or update cadence could be verified."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Falls County Clerk foreclosure notices",
+            "directory_url": "https://www.co.falls.tx.us/page/County.Clerk",
+            "source_url": "https://www.co.falls.tx.us/page/County.Clerk",
+            "note": (
+                "The County Clerk offers general property-record search, but "
+                "its page exposes no dedicated mortgage foreclosure notice "
+                "inventory or sale calendar. No downloadable foreclosure list "
+                "or recurring feed was verified."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Falls County Clerk public property records",
+            "directory_url": "https://www.co.falls.tx.us/page/County.Clerk",
+            "source_url": "https://www.edoctecinc.com/fallspublicrecords",
+            "note": (
+                "The County Clerk links an online public-records system that "
+                "searches property documents, deeds, mortgages, and liens; "
+                "document downloads require purchase and have a 30-day access "
+                "period. This is a general records search, not a dedicated "
+                "lis-pendens/default feed, and no bulk export was verified."
+            ),
+        },
+    },
+    "Fannin": {
+        "assessor": {
+            "directory_name": "Fannin Central Appraisal District property search",
+            "directory_url": "https://www.fannincad.org/",
+            "source_url": (
+                "https://fannincad.southwestdatasolutions.com/PropertySearch"
+            ),
+            "note": (
+                "The CAD supports interactive searches by owner, property "
+                "address, Geographic ID, and Property ID. No countywide "
+                "parcel-roll CSV/ZIP, bulk export, or public API was verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Fannin County Tax Assessor-Collector property auctions",
+            "directory_url": (
+                "https://www.co.fannin.tx.us/page/fannin.County.Assessor.Collector"
+            ),
+            "source_url": (
+                "https://www.co.fannin.tx.us/page/fannin.County.Assessor.Collector"
+            ),
+            "note": (
+                "The Comptroller says the County Tax Assessor-Collector does "
+                "not collect property taxes. The County page labels a County "
+                "Property Auctions process and directs people to request the "
+                "property-seizure list from the tax office or watch the "
+                "Trenton Tribune and Fannin County Special. No current "
+                "downloadable lot list or online auction docket was found."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Fannin County code-enforcement source discovery",
+            "directory_url": "https://www.co.fannin.tx.us/",
+            "source_url": "https://www.co.fannin.tx.us/",
+            "status": "municipal_scope",
+            "note": (
+                "No Fannin-specific property-level code-case list or "
+                "countywide enforcement feed was verified. The County's "
+                "generic permits route displayed Hardin County content, and "
+                "the county-specific floodplain route returned HTTP 403; "
+                "neither provides a verified Fannin export or update cadence."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Fannin County Clerk foreclosure notices",
+            "directory_url": (
+                "https://www.co.fannin.tx.us/page/fannin.County.Clerk"
+            ),
+            "source_url": (
+                "https://www.co.fannin.tx.us/page/fannin.County.Clerk"
+            ),
+            "note": (
+                "The County Clerk's generic Official Public Records search is "
+                "not a foreclosure inventory. The County's generic foreclosure "
+                "route displayed Hardin County content and the Fannin-specific "
+                "route returned HTTP 403; no current Fannin sale list, "
+                "download, or recurring feed could be verified."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Fannin County Clerk Official Public Records",
+            "directory_url": (
+                "https://www.co.fannin.tx.us/page/fannin.County.Clerk"
+            ),
+            "source_url": "https://ava.fidlar.com/TXFannin/AvaWeb/",
+            "note": (
+                "The County links an online Land Records/Official Public "
+                "Records search. The County Clerk says current records and "
+                "records dating to the mid-1970s are available online and are "
+                "being added on an ongoing basis; older historical records "
+                "require an office search. This is a general document index, "
+                "not a dedicated lis-pendens/default feed, and no bulk export "
+                "was verified."
+            ),
+        },
+    },
+    "Fayette": {
+        "assessor": {
+            "directory_name": "Fayette Appraisal District property search",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/fayette.php"
+            ),
+            "source_url": "https://esearch.fayettecad.org/",
+            "note": (
+                "The CAD eSearch supports interactive Owner, Address, ID, and "
+                "Advanced searches. No countywide parcel-roll CSV/ZIP, bulk "
+                "export, or public API was verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Fayette County tax-sale source discovery",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/fayette.php"
+            ),
+            "source_url": "https://www.co.fayette.tx.us/page/fayette.Foreclosures",
+            "note": (
+                "The Comptroller says the County Tax Assessor-Collector does "
+                "not collect property taxes. The County foreclosure route "
+                "returned HTTP 403 during this check; no current tax-sale "
+                "date, itemized property list, or downloadable auction docket "
+                "could be verified. The access error is not proof that no "
+                "records exist."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Fayette County development-permit records",
+            "directory_url": "https://www.co.fayette.tx.us/",
+            "source_url": (
+                "https://www.co.fayette.tx.us/upload/page/1777/docs/"
+                "Fayette%20County%20Oil_Gas_Pipeline%20Development%20"
+                "Permitting%20Packet%20FINAL%20Aug2025.pdf"
+            ),
+            "status": "needs_feed_verification",
+            "note": (
+                "The County publishes an Oil, Gas & Pipeline Development "
+                "permit application, confirming a county-level permitting "
+                "process. No property-level code/inspection case list, public "
+                "export, or update cadence was verified."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Fayette County foreclosure notices",
+            "directory_url": "https://www.co.fayette.tx.us/page/fayette.County.Clerk",
+            "source_url": "https://www.co.fayette.tx.us/page/fayette.Foreclosures",
+            "note": (
+                "The County's foreclosure route returned HTTP 403 during this "
+                "check. No current mortgage/trustee sale notice list, public "
+                "sale calendar, or downloadable inventory could be verified; "
+                "the access error is not proof that no records exist."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Fayette County Clerk real-property records",
+            "directory_url": "https://www.co.fayette.tx.us/page/fayette.County.Clerk",
+            "source_url": "https://www.co.fayette.tx.us/page/fayette.County.Clerk",
+            "note": (
+                "The accessible County Clerk page describes office services "
+                "but did not link a public Official Public Records search. No "
+                "dedicated lis-pendens/default index, bulk export, or refresh "
+                "cadence was verified."
+            ),
+        },
+    },
+    "Fisher": {
+        "assessor": {
+            "directory_name": "Fisher County Appraisal District property search",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/fisher.php"
+            ),
+            "source_url": "https://www.fishercad.org/",
+            "note": (
+                "The Comptroller lists this as the official Appraisal "
+                "District website, but the site returned only the text "
+                "\"Agent\" during this check. No usable parcel search, "
+                "countywide export, CSV/ZIP, or public API could be "
+                "confirmed."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Fisher County tax-sale source discovery",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/fisher.php"
+            ),
+            "source_url": "https://www.fishercounty.org/page/fisher.Foreclosures",
+            "note": (
+                "The Comptroller says the County Tax Assessor-Collector does "
+                "not collect property taxes. The County foreclosure route "
+                "returned HTTP 403 and its Tax Assessor-Collector page also "
+                "returned HTTP 403; no current tax-sale date, lot list, or "
+                "downloadable inventory could be verified."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Fisher County code-enforcement source discovery",
+            "directory_url": "https://www.fishercounty.org/",
+            "source_url": "https://www.fishercounty.org/",
+            "status": "municipal_scope",
+            "note": (
+                "The accessible County pages reviewed describe county "
+                "administration and clerk services but no property-level code "
+                "or inspection case feed. No countywide public export or "
+                "update cadence was verified."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Fisher County foreclosure notices",
+            "directory_url": "https://www.fishercounty.org/page/fisher.County.Clerk",
+            "source_url": "https://www.fishercounty.org/page/fisher.Foreclosures",
+            "note": (
+                "The County's foreclosure route returned HTTP 403 during this "
+                "check. No current mortgage/trustee sale notice list, public "
+                "sale calendar, or downloadable inventory could be verified; "
+                "the access error is not proof that no records exist."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Fisher County Clerk public records",
+            "directory_url": "https://www.fishercounty.org/page/fisher.County.Clerk",
+            "source_url": "https://www.fishercounty.org/page/fisher.County.Clerk",
+            "note": (
+                "The County Clerk describes recording and custody of deeds "
+                "and other public records, but the page did not link a public "
+                "search portal. No dedicated lis-pendens/default index, bulk "
+                "export, or update cadence was verified."
+            ),
+        },
+    },
+    "Floyd": {
+        "assessor": {
+            "directory_name": "Floyd County Appraisal District",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/floyd.php"
+            ),
+            "source_url": "http://www.floydcad.org/",
+            "note": (
+                "The Comptroller lists this Appraisal District website, but "
+                "both the CAD home page and the eSearch host failed with a "
+                "DNS/connection error during this check. No usable property "
+                "search, parcel export, or API could be confirmed."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Floyd County tax-sale source discovery",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/floyd.php"
+            ),
+            "source_url": "https://www.co.floyd.tx.us/page/floyd.Tax.Assessor.Collector",
+            "note": (
+                "The Comptroller says the County Tax Assessor-Collector does "
+                "not collect property taxes. The County Tax Assessor-Collector "
+                "and foreclosure routes returned HTTP 403; no current tax-sale "
+                "date, itemized list, or downloadable auction inventory could "
+                "be verified."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Floyd County code-enforcement source discovery",
+            "directory_url": "https://www.co.floyd.tx.us/",
+            "source_url": "https://www.co.floyd.tx.us/",
+            "status": "municipal_scope",
+            "note": (
+                "The County pages reviewed exposed no property-level code or "
+                "inspection case feed. No countywide public export or update "
+                "cadence was verified."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Floyd County foreclosure notices",
+            "directory_url": "https://www.co.floyd.tx.us/page/floyd.County.Clerk",
+            "source_url": "https://www.co.floyd.tx.us/page/floyd.Foreclosures",
+            "note": (
+                "The County foreclosure route returned HTTP 403 during this "
+                "check. No current mortgage/trustee sale notice list, public "
+                "sale calendar, or downloadable inventory could be verified; "
+                "the access error is not proof that no records exist."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Floyd County Clerk public records",
+            "directory_url": "https://www.co.floyd.tx.us/page/floyd.County.Clerk",
+            "source_url": "https://www.co.floyd.tx.us/page/floyd.County.Clerk",
+            "note": (
+                "The County Clerk page provides office and vital-record "
+                "information but no public real-property search link. No "
+                "dedicated lis-pendens/default index, bulk export, or update "
+                "cadence was verified."
+            ),
+        },
+    },
+    "Foard": {
+        "assessor": {
+            "directory_name": "Foard County Appraisal District property search",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/foard.php"
+            ),
+            "source_url": "https://www.foardcad.org/",
+            "note": (
+                "The CAD page offers interactive searches by owner, address, "
+                "property ID, and advanced criteria. No countywide parcel-roll "
+                "CSV/ZIP, bulk export, or public API was verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Foard County tax-sale source discovery",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/foard.php"
+            ),
+            "source_url": "https://www.foardcounty.texas.gov/page/Tax.Assessor.Collector",
+            "note": (
+                "The Comptroller says the County Tax Assessor-Collector does "
+                "not collect property taxes. The County tax-office route "
+                "returned HTTP 403; no current tax-sale date, itemized lot "
+                "list, or downloadable auction inventory was verified."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Foard County code-enforcement source discovery",
+            "directory_url": "https://www.foardcounty.texas.gov/",
+            "source_url": "https://www.foardcounty.texas.gov/",
+            "status": "municipal_scope",
+            "note": (
+                "The County's public pages describe general services but no "
+                "property-level code or inspection case feed. No countywide "
+                "public export or update cadence was verified."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Foard County foreclosure notices",
+            "directory_url": "https://www.foardcounty.texas.gov/page/County.Clerk",
+            "source_url": "https://www.foardcounty.texas.gov/page/Foreclosures",
+            "note": (
+                "The County foreclosure route returned HTTP 403 during this "
+                "check. No current mortgage/trustee sale notice list, public "
+                "sale calendar, or downloadable inventory could be verified; "
+                "the access error is not proof that no records exist."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Foard County Clerk real-property records",
+            "directory_url": "https://www.foardcounty.texas.gov/page/County.Clerk",
+            "source_url": "https://www.foardcounty.texas.gov/page/County.Clerk",
+            "note": (
+                "The County Clerk page describes real-property deed recording "
+                "and statutory filing requirements, but it does not link a "
+                "public searchable land-record index. No dedicated "
+                "lis-pendens/default index, bulk export, or update cadence "
+                "was verified."
+            ),
+        },
+    },
+    "Fort Bend": {
+        "assessor": {
+            "directory_name": "Fort Bend Central Appraisal District property search",
+            "directory_url": "https://www.fbcad.org/",
+            "source_url": "https://esearch.fbcad.org/",
+            "note": (
+                "FBCAD links an interactive eSearch for Owner, Address, ID, "
+                "and Advanced property queries and a separate GIS map. No "
+                "countywide parcel-roll CSV/ZIP, bulk export, or public API "
+                "was verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Fort Bend County tax-sale information",
+            "directory_url": (
+                "https://www.fortbendcountytx.gov/government/departments/"
+                "county-clerk/search-for-foreclosures"
+            ),
+            "source_url": (
+                "https://www.fortbendcountytx.gov/government/departments/"
+                "constables"
+            ),
+            "note": (
+                "The County Clerk's sale page directs tax-sale inquiries to "
+                "the Constables. The Tax Office's online portal is an account "
+                "lookup/payment system, not an itemized auction docket. No "
+                "current downloadable tax-sale property list or separate "
+                "constable auction inventory was verified."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Fort Bend County code and inspection records",
+            "directory_url": "https://www.fortbendcountytx.gov/",
+            "source_url": (
+                "https://www.fortbendcountytx.gov/government/departments/"
+                "environmental-health"
+            ),
+            "status": "needs_feed_verification",
+            "note": (
+                "The County's Environmental Health route redirected to a "
+                "login page, and the Engineering route tested returned HTTP "
+                "404. No public property-level code/inspection case search, "
+                "export, or update cadence could be verified."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Fort Bend County Clerk monthly foreclosure lists",
+            "directory_url": (
+                "https://www.fortbendcountytx.gov/government/departments/"
+                "county-clerk/search-for-foreclosures"
+            ),
+            "source_url": (
+                "https://www.fortbendcountytx.gov/sites/default/files/"
+                "document-central/document-central/county-clerk-documents/"
+                "home-page-county-clerk/research-foreclosures/November-2026.pdf"
+            ),
+            "note": (
+                "The County Clerk publicly posts monthly foreclosure-list "
+                "PDFs; the page linked October and November 2026 and says the "
+                "list is imaged and searchable with Ctrl-F. It states sales "
+                "are held monthly and directs tax-property-sale questions to "
+                "the Constables. The November PDF link is published, but a "
+                "complete local download was not confirmed."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Fort Bend County Clerk Official Public Records",
+            "directory_url": (
+                "https://www.fortbendcountytx.gov/government/departments/"
+                "county-clerk/online-record-search"
+            ),
+            "source_url": "http://ccweb.co.fort-bend.tx.us/",
+            "note": (
+                "The County Clerk links an Official Public Records search "
+                "covering deeds, mortgage documents, easements, and liens. "
+                "This is a general document index, not a dedicated "
+                "lis-pendens/default feed; no bulk export or refresh cadence "
+                "was verified."
+            ),
+        },
+    },
+    "Franklin": {
+        "assessor": {
+            "directory_name": "Franklin County Appraisal District property search",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/franklin.php"
+            ),
+            "source_url": "https://www.franklin-cad.org/",
+            "note": (
+                "The CAD site offers interactive property searches by owner, "
+                "address, property ID, and advanced criteria. No countywide "
+                "parcel-roll CSV/ZIP, bulk export, or public API was verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Franklin County tax-sale source discovery",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/franklin.php"
+            ),
+            "source_url": "https://www.co.franklin.tx.us/page/franklin.Foreclosures",
+            "note": (
+                "The Comptroller identifies Franklin County as a collecting "
+                "unit. The County foreclosure route returned HTTP 403; no "
+                "current tax-sale date, itemized lot list, or downloadable "
+                "auction inventory could be verified."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Franklin County code-enforcement source discovery",
+            "directory_url": "https://www.co.franklin.tx.us/",
+            "source_url": "https://www.co.franklin.tx.us/",
+            "status": "municipal_scope",
+            "note": (
+                "The County pages reviewed exposed no property-level code or "
+                "inspection case feed. No countywide public export or update "
+                "cadence was verified."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Franklin County foreclosure notices",
+            "directory_url": "https://www.co.franklin.tx.us/page/franklin.County.Clerk",
+            "source_url": "https://www.co.franklin.tx.us/page/franklin.Foreclosures",
+            "note": (
+                "The County's foreclosure route returned HTTP 403 during this "
+                "check. No current mortgage/trustee notice list, public sale "
+                "calendar, or downloadable inventory could be verified; the "
+                "access error is not proof that no records exist."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Franklin County Clerk online property records",
+            "directory_url": "https://www.co.franklin.tx.us/page/franklin.County.Clerk",
+            "source_url": "https://countyclerkrecords.co.franklin.tx.us/web/",
+            "note": (
+                "The County Clerk provides a public online search and view "
+                "portal; deed records are indexed and imaged from 1843, and "
+                "contract, lien, and oil-and-gas lease records from 1910. "
+                "Viewing is free, while printed copies require payment. This "
+                "is a general records index, not a dedicated "
+                "lis-pendens/default feed, and no bulk export was verified."
+            ),
+        },
+    },
+    "Freestone": {
+        "assessor": {
+            "directory_name": "Freestone Central Appraisal District property information",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/freestone.php"
+            ),
+            "source_url": "https://www.freestonecad.org/",
+            "note": (
+                "The CAD site describes access to information about specific "
+                "properties, but no countywide parcel download or bulk export "
+                "was verified. The guessed eSearch host failed with a "
+                "DNS/connection error; no public API was found."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Freestone County Tax Assessor-Collector",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/freestone.php"
+            ),
+            "source_url": (
+                "https://www.co.freestone.tx.us/page/"
+                "freestone.County.Assessor.Collector"
+            ),
+            "note": (
+                "The Comptroller identifies Freestone County as a collecting "
+                "unit. The County tax-office page provides contact details, "
+                "not a current tax-sale inventory; its foreclosure route "
+                "returned HTTP 403. No current sale date, itemized lot list, "
+                "or downloadable auction docket was verified."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Freestone County permits and subdivision records",
+            "directory_url": (
+                "https://www.co.freestone.tx.us/page/"
+                "freestone.DownloadablePermits"
+            ),
+            "source_url": (
+                "https://www.co.freestone.tx.us/page/"
+                "freestone.DownloadablePermits"
+            ),
+            "status": "needs_feed_verification",
+            "note": (
+                "The County posts downloadable special-road-use, pipeline, "
+                "septic, floodplain, and mass-gathering permit forms and "
+                "separate plat/replat applications and subdivision rules. "
+                "These establish county-level permitting, not a property-level "
+                "code/inspection case feed; no case export or update cadence "
+                "was verified."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Freestone County foreclosure notices",
+            "directory_url": "https://www.co.freestone.tx.us/page/freestone.County.Clerk",
+            "source_url": "https://www.co.freestone.tx.us/page/freestone.Foreclosures",
+            "note": (
+                "The County foreclosure route returned HTTP 403 during this "
+                "check. No current mortgage/trustee notice list, public sale "
+                "calendar, or downloadable inventory could be verified; the "
+                "access error is not proof that no records exist."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Freestone County Clerk real-property records",
+            "directory_url": "https://www.co.freestone.tx.us/page/freestone.County.Clerk",
+            "source_url": "https://www.co.freestone.tx.us/page/freestone.County.Clerk",
+            "note": (
+                "The accessible County Clerk page describes filing and "
+                "recording services but links no public searchable land-record "
+                "index. No dedicated lis-pendens/default search, bulk export, "
+                "or refresh cadence was verified."
+            ),
+        },
+    },
+    "Frio": {
+        "assessor": {
+            "directory_name": "Frio County Appraisal District property search",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/frio.php"
+            ),
+            "source_url": "https://www.friocad.org/",
+            "note": (
+                "The Comptroller lists the CAD site, but it returned only the "
+                "text \"Agent\" during this check, and the guessed eSearch "
+                "host failed with a DNS/connection error. No usable parcel "
+                "search, countywide export, or public API was confirmed."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Frio County Tax Assessor-Collector",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/frio.php"
+            ),
+            "source_url": "https://www.co.frio.tx.us/page/frio.County.Assessor.Collector",
+            "note": (
+                "The Comptroller identifies Frio County as a collecting "
+                "unit. The County Tax Assessor-Collector route returned HTTP "
+                "403; no current tax-sale date, itemized lot list, or "
+                "downloadable auction inventory could be verified."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Frio County code-enforcement source discovery",
+            "directory_url": "https://www.co.frio.tx.us/",
+            "source_url": "https://www.co.frio.tx.us/",
+            "status": "municipal_scope",
+            "note": (
+                "No countywide property-level code or inspection case feed "
+                "was identified. The County's Clerk and Tax Assessor-Collector "
+                "pages returned HTTP 403; this does not establish that no "
+                "records exist. No public case export or update cadence was "
+                "verified."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Frio County foreclosure notices",
+            "directory_url": "https://www.co.frio.tx.us/page/frio.County.Clerk",
+            "source_url": "https://www.co.frio.tx.us/page/frio.County.Clerk",
+            "note": (
+                "The County Clerk page returned HTTP 403 during this check. "
+                "No current mortgage/trustee notice list, public sale "
+                "calendar, or downloadable inventory could be verified."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Frio County Clerk real-property records",
+            "directory_url": "https://www.co.frio.tx.us/page/frio.County.Clerk",
+            "source_url": "https://www.co.frio.tx.us/page/frio.County.Clerk",
+            "note": (
+                "The County Clerk page returned HTTP 403, so a public "
+                "real-property-record search could not be confirmed. No "
+                "dedicated lis-pendens/default index, bulk export, or refresh "
+                "cadence was verified."
+            ),
+        },
+    },
+    "Gaines": {
+        "assessor": {
+            "directory_name": "Gaines County Appraisal District property search",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/gaines.php"
+            ),
+            "source_url": "https://esearch.gainescad.org/",
+            "note": (
+                "The CAD eSearch supports interactive Owner, Address, ID, and "
+                "Advanced searches. No countywide parcel-roll CSV/ZIP, bulk "
+                "export, or public API was verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Gaines County foreclosures and sales archive",
+            "directory_url": (
+                "https://www.co.gaines.tx.us/page/gaines.ForeclosuresandSales"
+            ),
+            "source_url": "https://www.co.gaines.tx.us/page/gaines.ForeclosuresandSales",
+            "note": (
+                "The Comptroller says the County Tax Assessor-Collector does "
+                "not collect property taxes. The County's \"Foreclosures and "
+                "Sales\" page links historical individual PDFs, with the "
+                "latest visible entries from September 2018; no current "
+                "tax-sale date, itemized lot list, or downloadable current "
+                "inventory was found."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Gaines County code-enforcement source discovery",
+            "directory_url": "https://www.co.gaines.tx.us/",
+            "source_url": "https://www.co.gaines.tx.us/",
+            "status": "municipal_scope",
+            "note": (
+                "The County's public office directory and notices page expose "
+                "no property-level code or inspection case feed. No "
+                "countywide public export or update cadence was verified."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Gaines County foreclosure notices",
+            "directory_url": (
+                "https://www.co.gaines.tx.us/page/gaines.ForeclosuresandSales"
+            ),
+            "source_url": "https://www.co.gaines.tx.us/page/gaines.ForeclosuresandSales",
+            "note": (
+                "The County page links historical foreclosure/sale PDFs, but "
+                "the latest visible entries are from September 2018. No "
+                "current mortgage/trustee notice list, sale calendar, or "
+                "downloadable current inventory was verified."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Gaines County Clerk real-property records",
+            "directory_url": "https://www.co.gaines.tx.us/page/gaines.County.Clerk",
+            "source_url": "https://www.co.gaines.tx.us/page/gaines.County.Clerk",
+            "note": (
+                "The County Clerk page provides office information but links "
+                "no public searchable land-record index. No dedicated "
+                "lis-pendens/default search, bulk export, or refresh cadence "
+                "was verified."
+            ),
+        },
+    },
+    "Galveston": {
+        "assessor": {
+            "directory_name": "Galveston Central Appraisal District GIS and roll exports",
+            "directory_url": "https://galvestoncad.org/",
+            "source_url": "https://galvestoncad.org/gis-data/",
+            "note": (
+                "GCAD publishes 10/06/2026 parcel shapefile and DBF ZIPs. "
+                "HEAD checks returned HTTP 200 for parcels.zip (46,661,881 "
+                "bytes) and parcel_data.dbf_.zip (27,469,539 bytes); the DBF "
+                "ZIP was downloaded and validated with parcel_data.dbf inside. "
+                "The site also links interactive property search, maps, and "
+                "certified/preliminary roll export pages."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Galveston County Tax Assessor-Collector",
+            "directory_url": "https://www.galcotax.com/",
+            "source_url": "https://www.galcotax.com/",
+            "note": (
+                "The Comptroller identifies Galveston County as a collecting "
+                "unit. The Tax Office site redirected to a County page that "
+                "returned HTTP 403, as did the County homepage; no current "
+                "tax-sale date, itemized property list, or downloadable "
+                "auction inventory could be verified."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Galveston County code-enforcement source discovery",
+            "directory_url": "https://www.galvestoncountytx.gov/",
+            "source_url": "https://www.galvestoncountytx.gov/",
+            "status": "needs_feed_verification",
+            "note": (
+                "The County website returned HTTP 403, preventing review of "
+                "county permitting and enforcement pages. No public "
+                "property-level code/inspection feed, export, or refresh "
+                "cadence could be verified."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Galveston County foreclosure notices",
+            "directory_url": "https://www.galvestoncountytx.gov/",
+            "source_url": "https://www.galvestoncountytx.gov/",
+            "note": (
+                "The County homepage and County Clerk route returned HTTP 403. "
+                "No current mortgage/trustee notice list, public sale "
+                "calendar, or downloadable foreclosure inventory could be "
+                "verified; the access error is not proof that no records exist."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Galveston County Clerk Official Public Records",
+            "directory_url": "https://www.galvestoncountytx.gov/",
+            "source_url": (
+                "https://www.galvestoncountytx.gov/departments/"
+                "county-clerk/official-public-records"
+            ),
+            "note": (
+                "The County Clerk/Official Public Records route returned HTTP "
+                "403, so no public real-property search could be verified. "
+                "No dedicated lis-pendens/default index, bulk export, or "
+                "refresh cadence was confirmed."
+            ),
+        },
+    },
+    "Garza": {
+        "assessor": {
+            "directory_name": "Garza Central Appraisal District property search",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/garza.php"
+            ),
+            "source_url": "https://esearch.garzacad.org/",
+            "note": (
+                "The CAD eSearch supports interactive Owner, Address, ID, and "
+                "Advanced searches and displays preliminary 2026 values. No "
+                "countywide parcel-roll CSV/ZIP, bulk export, or public API "
+                "was verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Garza County tax-sale source discovery",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/garza.php"
+            ),
+            "source_url": "https://www.garzacounty.gov/page/garza.County.Assessor.Collector",
+            "note": (
+                "The Comptroller identifies Garza County as a collecting "
+                "unit. The County Tax Assessor-Collector and foreclosure "
+                "routes returned HTTP 403; no current tax-sale date, itemized "
+                "lot list, or downloadable auction inventory could be "
+                "verified."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Garza County code-enforcement source discovery",
+            "directory_url": "https://www.garzacounty.gov/",
+            "source_url": "https://www.garzacounty.gov/",
+            "status": "municipal_scope",
+            "note": (
+                "The accessible County and CAD homepages expose no "
+                "property-level code or inspection case feed. No countywide "
+                "public export or update cadence was verified."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Garza County foreclosure notices",
+            "directory_url": "https://www.garzacounty.gov/",
+            "source_url": "https://www.garzacounty.gov/page/garza.ForeclosuresandSales",
+            "note": (
+                "The County's foreclosure/sales route returned HTTP 403 "
+                "during this check. No current mortgage/trustee notice list, "
+                "public sale calendar, or downloadable inventory could be "
+                "verified; the access error is not proof that no records exist."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Garza County Clerk real-property records",
+            "directory_url": "https://www.garzacounty.gov/",
+            "source_url": "https://www.garzacounty.gov/page/garza.County.Clerk",
+            "note": (
+                "The County Clerk route returned HTTP 403, so a public "
+                "real-property-record search could not be confirmed. No "
+                "dedicated lis-pendens/default index, bulk export, or refresh "
+                "cadence was verified."
+            ),
+        },
+    },
+    "Gillespie": {
+        "assessor": {
+            "directory_name": "Gillespie Central Appraisal District property search",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/gillespie.php"
+            ),
+            "source_url": "https://esearch.gillespiecad.org/",
+            "note": (
+                "The CAD eSearch supports interactive Owner, Address, ID, and "
+                "Advanced searches. No countywide parcel-roll CSV/ZIP, bulk "
+                "export, or public API was verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Gillespie County tax-sale source discovery",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/gillespie.php"
+            ),
+            "source_url": "https://www.gillespiecounty.gov/",
+            "note": (
+                "The Comptroller says the County Tax Assessor-Collector does "
+                "not collect property taxes; the County states GCAD collects "
+                "taxes for its eight taxing entities. No current tax-sale "
+                "date, itemized lot list, or downloadable auction inventory "
+                "was found on the County pages reviewed."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Gillespie County code-enforcement source discovery",
+            "directory_url": "https://www.gillespiecounty.gov/",
+            "source_url": "https://www.gillespiecounty.gov/",
+            "status": "municipal_scope",
+            "note": (
+                "The County pages reviewed exposed no property-level code or "
+                "inspection case feed. No countywide public export or update "
+                "cadence was verified."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Gillespie County foreclosure notices",
+            "directory_url": "https://www.gillespiecounty.gov/",
+            "source_url": "https://www.gillespiecounty.gov/",
+            "note": (
+                "The County homepage lists no dedicated mortgage-foreclosure "
+                "or trustee-sale inventory. No current notice list, public "
+                "sale calendar, or downloadable foreclosure docket was "
+                "verified."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Gillespie County Clerk real-property records",
+            "directory_url": "https://www.gillespiecounty.gov/",
+            "source_url": "https://www.gillespiecounty.gov/",
+            "note": (
+                "The County homepage and pages reached during this check did "
+                "not surface a public Official Public Records search. No "
+                "dedicated lis-pendens/default index, bulk export, or refresh "
+                "cadence was verified."
+            ),
+        },
+    },
+    "Glasscock": {
+        "assessor": {
+            "directory_name": "Glasscock County Appraisal District",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/glasscock.php"
+            ),
+            "source_url": "https://www.glasscockcad.org/",
+            "note": (
+                "The Comptroller lists this as the official Appraisal "
+                "District website, but the site returned only the text "
+                "\"Agent\" and the guessed eSearch host did not resolve. No "
+                "usable property search, countywide export, CSV/ZIP, or "
+                "public API could be confirmed."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Glasscock County Tax Assessor-Collector",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/glasscock.php"
+            ),
+            "source_url": "https://www.co.glasscock.tx.us/page/County.Assessor.Collector",
+            "note": (
+                "The Comptroller identifies Glasscock County as a collecting "
+                "unit. The County Tax Assessor-Collector page provides office "
+                "contact information; its foreclosure/sales route returned "
+                "HTTP 403. No current tax-sale date, itemized lot list, or "
+                "downloadable auction inventory was verified."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Glasscock County code-enforcement source discovery",
+            "directory_url": "https://www.co.glasscock.tx.us/",
+            "source_url": "https://www.co.glasscock.tx.us/",
+            "status": "municipal_scope",
+            "note": (
+                "The County public pages reviewed expose no property-level "
+                "code or inspection case feed. No countywide public export or "
+                "update cadence was verified."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Glasscock County foreclosure notices",
+            "directory_url": "https://www.co.glasscock.tx.us/",
+            "source_url": "https://www.co.glasscock.tx.us/page/ForeclosuresandSales",
+            "note": (
+                "The County's foreclosure/sales route returned HTTP 403 "
+                "during this check. No current mortgage/trustee notice list, "
+                "public sale calendar, or downloadable inventory could be "
+                "verified; the access error is not proof that no records exist."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Glasscock County Clerk real-property records",
+            "directory_url": "https://www.co.glasscock.tx.us/",
+            "source_url": "https://www.co.glasscock.tx.us/page/County.Clerk",
+            "note": (
+                "The County Clerk route returned HTTP 403, so a public "
+                "real-property-record search could not be confirmed. No "
+                "dedicated lis-pendens/default index, bulk export, or refresh "
+                "cadence was verified."
+            ),
+        },
+    },
+    "Goliad": {
+        "assessor": {
+            "directory_name": "Goliad County Appraisal District property search",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/goliad.php"
+            ),
+            "source_url": "https://goliadcad.org/",
+            "note": (
+                "The CAD supports interactive Basic, Owner, Property, and "
+                "Advanced searches. The site says the CAD handles appraisal "
+                "values and that the County Tax Office collects taxes. No "
+                "countywide parcel-roll CSV/ZIP, bulk export, or public API "
+                "was verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Goliad County Tax Assessor-Collector",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/goliad.php"
+            ),
+            "source_url": "https://www.co.goliad.tx.us/page/goliad.County.Assessor.Collector",
+            "note": (
+                "The Comptroller identifies Goliad County as a collecting "
+                "unit. The County Tax Assessor-Collector page provides "
+                "contact details, while the Trustee/Foreclosure Sales page "
+                "showed no current sale inventory. No itemized tax-sale list "
+                "or downloadable auction docket was verified."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Goliad County code-enforcement source discovery",
+            "directory_url": "https://www.co.goliad.tx.us/",
+            "source_url": "https://www.co.goliad.tx.us/",
+            "status": "municipal_scope",
+            "note": (
+                "The County pages reviewed exposed no property-level code or "
+                "inspection case feed. No countywide public export or update "
+                "cadence was verified."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Goliad County Trustee and Foreclosure Sales",
+            "directory_url": (
+                "https://www.co.goliad.tx.us/page/"
+                "goliad.CountyandDistrictClerkPublicNotices"
+            ),
+            "source_url": (
+                "https://www.co.goliad.tx.us/page/"
+                "goliad.CountyandDistrictClerkPublicNotices"
+            ),
+            "note": (
+                "The County menu labels this page Trustee/Foreclosure Sales, "
+                "but its accessible content showed only a general Fair "
+                "Housing notice. No current mortgage/trustee sale list, "
+                "calendar, or downloadable inventory was present."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Goliad County and District Clerk real-property records",
+            "directory_url": "https://www.co.goliad.tx.us/page/goliad.County.Clerk",
+            "source_url": "https://www.co.goliad.tx.us/page/goliad.County.Clerk",
+            "note": (
+                "The County and District Clerk page lists real-property filing "
+                "fees but no public searchable Official Public Records link. "
+                "No dedicated lis-pendens/default index, bulk export, or "
+                "refresh cadence was verified."
+            ),
+        },
+    },
+    "Gonzales": {
+        "assessor": {
+            "directory_name": "Gonzales Central Appraisal District property information",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/gonzales.php"
+            ),
+            "source_url": "https://www.gonzalescad.org/",
+            "note": (
+                "The CAD site provides general appraisal information; the "
+                "guessed eSearch host failed with a DNS/connection error. No "
+                "usable countywide parcel search, CSV/ZIP, bulk export, or "
+                "public API was verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Gonzales County tax-sale source discovery",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/gonzales.php"
+            ),
+            "source_url": "https://www.co.gonzales.tx.us/page/gonzales.ForeclosuresandSales",
+            "note": (
+                "The Comptroller identifies Gonzales County as a collecting "
+                "unit. The County foreclosure/sales route returned HTTP 403; "
+                "the Tax Assessor-Collector page reviewed provided vehicle "
+                "services and no current sale inventory. No current tax-sale "
+                "date, itemized lot list, or downloadable docket was verified."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Gonzales County code-enforcement source discovery",
+            "directory_url": "https://www.co.gonzales.tx.us/",
+            "source_url": "https://www.co.gonzales.tx.us/",
+            "status": "municipal_scope",
+            "note": (
+                "The County pages reviewed exposed no property-level code or "
+                "inspection case feed. No countywide public export or update "
+                "cadence was verified."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Gonzales County foreclosure notices",
+            "directory_url": "https://www.co.gonzales.tx.us/",
+            "source_url": "https://www.co.gonzales.tx.us/page/gonzales.ForeclosuresandSales",
+            "note": (
+                "The County's foreclosure/sales route returned HTTP 403 "
+                "during this check. No current mortgage/trustee notice list, "
+                "public sale calendar, or downloadable inventory could be "
+                "verified; the access error is not proof that no records exist."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Gonzales County Clerk Official Public Records",
+            "directory_url": "https://www.co.gonzales.tx.us/page/gonzales.County.Clerk",
+            "source_url": "https://gonzalescountytx-web.tylerhost.net/web",
+            "note": (
+                "The County Clerk links an online Official Property Records "
+                "and Vital Records index. The Tyler portal opened with a "
+                "public-service disclaimer. This is a general records search, "
+                "not a dedicated lis-pendens/default feed; no bulk export or "
+                "refresh cadence was verified."
+            ),
+        },
+    },
+    "Gray": {
+        "assessor": {
+            "directory_name": "Gray County Appraisal District eSearch",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/gray.php"
+            ),
+            "source_url": "https://esearch.graycad.org/",
+            "note": (
+                "Gray CAD eSearch supports interactive Owner, Address, ID, "
+                "and Advanced searches. The district site provides general "
+                "appraisal information, but no countywide parcel CSV/ZIP, "
+                "bulk export, or public API was verified. County-specific "
+                "source review checked 2026-11-02."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Gray County Tax Assessor-Collector",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/gray.php"
+            ),
+            "source_url": (
+                "https://www.co.gray.tx.us/page/"
+                "gray.County.Assessor.Collector"
+            ),
+            "note": (
+                "The Comptroller identifies Gray County as a collecting "
+                "unit. The County Tax Assessor-Collector page links a Tax "
+                "Sale Bid Form, but no current tax-sale date, itemized lot "
+                "list, or downloadable auction docket was verified; the "
+                "form is not a sale inventory. County-specific source review "
+                "checked 2026-11-02."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Gray County regulations and code-enforcement source discovery",
+            "directory_url": "https://www.co.gray.tx.us/",
+            "source_url": (
+                "https://www.co.gray.tx.us/page/gray.County.Regulations"
+            ),
+            "status": "municipal_scope",
+            "note": (
+                "The County Regulations page provides only courthouse "
+                "location details. No property-level code, inspection, or "
+                "permit-case index, countywide export, or update cadence was "
+                "verified. County-specific source review checked 2026-11-02."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Gray County Public Notices Calendar",
+            "directory_url": (
+                "https://www.co.gray.tx.us/page/gray.PublicNotice"
+            ),
+            "source_url": (
+                "https://www.co.gray.tx.us/page/gray.PublicNotice"
+            ),
+            "note": (
+                "The County Public Notices Calendar showed a 2022 lightbox "
+                "demo and an empty November 2026 calendar. No current "
+                "foreclosure notice list or downloadable sale inventory "
+                "appeared. County-specific source review checked 2026-11-02."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Gray County Clerk real-property records",
+            "directory_url": (
+                "https://www.co.gray.tx.us/page/gray.County.Clerk"
+            ),
+            "source_url": (
+                "https://www.co.gray.tx.us/page/gray.County.Clerk"
+            ),
+            "note": (
+                "The County Clerk page provides office details but no public "
+                "searchable real-property record portal. No dedicated "
+                "lis-pendens/default feed, bulk export, or refresh cadence "
+                "was verified. County-specific source review checked "
+                "2026-11-02."
+            ),
+        },
+    },
+    "Grayson": {
+        "assessor": {
+            "directory_name": "Grayson Central Appraisal District eSearch",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/grayson.php"
+            ),
+            "source_url": "https://esearch.graysonappraisal.org/",
+            "note": (
+                "Grayson CAD eSearch supports interactive Owner, Address, "
+                "ID, and Advanced searches. No countywide parcel CSV/ZIP, "
+                "bulk export, or public API was verified. County-specific "
+                "source review checked 2026-11-02."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Grayson County Tax Assessor-Collector",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/grayson.php"
+            ),
+            "source_url": (
+                "https://grayson.propertytaxpayments.net/landing-page-en-us"
+            ),
+            "note": (
+                "The Comptroller identifies Grayson County as a collecting "
+                "unit. Its linked Tax Assessor-Collector portal is a general "
+                "payment/contact landing page; no current delinquent-tax "
+                "inventory, tax-sale date, itemized lot list, or downloadable "
+                "docket was verified. County-specific source review checked "
+                "2026-11-02."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Grayson County Development Services and GIS",
+            "directory_url": "https://www.co.grayson.tx.us/page/dev.home",
+            "source_url": "https://www.co.grayson.tx.us/page/dev.gis",
+            "status": "municipal_scope",
+            "note": (
+                "Development Services GIS supports rural 9-1-1 addressing "
+                "and links to county development information, but no "
+                "property-level code/inspection case docket or downloadable "
+                "enforcement dataset was verified. County-specific source "
+                "review checked 2026-11-02."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Grayson County Sheriff's Office property sales",
+            "directory_url": "https://www.co.grayson.tx.us/page/gcso.home",
+            "source_url": "https://www.co.grayson.tx.us/page/gcso.home",
+            "note": (
+                "The Sheriff's Office says it conducts court-ordered real "
+                "estate sales, and the County public-information menu names "
+                "Sheriff's Property Sale. No current itemized sale list, "
+                "calendar, or downloadable docket was surfaced. "
+                "County-specific source review checked 2026-11-02."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Grayson County Clerk Official Records Search",
+            "directory_url": "https://www.co.grayson.tx.us/page/cclk.home",
+            "source_url": "https://grayson.tx.publicsearch.us/",
+            "note": (
+                "The official records portal supports live Real Property "
+                "searches by grantor/grantee, subdivision, document type, or "
+                "document number and was certified through 10/27/2026. It is "
+                "a general records index, not a dedicated lis-pendens/default "
+                "feed; no bulk export or refresh cadence was verified. "
+                "County-specific source review checked 2026-11-02."
+            ),
+        },
+    },
+    "Gregg": {
+        "assessor": {
+            "directory_name": "Gregg County Appraisal District property information",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/gregg.php"
+            ),
+            "source_url": "https://gcad.org/",
+            "note": (
+                "The CAD site says property-specific information is "
+                "available, but the guessed eSearch host "
+                "esearch.gcad.org failed with a DNS/connection error. No "
+                "usable countywide parcel search, CSV/ZIP, bulk export, or "
+                "public API was verified. County-specific source review "
+                "checked 2026-11-02."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Gregg County Tax Assessor-Collector",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/gregg.php"
+            ),
+            "source_url": (
+                "https://greggcounty.texas.gov/departments/"
+                "tax-assessor-collector"
+            ),
+            "note": (
+                "The Comptroller identifies Gregg County as a collecting "
+                "unit, and the County Tax Assessor-Collector page links "
+                "property-tax payments. No separate current tax-sale date, "
+                "itemized tax-sale inventory, or auction docket was verified; "
+                "the County's foreclosure PDF was not verified as a tax-sale "
+                "list. County-specific source review checked 2026-11-02."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Gregg County code-enforcement source discovery",
+            "directory_url": "https://greggcounty.texas.gov/",
+            "source_url": "https://greggcounty.texas.gov/",
+            "status": "municipal_scope",
+            "note": (
+                "The County pages reviewed exposed no public property-level "
+                "code, inspection, or permit-case feed, countywide export, "
+                "or update cadence. County-specific source review checked "
+                "2026-11-02."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Gregg County Foreclosure List",
+            "directory_url": (
+                "https://greggcounty.texas.gov/news-events/events"
+                "?category=foreclosure"
+            ),
+            "source_url": (
+                "https://greggcounty.texas.gov/assets/main/"
+                "november-2026-foreclosure.pdf"
+            ),
+            "note": (
+                "The County's News & Events page lists a November 3, 2026 "
+                "Foreclosure List and links this PDF. The 29,601,145-byte "
+                "file downloaded successfully and had a valid PDF header. "
+                "The event does not classify the underlying notices as "
+                "mortgage versus tax foreclosure. County-specific source "
+                "review checked 2026-11-02."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Gregg County Clerk property records",
+            "directory_url": (
+                "https://greggcounty.texas.gov/departments/county-clerk"
+            ),
+            "source_url": (
+                "https://greggcounty.texas.gov/departments/county-clerk"
+            ),
+            "note": (
+                "The County Clerk page references a County Clerk Property "
+                "Records Search but did not expose a direct public search "
+                "link in the accessible page. No dedicated lis-pendens/"
+                "default feed, bulk export, or refresh cadence was verified. "
+                "County-specific source review checked 2026-11-02."
+            ),
+        },
+    },
+    "Grimes": {
+        "assessor": {
+            "directory_name": "Grimes Central Appraisal District",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/grimes.php"
+            ),
+            "source_url": "https://grimescad.org/",
+            "note": (
+                "The CAD site describes appraisal and collection services "
+                "and directs taxpayers to the Grimes tax portal. The guessed "
+                "eSearch host failed with a DNS/connection error; no usable "
+                "countywide parcel search, CSV/ZIP, bulk export, or public "
+                "API was verified. County-specific source review checked "
+                "2026-11-02."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Grimes County tax-sale source discovery",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/grimes.php"
+            ),
+            "source_url": "https://www.grimestaxes.org/",
+            "note": (
+                "The Comptroller says the County Tax Assessor-Collector does "
+                "not collect property taxes; GCAD describes itself as "
+                "providing appraisal and collection services. The linked tax "
+                "portal did not expose a current tax-sale date, itemized lot "
+                "list, or downloadable auction docket. County-specific source "
+                "review checked 2026-11-02."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Grimes County public notices and code-enforcement source discovery",
+            "directory_url": "https://grimescountytexas.gov/",
+            "source_url": "https://grimescountytexas.gov/public-notices",
+            "status": "municipal_scope",
+            "note": (
+                "The County public-notices page exposed no property-level "
+                "code, inspection, or permit-case feed. No countywide public "
+                "export or update cadence was verified. County-specific "
+                "source review checked 2026-11-02."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Grimes County Clerk foreclosure records",
+            "directory_url": "https://grimescountytexas.gov/county-clerk",
+            "source_url": "https://grimes.tx.publicsearch.us/",
+            "note": (
+                "The County Clerk says its public property-record search "
+                "includes foreclosures, but it is a general records index, "
+                "not an upcoming-sale list. No current foreclosure calendar, "
+                "itemized sale inventory, or downloadable docket was "
+                "verified. County-specific source review checked 2026-11-02."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Grimes County Clerk Official Records Search",
+            "directory_url": "https://grimescountytexas.gov/county-clerk",
+            "source_url": "https://grimes.tx.publicsearch.us/",
+            "note": (
+                "The official records portal supports property-record "
+                "searches by grantor/grantee, subdivision, document type, or "
+                "document number and was certified through 10/28/2026. It is "
+                "a general records index, not a dedicated lis-pendens/default "
+                "feed; no bulk export or refresh cadence was verified. "
+                "County-specific source review checked 2026-11-02."
+            ),
+        },
+    },
+    "Guadalupe": {
+        "assessor": {
+            "directory_name": "Guadalupe Appraisal District eSearch",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/guadalupe.php"
+            ),
+            "source_url": "https://esearch.guadalupead.org/",
+            "note": (
+                "Guadalupe AD eSearch supports interactive Owner, Address, "
+                "ID, and Advanced searches. No countywide parcel CSV/ZIP, "
+                "bulk export, or public API was verified. County-specific "
+                "source review checked 2026-11-02."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Guadalupe County Tax Assessor-Collector",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/guadalupe.php"
+            ),
+            "source_url": "https://www.guadalupetx.gov/",
+            "note": (
+                "The Comptroller identifies Guadalupe County as a collecting "
+                "unit. Its older listed County website did not resolve, while "
+                "the current County homepage showed only a generic Fair "
+                "Housing notice. No current tax-sale date, itemized lot list, "
+                "or downloadable docket was verified; the access limitation "
+                "does not establish that no records exist. County-specific "
+                "source review checked 2026-11-02."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Guadalupe County code-enforcement source discovery",
+            "directory_url": "https://www.guadalupetx.gov/",
+            "source_url": "https://www.guadalupetx.gov/",
+            "status": "municipal_scope",
+            "note": (
+                "The current County homepage showed only a generic Fair "
+                "Housing notice, and no public property-level code, "
+                "inspection, or permit-case feed was verified. No countywide "
+                "export or update cadence was confirmed. County-specific "
+                "source review checked 2026-11-02."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Guadalupe County foreclosure notices",
+            "directory_url": "https://www.guadalupetx.gov/",
+            "source_url": "https://www.guadalupetx.gov/",
+            "note": (
+                "The former County website did not resolve and the current "
+                "County homepage showed only a generic Fair Housing notice. "
+                "No current foreclosure notice list, calendar, or "
+                "downloadable inventory could be verified; these access "
+                "limitations are not proof that no records exist. "
+                "County-specific source review checked 2026-11-02."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Guadalupe County Clerk real-property records",
+            "directory_url": "https://www.guadalupetx.gov/county-clerk",
+            "source_url": "https://www.guadalupetx.gov/county-clerk",
+            "note": (
+                "The current County Clerk route returned HTTP 404, and the "
+                "former official County site did not resolve. No public "
+                "searchable real-property record portal, dedicated "
+                "lis-pendens/default feed, bulk export, or refresh cadence "
+                "was verified. County-specific source review checked "
+                "2026-11-02."
+            ),
+        },
+    },
+    "Hale": {
+        "assessor": {
+            "directory_name": "Hale Appraisal District eSearch",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/hale.php"
+            ),
+            "source_url": "https://esearch.halecad.org/",
+            "note": (
+                "Hale CAD eSearch supports interactive Owner, Address, ID, "
+                "and Advanced searches and displays preliminary 2026 values. "
+                "No countywide parcel CSV/ZIP, bulk export, or public API was "
+                "verified. County-specific source review checked 2026-11-02."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Hale County Tax Assessor-Collector",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/hale.php"
+            ),
+            "source_url": "https://www.halecounty.org/",
+            "note": (
+                "The Comptroller says the County Tax Assessor-Collector does "
+                "not collect property taxes; the CAD may collect some or all "
+                "local taxes. County Tax Office pages returned HTTP 403, and "
+                "no current tax-sale date, itemized lot list, or downloadable "
+                "docket was verified. County-specific source review checked "
+                "2026-11-02."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Hale County code-enforcement source discovery",
+            "directory_url": "https://www.halecounty.org/",
+            "source_url": "https://www.halecounty.org/",
+            "status": "municipal_scope",
+            "note": (
+                "The County homepage provides general county information; "
+                "the County Clerk and other guessed office routes returned "
+                "HTTP 403. No property-level code/inspection case feed, "
+                "countywide export, or update cadence was verified. "
+                "County-specific source review checked 2026-11-02."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Hale County foreclosure notices",
+            "directory_url": "https://www.halecounty.org/",
+            "source_url": "https://www.halecounty.org/",
+            "note": (
+                "The County's foreclosure/sales route returned HTTP 403. No "
+                "current foreclosure notice list, sale calendar, or "
+                "downloadable inventory could be verified; the access error "
+                "is not proof that no records exist. County-specific source "
+                "review checked 2026-11-02."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Hale County Clerk real-property records",
+            "directory_url": "https://www.halecounty.org/",
+            "source_url": "https://www.halecounty.org/",
+            "note": (
+                "The County Clerk route returned HTTP 403, and no separate "
+                "public real-property search portal was surfaced. No "
+                "dedicated lis-pendens/default feed, bulk export, or refresh "
+                "cadence was verified. County-specific source review checked "
+                "2026-11-02."
+            ),
+        },
+    },
+    "Hall": {
+        "assessor": {
+            "directory_name": "Hall County Appraisal District property search",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/hall.php"
+            ),
+            "source_url": "https://hallcad.org/",
+            "note": (
+                "Hall CAD's site presents Basic, Owner, Property, and "
+                "Advanced interactive searches and says the CAD collects "
+                "for all taxing units. The browser reported a JavaScript "
+                "null.trim error before search results could be verified. "
+                "No parcel CSV/ZIP, bulk export, or public API was found. "
+                "County-specific source review checked 2026-11-02."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Hall County tax-sale source discovery",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/hall.php"
+            ),
+            "source_url": "https://hallcad.org/",
+            "note": (
+                "The Comptroller says the County Tax Assessor-Collector does "
+                "not collect property taxes; Hall CAD says it collects for "
+                "all taxing units. The CAD site exposes no current tax-sale "
+                "date, itemized lot list, or downloadable auction docket. "
+                "County-specific source review checked 2026-11-02."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Hall County code-enforcement source discovery",
+            "directory_url": "https://www.co.hall.tx.us/",
+            "source_url": "https://www.co.hall.tx.us/",
+            "status": "municipal_scope",
+            "note": (
+                "The County homepage exposes general information and a burn "
+                "ban notice; the guessed office routes returned HTTP 403. "
+                "No property-level code/inspection case feed, countywide "
+                "export, or update cadence was verified. County-specific "
+                "source review checked 2026-11-02."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Hall County foreclosure notices",
+            "directory_url": "https://www.co.hall.tx.us/",
+            "source_url": "https://www.co.hall.tx.us/",
+            "note": (
+                "The County foreclosure/sales route returned HTTP 403. No "
+                "current foreclosure notice list, sale calendar, or "
+                "downloadable inventory could be verified; the access error "
+                "is not proof that no records exist. County-specific source "
+                "review checked 2026-11-02."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Hall County Clerk real-property records",
+            "directory_url": "https://www.co.hall.tx.us/",
+            "source_url": "https://www.co.hall.tx.us/",
+            "note": (
+                "The County Clerk route returned HTTP 403, and the guessed "
+                "public-record search host did not resolve. No public "
+                "searchable real-property portal, dedicated "
+                "lis-pendens/default feed, bulk export, or refresh cadence "
+                "was verified. County-specific source review checked "
+                "2026-11-02."
+            ),
+        },
+    },
+    "Hamilton": {
+        "assessor": {
+            "directory_name": "Hamilton Central Appraisal District property search",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/hamilton.php"
+            ),
+            "source_url": (
+                "https://hamiltoncad.southwestdatasolutions.com/PropertySearch"
+            ),
+            "note": (
+                "Hamilton CAD provides a quick property search by name, Geo "
+                "ID, or property ID and links an interactive GIS map. Its "
+                "Downloads & Forms page contains appraisal forms, not a "
+                "verified parcel-roll file or bulk export. County-specific "
+                "source review checked 2026-11-02."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Hamilton CAD Tax Sale Property Notice",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/hamilton.php"
+            ),
+            "source_url": (
+                "https://hamiltoncad.southwestdatasolutions.com/c/tax-sale"
+            ),
+            "note": (
+                "Hamilton CAD publishes a Tax Sale Property Notice page with "
+                "an October 6 PDF; the 130,186-byte file downloaded and had "
+                "a valid PDF header. The displayed link does not state the "
+                "year, and the page warns that properties can be removed "
+                "from sale; current sale status must be confirmed with CAD. "
+                "County-specific source review checked 2026-11-02."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Hamilton County code-enforcement source discovery",
+            "directory_url": "https://www.hamiltoncountytx.gov/",
+            "source_url": "https://www.hamiltoncountytx.gov/",
+            "status": "municipal_scope",
+            "note": (
+                "The County homepage links an ArcGIS map for fire, weather, "
+                "and road closures, not property code cases. No public "
+                "property-level code/inspection feed, countywide export, or "
+                "update cadence was verified. County-specific source review "
+                "checked 2026-11-02."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Hamilton County foreclosure notices",
+            "directory_url": "https://www.hamiltoncountytx.gov/",
+            "source_url": (
+                "https://www.hamiltoncountytx.gov/page/"
+                "hamilton.ForeclosuresandSales"
+            ),
+            "note": (
+                "The County's foreclosure/sales route returned HTTP 403. The "
+                "CAD separately posts a tax-sale notice (see tax-sale source), "
+                "but no current mortgage/trustee foreclosure list or "
+                "downloadable docket was verified. County-specific source "
+                "review checked 2026-11-02."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Hamilton County Clerk real-property records",
+            "directory_url": "https://www.hamiltoncountytx.gov/",
+            "source_url": (
+                "https://www.hamiltoncountytx.gov/page/"
+                "hamilton.County.Clerk"
+            ),
+            "note": (
+                "The County Clerk route returned HTTP 403, and no public "
+                "searchable real-property portal was surfaced. No dedicated "
+                "lis-pendens/default feed, bulk export, or refresh cadence "
+                "was verified. County-specific source review checked "
+                "2026-11-02."
+            ),
+        },
+    },
+    "Hansford": {
+        "assessor": {
+            "directory_name": "Hansford County Appraisal District property search",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/hansford.php"
+            ),
+            "source_url": "https://hansfordcad.org/",
+            "note": (
+                "Hansford CAD provides interactive Basic, Owner, Property, "
+                "and Advanced searches. No countywide parcel CSV/ZIP, bulk "
+                "export, or public API was verified. County-specific source "
+                "review checked 2026-11-02."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Hansford County Tax Assessor-Collector",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/hansford.php"
+            ),
+            "source_url": "https://www.co.hansford.tx.us/page/County.Assessor.Collector",
+            "note": (
+                "The Comptroller identifies Hansford County as a collecting "
+                "unit. The County Tax Assessor-Collector page provides office "
+                "contact details but no current tax-sale date, itemized lot "
+                "list, or downloadable auction docket. County-specific source "
+                "review checked 2026-11-02."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Hansford County public notices and code-enforcement source discovery",
+            "directory_url": "https://www.co.hansford.tx.us/",
+            "source_url": "https://www.co.hansford.tx.us/page/Public.Notices",
+            "status": "municipal_scope",
+            "note": (
+                "The County site exposes a public-notices calendar but no "
+                "property-level code, inspection, or permit-case feed. No "
+                "countywide export or update cadence was verified. "
+                "County-specific source review checked 2026-11-02."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Hansford County foreclosure notices",
+            "directory_url": "https://www.co.hansford.tx.us/page/County.Clerk",
+            "source_url": "https://www.co.hansford.tx.us/page/County.Clerk",
+            "note": (
+                "The County menu labels a link Foreclosure Notices, but it "
+                "points to the general County Clerk page, whose accessible "
+                "content showed no sale notices. A separate guessed "
+                "foreclosure/sales route returned HTTP 403; no current "
+                "itemized list or downloadable docket was verified. "
+                "County-specific source review checked 2026-11-02."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Hansford County Clerk real-property records",
+            "directory_url": "https://www.co.hansford.tx.us/page/County.Clerk",
+            "source_url": "https://www.co.hansford.tx.us/page/County.Clerk",
+            "note": (
+                "The County Clerk page exposed office navigation and contact "
+                "information but no public searchable real-property record "
+                "portal. No dedicated lis-pendens/default feed, bulk export, "
+                "or refresh cadence was verified. County-specific source "
+                "review checked 2026-11-02."
+            ),
+        },
+    },
+    "Hardeman": {
+        "assessor": {
+            "directory_name": "Hardeman County Appraisal District",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/hardeman.php"
+            ),
+            "source_url": "https://hardemancad.org/",
+            "note": (
+                "The Comptroller-listed CAD homepage returned only "
+                "'Agent' during this check. The guessed eSearch host did not "
+                "resolve; no usable parcel search, CSV/ZIP, bulk export, or "
+                "public API was verified. County-specific source review "
+                "checked 2026-11-02."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Hardeman County Tax Assessor-Collector",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/hardeman.php"
+            ),
+            "source_url": "https://www.co.hardeman.tx.us/",
+            "note": (
+                "The Comptroller identifies Hardeman County as a collecting "
+                "unit. The County homepage links tax-transparency and "
+                "estimated-tax notices, not an auction inventory; no current "
+                "tax-sale date, itemized lot list, or downloadable docket "
+                "was verified. County-specific source review checked "
+                "2026-11-02."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Hardeman County code-enforcement source discovery",
+            "directory_url": "https://www.co.hardeman.tx.us/",
+            "source_url": "https://www.co.hardeman.tx.us/",
+            "status": "municipal_scope",
+            "note": (
+                "The County homepage provides general notices and a burn-ban "
+                "link, but no property-level code/inspection case feed, "
+                "countywide export, or update cadence was verified. "
+                "County-specific source review checked 2026-11-02."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Hardeman County foreclosure notices",
+            "directory_url": "https://www.co.hardeman.tx.us/",
+            "source_url": "https://www.co.hardeman.tx.us/",
+            "note": (
+                "The County pages reviewed exposed no current foreclosure "
+                "sale list, calendar, or downloadable docket. The County "
+                "Clerk's online records notice points to a general records "
+                "service, not a verified upcoming-sale inventory. "
+                "County-specific source review checked 2026-11-02."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Hardeman County Clerk real-property records",
+            "directory_url": "https://www.co.hardeman.tx.us/",
+            "source_url": "https://www.edoctecinc.com/",
+            "note": (
+                "The County homepage says the County Clerk has online "
+                "research for records from October 31, 2006 to current, but "
+                "its vendor link opened only a general contact page; no "
+                "county-specific search endpoint was verified. This is not "
+                "a dedicated lis-pendens/default feed or bulk export. "
+                "County-specific source review checked 2026-11-02."
+            ),
+        },
+    },
+    "Hardin": {
+        "assessor": {
+            "directory_name": "Hardin County Appraisal District property data",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/hardin.php"
+            ),
+            "source_url": "https://hardin-cad.org/shapefile-download/",
+            "note": (
+                "Hardin CAD eSearch supports interactive Owner, Address, ID, "
+                "and Advanced searches and showed preliminary 2026 values. "
+                "Its Shapefile Download page links a Hardin County GBD ZIP; "
+                "the file served HTTP 200 with a 14,569,902-byte content "
+                "length, a 2023-07-02 Last-Modified date, and a ZIP signature "
+                "on a ranged GET. This is an old GIS archive, not a current "
+                "certified appraisal roll; no recent parcel-roll export or "
+                "update cadence was verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Hardin County Tax Assessor-Collector",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/hardin.php"
+            ),
+            "source_url": (
+                "https://www.hardincountytx.gov/page/Tax.Assessor.Collector"
+            ),
+            "note": (
+                "The Comptroller identifies Hardin County as a collecting "
+                "unit, but the County Tax Assessor-Collector route returned "
+                "HTTP 403. No current sale date, itemized tax-sale list, "
+                "download, or recurring feed was verified; the access error "
+                "does not establish that no records exist."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Hardin County floodplain administration",
+            "directory_url": "https://www.hardincountytx.gov/",
+            "source_url": (
+                "https://www.hardincountytx.gov/page/"
+                "hardin.County.FloodplainAdmin"
+            ),
+            "status": "municipal_scope",
+            "note": (
+                "The County's floodplain page provides an administrator "
+                "contact, not a property-level code or inspection case list. "
+                "No countywide enforcement feed, export, or update cadence "
+                "was verified; municipal enforcement may be separate."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Hardin County foreclosure sales",
+            "directory_url": (
+                "https://www.hardincountytx.gov/page/Foreclosures"
+            ),
+            "source_url": "https://www.hardincountytx.gov/page/Foreclosures",
+            "note": (
+                "The County's Foreclosures page displayed only the "
+                "courthouse address, not an itemized sale notice list or "
+                "calendar. No current mortgage/trustee notice inventory, "
+                "download, or recurring feed was verified."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Hardin County Clerk real-property records",
+            "directory_url": (
+                "https://www.hardincountytx.gov/page/County.Clerk"
+            ),
+            "source_url": "https://www.hardincountytx.gov/page/County.Clerk",
+            "note": (
+                "The County Clerk page describes vital-record, marriage, "
+                "assumed-name, and other office services but links no public "
+                "real-property search. No dedicated lis-pendens/default "
+                "index, bulk export, or refresh cadence was verified."
+            ),
+        },
+    },
+    "Harris": {
+        "assessor": {
+            "directory_name": "Harris Central Appraisal District data downloads",
+            "directory_url": "https://hcad.org/pdata/pdata-property-downloads.html",
+            "source_url": (
+                "https://download.hcad.org/data/CAMA/2026/Real_acct_owner.zip"
+            ),
+            "note": (
+                "HCAD's public CAMA endpoint lists 2026 real-property "
+                "ownership data; a ranged GET to Real_acct_owner.zip returned "
+                "HTTP 206 and a ZIP signature (212,021,338 bytes total). The "
+                "GIS endpoint also served Parcels.zip with a ZIP signature "
+                "(212,259,011 bytes); HCAD says GIS files are updated "
+                "quarterly. These are bulk appraisal/GIS datasets, not "
+                "distressed-property lists, and no weekly refresh guarantee "
+                "or automated-use authorization was verified."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Harris County code-enforcement source discovery",
+            "directory_url": "https://www.harriscountytx.gov/",
+            "source_url": "https://www.harriscountytx.gov/",
+            "status": "municipal_scope",
+            "note": (
+                "No countywide public property-level code or inspection case "
+                "feed, export, or update cadence was identified in the "
+                "County sources reviewed. Code enforcement is often "
+                "municipal, so city-specific coverage would need separate "
+                "review."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Harris County Clerk foreclosure search",
+            "directory_url": (
+                "https://www.cclerk.hctx.net/Applications/WebSearch/FRCL_R.aspx"
+            ),
+            "source_url": (
+                "https://www.cclerk.hctx.net/Applications/WebSearch/FRCL_R.aspx"
+            ),
+            "note": (
+                "The Clerk's interactive search filters by document ID, sale "
+                "date, file date, year, and month. It reported postings "
+                "accepted through 10/30/2026; a November 2026 sale-date "
+                "search returned 840 rows for the November 3 sale. Results "
+                "are paginated document IDs with individual image links; no "
+                "combined CSV or bulk export was found."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Harris County Clerk real-property records",
+            "directory_url": "https://www.cclerk.hctx.net/Applications/WebSearch/RP.aspx",
+            "source_url": "https://www.cclerk.hctx.net/Applications/WebSearch/RP.aspx",
+            "note": (
+                "The public real-property index searches dates, grantors, "
+                "grantees, trustees, descriptions, and instrument types; "
+                "records are available from 1960, with a stated 1-2 business "
+                "day posting delay. Searches are free, while copies require "
+                "registration and may cost money. Bulk data/FTP access is "
+                "available by contacting the Clerk's Data Sales desk; this "
+                "is a general index, not a dedicated lis-pendens/default "
+                "feed or public bulk download."
+            ),
+        },
+    },
+    "Harrison": {
+        "assessor": {
+            "directory_name": "Harrison Central Appraisal District property search",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/harrison.php"
+            ),
+            "source_url": "https://harrisoncad.net/",
+            "note": (
+                "The CAD's public portal offers interactive Property Search, "
+                "Map Search, and tax-payment tools. No countywide parcel "
+                "CSV/ZIP, bulk export, or public API was verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Harrison County Tax Assessor-Collector",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/harrison.php"
+            ),
+            "source_url": (
+                "https://www.harrisoncountytexas.gov/page/"
+                "Tax.Assessor.Collector"
+            ),
+            "note": (
+                "The Comptroller identifies Harrison County as a collecting "
+                "unit, but the County Tax Assessor-Collector route returned "
+                "HTTP 403. No current tax-sale date, itemized lot list, "
+                "download, or recurring feed was verified; the access error "
+                "is not proof that no records exist."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Harrison County code-enforcement source discovery",
+            "directory_url": "https://www.harrisoncountytexas.gov/",
+            "source_url": "https://www.harrisoncountytexas.gov/",
+            "status": "municipal_scope",
+            "note": (
+                "The County sources reviewed did not expose a countywide "
+                "property-level code or inspection case feed, export, or "
+                "update cadence. Municipal code-enforcement coverage may be "
+                "separate."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Harrison County foreclosure notices",
+            "directory_url": (
+                "https://www.harrisoncountytexas.gov/page/Foreclosures"
+            ),
+            "source_url": (
+                "https://www.harrisoncountytexas.gov/page/Foreclosures"
+            ),
+            "note": (
+                "The County's foreclosure route returned HTTP 403, so its "
+                "contents could not be verified. No current mortgage/trustee "
+                "sale list, downloadable docket, or recurring feed was "
+                "confirmed; the access error does not prove that records do "
+                "not exist."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Harrison County Clerk real-property records",
+            "directory_url": (
+                "https://www.harrisoncountytexas.gov/page/County.Clerk"
+            ),
+            "source_url": (
+                "https://www.harrisoncountytexas.gov/page/County.Clerk"
+            ),
+            "note": (
+                "The County Clerk route returned HTTP 403, so a public "
+                "real-property search could not be confirmed. No dedicated "
+                "lis-pendens/default index, bulk export, or refresh cadence "
+                "was verified."
+            ),
+        },
+    },
+    "Hartley": {
+        "assessor": {
+            "directory_name": "Hartley County Appraisal District GIS data",
+            "directory_url": "https://hartleycad.org/",
+            "source_url": (
+                "https://texascountygisdata.com/product/"
+                "hartley-county-kmz-and-property-data/"
+            ),
+            "note": (
+                "The CAD links a third-party Premium GIS property-data "
+                "product priced at $275. It advertises ownership, parcel "
+                "boundaries, legal descriptions, values, situs/mailing "
+                "addresses, and deed attributes, with a ZIP download after "
+                "purchase (up to five downloads). The vendor says Premium "
+                "datasets are updated nightly, but no current extract date "
+                "or public free export was verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Hartley County Tax Assessor-Collector",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/hartley.php"
+            ),
+            "source_url": (
+                "https://www.co.hartley.tx.us/page/Tax.Assessor.Collector"
+            ),
+            "note": (
+                "The Comptroller says the County Tax Assessor-Collector does "
+                "not collect property taxes; the County tax-office route "
+                "returned HTTP 403. The CAD may collect some local taxes, "
+                "but no current tax-sale date, itemized list, downloadable "
+                "inventory, or recurring feed was verified."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Hartley County code-enforcement source discovery",
+            "directory_url": "https://www.co.hartley.tx.us/",
+            "source_url": "https://www.co.hartley.tx.us/page/Floodplain",
+            "status": "municipal_scope",
+            "note": (
+                "The County floodplain route returned HTTP 403. No "
+                "countywide property-level code or inspection case list, "
+                "public export, or update cadence was verified; municipal "
+                "enforcement may be separate."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Hartley County foreclosure notices",
+            "directory_url": "https://www.co.hartley.tx.us/page/Foreclosures",
+            "source_url": "https://www.co.hartley.tx.us/page/Foreclosures",
+            "note": (
+                "The County foreclosure route returned HTTP 403, so no "
+                "current mortgage/trustee sale notice list, calendar, or "
+                "download could be verified; the access error is not proof "
+                "that no records exist."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Hartley County Clerk real-property records",
+            "directory_url": "https://www.co.hartley.tx.us/page/County.Clerk",
+            "source_url": "https://www.co.hartley.tx.us/page/County.Clerk",
+            "note": (
+                "The County Clerk page provides office contacts but no public "
+                "real-property search. No dedicated lis-pendens/default "
+                "index, bulk export, or refresh cadence was verified."
+            ),
+        },
+    },
+    "Haskell": {
+        "assessor": {
+            "directory_name": "Haskell County Appraisal District property search",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/haskell.php"
+            ),
+            "source_url": "https://haskellcad.org/",
+            "note": (
+                "The Comptroller page lists haskellcad.com, which failed at "
+                "the DNS/connection layer. A separate Haskell CAD-branded "
+                "Pritchard & Abbott .org portal provides interactive "
+                "Basic/Owner/Property/Advanced searches and a map; its "
+                "Records | Data | Reports route exposed no direct CSV/ZIP "
+                "link in this check. The .org relationship to the official "
+                "directory was not independently confirmed."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Haskell County tax-sale source discovery",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/haskell.php"
+            ),
+            "source_url": "https://haskellcad.org/",
+            "note": (
+                "The Comptroller's 2013 Tax Assessor-Collector entry says "
+                "that office does not collect property taxes; the accessible "
+                "Pritchard & Abbott CAD-branded .org site says the CAD "
+                "collects for its taxing entities and supports online tax "
+                "payments. Neither source published a current tax-sale "
+                "date, itemized lot list, or downloadable auction docket; "
+                "the .org domain's official relationship needs confirmation."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Haskell County code-enforcement source discovery",
+            "directory_url": "https://www.haskellcountytx.gov/",
+            "source_url": "https://www.haskellcountytx.gov/",
+            "status": "municipal_scope",
+            "note": (
+                "The County homepage returned only a Texas Association of "
+                "Counties logo. Clerk/floodplain routes returned HTTP 403, "
+                "and the foreclosure route rendered Hardin County menu "
+                "content. No Haskell County property-level code or "
+                "inspection feed, export, or update cadence was verified."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Haskell County foreclosure sales",
+            "directory_url": (
+                "https://www.haskellcountytx.gov/page/Foreclosures"
+            ),
+            "source_url": (
+                "https://www.haskellcountytx.gov/page/Foreclosures"
+            ),
+            "note": (
+                "The County foreclosure route rendered Hardin County menu "
+                "content and a stale notice referring to 2024 sales, not a "
+                "Haskell County sale list. No Haskell-specific current "
+                "foreclosure inventory or downloadable docket could be "
+                "verified."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Haskell County Clerk real-property records",
+            "directory_url": (
+                "https://www.haskellcountytx.gov/page/County.Clerk"
+            ),
+            "source_url": (
+                "https://www.haskellcountytx.gov/page/County.Clerk"
+            ),
+            "note": (
+                "The County Clerk route returned HTTP 403, so a public "
+                "real-property search could not be confirmed. No dedicated "
+                "lis-pendens/default index, bulk export, or refresh cadence "
+                "was verified."
+            ),
+        },
+    },
+    "Hays": {
+        "assessor": {
+            "directory_name": "Hays Central Appraisal District property search",
+            "directory_url": "https://hayscad.com/",
+            "source_url": "https://hayscad.com/",
+            "note": (
+                "The CAD homepage links interactive Property Search and "
+                "Interactive Map tools. No public bulk parcel file, CSV/ZIP "
+                "download, or export endpoint was verified on the reviewed "
+                "pages."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Hays County Tax Assessor-Collector sale sources",
+            "directory_url": (
+                "https://www.hayscountytx.gov/departments/"
+                "tax-assessor-collector"
+            ),
+            "source_url": "https://tax.co.hays.tx.us/",
+            "note": (
+                "The Comptroller identifies Hays County as a collecting "
+                "unit. The County Tax Assessor-Collector route returned "
+                "HTTP 403 and the linked tax portal failed at the "
+                "DNS/connection layer; no current tax-sale list, PDF, or "
+                "download was verified. These access failures do not show "
+                "that no sale records exist."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Hays County code-enforcement source discovery",
+            "directory_url": "https://www.hayscountytx.gov/",
+            "source_url": "https://www.hayscountytx.gov/",
+            "status": "municipal_scope",
+            "note": (
+                "The County website returned HTTP 403 in this check. No "
+                "countywide property-level code or inspection case feed, "
+                "export, or update cadence could be verified; city "
+                "enforcement may be separate."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Hays County Clerk foreclosure notices",
+            "directory_url": (
+                "https://www.hayscountytx.gov/departments/county-clerk"
+            ),
+            "source_url": (
+                "https://www.hayscountytx.gov/departments/county-clerk"
+            ),
+            "note": (
+                "The County Clerk route returned HTTP 403. No current "
+                "mortgage/trustee sale notice list, calendar, or "
+                "downloadable docket could be verified; the access error "
+                "does not establish that notices are unavailable."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Hays County Clerk real-property records",
+            "directory_url": (
+                "https://www.hayscountytx.gov/departments/county-clerk"
+            ),
+            "source_url": (
+                "https://www.hayscountytx.gov/departments/county-clerk"
+            ),
+            "note": (
+                "The County Clerk route returned HTTP 403, so a public "
+                "real-property or lis-pendens search, bulk export, and "
+                "refresh cadence could not be confirmed."
+            ),
+        },
+    },
+    "Hemphill": {
+        "assessor": {
+            "directory_name": "Hemphill County Appraisal District property search",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/hemphill.php"
+            ),
+            "source_url": "https://www.hemphillcad.org/",
+            "note": (
+                "The CAD portal provides interactive Basic, By Owner, By "
+                "Property, All Criteria, and Advanced searches. No public "
+                "bulk parcel download, CSV/ZIP file, or export route was "
+                "verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Hemphill County tax-sale notices",
+            "directory_url": (
+                "https://www.co.hemphill.tx.us/page/"
+                "hemphill.County.Assessor.Collector"
+            ),
+            "source_url": (
+                "https://www.co.hemphill.tx.us/page/"
+                "hemphill.Notice%20of%20Sales"
+            ),
+            "note": (
+                "The County's Notice of Sales page returned only the "
+                "courthouse address; its Tax Assessor/Collector page "
+                "published 2026 tax-rate worksheets and meeting notices, "
+                "not a current auction inventory. No itemized sale list "
+                "or downloadable docket was verified."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Hemphill County code-enforcement source discovery",
+            "directory_url": "https://www.co.hemphill.tx.us/",
+            "source_url": "https://www.co.hemphill.tx.us/",
+            "status": "municipal_scope",
+            "note": (
+                "The County site lists its offices and public notices but "
+                "exposes no countywide property-level code or inspection "
+                "case feed, export, or refresh cadence in the pages "
+                "reviewed. City enforcement may be separate."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Hemphill County Clerk foreclosure notices",
+            "directory_url": (
+                "https://www.co.hemphill.tx.us/page/"
+                "hemphill.County.Clerk"
+            ),
+            "source_url": (
+                "https://www.co.hemphill.tx.us/page/"
+                "hemphill.Notice%20of%20Sales"
+            ),
+            "note": (
+                "The Clerk's page directs users to general official land "
+                "records but does not publish a dedicated mortgage or "
+                "trustee-sale calendar. The County's Notice of Sales page "
+                "showed no current sale inventory or downloadable notices."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Hemphill County Clerk official public records",
+            "directory_url": (
+                "https://www.co.hemphill.tx.us/page/"
+                "hemphill.County.Clerk"
+            ),
+            "source_url": "https://www.idocmarket.com/Sites",
+            "note": (
+                "The Clerk says land records are available through iDoc "
+                "Market and recommends searching by grantor, grantee, file "
+                "date, instrument number, or volume; legal-description-only "
+                "searches may miss records. Its recording-fee list includes "
+                "lis pendens, but this is a general index, not a dedicated "
+                "pre-foreclosure feed. No bulk export, refresh cadence, or "
+                "automated-access permission was verified."
+            ),
+        },
+    },
+    "Henderson": {
+        "assessor": {
+            "directory_name": "Henderson County Appraisal District property data",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/henderson.php"
+            ),
+            "source_url": "https://hendersoncad.org/",
+            "note": (
+                "The Comptroller directory links the County Appraisal "
+                "District; its accessible homepage lists taxing "
+                "jurisdictions and an estimated-tax notice. No public "
+                "parcel search, bulk data file, or export endpoint was "
+                "verified in the pages retrieved."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Henderson County Tax Assessor-Collector",
+            "directory_url": (
+                "https://www.henderson-county.com/departments/"
+                "county-tax-assessor-collector"
+            ),
+            "source_url": (
+                "https://www.henderson-county.com/departments/"
+                "county-tax-assessor-collector"
+            ),
+            "note": (
+                "The Comptroller identifies Henderson County as a "
+                "collecting unit, but the County Tax Assessor-Collector "
+                "route linked from the CAD returned HTTP 404. No current "
+                "tax-sale list, downloadable docket, or recurring feed "
+                "could be verified."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Henderson County code-enforcement source discovery",
+            "directory_url": "https://www.henderson-county.com/",
+            "source_url": "https://www.henderson-county.com/",
+            "status": "municipal_scope",
+            "note": (
+                "The County website's rendered homepage exposed only "
+                "account sign-in links in this check. No countywide "
+                "property-level code or inspection case feed, export, or "
+                "update cadence was verified; municipal coverage may be "
+                "separate."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Henderson County Clerk foreclosure notices",
+            "directory_url": (
+                "https://www.henderson-county.com/departments/county-clerk"
+            ),
+            "source_url": (
+                "https://www.henderson-county.com/departments/county-clerk"
+            ),
+            "note": (
+                "The County Clerk route returned HTTP 404. No current "
+                "mortgage/trustee sale notice calendar, itemized list, or "
+                "download could be verified; the failed route does not "
+                "prove that notices do not exist."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Henderson County Clerk real-property records",
+            "directory_url": (
+                "https://www.henderson-county.com/departments/county-clerk"
+            ),
+            "source_url": (
+                "https://www.henderson-county.com/departments/county-clerk"
+            ),
+            "note": (
+                "The County Clerk route returned HTTP 404, so an online "
+                "real-property or lis-pendens index, bulk export, and "
+                "refresh cadence could not be confirmed."
+            ),
+        },
+    },
+    "Hidalgo": {
+        "assessor": {
+            "directory_name": "Hidalgo County Appraisal District public portal",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/hidalgo.php"
+            ),
+            "source_url": "https://www.hidalgoad.org/",
+            "note": (
+                "The CAD site returned a JavaScript React Public Portal "
+                "shell, but the property-search interface did not render "
+                "in the available page client. No parcel download, CSV/ZIP, "
+                "or bulk export could be verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Hidalgo County Tax Assessor-Collector",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/hidalgo.php"
+            ),
+            "source_url": "https://www.hidalgocounty.us/",
+            "note": (
+                "The Comptroller directory identifies Hidalgo County as "
+                "the collecting unit and links the County website. The "
+                "separate hidalgocountytax.org host failed at the "
+                "DNS/connection layer, and no current tax-sale calendar, "
+                "itemized inventory, or downloadable list was verified."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Hidalgo County code-enforcement source discovery",
+            "directory_url": "https://www.hidalgocounty.us/",
+            "source_url": "https://www.hidalgocounty.us/",
+            "status": "municipal_scope",
+            "note": (
+                "The County homepage returned only its Title VI/ADA "
+                "contact message in the simplified page view, and no "
+                "countywide property-level code or inspection case feed, "
+                "export, or update cadence was surfaced. City enforcement "
+                "may be separate."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Hidalgo County foreclosure notices",
+            "directory_url": "https://www.hidalgocounty.us/",
+            "source_url": "https://www.hidalgocounty.us/",
+            "note": (
+                "No County Clerk or District Clerk foreclosure notice "
+                "calendar, current trustee-sale list, or downloadable "
+                "docket was exposed in the accessible County page content. "
+                "A countywide foreclosure feed was not verified."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Hidalgo County Clerk real-property records",
+            "directory_url": "https://www.hidalgocounty.us/",
+            "source_url": "https://www.hidalgocounty.us/",
+            "note": (
+                "The available County page content did not expose a "
+                "Clerk real-property or lis-pendens search. No dedicated "
+                "pre-foreclosure index, public bulk export, or refresh "
+                "cadence was verified."
+            ),
+        },
+    },
+    "Hill": {
+        "assessor": {
+            "directory_name": "Hill County Appraisal District property search",
+            "directory_url": "https://hillcad.org/",
+            "source_url": "https://esearch.hillcad.org/",
+            "note": (
+                "The CAD portal provides interactive Owner, Address, ID, "
+                "and Advanced searches for 2026 values, with an interactive "
+                "map. A download icon appeared in the search panel but was "
+                "not verifiable without a search result; no bulk parcel "
+                "export was confirmed."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Hill County Tax Office and MVBA tax-sale list",
+            "directory_url": "https://www.hilltax.org/tax-sale/",
+            "source_url": (
+                "https://mvbalaw.com/wp-content/TaxUploads/1126_Hill.pdf"
+            ),
+            "note": (
+                "The Tax Office page's stated next sale date, February 3, "
+                "2026, is past and stale. It links MVBA, whose November "
+                "2026 tax-sale page lists a November 3 Hill County sale and "
+                "links this seven-page PDF. The direct PDF returned HTTP "
+                "200 (449,781 bytes; last modified 2026-10-30); a four-byte "
+                "range request returned HTTP 206. This is a verified "
+                "downloadable current sale list, but no CSV/XLS feed, "
+                "future schedule, or automated-access permission was "
+                "verified."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Hill County code-enforcement source discovery",
+            "directory_url": "https://www.co.hill.tx.us/",
+            "source_url": "https://www.co.hill.tx.us/",
+            "status": "municipal_scope",
+            "note": (
+                "The County Clerk and Tax Office pages reviewed exposed "
+                "no countywide property-level code or inspection case feed, "
+                "export, or refresh cadence. City enforcement may be "
+                "separate."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Hill County Clerk foreclosure notices",
+            "directory_url": "https://www.co.hill.tx.us/page/hill.County.Clerk",
+            "source_url": "https://www.co.hill.tx.us/page/hill.County.Clerk",
+            "note": (
+                "The County Clerk page lists a $2 fee to post a foreclosure "
+                "notice and general document-filing information, but no "
+                "public foreclosure calendar, itemized notice list, or "
+                "downloadable docket."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Hill County Clerk real-property records",
+            "directory_url": "https://www.co.hill.tx.us/page/hill.County.Clerk",
+            "source_url": "https://www.co.hill.tx.us/page/hill.County.Clerk",
+            "note": (
+                "The Clerk page provides document-filing information but "
+                "no public real-property or lis-pendens search link. No "
+                "dedicated pre-foreclosure index, bulk export, or refresh "
+                "cadence was verified."
+            ),
+        },
+    },
+    "Houston": {
+        "assessor": {
+            "directory_name": "Houston County Appraisal District property search",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/houston.php"
+            ),
+            "source_url": "https://www.houstoncad.org/",
+            "note": (
+                "The CAD site exposes an interactive property-search portal "
+                "and links a Records/Data/Reports page, but the latter "
+                "returned only a copyright footer in this check. No parcel "
+                "CSV/ZIP or documented bulk endpoint was verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Houston County Tax Assessor-Collector",
+            "directory_url": "https://houstoncountytaxoffice.com/",
+            "source_url": "https://houstoncountytaxoffice.com/",
+            "note": (
+                "The Tax Office home page shows tax search/payment and a "
+                "Tax Sale Bidder Registration card. Its notices/news page "
+                "required login, and the public pages checked did not expose "
+                "a current itemized tax-sale list or CSV/ZIP/PDF download. "
+                "No recurring-download permission or public feed was "
+                "verified."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Houston County code-enforcement source discovery",
+            "directory_url": "https://www.co.houston.tx.us/",
+            "source_url": "https://www.co.houston.tx.us/",
+            "status": "municipal_scope",
+            "note": (
+                "The County pages checked did not expose a countywide "
+                "property-level code or inspection case list, export, or "
+                "refresh schedule. Code enforcement must be checked with "
+                "the individual municipalities."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Houston County Sheriff's Office",
+            "directory_url": "https://www.co.houston.tx.us/page/houston.Sheriff",
+            "source_url": "https://www.co.houston.tx.us/page/houston.Sheriff",
+            "note": (
+                "The official Sheriff's page provides an open-records "
+                "request contact, civil-process fees, and an inmate list, "
+                "but no property foreclosure calendar, itemized sale list, "
+                "or bulk download."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Houston County Clerk real-property records",
+            "directory_url": "https://www.co.houston.tx.us/page/houston.County.Clerk",
+            "source_url": "https://www.co.houston.tx.us/page/houston.County.Clerk",
+            "note": (
+                "The County Clerk page did not expose a dedicated "
+                "pre-foreclosure/lis-pendens index, bulk export, or recurring "
+                "feed in the retrieved content. No authorization for "
+                "automated access was verified."
+            ),
+        },
+    },
+    "Howard": {
+        "assessor": {
+            "directory_name": "Howard Central Appraisal District",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/howard.php"
+            ),
+            "source_url": "https://howardcad.org/",
+            "note": (
+                "The Comptroller links the Howard Central Appraisal District, "
+                "whose site describes access to specific property information "
+                "and posts tax-rate information. No direct bulk parcel "
+                "CSV/ZIP or documented API was verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Howard County Tax Assessor-Collector",
+            "directory_url": "https://www.co.howard.tx.us/1213/County-Tax-Assessor-Collector",
+            "source_url": "https://www.co.howard.tx.us/1213/County-Tax-Assessor-Collector",
+            "note": (
+                "The County Tax Assessor-Collector page provides courthouse "
+                "contact information but no current delinquent-tax sale date, "
+                "itemized inventory, or downloadable list. No recurring "
+                "source feed was verified."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Howard County OSSF Office and code-enforcement discovery",
+            "directory_url": "https://www.co.howard.tx.us/1231/OSSF-Office",
+            "source_url": "https://www.co.howard.tx.us/1231/OSSF-Office",
+            "status": "municipal_scope",
+            "note": (
+                "The County OSSF Office page provides courthouse contact "
+                "information only; no property-level code/inspection case "
+                "search, export, or countywide code-enforcement feed was "
+                "verified. City enforcement may be separate."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Howard County foreclosure notices",
+            "directory_url": "https://www.co.howard.tx.us/1209/Foreclosure-Notices",
+            "source_url": "https://www.co.howard.tx.us/1209/Foreclosure-Notices",
+            "note": (
+                "The official Foreclosure Notices page displayed courthouse "
+                "address and hours only, with no current notices, sale "
+                "calendar, itemized docket, or downloadable list."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Howard County Clerk real-property records",
+            "directory_url": "https://www.co.howard.tx.us/1208/County-Clerk",
+            "source_url": (
+                "https://howardcountytx-web.tylerhost.net/web/user/disclaimer"
+            ),
+            "note": (
+                "The County Clerk says its office does not conduct real-"
+                "property searches and directs users to a Tyler self-service "
+                "records portal. The portal presents a general document "
+                "index; no dedicated lis-pendens feed, bulk export, or "
+                "permission for recurring automated collection was verified."
+            ),
+        },
+    },
+    "Hudspeth": {
+        "assessor": {
+            "directory_name": "Hudspeth Appraisal District property search",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/hudspeth.php"
+            ),
+            "source_url": "https://esearch.hudspethcad.org/",
+            "note": (
+                "The CAD portal supports interactive Owner, Address, ID, "
+                "and Advanced property searches and carries a research-use "
+                "disclaimer. No parcel-roll export or recurring-download "
+                "authorization was verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Hudspeth County tax collection and sale sources",
+            "directory_url": "https://www.co.hudspeth.tx.us/",
+            "source_url": "https://hudspethcad.org/",
+            "note": (
+                "The Comptroller says the County Tax Assessor-Collector does "
+                "not collect property taxes; the CAD site says it collects "
+                "for local entities. The County/CAD pages checked exposed no "
+                "current delinquent-tax sale inventory or downloadable list."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Hudspeth County code-enforcement source discovery",
+            "directory_url": "https://www.co.hudspeth.tx.us/",
+            "source_url": "https://hudspethcad.org/",
+            "status": "municipal_scope",
+            "note": (
+                "The CAD says it handles OSSF inspections, but no public "
+                "property-level violation/case list or export was verified. "
+                "No countywide code-enforcement feed was found; municipal "
+                "services require separate review."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Hudspeth County & District Clerk foreclosure notices",
+            "directory_url": (
+                "https://www.co.hudspeth.tx.us/page/County.District.Clerk"
+            ),
+            "source_url": (
+                "https://www.co.hudspeth.tx.us/page/County.District.Clerk"
+            ),
+            "note": (
+                "The official Clerk page retrieved in this check showed "
+                "office hours but no current foreclosure calendar, itemized "
+                "sale list, or downloadable docket."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Hudspeth County & District Clerk land records",
+            "directory_url": (
+                "https://www.co.hudspeth.tx.us/page/County.District.Clerk"
+            ),
+            "source_url": (
+                "https://www.co.hudspeth.tx.us/page/County.District.Clerk"
+            ),
+            "note": (
+                "Search-index text describes remote access to Index Books and "
+                "Land Records, but the retrieved Clerk page did not expose a "
+                "direct search endpoint or bulk/export option. No dedicated "
+                "lis-pendens feed or recurring-access terms were verified."
+            ),
+        },
+    },
+    "Hunt": {
+        "assessor": {
+            "directory_name": "Hunt County Appraisal District",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/hunt.php"
+            ),
+            "source_url": "https://www.hunt-cad.org/",
+            "note": (
+                "The Comptroller-listed CAD site served a JavaScript public "
+                "portal shell; the candidate eSearch host failed at the "
+                "DNS/connection layer. No usable parcel search result or "
+                "bulk export was verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Hunt County Tax Assessor-Collector",
+            "directory_url": "https://hctax.info/",
+            "source_url": "https://www.hctax.info/",
+            "note": (
+                "The Tax Office home page offers interactive tax search, "
+                "payment, and mapping, not a delinquent-sale inventory. The "
+                "MVBA November 2026 list did not include Hunt County; that "
+                "third-party list is not proof that no local sale exists. "
+                "No current downloadable county list or recurring feed was "
+                "verified."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Hunt County code-enforcement source discovery",
+            "directory_url": "https://www.huntcounty.net/",
+            "source_url": "https://www.huntcounty.net/",
+            "status": "municipal_scope",
+            "note": (
+                "The County pages checked did not expose a countywide "
+                "property-level code-enforcement case list, export, or "
+                "refresh cadence. City enforcement must be reviewed "
+                "separately."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Hunt County foreclosure-sale source discovery",
+            "directory_url": "https://www.huntcounty.net/",
+            "source_url": "https://www.huntcounty.net/",
+            "note": (
+                "The County pages checked and the November 2026 MVBA month "
+                "list did not expose a Hunt-specific itemized foreclosure/"
+                "tax-sale roster or downloadable file. No sheriff/trustee "
+                "feed or recurring-access permission was verified."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Hunt County Clerk real-property records",
+            "directory_url": "https://www.huntcounty.net/",
+            "source_url": "https://www.huntcounty.net/",
+            "note": (
+                "No Hunt County-specific online real-property index, "
+                "dedicated lis-pendens/default feed, bulk export, or "
+                "recurring-access terms were verified in the official pages "
+                "retrieved for this check."
+            ),
+        },
+    },
+    "Hutchinson": {
+        "assessor": {
+            "directory_name": "Hutchinson County Appraisal District property search",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/hutchinson.php"
+            ),
+            "source_url": "https://www.hutchinsoncad.org/",
+            "note": (
+                "The CAD portal offers interactive Basic, Owner, Property, "
+                "All Criteria, and Advanced searches. No parcel CSV/ZIP or "
+                "documented bulk endpoint was verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Hutchinson County property-tax records and notices",
+            "directory_url": (
+                "https://www.co.hutchinson.tx.us/county-information/property-taxes/"
+            ),
+            "source_url": (
+                "https://www.co.hutchinson.tx.us/county-information/property-taxes/"
+            ),
+            "note": (
+                "The County page links public tax records and online payments; "
+                "its Public Tax Notices page showed no posts. No current "
+                "delinquent-tax sale calendar, itemized list, or downloadable "
+                "sale file was verified."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Hutchinson County code-enforcement source discovery",
+            "directory_url": "https://www.co.hutchinson.tx.us/",
+            "source_url": "https://www.co.hutchinson.tx.us/",
+            "status": "municipal_scope",
+            "note": (
+                "The County departments reviewed did not expose a countywide "
+                "property-level code/inspection case feed, export, or refresh "
+                "cadence. City enforcement must be checked separately."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Hutchinson County Clerk deed-records and foreclosure search",
+            "directory_url": (
+                "https://www.co.hutchinson.tx.us/government/county-clerk/"
+            ),
+            "source_url": (
+                "https://www.co.hutchinson.tx.us/government/county-clerk/"
+                "deed-records-search/"
+            ),
+            "note": (
+                "The County Clerk describes a free indexed Real Property "
+                "records search labeled Deed Records / Foreclosure Search. "
+                "Viewing/printing records is charged, with documents "
+                "available individually; no upcoming-sale roster or bulk "
+                "export was verified."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Hutchinson County Clerk real-property index",
+            "directory_url": (
+                "https://www.co.hutchinson.tx.us/government/county-clerk/"
+            ),
+            "source_url": (
+                "https://www.co.hutchinson.tx.us/government/county-clerk/"
+                "deed-records-search/"
+            ),
+            "note": (
+                "The County Clerk says indexed Real Property records are free "
+                "to search, while viewing or printing documents costs money. "
+                "This is a general recorded-document index, not a dedicated "
+                "lis-pendens feed; no bulk export or recurring-access terms "
+                "were verified."
+            ),
+        },
+    },
+    "Irion": {
+        "assessor": {
+            "directory_name": "Irion County Appraisal District property search",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/irion.php"
+            ),
+            "source_url": "https://irioncad.org/Home/Search",
+            "note": (
+                "The CAD result table displays Parcel ID, Owner Name, "
+                "address, value, and tax-due fields. No CSV/ZIP export or "
+                "documented bulk endpoint was verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Irion County Tax Assessor-Collector and statewide sale list",
+            "directory_url": "https://www.co.irion.tx.us/1194/County-Tax-AssessorCollector",
+            "source_url": "https://mvbalaw.com/tax-sales/month-sales/",
+            "note": (
+                "The County Tax Assessor-Collector page lists office "
+                "information but no sale inventory. MVBA's November 3, 2026 "
+                "list did not include Irion; that omission does not establish "
+                "that no local sale exists. No county-specific downloadable "
+                "tax-sale list or recurring-access terms were verified."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Irion County code-enforcement source discovery",
+            "directory_url": "https://www.co.irion.tx.us/27/Departments",
+            "source_url": "https://www.co.irion.tx.us/27/Departments",
+            "status": "municipal_scope",
+            "note": (
+                "The County departments reviewed did not expose a countywide "
+                "property-level code or inspection case feed. City of Mertzon "
+                "enforcement must be reviewed separately."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Irion County Trustee Sale Notices",
+            "directory_url": "https://www.co.irion.tx.us/1218/Trustee-Sale-Notices",
+            "source_url": (
+                "https://www.co.irion.tx.us/DocumentCenter/View/443/"
+                "Notice-of-Foreclosure-Sale-11-3-2026-PDF"
+            ),
+            "note": (
+                "The County publishes dated trustee-sale notices as "
+                "individual PDFs. The November 3, 2026 notice downloaded "
+                "successfully (184,227 bytes); its four pages yielded 8,398 "
+                "characters of selectable text, so the existing PDF "
+                "connector can extract it. Recurring automated-access "
+                "permission was not verified."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Irion County Clerk records",
+            "directory_url": "https://www.co.irion.tx.us/1193/County-Clerk",
+            "source_url": "https://www.co.irion.tx.us/1193/County-Clerk",
+            "note": (
+                "The County Clerk page provides office information but no "
+                "online real-property index, dedicated lis-pendens feed, "
+                "bulk export, or recurring-access terms."
+            ),
+        },
+    },
+    "Jack": {
+        "assessor": {
+            "directory_name": "Jack County Appraisal District property search",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/jack.php"
+            ),
+            "source_url": "https://jackcad.org/",
+            "note": (
+                "The CAD provides interactive Basic, By Owner, By Property, "
+                "All Criteria, and Advanced searches. No parcel CSV/ZIP or "
+                "documented bulk endpoint was verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Jack County Tax Assessor-Collector and statewide sale list",
+            "directory_url": "https://www.jackcounty.org/",
+            "source_url": "https://mvbalaw.com/tax-sales/month-sales/",
+            "note": (
+                "The Comptroller-listed County website failed at the "
+                "DNS/connection layer, and MVBA's November 3, 2026 list did "
+                "not include Jack. The omission does not establish that no "
+                "local sale exists. No current county-specific downloadable "
+                "tax-sale list or recurring-access terms were verified."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Jack County code-enforcement source discovery",
+            "directory_url": "https://www.jackcounty.org/",
+            "source_url": "https://www.jackcounty.org/",
+            "status": "municipal_scope",
+            "note": (
+                "The official County website was unreachable in the "
+                "retrieved client, and no countywide property-level code "
+                "case feed was verified. City enforcement requires separate "
+                "review."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Jack County foreclosure and sheriff-sale source discovery",
+            "directory_url": "https://www.jackcounty.org/",
+            "source_url": "https://www.jackcounty.org/",
+            "note": (
+                "The official County website failed at the DNS/connection "
+                "layer, so no county-specific trustee, sheriff, or "
+                "foreclosure notice list could be verified. No downloadable "
+                "sale roster or recurring-access terms were established."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Jack County Clerk real-property records source discovery",
+            "directory_url": "https://www.jackcounty.org/",
+            "source_url": "https://www.jackcounty.org/",
+            "note": (
+                "The official County website failed at the DNS/connection "
+                "layer. No public real-property index, dedicated "
+                "lis-pendens feed, bulk export, or recurring-access terms "
+                "could be verified."
+            ),
+        },
+    },
+    "Jackson": {
+        "assessor": {
+            "directory_name": "Jackson County Appraisal District property search",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/jackson.php"
+            ),
+            "source_url": "https://esearch.jacksoncad.org/",
+            "note": (
+                "The CAD site identifies its taxing entities, but the "
+                "separate eSearch page returned a disclaimer without a "
+                "verifiable search interface in the text client. No parcel "
+                "CSV/ZIP or bulk endpoint was verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Jackson County Tax Assessor-Collector and statewide sale list",
+            "directory_url": "https://www.co.jackson.tx.us/page/Tax.Assessor.Collector",
+            "source_url": "https://mvbalaw.com/tax-sales/month-sales/",
+            "note": (
+                "The County Tax Assessor-Collector route returned HTTP 403 "
+                "in the retrieved client. MVBA's November 3, 2026 list did "
+                "not include Jackson; that omission does not establish that "
+                "no local sale exists. No downloadable county-specific "
+                "tax-sale list or recurring-access terms were verified."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Jackson County code-enforcement source discovery",
+            "directory_url": "https://www.co.jackson.tx.us/",
+            "source_url": "https://www.co.jackson.tx.us/",
+            "status": "municipal_scope",
+            "note": (
+                "The County pages retrieved did not expose a countywide "
+                "property-level code or inspection case feed. City "
+                "enforcement must be reviewed separately."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Jackson County Clerk and Sheriff's sale notices",
+            "directory_url": "https://www.co.jackson.tx.us/page/County.Clerk",
+            "source_url": "https://www.co.jackson.tx.us/page/Sheriff",
+            "note": (
+                "The retrieved County Clerk page describes vital-record "
+                "services, while the Sheriff's page links custody-status "
+                "information; neither exposed a property-sale roster or "
+                "download. No dedicated foreclosure calendar or recurring "
+                "access terms were verified."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Jackson County Clerk real-property records",
+            "directory_url": "https://www.co.jackson.tx.us/page/County.Clerk",
+            "source_url": "https://www.co.jackson.tx.us/page/County.Clerk",
+            "note": (
+                "The County Clerk content retrieved covered vital records "
+                "and did not expose an online real-property index, dedicated "
+                "lis-pendens feed, bulk export, or recurring-access terms."
+            ),
+        },
+    },
+    "Jasper": {
+        "assessor": {
+            "directory_name": "Jasper County Appraisal District property search",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/jasper.php"
+            ),
+            "source_url": "https://jaspercad.org/",
+            "note": (
+                "The CAD homepage offers Property Search and Interactive "
+                "Map tools. No parcel CSV/ZIP or documented bulk endpoint "
+                "was verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Jasper County Tax Assessor-Collector and statewide sale list",
+            "directory_url": "https://www.co.jasper.tx.us/",
+            "source_url": "https://mvbalaw.com/tax-sales/month-sales/",
+            "note": (
+                "The County Tax Assessor-Collector route returned HTTP 403 "
+                "in the retrieved client. MVBA's November 3, 2026 list did "
+                "not include Jasper; that omission does not establish that "
+                "no local sale exists. No downloadable county-specific "
+                "tax-sale list or recurring-access terms were verified."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Jasper County code-enforcement source discovery",
+            "directory_url": "https://www.co.jasper.tx.us/",
+            "source_url": "https://www.co.jasper.tx.us/",
+            "status": "municipal_scope",
+            "note": (
+                "The County and CAD pages reviewed did not expose a "
+                "countywide property-level code or inspection case feed. "
+                "City enforcement requires separate review."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Jasper County Clerk foreclosure-sale source discovery",
+            "directory_url": "https://www.co.jasper.tx.us/page/County.Clerk",
+            "source_url": "https://www.co.jasper.tx.us/page/County.Clerk",
+            "note": (
+                "The retrieved County Clerk page describes vital-record "
+                "services and did not expose a foreclosure notice calendar, "
+                "upcoming-sale roster, or bulk download. No recurring-access "
+                "terms were verified."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Jasper County Clerk real-property records",
+            "directory_url": "https://www.co.jasper.tx.us/page/County.Clerk",
+            "source_url": "https://www.co.jasper.tx.us/page/County.Clerk",
+            "note": (
+                "The County Clerk page retrieved did not expose an online "
+                "real-property index, dedicated lis-pendens feed, bulk "
+                "export, or recurring-access terms."
+            ),
+        },
+    },
+    "Jeff Davis": {
+        "assessor": {
+            "directory_name": "Jeff Davis County Appraisal District property search",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/jeffdavis.php"
+            ),
+            "source_url": "https://jeffdaviscad.org/",
+            "note": (
+                "The CAD provides interactive Basic, By Owner, By Property, "
+                "All Criteria, and Advanced searches. No parcel CSV/ZIP or "
+                "documented bulk endpoint was verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Jeff Davis County Tax Assessor-Collector and statewide sale list",
+            "directory_url": "https://www.jeffdaviscounty.texas.gov/",
+            "source_url": "https://mvbalaw.com/tax-sales/month-sales/",
+            "note": (
+                "The County tax-office route returned HTTP 403 in the "
+                "retrieved client. MVBA's November 3, 2026 list did not "
+                "include Jeff Davis; that omission does not establish that "
+                "no local sale exists. No downloadable county-specific "
+                "tax-sale list or recurring-access terms were verified."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Jeff Davis County code-enforcement source discovery",
+            "directory_url": "https://www.jeffdaviscounty.texas.gov/",
+            "source_url": "https://www.jeffdaviscounty.texas.gov/",
+            "status": "municipal_scope",
+            "note": (
+                "The County pages reviewed did not expose a countywide "
+                "property-level code or inspection case feed. City "
+                "enforcement must be reviewed separately."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Jeff Davis County Clerk foreclosure records",
+            "directory_url": (
+                "https://www.jeffdaviscounty.texas.gov/page/"
+                "jeffdavis.County.Clerk"
+            ),
+            "source_url": "https://kofilequicklinks.com/JeffDavis/",
+            "note": (
+                "The Clerk links Kofile QuickLinks for index-book and land "
+                "record searches; purchased pages cost $1.00 plus a $0.25 "
+                "processing fee. It is not an upcoming-sale roster or bulk "
+                "download, and recurring automated-access terms were not "
+                "verified."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Jeff Davis County Clerk real-property index",
+            "directory_url": (
+                "https://www.jeffdaviscounty.texas.gov/page/"
+                "jeffdavis.County.Clerk"
+            ),
+            "source_url": "https://kofilequicklinks.com/JeffDavis/",
+            "note": (
+                "Kofile offers searchable Index Books and purchasable Land "
+                "Records dated 1879-1997, including Deeds and Deed of Trust "
+                "volumes. It is historical general-record access, not a "
+                "current dedicated lis-pendens feed or bulk export."
+            ),
+        },
+    },
+    "Jim Hogg": {
+        "assessor": {
+            "directory_name": "Jim Hogg County Appraisal District property search",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/jimhogg.php"
+            ),
+            "source_url": "https://jimhogg-cad.org/",
+            "note": (
+                "The CAD portal offers interactive Basic, By Owner, By "
+                "Property, All Criteria, and Advanced searches. No parcel "
+                "CSV/ZIP or documented bulk endpoint was verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Jim Hogg County Tax Assessor-Collector and statewide sale list",
+            "directory_url": "https://www.jimhoggcountytax.org/",
+            "source_url": "https://mvbalaw.com/tax-sales/month-sales/",
+            "note": (
+                "The tax-office portal provides interactive property-tax "
+                "search and payment, not a verified sale inventory. MVBA's "
+                "November 3, 2026 list did not include Jim Hogg; that "
+                "omission does not establish that no local sale exists. No "
+                "county-specific downloadable tax-sale list or "
+                "recurring-access terms were verified."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Jim Hogg County code-enforcement source discovery",
+            "directory_url": "https://www.co.jim-hogg.tx.us/",
+            "source_url": "https://www.co.jim-hogg.tx.us/",
+            "status": "municipal_scope",
+            "note": (
+                "The County pages reviewed did not expose a countywide "
+                "property-level code or inspection case feed. Municipal "
+                "enforcement must be reviewed separately."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Jim Hogg County Foreclosure Notices",
+            "directory_url": (
+                "https://www.co.jim-hogg.tx.us/page/jim-hogg.Foreclosures"
+            ),
+            "source_url": (
+                "https://www.co.jim-hogg.tx.us/page/jim-hogg.Foreclosures"
+            ),
+            "note": (
+                "The County page lists individual November 3, 2026 trustee "
+                "sale notices and an archive. A linked two-page notice "
+                "downloaded, but its PDF had no extractable text; OCR would "
+                "be required. The current connector also does not follow "
+                "notice links from this page, and recurring automated-access "
+                "permission was not verified."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Jim Hogg County Clerk Index Books",
+            "directory_url": (
+                "https://www.co.jim-hogg.tx.us/page/jim-hogg.County.Clerk"
+            ),
+            "source_url": "https://kofilequicklinks.com/JimHogg/",
+            "note": (
+                "The Clerk's Kofile QuickLink allows remote searches of "
+                "Index Books dated 1913-1997; land-record copies must be "
+                "purchased through the Clerk. This is historical general "
+                "index access, not a current dedicated lis-pendens feed or "
+                "bulk export."
+            ),
+        },
+    },
+    "Jim Wells": {
+        "assessor": {
+            "directory_name": "Jim Wells County Appraisal District public portal",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/jimwells.php"
+            ),
+            "source_url": "https://www.jimwellscad.org/",
+            "note": (
+                "The CAD site returned a React Public Portal shell without "
+                "a rendered search interface in the text client. No parcel "
+                "CSV/ZIP or bulk endpoint was verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Jim Wells County Tax Assessor-Collector and statewide sale list",
+            "directory_url": "https://www.co.jim-wells.tx.us/",
+            "source_url": "https://mvbalaw.com/tax-sales/month-sales/",
+            "note": (
+                "The Comptroller says the County Tax Assessor-Collector "
+                "does not collect property taxes. The County pages retrieved "
+                "did not expose a current sale inventory, and MVBA's "
+                "November 3, 2026 list did not include Jim Wells. That "
+                "omission does not establish that no local sale exists."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Jim Wells County code-enforcement source discovery",
+            "directory_url": "https://www.co.jim-wells.tx.us/",
+            "source_url": "https://www.co.jim-wells.tx.us/",
+            "status": "municipal_scope",
+            "note": (
+                "No countywide property-level code or inspection case feed "
+                "was verified in the County or CAD pages retrieved. "
+                "Municipal enforcement requires separate review."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Jim Wells County foreclosure notices",
+            "directory_url": "https://www.co.jim-wells.tx.us/",
+            "source_url": "https://www.co.jim-wells.tx.us/",
+            "note": (
+                "The County homepage publishes general notices, but "
+                "attempted County Clerk, Tax Assessor, Foreclosures, and "
+                "Public Notices routes returned HTTP 403. No current "
+                "foreclosure list, downloadable sale roster, or recurring "
+                "access terms could be verified."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Jim Wells County Clerk real-property records",
+            "directory_url": "https://www.co.jim-wells.tx.us/",
+            "source_url": "https://www.co.jim-wells.tx.us/",
+            "note": (
+                "The County Clerk route returned HTTP 403. No public "
+                "real-property index, dedicated lis-pendens feed, bulk "
+                "export, or recurring-access terms could be verified."
+            ),
+        },
+    },
+    "Johnson": {
+        "assessor": {
+            "directory_name": "Johnson County Appraisal District data downloads",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/johnson.php"
+            ),
+            "source_url": "https://johnsoncad.com/downloads/",
+            "note": (
+                "The CAD publishes downloadable 2026 certified and "
+                "supplemental ZIP archives (45,043,599 and 25,837,311 bytes "
+                "respectively). A supplemental archive download contained "
+                "12 tab-delimited tables, not CSV; some tables exceed one "
+                "million rows and externalnal_N.tab contains an SQL error "
+                "message. The existing CSV-ZIP connector's format and "
+                "100,000-row cap cannot ingest this package as-is. "
+                "Table-specific ETL and recurring-access permission remain "
+                "unverified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Johnson County Tax Assessor-Collector and statewide sale list",
+            "directory_url": "https://www.johnsoncountytaxoffice.org/search",
+            "source_url": "https://mvbalaw.com/tax-sales/month-sales/",
+            "note": (
+                "The Tax Office provides interactive Search & Pay by account, "
+                "owner, address, or property location, not a sale inventory. "
+                "MVBA's November 3, 2026 list did not include Johnson; that "
+                "omission does not establish that no local sale exists. No "
+                "county-specific downloadable tax-sale list or recurring "
+                "access terms were verified."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Johnson County code-enforcement source discovery",
+            "directory_url": "https://www.johnsoncountytx.org/",
+            "source_url": "https://www.johnsoncountytx.org/",
+            "status": "municipal_scope",
+            "note": (
+                "The County website returned HTTP 403 in the retrieved "
+                "client, and no countywide property-level code or inspection "
+                "case feed was verified. Municipal enforcement must be "
+                "reviewed separately."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Johnson County foreclosure-sale source discovery",
+            "directory_url": "https://www.johnsoncountytx.org/",
+            "source_url": "https://www.johnsoncountytx.org/",
+            "note": (
+                "The County website returned HTTP 403 in the retrieved "
+                "client. No county-specific foreclosure notice calendar, "
+                "sale roster, downloadable list, or recurring-access terms "
+                "could be verified."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Johnson County Clerk real-property records",
+            "directory_url": "https://www.johnsoncountytx.org/",
+            "source_url": "https://www.johnsoncountytx.org/",
+            "note": (
+                "The County website returned HTTP 403 in the retrieved "
+                "client. No public real-property index, dedicated "
+                "lis-pendens feed, bulk export, or recurring-access terms "
+                "could be verified."
+            ),
+        },
+    },
+    "Jones": {
+        "assessor": {
+            "directory_name": "Jones County Appraisal District property search",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/jones.php"
+            ),
+            "source_url": "https://jonescad.org/Home/Search",
+            "note": (
+                "The CAD search page displays a property table with parcel, "
+                "owner, address, value, and tax-due fields. No CSV/ZIP or "
+                "documented bulk export was verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Jones County Assessor-Collector and statewide sale list",
+            "directory_url": (
+                "https://www.co.jones.tx.us/page/"
+                "jones.County.Assessor.Collector"
+            ),
+            "source_url": "https://mvbalaw.com/tax-sales/month-sales/",
+            "note": (
+                "The County Assessor/Collector page says the office does not "
+                "collect property taxes. Jones was not on MVBA's November 3, "
+                "2026 list; this does not establish that no local sale "
+                "exists. No county-specific downloadable tax-sale list or "
+                "recurring-access terms were verified."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Jones County code-enforcement source discovery",
+            "directory_url": "https://www.co.jones.tx.us/",
+            "source_url": "https://www.co.jones.tx.us/",
+            "status": "municipal_scope",
+            "note": (
+                "The County lists subdivision and septic resources but no "
+                "countywide property-level code or inspection case feed. "
+                "City enforcement must be reviewed separately."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Jones County Foreclosure Notices",
+            "directory_url": (
+                "https://www.co.jones.tx.us/page/jones.ForeclosureNotices"
+            ),
+            "source_url": (
+                "https://www.co.jones.tx.us/page/jones.ForeclosureNotices"
+            ),
+            "note": (
+                "The County's Foreclosure Notices page rendered only the "
+                "County logo in the retrieved client. No current notice, "
+                "sale roster, downloadable list, or recurring-access terms "
+                "were verified."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Jones County Clerk real-property records",
+            "directory_url": (
+                "https://www.co.jones.tx.us/page/jones.County.Clerk"
+            ),
+            "source_url": (
+                "https://www.co.jones.tx.us/page/jones.County.Clerk"
+            ),
+            "note": (
+                "The County Clerk states staff will not conduct searches "
+                "that are not authorized by statute. No online public "
+                "real-property index, dedicated lis-pendens feed, bulk "
+                "export, or recurring-access terms were verified."
+            ),
+        },
+    },
+    "Karnes": {
+        "assessor": {
+            "directory_name": "Karnes County Appraisal District property search",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/karnes.php"
+            ),
+            "source_url": "https://www.karnescad.org/Home/Search",
+            "note": (
+                "The CAD supports interactive Basic, By Owner, By Property, "
+                "All Criteria, and Advanced searches. No parcel CSV/ZIP or "
+                "documented bulk endpoint was verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Karnes County Tax Assessor-Collector and statewide sale list",
+            "directory_url": (
+                "https://www.co.karnes.tx.us/page/"
+                "karnes.County.Assessor.Collector"
+            ),
+            "source_url": "https://mvbalaw.com/tax-sales/month-sales/",
+            "note": (
+                "The County Tax Assessor-Collector page provides tax "
+                "information and online payment, not an itemized sale "
+                "inventory. Karnes was not on MVBA's November 3, 2026 list; "
+                "that omission does not establish that no local sale exists. "
+                "No downloadable county-specific tax-sale list or "
+                "recurring-access terms were verified."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Karnes County code-enforcement source discovery",
+            "directory_url": "https://www.co.karnes.tx.us/",
+            "source_url": "https://www.co.karnes.tx.us/",
+            "status": "municipal_scope",
+            "note": (
+                "The County pages reviewed did not expose a countywide "
+                "property-level code or inspection case feed. Municipal "
+                "enforcement requires separate review."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Karnes County Clerk and Sheriff's sale notices",
+            "directory_url": (
+                "https://www.co.karnes.tx.us/page/karnes.County.Clerk"
+            ),
+            "source_url": "https://www.co.karnes.tx.us/page/karnes.Sheriff",
+            "note": (
+                "The County Clerk page retrieved covers criminal records; "
+                "the Sheriff's PDF is an abandoned/unclaimed-property "
+                "inventory, not a real-estate sale notice. An attempted "
+                "County foreclosure-notice route returned HTTP 403. No "
+                "property-sale roster or recurring-access terms were "
+                "verified."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Karnes County Clerk real-property records",
+            "directory_url": (
+                "https://www.co.karnes.tx.us/page/karnes.County.Clerk"
+            ),
+            "source_url": (
+                "https://www.co.karnes.tx.us/page/karnes.County.Clerk"
+            ),
+            "note": (
+                "The County Clerk page retrieved concerns criminal records "
+                "and did not expose an online real-property index, dedicated "
+                "lis-pendens feed, bulk export, or recurring-access terms."
+            ),
+        },
+    },
+    "Kenedy": {
+        "assessor": {
+            "directory_name": "Kenedy County Central Appraisal District property search",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/kenedy.php"
+            ),
+            "source_url": "https://kenedycad.org/",
+            "note": (
+                "The CAD homepage links Property Search, Interactive Map, "
+                "and Forms, Reports & Downloads. No parcel-level CSV/ZIP "
+                "or documented bulk endpoint was verified; individual "
+                "property lookup is not a bulk-feed confirmation."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Kenedy County Tax Assessor-Collector and statewide sale list",
+            "directory_url": (
+                "https://www.kenedycountytx.gov/page/"
+                "kenedy.County.Assessor.Collector"
+            ),
+            "source_url": "https://mvbalaw.com/tax-sales/month-sales/",
+            "note": (
+                "The Comptroller identifies Kenedy County as a collecting "
+                "unit, but the County Tax Office page provides contact "
+                "information, not a sale inventory. Kenedy was not on "
+                "MVBA's November 3, 2026 list; this does not establish that "
+                "no local sale exists. No county-specific downloadable "
+                "sale list or recurring-access terms were verified."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Kenedy County code-enforcement source discovery",
+            "directory_url": "https://www.kenedycountytx.gov/",
+            "source_url": "https://www.kenedycountytx.gov/",
+            "status": "municipal_scope",
+            "note": (
+                "The County and CAD pages reviewed did not expose a "
+                "countywide property-level code or inspection case feed. "
+                "Municipal enforcement requires separate review."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Kenedy County public notices and Sheriff's Office",
+            "directory_url": (
+                "https://www.kenedycountytx.gov/page/"
+                "kenedy.PublicNoticeCalendar"
+            ),
+            "source_url": (
+                "https://www.kenedycountytx.gov/page/kenedy.Sheriff"
+            ),
+            "note": (
+                "The public-notice calendar returned a 2022 lightbox demo "
+                "event and a 2026 calendar grid, not a foreclosure roster. "
+                "The Sheriff's page provides office and custody links only. "
+                "No current notice list, direct sale-file download, or "
+                "recurring-access terms were verified."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Kenedy County Clerk real-property records",
+            "directory_url": (
+                "https://www.kenedycountytx.gov/page/"
+                "kenedy.County.Clerk"
+            ),
+            "source_url": (
+                "https://www.kenedycountytx.gov/page/"
+                "kenedy.County.Clerk"
+            ),
+            "note": (
+                "The County Clerk page provides office contacts and permit "
+                "documents but no online real-property index, dedicated "
+                "lis-pendens feed, bulk export, or recurring-access terms."
+            ),
+        },
+    },
+    "Kent": {
+        "assessor": {
+            "directory_name": "Kent County Appraisal District property information",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/kent.php"
+            ),
+            "source_url": "https://kentcad.org/",
+            "note": (
+                "The CAD site loads a dynamic account shell and tax "
+                "transparency information, but a rendered property search "
+                "or parcel download was not verified. No parcel CSV/ZIP or "
+                "documented bulk endpoint was found."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Kent County Tax Assessor-Collector and statewide sale list",
+            "directory_url": (
+                "https://www.co.kent.tx.us/page/"
+                "kent.CountyTaxAssessor-Collector"
+            ),
+            "source_url": "https://mvbalaw.com/tax-sales/month-sales/",
+            "note": (
+                "The Comptroller says the County Tax Assessor-Collector "
+                "does not collect property taxes. The County office page "
+                "provides contact information, not a sale inventory. Kent "
+                "was not on MVBA's November 3, 2026 list; that omission "
+                "does not establish that no local sale exists."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Kent County code-enforcement source discovery",
+            "directory_url": "https://www.co.kent.tx.us/",
+            "source_url": "https://www.co.kent.tx.us/",
+            "status": "municipal_scope",
+            "note": (
+                "The County pages reviewed did not expose a countywide "
+                "property-level code or inspection case feed. Municipal "
+                "enforcement requires separate review."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Kent County public notices and Sheriff's Office",
+            "directory_url": (
+                "https://www.co.kent.tx.us/page/kent.PublicNotices"
+            ),
+            "source_url": "https://www.co.kent.tx.us/page/kent.Sheriff",
+            "note": (
+                "The County Public Notices page returned courthouse "
+                "location information only; the Sheriff's page is an "
+                "office contact page. No current foreclosure notice list, "
+                "sale roster, downloadable file, or recurring-access terms "
+                "were verified."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Kent County Clerk real-property records",
+            "directory_url": (
+                "https://www.co.kent.tx.us/page/kent.CountyClerk"
+            ),
+            "source_url": "https://www.co.kent.tx.us/page/kent.CountyClerk",
+            "note": (
+                "The County Clerk page provides contact information and "
+                "also identifies the District Clerk role, but no online "
+                "real-property index, dedicated lis-pendens feed, bulk "
+                "export, or recurring-access terms were verified."
+            ),
+        },
+    },
+    "Kerr": {
+        "assessor": {
+            "directory_name": "Kerr Central Appraisal District property information",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/kerr.php"
+            ),
+            "source_url": "https://kerrcad.org/",
+            "note": (
+                "The CAD describes property-specific information on its "
+                "site, but no parcel-level CSV/ZIP or documented bulk "
+                "endpoint was verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Kerr County Tax Assessor-Collector and statewide sale list",
+            "directory_url": "https://www.kerrcountytx.gov/kerr-county-payments",
+            "source_url": "https://mvbalaw.com/tax-sales/month-sales/",
+            "note": (
+                "The County Clerk's sale PDF is titled for trustee and "
+                "foreclosure sales, not established as a delinquent-tax "
+                "sale inventory. Kerr was not on MVBA's November 3, 2026 "
+                "list; that omission does not establish that no local tax "
+                "sale exists. No county-specific downloadable tax-sale "
+                "list or recurring-access terms were verified."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Kerr County code-enforcement source discovery",
+            "directory_url": "https://www.kerrcountytx.gov/",
+            "source_url": "https://www.kerrcountytx.gov/",
+            "status": "municipal_scope",
+            "note": (
+                "The County and CAD pages reviewed did not expose a "
+                "countywide property-level code or inspection case feed. "
+                "Municipal enforcement requires separate review."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Kerr County Clerk trustee and foreclosure sales",
+            "directory_url": (
+                "https://www.kerrcountytx.gov/kerr-county-public-notices"
+            ),
+            "source_url": (
+                "https://legacy.co.kerr.tx.us/cclerk/docs/trustee_sales.pdf"
+            ),
+            "note": (
+                "The County Clerk says trustee sales occur on the first "
+                "Tuesday monthly and links a downloadable PDF. A test "
+                "download was 22,074,329 bytes and 181 pages; only 36 pages "
+                "had extractable text and 145 did not. The PDF is below the "
+                "connector's size/page limits, but the current PDF connector "
+                "rejects pages without text; OCR and record normalization "
+                "are needed before ingestion. Recurring automated-access "
+                "permission was not verified."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Kerr County Clerk AVA real-property index",
+            "directory_url": (
+                "https://www.kerrcountytx.gov/kerr-county-all-departments/"
+                "kerr-county-clerk"
+            ),
+            "source_url": "https://ava.fidlar.com/TXKerr/AvaWeb/#/search",
+            "note": (
+                "The County Clerk links AVA Real Time Search for recorded "
+                "land and official public records; it supports interactive "
+                "deed and deed-of-trust searches. Laredo is subscription "
+                "only. No API, bulk export, dedicated lis-pendens feed, or "
+                "recurring-access terms were verified."
+            ),
+        },
+    },
+    "Kimble": {
+        "assessor": {
+            "directory_name": "Kimble Central Appraisal District property information",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/kimble.php"
+            ),
+            "source_url": "https://kimblecad.org/",
+            "note": (
+                "The CAD says property information is available free online. "
+                "The pages reviewed did not expose a parcel-level CSV/ZIP "
+                "or documented bulk endpoint."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Kimble County Tax Assessor-Collector and statewide sale list",
+            "directory_url": (
+                "https://www.co.kimble.tx.us/page/County.Assessor.Collector"
+            ),
+            "source_url": "https://mvbalaw.com/tax-sales/month-sales/",
+            "note": (
+                "The Comptroller says the County Tax Assessor-Collector "
+                "does not collect property taxes. The County office page "
+                "provides contact information, not a sale inventory. Kimble "
+                "was not on MVBA's November 3, 2026 list; that omission "
+                "does not establish that no local sale exists."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Kimble County code-enforcement source discovery",
+            "directory_url": "https://www.co.kimble.tx.us/",
+            "source_url": "https://www.co.kimble.tx.us/",
+            "status": "municipal_scope",
+            "note": (
+                "The County and CAD pages reviewed did not expose a "
+                "countywide property-level code or inspection case feed. "
+                "Municipal enforcement requires separate review."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Kimble County Foreclosure Notices and Clerk posting board",
+            "directory_url": (
+                "https://www.co.kimble.tx.us/page/ForeclosureNotice"
+            ),
+            "source_url": "https://www.co.kimble.tx.us/page/ClerksBoard",
+            "note": (
+                "The County's Foreclosure Notices page returned a courthouse "
+                "address only; the Clerk's Public Posting Board rendered its "
+                "title without any notice entries. The County calendar "
+                "returned a 2022 demo event. No current sale list, downloadable "
+                "notice file, or recurring-access terms were verified."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Kimble County Clerk real-property records",
+            "directory_url": "https://www.co.kimble.tx.us/page/County.Clerk",
+            "source_url": "https://www.co.kimble.tx.us/page/County.Clerk",
+            "note": (
+                "The County Clerk page provides office contact information "
+                "only. No online public real-property index, dedicated "
+                "lis-pendens feed, bulk export, or recurring-access terms "
+                "were verified."
+            ),
+        },
+    },
+    "King": {
+        "assessor": {
+            "directory_name": "King County Appraisal District property search",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/king.php"
+            ),
+            "source_url": "https://kingcad.org/home",
+            "note": (
+                "The CAD exposes an interactive Property Search page with "
+                "a search control. No parcel-level CSV/ZIP or documented "
+                "bulk endpoint was verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "King County Tax Assessor-Collector and statewide sale list",
+            "directory_url": (
+                "https://www.co.king.tx.us/page/king.Assessor.Collector"
+            ),
+            "source_url": "https://mvbalaw.com/tax-sales/month-sales/",
+            "note": (
+                "The County Tax Assessor-Collector page is an office and "
+                "tax-information route, not a sale inventory. King was not "
+                "on MVBA's November 3, 2026 list; that omission does not "
+                "establish that no local sale exists. No county-specific "
+                "downloadable tax-sale list or recurring-access terms "
+                "were verified."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "King County code-enforcement source discovery",
+            "directory_url": "https://www.co.king.tx.us/",
+            "source_url": "https://www.co.king.tx.us/",
+            "status": "municipal_scope",
+            "note": (
+                "The County pages reviewed did not expose a countywide "
+                "property-level code or inspection case feed. Municipal "
+                "enforcement requires separate review."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "King County public notices and Sheriff's Office",
+            "directory_url": (
+                "https://www.co.king.tx.us/page/king.Public.Notices.Calendar"
+            ),
+            "source_url": "https://www.co.king.tx.us/page/king.Sheriff",
+            "note": (
+                "The public-notice calendar returned a 2022 demo event and "
+                "no current foreclosure notices; the Sheriff's page provides "
+                "office contact information only. No current sale roster, "
+                "downloadable notice file, or recurring-access terms were "
+                "verified."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "King County Clerk online real-property records",
+            "directory_url": "https://www.co.king.tx.us/page/king.County.Clerk",
+            "source_url": "https://public.lgsonlinesolutions.com/ors_UserLogin.html",
+            "note": (
+                "The County Clerk page links an LGS Online Records Search "
+                "portal for recorded documents. The search is interactive; "
+                "no bulk export, dedicated lis-pendens feed, or recurring "
+                "automated-access terms were verified."
+            ),
+        },
+    },
+    "Kaufman": {
+        "assessor": {
+            "directory_name": "Kaufman Central Appraisal District property search",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/kaufman.php"
+            ),
+            "source_url": "https://kaufman-cad.org/",
+            "note": (
+                "The CAD homepage links Property Search and an Interactive "
+                "Map, but no parcel-level CSV/ZIP or documented bulk "
+                "endpoint was verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Kaufman County Tax Assessor-Collector and statewide sale list",
+            "directory_url": "https://www.kaufmancounty.net/247/Tax-Assessor",
+            "source_url": "https://mvbalaw.com/tax-sales/month-sales/",
+            "note": (
+                "The County Tax Office collects property taxes and supports "
+                "interactive tax payment, but its office page does not "
+                "provide a sale inventory. Kaufman was not on MVBA's "
+                "November 3, 2026 list; this does not establish that no "
+                "local sale exists. No county-specific downloadable "
+                "tax-sale list or recurring-access terms were verified."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Kaufman County Development Services GIS violations layer",
+            "directory_url": (
+                "https://www.kaufmancounty.net/257/Development-Services"
+            ),
+            "source_url": (
+                "https://www.kaufmancounty.net/257/Development-Services"
+            ),
+            "status": "needs_feed_verification",
+            "note": (
+                "Development Services links a GIS map and a Violations "
+                "layer, but the linked /364/Violations page returned HTTP "
+                "404 and the GIS host could not be reached. No usable "
+                "property-level violation dataset or export was verified."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Kaufman County Clerk foreclosure-sale source discovery",
+            "directory_url": "https://www.kaufmancounty.net/166/County-Clerk",
+            "source_url": "https://www.kaufmancounty.net/166/County-Clerk",
+            "note": (
+                "The County Clerk page provides real-property-records "
+                "office contacts but no foreclosure notice calendar, sale "
+                "roster, downloadable list, or recurring-access terms. "
+                "Kaufman was not on MVBA's November 3, 2026 list; that "
+                "omission does not establish that no local sale exists."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Kaufman County Clerk real-property records",
+            "directory_url": "https://www.kaufmancounty.net/166/County-Clerk",
+            "source_url": "https://www.kaufmancounty.net/166/County-Clerk",
+            "note": (
+                "The County Clerk page lists contact details for the Real "
+                "Property and Vital Statistics office but no public online "
+                "real-property index, dedicated lis-pendens feed, bulk "
+                "export, or recurring-access terms."
+            ),
+        },
+    },
+    "Kendall": {
+        "assessor": {
+            "directory_name": "Kendall Appraisal District property search",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/kendall.php"
+            ),
+            "source_url": "https://kendallad.org/",
+            "note": (
+                "The CAD homepage links Property Search, Interactive Map, "
+                "Taxpayer Portal, and online payment. No parcel-level "
+                "CSV/ZIP or documented bulk endpoint was verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Kendall County Tax Assessor-Collector and statewide sale list",
+            "directory_url": (
+                "https://www.kendallcountytx.gov/179/"
+                "County-Tax-Assessor-Collector"
+            ),
+            "source_url": "https://mvbalaw.com/tax-sales/month-sales/",
+            "note": (
+                "The Comptroller says the County Tax Assessor-Collector "
+                "does not collect property taxes; the County office page "
+                "covers vehicle/passport services and tax-rate notices, "
+                "not a sale inventory. Kendall was not on MVBA's November 3, "
+                "2026 list; this does not establish that no local sale "
+                "exists."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Kendall County code-enforcement source discovery",
+            "directory_url": "https://www.kendallcountytx.gov/",
+            "source_url": "https://www.kendallcountytx.gov/",
+            "status": "municipal_scope",
+            "note": (
+                "The County and CAD pages reviewed did not expose a "
+                "countywide property-level code or inspection case feed. "
+                "Municipal enforcement requires separate review."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Kendall County Clerk and Sheriff's sale source discovery",
+            "directory_url": (
+                "https://www.kendallcountytx.gov/175/County-Clerk"
+            ),
+            "source_url": (
+                "https://www.kendallcountytx.gov/175/County-Clerk"
+            ),
+            "note": (
+                "The County Clerk page describes e-recording setup and the "
+                "attempted Sheriff route redirected to a Probate page. No "
+                "current foreclosure notice list, sale roster, downloadable "
+                "file, or recurring-access terms were verified."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Kendall County Clerk real-property records",
+            "directory_url": (
+                "https://www.kendallcountytx.gov/175/County-Clerk"
+            ),
+            "source_url": (
+                "https://www.kendallcountytx.gov/175/County-Clerk"
+            ),
+            "note": (
+                "The County Clerk page lists e-recording vendors but no "
+                "public online real-property index, dedicated lis-pendens "
+                "feed, bulk export, or recurring-access terms."
+            ),
+        },
+    },
+    "Kinney": {
+        "assessor": {
+            "directory_name": "Kinney County Appraisal District property search",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/kinney.php"
+            ),
+            "source_url": "https://kinneycad.org/",
+            "note": (
+                "The CAD homepage links Property Search & Pay Taxes Online "
+                "and describes property-specific information. No "
+                "parcel-level CSV/ZIP or documented bulk endpoint was "
+                "verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Kinney County Tax Assessor-Collector and statewide sale list",
+            "directory_url": (
+                "https://www.co.kinney.tx.us/page/County.Assessor.Collector"
+            ),
+            "source_url": "https://mvbalaw.com/tax-sales/month-sales/",
+            "note": (
+                "The Comptroller says the County Tax Assessor-Collector "
+                "does not collect property taxes. Kinney was not on MVBA's "
+                "November 3, 2026 list; that omission does not establish "
+                "that no local sale exists. No downloadable county-specific "
+                "tax-sale list or recurring-access terms were verified."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Kinney County code-enforcement source discovery",
+            "directory_url": "https://www.co.kinney.tx.us/",
+            "source_url": "https://www.co.kinney.tx.us/",
+            "status": "municipal_scope",
+            "note": (
+                "The County publishes subdivision regulations and permit "
+                "information but no countywide property-level code or "
+                "inspection case feed. Municipal enforcement requires "
+                "separate review."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Kinney County Foreclosure Notices",
+            "directory_url": "https://www.co.kinney.tx.us/page/Foreclosures",
+            "source_url": "https://www.co.kinney.tx.us/page/Foreclosures",
+            "note": (
+                "The County's Foreclosures page returned only a courthouse "
+                "address. The Sheriff page provides office and custody "
+                "links, and the public-notice calendar returned a 2022 demo "
+                "event. No current notice list, downloadable sale roster, "
+                "or recurring-access terms were verified."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Kinney County Clerk real-property records",
+            "directory_url": "https://www.co.kinney.tx.us/page/County.Clerk",
+            "source_url": "https://www.co.kinney.tx.us/page/County.Clerk",
+            "note": (
+                "The County Clerk page provides jury-service information "
+                "but no public online real-property index, dedicated "
+                "lis-pendens feed, bulk export, or recurring-access terms."
+            ),
+        },
+    },
+    "Kleberg": {
+        "assessor": {
+            "directory_name": "Kleberg County Appraisal District property search",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/kleberg.php"
+            ),
+            "source_url": "https://kleberg-cad.org/",
+            "note": (
+                "The CAD homepage links Property Search and an Interactive "
+                "Map, but no parcel-level CSV/ZIP or documented bulk "
+                "endpoint was verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Kleberg County Tax Assessor-Collector and statewide sale list",
+            "directory_url": (
+                "https://www.co.kleberg.tx.us/page/"
+                "kleberg.CountyTaxAssessor-Collector"
+            ),
+            "source_url": "https://mvbalaw.com/tax-sales/month-sales/",
+            "note": (
+                "The County Tax Assessor-Collector page links online tax "
+                "payment, not a sale inventory. Kleberg was not on MVBA's "
+                "November 3, 2026 list; this does not establish that no "
+                "local sale exists. The County Clerk's foreclosure notices "
+                "are not verified as a delinquent-tax-sale roster."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Kleberg County code-enforcement source discovery",
+            "directory_url": "https://www.co.kleberg.tx.us/",
+            "source_url": "https://www.co.kleberg.tx.us/",
+            "status": "municipal_scope",
+            "note": (
+                "The County and CAD pages reviewed did not expose a "
+                "countywide property-level code or inspection case feed. "
+                "Municipal enforcement requires separate review."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Kleberg County Clerk filed foreclosure notices",
+            "directory_url": (
+                "https://www.co.kleberg.tx.us/page/kleberg.County.Clerk"
+            ),
+            "source_url": (
+                "https://www.co.kleberg.tx.us/page/kleberg.County.Clerk"
+            ),
+            "note": (
+                "The County Clerk page publishes a current HTML list of "
+                "filed foreclosures and sale dates, with individual PDFs; "
+                "sales are stated to occur the first Tuesday monthly. A "
+                "current three-page notice downloaded but had no selectable "
+                "text. The current connector cannot parse the HTML listing "
+                "or OCR the PDFs; an HTML-list parser/OCR is needed before "
+                "ingestion, and recurring-access permission was not "
+                "verified."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Kleberg County Clerk real-property records",
+            "directory_url": (
+                "https://www.co.kleberg.tx.us/page/kleberg.County.Clerk"
+            ),
+            "source_url": (
+                "https://www.co.kleberg.tx.us/page/kleberg.County.Clerk"
+            ),
+            "note": (
+                "The County Clerk page publishes foreclosure notices but "
+                "no public real-property index, dedicated lis-pendens feed, "
+                "bulk export, or recurring-access terms were verified."
+            ),
+        },
+    },
+    "Knox": {
+        "assessor": {
+            "directory_name": "Knox County Appraisal District property information",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/knox.php"
+            ),
+            "source_url": "https://knoxcad.com/",
+            "note": (
+                "The CAD directs taxpayers to the Texas property-tax "
+                "database and its own login-based portal for taxpayer "
+                "documents and communications. No public parcel-level "
+                "CSV/ZIP or documented bulk endpoint was verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Knox County Tax Assessor-Collector and statewide sale list",
+            "directory_url": "https://www.knoxcountytexas.org/",
+            "source_url": "https://mvbalaw.com/tax-sales/month-sales/",
+            "note": (
+                "The Comptroller identifies Knox County as a collecting "
+                "unit, but the County routes retrieved did not expose a "
+                "sale inventory. Knox was not on MVBA's November 3, 2026 "
+                "list; that omission does not establish that no local sale "
+                "exists."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Knox County code-enforcement source discovery",
+            "directory_url": "https://www.knoxcountytexas.org/",
+            "source_url": "https://www.knoxcountytexas.org/",
+            "status": "municipal_scope",
+            "note": (
+                "The County pages retrieved did not expose a countywide "
+                "property-level code or inspection case feed. Municipal "
+                "enforcement requires separate review."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Knox County foreclosure-sale source discovery",
+            "directory_url": "https://www.knoxcountytexas.org/",
+            "source_url": "https://www.knoxcountytexas.org/",
+            "note": (
+                "The County Clerk and Sheriff routes returned HTTP 403; "
+                "the public-notice and Foreclosures routes returned "
+                "Hardin County content and cannot be treated as Knox "
+                "records. No current Knox foreclosure list or downloadable "
+                "sale roster was verified."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Knox County Clerk real-property records",
+            "directory_url": "https://www.knoxcountytexas.org/",
+            "source_url": "https://www.knoxcountytexas.org/page/knox.County.Clerk",
+            "note": (
+                "The County Clerk route returned HTTP 403. No public "
+                "real-property index, dedicated lis-pendens feed, bulk "
+                "export, or recurring-access terms were verified."
+            ),
+        },
+    },
+    "La Salle": {
+        "assessor": {
+            "directory_name": "La Salle County Appraisal District property information",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/lasalle.php"
+            ),
+            "source_url": "https://lasallecad.com/",
+            "note": (
+                "County-specific source review checked 2026-11-02. The "
+                "Comptroller directory lists lasallecad.com, but that host "
+                "failed transport-level retrieval. No usable parcel search "
+                "or CSV/ZIP export was verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "La Salle County Tax Office and statewide sale list",
+            "directory_url": "https://lasallecountytxtax.org/",
+            "source_url": "https://mvbalaw.com/tax-sales/month-sales/",
+            "note": (
+                "County-specific source review checked 2026-11-02. The "
+                "Tax Office site supports online payments and says payment "
+                "status updates weekly, but it does not show a sale roster. "
+                "La Salle was not listed on MVBA's November 3, 2026 page; "
+                "that omission does not establish that no local sale exists. "
+                "No county-specific downloadable list or recurring-access "
+                "terms were verified."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "La Salle County code-enforcement source discovery",
+            "directory_url": "https://www.co.la-salle.tx.us/",
+            "source_url": "https://www.co.la-salle.tx.us/",
+            "status": "municipal_scope",
+            "note": (
+                "County-specific source review checked 2026-11-02. The "
+                "reachable County homepage carried courthouse-restoration "
+                "news; no countywide property-level code or inspection feed "
+                "was found. Municipal enforcement requires separate review."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "La Salle County foreclosure-sale source discovery",
+            "directory_url": "https://www.co.la-salle.tx.us/",
+            "source_url": "https://www.co.la-salle.tx.us/page/Foreclosures",
+            "note": (
+                "County-specific source review checked 2026-11-02. The "
+                "County Clerk, Sheriff, and Foreclosures routes tested "
+                "returned HTTP 404. No accessible current foreclosure-sale "
+                "calendar or downloadable roster was verified; route "
+                "failures do not establish that no sales exist."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "La Salle County Clerk real-property records",
+            "directory_url": "https://www.co.la-salle.tx.us/",
+            "source_url": "https://www.co.la-salle.tx.us/page/County.Clerk",
+            "note": (
+                "County-specific source review checked 2026-11-02. The "
+                "County Clerk route returned HTTP 404; no public real-property "
+                "search, dedicated lis-pendens feed, bulk export, or "
+                "recurring-access terms were verified."
+            ),
+        },
+    },
+    "Lamar": {
+        "assessor": {
+            "directory_name": "Lamar County Appraisal District property search",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/lamar.php"
+            ),
+            "source_url": "https://gis.bisclient.com/LAMARCAD/",
+            "note": (
+                "County-specific source review checked 2026-11-02. The "
+                "current CAD homepage links PROPERTY SEARCH / PAY TAXES to "
+                "an interactive GIS app. No direct parcel CSV/ZIP download "
+                "or documented bulk endpoint was verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Lamar County Tax Assessor-Collector and statewide sale list",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/lamar.php"
+            ),
+            "source_url": "https://mvbalaw.com/tax-sales/month-sales/",
+            "note": (
+                "County-specific source review checked 2026-11-02. The "
+                "Comptroller says the County Tax Assessor-Collector does "
+                "not collect property taxes; the CAD may collect some or "
+                "all local taxes. Lamar was not on MVBA's November 3, 2026 "
+                "list, which does not establish that no local sale exists. "
+                "No county-specific downloadable sale roster or "
+                "recurring-access terms were verified."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Lamar County code-enforcement source discovery",
+            "directory_url": "https://www.lamarcountytx.gov/",
+            "source_url": "https://www.lamarcountytx.gov/",
+            "status": "municipal_scope",
+            "note": (
+                "County-specific source review checked 2026-11-02. No "
+                "countywide property-level code or inspection feed was "
+                "identified in the County pages reviewed. Municipal "
+                "enforcement requires separate review."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Lamar County Clerk foreclosure-sale source discovery",
+            "directory_url": "https://www.lamarcountytx.gov/page/County.Clerk",
+            "source_url": "https://www.lamarcountytx.gov/page/County.Clerk",
+            "note": (
+                "County-specific source review checked 2026-11-02. The "
+                "County Clerk page provides office contacts but no current "
+                "foreclosure calendar, sale roster, downloadable list, or "
+                "recurring-access terms."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Lamar County Clerk real-property records",
+            "directory_url": "https://www.lamarcountytx.gov/page/County.Clerk",
+            "source_url": "https://www.lamarcountytx.gov/page/County.Clerk",
+            "note": (
+                "County-specific source review checked 2026-11-02. The "
+                "County Clerk page provides contact details but no public "
+                "real-property index, dedicated lis-pendens feed, bulk "
+                "export, or recurring-access terms."
+            ),
+        },
+    },
+    "Lamb": {
+        "assessor": {
+            "directory_name": "Lamb County Appraisal District property search",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/lamb.php"
+            ),
+            "source_url": "https://lambcad.org/",
+            "note": (
+                "County-specific source review checked 2026-11-02. The CAD "
+                "homepage links an interactive Property Search and online "
+                "tax payment; no parcel CSV/ZIP export or documented bulk "
+                "endpoint was verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Lamb County Tax Assessor-Collector and statewide sale list",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/lamb.php"
+            ),
+            "source_url": "https://mvbalaw.com/tax-sales/month-sales/",
+            "note": (
+                "County-specific source review checked 2026-11-02. The "
+                "Comptroller says the County Tax Assessor-Collector does "
+                "not collect property taxes; the CAD may collect some or "
+                "all local taxes. Lamb was not on MVBA's November 3, 2026 "
+                "list, which does not establish that no local sale exists. "
+                "No county-specific downloadable tax-sale roster or "
+                "recurring-access terms were verified."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Lamb County code-enforcement source discovery",
+            "directory_url": "https://www.co.lamb.tx.us/",
+            "source_url": "https://www.co.lamb.tx.us/",
+            "status": "municipal_scope",
+            "note": (
+                "County-specific source review checked 2026-11-02. No "
+                "countywide property-level code or inspection feed was "
+                "identified in the County pages reviewed. Municipal "
+                "enforcement requires separate review."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Lamb County Clerk trustee-sale notices",
+            "directory_url": "https://www.co.lamb.tx.us/page/Forclosurenotices",
+            "source_url": "https://www.co.lamb.tx.us/page/Forclosurenotices",
+            "note": (
+                "County-specific source review checked 2026-11-02. The "
+                "County Clerk page says trustee-sale notices were scanned "
+                "and placed online as of January 1, 2017, and that received "
+                "withdrawals are not reflected. Current retrieval exposed "
+                "only introductory text, not current notice links or "
+                "downloadable files; no recurring feed was verified."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Lamb County Clerk records through iDoc Market",
+            "directory_url": "https://www.co.lamb.tx.us/page/County.Clerk",
+            "source_url": "https://www.idocmarket.com/Sites",
+            "note": (
+                "County-specific source review checked 2026-11-02. The "
+                "County Clerk links iDoc Market, where Lamb appears as a "
+                "participating county. The portal requires registration "
+                "and a paid day pass or subscription for searches and prints; "
+                "no bulk export, dedicated lis-pendens feed, or "
+                "recurring-automation terms were verified."
+            ),
+        },
+    },
+    "Lampasas": {
+        "assessor": {
+            "directory_name": "Lampasas Central Appraisal District property search",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/lampasas.php"
+            ),
+            "source_url": "https://lampasascad.com/",
+            "note": (
+                "County-specific source review checked 2026-11-02. The CAD "
+                "homepage links interactive Property Search and Interactive "
+                "Maps; no parcel CSV/ZIP export or documented bulk endpoint "
+                "was verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Lampasas County Tax Assessor-Collector and statewide sale list",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/lampasas.php"
+            ),
+            "source_url": "https://mvbalaw.com/tax-sales/month-sales/",
+            "note": (
+                "County-specific source review checked 2026-11-02. The "
+                "Comptroller says the County Tax Assessor-Collector does "
+                "not collect property taxes; the CAD may collect some or "
+                "all local taxes. Lampasas was not on MVBA's November 3, "
+                "2026 list, which does not establish that no local sale "
+                "exists. No county-specific downloadable sale roster or "
+                "recurring-access terms were verified."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Lampasas County code-enforcement source discovery",
+            "directory_url": "https://www.co.lampasas.tx.us/",
+            "source_url": "https://www.co.lampasas.tx.us/",
+            "status": "municipal_scope",
+            "note": (
+                "County-specific source review checked 2026-11-02. No "
+                "countywide property-level code or inspection feed was "
+                "identified in the County pages reviewed. Municipal "
+                "enforcement requires separate review."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Lampasas County foreclosure-sale source discovery",
+            "directory_url": "https://www.co.lampasas.tx.us/",
+            "source_url": "https://www.co.lampasas.tx.us/page/Foreclosures",
+            "note": (
+                "County-specific source review checked 2026-11-02. The "
+                "Foreclosures and Public Notices routes served Hardin "
+                "County content, not Lampasas records, and were excluded. "
+                "No current Lampasas foreclosure calendar or downloadable "
+                "sale roster was verified."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Lampasas County Clerk records and notification service",
+            "directory_url": (
+                "https://www.co.lampasas.tx.us/page/lampasas.County.Clerk"
+            ),
+            "source_url": "https://kofilequicklinks.com/Lampasas-TX_CC/",
+            "note": (
+                "County-specific source review checked 2026-11-02. The "
+                "QuickLink page offers historical deed indexes (1932-2023), "
+                "deeds of trust (1881-2017), and lis pendens (1910-1984), "
+                "with some images available for viewing or purchase. The "
+                "County also offers opt-in name alerts within 24 hours. "
+                "Neither is a current bulk feed; no automation terms were "
+                "verified."
+            ),
+        },
+    },
+    "Lavaca": {
+        "assessor": {
+            "directory_name": "Lavaca County Central Appraisal District property information",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/lavaca.php"
+            ),
+            "source_url": "https://lavacacad.com/",
+            "note": (
+                "County-specific source review checked 2026-11-02. The CAD "
+                "homepage provides district information and forms, but no "
+                "interactive parcel search or bulk export was verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Lavaca County Tax Assessor-Collector and statewide sale list",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/lavaca.php"
+            ),
+            "source_url": "https://mvbalaw.com/tax-sales/month-sales/",
+            "note": (
+                "County-specific source review checked 2026-11-02. The "
+                "Comptroller identifies Lavaca County as a collecting unit, "
+                "but its Tax Office route returned HTTP 403. Lavaca was not "
+                "on MVBA's November 3, 2026 list; that omission and the "
+                "access failure do not establish that no local sale exists. "
+                "No county-specific downloadable roster or recurring-access "
+                "terms were verified."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Lavaca County code-enforcement source discovery",
+            "directory_url": "https://www.co.lavaca.tx.us/",
+            "source_url": "https://www.co.lavaca.tx.us/",
+            "status": "municipal_scope",
+            "note": (
+                "County-specific source review checked 2026-11-02. No "
+                "countywide property-level code or inspection feed was "
+                "identified in the County pages reviewed. Municipal "
+                "enforcement requires separate review."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Lavaca County foreclosure-sale source discovery",
+            "directory_url": "https://www.co.lavaca.tx.us/page/County.Clerk",
+            "source_url": "https://www.co.lavaca.tx.us/page/County.Clerk",
+            "note": (
+                "County-specific source review checked 2026-11-02. The "
+                "County Clerk page links general real-property records but "
+                "does not publish a foreclosure calendar or sale roster. "
+                "The Tax Office route returned HTTP 403; no current "
+                "downloadable foreclosure list was verified."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Lavaca County Clerk Records Public Access",
+            "directory_url": "https://www.co.lavaca.tx.us/page/County.Clerk",
+            "source_url": (
+                "https://lavacacountytx-web.tylerhost.net/web/user/disclaimer"
+            ),
+            "note": (
+                "County-specific source review checked 2026-11-02. The "
+                "County Clerk links a Tyler Records Public Access portal "
+                "for interactive real-property searches. Its disclaimer "
+                "says the index may be incomplete or redacted and is not "
+                "the official records repository. No bulk export, dedicated "
+                "lis-pendens feed, or recurring-access terms were verified."
+            ),
+        },
+    },
+    "Lee": {
+        "assessor": {
+            "directory_name": "Lee County Tax Office property search",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/lee.php"
+            ),
+            "source_url": "https://esearch.leetax.org/",
+            "note": (
+                "County-specific source review checked 2026-11-02. The "
+                "Tax Office portal supports interactive owner, address, "
+                "and property-ID searches. Its terms prohibit unauthorized "
+                "data scrubbing and say data subscriptions are separately "
+                "available; no authorized bulk export was verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Lee County Tax Assessor-Collector and statewide sale list",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/lee.php"
+            ),
+            "source_url": "https://mvbalaw.com/tax-sales/month-sales/",
+            "note": (
+                "County-specific source review checked 2026-11-02. The "
+                "Comptroller identifies Lee County as a collecting unit, "
+                "but the Tax Office pages reviewed did not show a sale "
+                "roster. Lee was not on MVBA's November 3, 2026 list; "
+                "that omission does not establish that no local sale "
+                "exists. No recurring-access terms were verified."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Lee County code-enforcement source discovery",
+            "directory_url": "https://www.co.lee.tx.us/",
+            "source_url": "https://www.co.lee.tx.us/",
+            "status": "municipal_scope",
+            "note": (
+                "County-specific source review checked 2026-11-02. The "
+                "County homepage lists Development Services but no "
+                "countywide property-level code or inspection case feed "
+                "was verified. Municipal enforcement requires separate "
+                "review."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Lee County Clerk trustee and foreclosure notices",
+            "directory_url": "https://www.co.lee.tx.us/page/lee.County.Clerk",
+            "source_url": "https://www.co.lee.tx.us/page/lee.County.Clerk",
+            "note": (
+                "County-specific source review checked 2026-11-02. The "
+                "Clerk page lists individual trustee/foreclosure-sale PDFs "
+                "through November 3, 2026. A current seven-page PDF "
+                "downloaded (339,382 bytes), but all pages had no selectable "
+                "text; the current connector needs OCR to ingest it. No "
+                "recurring-download authorization was verified."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Lee County Clerk online real-property records",
+            "directory_url": "https://www.co.lee.tx.us/page/lee.County.Clerk",
+            "source_url": "https://public.lgsonlinesolutions.com/ors.html",
+            "note": (
+                "County-specific source review checked 2026-11-02. The "
+                "Clerk links an LGS Online Records Search login portal for "
+                "record indexes. It is an interactive general-records "
+                "search; no bulk export, dedicated lis-pendens feed, or "
+                "recurring-access terms were verified."
+            ),
+        },
+    },
+    "Leon": {
+        "assessor": {
+            "directory_name": "Leon Central Appraisal District property search",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/leon.php"
+            ),
+            "source_url": "https://www.leoncad.org/",
+            "note": (
+                "County-specific source review checked 2026-11-02. The CAD "
+                "offers interactive basic, owner, property, and advanced "
+                "search forms. No parcel CSV/ZIP export or documented bulk "
+                "endpoint was verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Leon County Tax Assessor-Collector and statewide sale list",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/leon.php"
+            ),
+            "source_url": "https://mvbalaw.com/tax-sales/month-sales/",
+            "note": (
+                "County-specific source review checked 2026-11-02. The "
+                "Comptroller identifies Leon County as a collecting unit, "
+                "but the County Tax Assessor-Collector route returned "
+                "HTTP 403. Leon was not on MVBA's November 3, 2026 list; "
+                "the route failure and omission do not establish that no "
+                "local sale exists. No downloadable sale roster was verified."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Leon County code-enforcement source discovery",
+            "directory_url": "https://www.co.leon.tx.us/",
+            "source_url": "https://www.co.leon.tx.us/",
+            "status": "municipal_scope",
+            "note": (
+                "County-specific source review checked 2026-11-02. The "
+                "County directory lists 911 addressing and permits, but "
+                "no countywide property-level code or inspection feed was "
+                "identified. Municipal enforcement requires separate review."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Leon County foreclosure-sale source discovery",
+            "directory_url": "https://www.co.leon.tx.us/page/leon.County.Clerk",
+            "source_url": "https://www.co.leon.tx.us/page/Foreclosures",
+            "note": (
+                "County-specific source review checked 2026-11-02. The "
+                "Clerk page links foreclosure-sale location information, "
+                "not a current property list. The Foreclosures route served "
+                "Hardin County content and was excluded. No current Leon "
+                "sale roster or downloadable notice list was verified."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Leon County Clerk official-records search",
+            "directory_url": "https://www.co.leon.tx.us/page/leon.County.Clerk",
+            "source_url": "https://leon.tx.publicsearch.us/",
+            "note": (
+                "County-specific source review checked 2026-11-02. The "
+                "Clerk links an interactive Official Records Search "
+                "certified through October 29, 2026, including real "
+                "property documents. No bulk export, dedicated "
+                "lis-pendens feed, or recurring-access terms were verified."
+            ),
+        },
+    },
+    "Liberty": {
+        "assessor": {
+            "directory_name": "Liberty County Central Appraisal District property information",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/liberty.php"
+            ),
+            "source_url": "https://libertycad.com/",
+            "note": (
+                "County-specific source review checked 2026-11-02. The "
+                "CAD homepage provides district notices and contact "
+                "information; no usable parcel search, CSV/ZIP export, "
+                "or documented bulk endpoint was verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Liberty County Tax Assessor-Collector and statewide sale list",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/liberty.php"
+            ),
+            "source_url": "https://mvbalaw.com/tax-sales/month-sales/",
+            "note": (
+                "County-specific source review checked 2026-11-02. The "
+                "Comptroller identifies Liberty County as a collecting "
+                "unit, but the County Tax Assessor-Collector route returned "
+                "HTTP 403. Liberty was not on MVBA's November 3, 2026 list; "
+                "the access failure and omission do not establish that no "
+                "local sale exists. No downloadable roster was verified."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Liberty County code-enforcement source discovery",
+            "directory_url": "https://www.co.liberty.tx.us/",
+            "source_url": "https://www.co.liberty.tx.us/",
+            "status": "municipal_scope",
+            "note": (
+                "County-specific source review checked 2026-11-02. No "
+                "countywide property-level code or inspection feed was "
+                "identified in the County pages reviewed. Municipal "
+                "enforcement requires separate review."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Liberty County Clerk foreclosure-sale source discovery",
+            "directory_url": "https://www.co.liberty.tx.us/page/liberty.County.Clerk",
+            "source_url": "https://www.co.liberty.tx.us/page/Foreclosures",
+            "note": (
+                "County-specific source review checked 2026-11-02. The "
+                "Clerk page provides office contacts but no current sale "
+                "list. The Foreclosures route served Hardin County content "
+                "and was excluded. No current Liberty foreclosure roster "
+                "or downloadable notices were verified."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Liberty County Clerk real-property records",
+            "directory_url": "https://www.co.liberty.tx.us/page/liberty.County.Clerk",
+            "source_url": "https://www.co.liberty.tx.us/page/liberty.County.Clerk",
+            "note": (
+                "County-specific source review checked 2026-11-02. The "
+                "Clerk page provides contact information but no public "
+                "real-property search or deed-record index. No dedicated "
+                "lis-pendens feed, bulk export, or recurring-access terms "
+                "were verified."
+            ),
+        },
+    },
+    "Limestone": {
+        "assessor": {
+            "directory_name": "Limestone County Appraisal District public portal",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/limestone.php"
+            ),
+            "source_url": "https://www.limestonecad.com/",
+            "note": (
+                "County-specific source review checked 2026-11-02. The CAD "
+                "host returns a client-rendered Public Portal, but no "
+                "parcel CSV/ZIP download or documented bulk endpoint was "
+                "verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Limestone County Tax Assessor-Collector and statewide sale list",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/limestone.php"
+            ),
+            "source_url": "https://mvbalaw.com/tax-sales/month-sales/",
+            "note": (
+                "County-specific source review checked 2026-11-02. The "
+                "Comptroller identifies Limestone County as a collecting "
+                "unit, but its Tax Assessor-Collector route served Hardin "
+                "County content, including a June 2026 sale list, and was "
+                "excluded. Limestone was not on MVBA's November 3, 2026 "
+                "list; no current Limestone sale roster was verified."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Limestone County code-enforcement source discovery",
+            "directory_url": "https://www.co.limestone.tx.us/",
+            "source_url": "https://www.co.limestone.tx.us/",
+            "status": "municipal_scope",
+            "note": (
+                "County-specific source review checked 2026-11-02. No "
+                "countywide property-level code or inspection feed was "
+                "identified in the County pages reviewed. Municipal "
+                "enforcement requires separate review."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Limestone County foreclosure-sale source discovery",
+            "directory_url": "https://www.co.limestone.tx.us/",
+            "source_url": "https://www.co.limestone.tx.us/page/Foreclosures",
+            "note": (
+                "County-specific source review checked 2026-11-02. The "
+                "County Clerk route returned HTTP 403, and the Foreclosures "
+                "route served Hardin County content rather than Limestone "
+                "records. No current local sale roster or downloadable "
+                "notices were verified."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Limestone County Clerk real-property records",
+            "directory_url": "https://www.co.limestone.tx.us/",
+            "source_url": "https://www.co.limestone.tx.us/page/limestone.County.Clerk",
+            "note": (
+                "County-specific source review checked 2026-11-02. The "
+                "County Clerk route returned HTTP 403. No public "
+                "real-property search, dedicated lis-pendens feed, bulk "
+                "export, or recurring-access terms were verified; the "
+                "access failure does not establish that records do not exist."
+            ),
+        },
+    },
+    "Lipscomb": {
+        "assessor": {
+            "directory_name": "Lipscomb County Appraisal District property information",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/lipscomb.php"
+            ),
+            "source_url": "https://www.lipscombcad.com/",
+            "note": (
+                "County-specific source review checked 2026-11-02. The "
+                "Comptroller directory lists lipscombcad.com, but the host "
+                "failed transport-level retrieval. No usable parcel search "
+                "or CSV/ZIP export was verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Lipscomb County Tax Assessor-Collector and statewide sale list",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/lipscomb.php"
+            ),
+            "source_url": "https://mvbalaw.com/tax-sales/month-sales/",
+            "note": (
+                "County-specific source review checked 2026-11-02. The "
+                "Comptroller identifies Lipscomb County as a collecting "
+                "unit, but the County Tax Assessor-Collector route returned "
+                "HTTP 403. Lipscomb was not on MVBA's November 3, 2026 "
+                "list; the access failure and omission do not establish "
+                "that no local sale exists. Trustee-sale notices are not "
+                "confirmed tax-sale inventory."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Lipscomb County code-enforcement source discovery",
+            "directory_url": "https://www.co.lipscomb.tx.us/",
+            "source_url": "https://www.co.lipscomb.tx.us/",
+            "status": "municipal_scope",
+            "note": (
+                "County-specific source review checked 2026-11-02. No "
+                "countywide property-level code or inspection feed was "
+                "identified in the County pages reviewed. Municipal "
+                "enforcement requires separate review."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Lipscomb County Clerk trustee-sale notices",
+            "directory_url": "https://www.co.lipscomb.tx.us/page/lipscomb.County.Clerk",
+            "source_url": "https://www.co.lipscomb.tx.us/page/lipscomb.County.Clerk",
+            "note": (
+                "County-specific source review checked 2026-11-02. The "
+                "Clerk page lists a November 3, 2026 Notice of Trustee's "
+                "Sale as a direct PDF download. A sample downloaded "
+                "(428,474 bytes, one page) but had no selectable text, so "
+                "OCR is required for the current PDF connector. No "
+                "recurring-download authorization was verified."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Lipscomb County Clerk Official Public Records",
+            "directory_url": "https://www.co.lipscomb.tx.us/page/lipscomb.County.Clerk",
+            "source_url": "https://www.co.lipscomb.tx.us/page/lipscomb.County.Clerk",
+            "note": (
+                "County-specific source review checked 2026-11-02. The "
+                "Clerk links an Official Public Records fee schedule and "
+                "a Bulk Data Request form, but no public online "
+                "real-property index or standing export is documented. "
+                "The two-page request form downloaded as an image-only PDF; "
+                "no recurring data-delivery authorization was verified."
+            ),
+        },
+    },
+    "Live Oak": {
+        "assessor": {
+            "directory_name": "Live Oak County Appraisal District property search",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/liveoak.php"
+            ),
+            "source_url": "https://www.liveoakappraisal.com/home",
+            "note": (
+                "The Comptroller lists Live Oak CAD's liveoakappraisal.com "
+                "site. It exposes an interactive property search, but the "
+                "browser reported a null.trim error before search results "
+                "could be verified. The Records | Data | Reports page exposed "
+                "board materials rather than a parcel-roll file; no CSV/ZIP "
+                "export or public API was verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Live Oak CAD Tax Sale Information",
+            "directory_url": (
+                "https://www.liveoakappraisal.com/home/Custom?"
+                "custurl=/home/taxsales"
+            ),
+            "source_url": (
+                "https://www.liveoakappraisal.com/home/Custom?"
+                "custurl=/home/taxsales"
+            ),
+            "note": (
+                "The page links a November 3, 2026 Tax Sale List as a direct "
+                "PDF download. The sample was 944,598 bytes and 19 pages, "
+                "with no extractable text on any page; the current PDF "
+                "connector cannot ingest it without OCR. The CAD disclaimer "
+                "calls site information public domain, but no stable feed or "
+                "recurring-download authorization was verified."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Live Oak County code-enforcement source discovery",
+            "directory_url": "https://www.co.live-oak.tx.us/",
+            "source_url": "https://www.co.live-oak.tx.us/",
+            "status": "municipal_scope",
+            "note": (
+                "No countywide property-level code or inspection case feed, "
+                "bulk export, or update cadence was identified in the County "
+                "pages reviewed. Municipal enforcement requires separate "
+                "review."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Live Oak County Foreclosure Notices",
+            "directory_url": (
+                "https://www.co.live-oak.tx.us/page/liveoak.ForeclosureNotices"
+            ),
+            "source_url": (
+                "https://www.co.live-oak.tx.us/page/liveoak.ForeclosureNotices"
+            ),
+            "note": (
+                "The County page lists dated 2026 foreclosure notices as "
+                "individual PDF downloads. It directs users to the Live Oak "
+                "Public Search portal for 2027 notices (select Foreclosure "
+                "and search); no combined export or bulk download was "
+                "verified. Permission for recurring automated access was "
+                "not verified."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Live Oak County Clerk Official Records Search",
+            "directory_url": (
+                "https://www.co.live-oak.tx.us/page/liveoak.County.Clerk"
+            ),
+            "source_url": "https://liveoak.tx.publicsearch.us/",
+            "note": (
+                "The Clerk links an Official Records Search portal certified "
+                "through October 30, 2026. Its Real Property search supports "
+                "grantor/grantee, subdivision, document type, document "
+                "number, and date-range queries; no dedicated "
+                "lis-pendens/default feed, bulk export, or recurring-access "
+                "terms were verified."
+            ),
+        },
+    },
+    "Llano": {
+        "assessor": {
+            "directory_name": "Llano Central Appraisal District Public Portal",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/llano.php"
+            ),
+            "source_url": "https://www.llanocad.net/",
+            "note": (
+                "The Comptroller-listed CAD site loads a JavaScript Public "
+                "Portal with property-search and Records | Data | Reports "
+                "navigation. No parcel CSV/ZIP export, public API, or "
+                "downloadable appraisal roll was verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Llano County Tax Assessor-Collector",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/llano.php"
+            ),
+            "source_url": "https://www.llanocounty.gov/",
+            "note": (
+                "The Comptroller identifies Llano County as a collecting "
+                "unit. Its former county-site routes redirect to the current "
+                "general homepage, where no current tax-sale date, itemized "
+                "parcel list, or downloadable docket was verified. The "
+                "statewide Texas Public Notices terms prohibit automated "
+                "collection and database/archive reuse."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Llano County code-enforcement source discovery",
+            "directory_url": "https://www.llanocounty.gov/",
+            "source_url": "https://www.llanocounty.gov/",
+            "status": "municipal_scope",
+            "note": (
+                "The County site exposes office and public-notice navigation "
+                "but no countywide property-level code or inspection case "
+                "feed, bulk export, or update cadence. Municipal enforcement "
+                "requires separate review."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Llano County foreclosure notices",
+            "directory_url": "https://www.llanocounty.gov/page/County.Clerk",
+            "source_url": "https://www.llanocounty.gov/",
+            "note": (
+                "The Comptroller-listed County Clerk route redirected to the "
+                "current general homepage. No itemized foreclosure notice "
+                "list, sale calendar, direct notice download, or authorized "
+                "recurring feed was verified."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Llano County Clerk real-property records",
+            "directory_url": "https://www.llanocounty.gov/page/County.Clerk",
+            "source_url": "https://www.llanocounty.gov/",
+            "note": (
+                "The current County Clerk route did not expose a public "
+                "real-property index, dedicated lis-pendens/default feed, "
+                "bulk export, or recurring-access terms."
+            ),
+        },
+    },
+    "Loving": {
+        "assessor": {
+            "directory_name": "Loving County Appraisal District property search",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/loving.php"
+            ),
+            "source_url": "https://www.lovingcad.org/home",
+            "note": (
+                "The Comptroller-listed CAD site links an interactive "
+                "Property Search. Its Records | Data | Reports route did not "
+                "expose a countywide CSV/ZIP parcel export or public API."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Loving County tax-sale source discovery",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/loving.php"
+            ),
+            "source_url": "https://www.co.loving.tx.us/page/loving.County.TAC",
+            "note": (
+                "The Comptroller says the County Tax Assessor-Collector does "
+                "not collect property taxes. The County CAD and Tax Office "
+                "pages did not expose a current tax-sale date, itemized "
+                "parcel list, or downloadable docket. The public-notice "
+                "calendar showed a 2022 demo event, not sale inventory."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Loving County code-enforcement source discovery",
+            "directory_url": "https://www.co.loving.tx.us/",
+            "source_url": "https://www.co.loving.tx.us/",
+            "status": "municipal_scope",
+            "note": (
+                "No countywide property-level code or inspection case feed, "
+                "bulk export, or update cadence was identified. Municipal "
+                "enforcement requires separate review."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Loving County foreclosure notices",
+            "directory_url": "https://www.co.loving.tx.us/page/loving.County.Clerk",
+            "source_url": "https://www.co.loving.tx.us/page/loving.County.Clerk",
+            "note": (
+                "The County Clerk page provides office information, while "
+                "the public-notice calendar exposed only a 2022 demo event. "
+                "No current itemized foreclosure list, sale calendar, "
+                "downloadable notice roster, or recurring feed was verified."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Loving County Clerk real-property records",
+            "directory_url": "https://www.co.loving.tx.us/page/loving.County.Clerk",
+            "source_url": "https://www.co.loving.tx.us/page/loving.County.Clerk",
+            "note": (
+                "The County Clerk page did not expose a public searchable "
+                "real-property index, dedicated lis-pendens/default feed, "
+                "bulk export, or recurring-access terms."
+            ),
+        },
+    },
+    "Lubbock": {
+        "assessor": {
+            "directory_name": "Lubbock Central Appraisal District property search",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/lubbock.php"
+            ),
+            "source_url": "https://www.lubbockcad.org/Property-and-Tax-Information",
+            "note": (
+                "LCAD links Property and Tax Information, Advanced Search, "
+                "and GIS maps. No countywide parcel CSV/ZIP export or public "
+                "API was verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Lubbock CAD Tax Foreclosure Sale Information",
+            "directory_url": "https://www.lubbockcad.org/",
+            "source_url": "https://www.lubbockcad.org/",
+            "note": (
+                "The Comptroller says the County Tax Assessor-Collector does "
+                "not collect property taxes. LCAD's page refers to a "
+                "September 1, 2026 tax sale and a deadline to request a "
+                "written delinquent-tax statement using Form 50-307; the "
+                "sale date is past and the form is not a parcel list. No "
+                "current itemized tax-sale roster or export was verified."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Lubbock County code-enforcement source discovery",
+            "directory_url": "https://www.lubbockcounty.gov/",
+            "source_url": "https://www.lubbockcounty.gov/",
+            "status": "municipal_scope",
+            "note": (
+                "The County pages reviewed did not expose a countywide "
+                "property-level code or inspection case feed, bulk export, "
+                "or update cadence. Municipal enforcement requires separate "
+                "review."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Lubbock County Clerk public notices",
+            "directory_url": (
+                "https://www.lubbockcounty.gov/egov/apps/services/"
+                "index.egov?view=detail;id=78"
+            ),
+            "source_url": (
+                "https://www.lubbockcounty.gov/egov/apps/document/"
+                "center.egov?view=browse&eGov_searchType=58&eGov_searchSubmit=Search"
+            ),
+            "note": (
+                "The County Public Notices link opens a general document "
+                "center with individual files, not a verified real-estate "
+                "foreclosure roster, tax-sale list, or sheriff-sale calendar. "
+                "No CSV/ZIP export, dedicated sale feed, or automation "
+                "authorization was verified."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Lubbock County Clerk real-property records",
+            "directory_url": (
+                "https://www.lubbockcounty.gov/egov/apps/services/"
+                "index.egov?view=detail;id=57"
+            ),
+            "source_url": (
+                "https://www.lubbockcounty.gov/egov/apps/services/"
+                "index.egov?view=detail;id=57"
+            ),
+            "note": (
+                "The Clerk Records page says records are available for "
+                "in-person viewing and links online access only to court "
+                "records; that linked portal is for criminal cases, not "
+                "real property. No public real-property index, dedicated "
+                "lis-pendens/default feed, bulk export, or authorized "
+                "recurring access was verified."
+            ),
+        },
+    },
+    "Lynn": {
+        "assessor": {
+            "directory_name": "Lynn County Appraisal District property search",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/lynn.php"
+            ),
+            "source_url": "https://www.lynncad.org/home",
+            "note": (
+                "Lynn CAD exposes Basic, Owner, Property, and Advanced "
+                "interactive searches. No countywide parcel CSV/ZIP export "
+                "or public API was verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Lynn County Tax Assessor-Collector",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/lynn.php"
+            ),
+            "source_url": "https://www.co.lynn.tx.us/",
+            "note": (
+                "The Comptroller says the County Tax Assessor-Collector does "
+                "not collect property taxes. No current local tax-sale date, "
+                "itemized parcel list, or downloadable tax-sale docket was "
+                "verified; the foreclosure PDFs are not a confirmed tax-sale "
+                "roster."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Lynn County code-enforcement source discovery",
+            "directory_url": "https://www.co.lynn.tx.us/",
+            "source_url": "https://www.co.lynn.tx.us/",
+            "status": "municipal_scope",
+            "note": (
+                "No countywide property-level code or inspection case feed, "
+                "bulk export, or update cadence was identified. Municipal "
+                "enforcement requires separate review."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Lynn County Foreclosure Notices",
+            "directory_url": "https://www.co.lynn.tx.us/page/Foreclosures",
+            "source_url": "https://www.co.lynn.tx.us/page/Foreclosures",
+            "note": (
+                "The County page lists two 2026 foreclosure notices as "
+                "individual direct PDF downloads. Both sampled PDFs were "
+                "image-only: the 1,322,207-byte file had two pages and the "
+                "144,544-byte file had three pages, with no extractable "
+                "text. OCR is required by the current PDF connector. The "
+                "page showed no combined export or 2027 list, and the "
+                "notices were not identified as tax-sale inventory."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Lynn County Clerk real-property records",
+            "directory_url": "https://www.co.lynn.tx.us/page/County.Clerk",
+            "source_url": "https://www.co.lynn.tx.us/page/County.Clerk",
+            "note": (
+                "The Clerk describes its role as custodian of filed official "
+                "records, but the reviewed page exposed no searchable "
+                "real-property index, dedicated lis-pendens/default feed, "
+                "bulk export, or recurring-access terms."
+            ),
+        },
+    },
+    "McCulloch": {
+        "assessor": {
+            "directory_name": "McCulloch County Appraisal District property search",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/mcculloch.php"
+            ),
+            "source_url": "https://www.mccullochcad.org/",
+            "note": (
+                "The CAD's Pritchard & Abbott portal exposes an interactive "
+                "Property Search and Records | Data | Reports navigation, "
+                "but no countywide parcel CSV/ZIP download or public API "
+                "was verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "McCulloch County Tax Assessor-Collector",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/mcculloch.php"
+            ),
+            "source_url": "https://www.co.mcculloch.tx.us/",
+            "note": (
+                "The Comptroller says the County Tax Assessor-Collector "
+                "does not collect property taxes; the CAD may collect some "
+                "local taxes. No current itemized tax-sale roster, "
+                "downloadable docket, or stable feed was verified in the "
+                "County or CAD pages reviewed."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "McCulloch County nuisance-abatement procedures",
+            "directory_url": (
+                "https://www.co.mcculloch.tx.us/page/"
+                "mcculloch.nuisanceabatment"
+            ),
+            "source_url": (
+                "https://www.co.mcculloch.tx.us/page/"
+                "mcculloch.nuisanceabatment"
+            ),
+            "status": "needs_feed_verification",
+            "note": (
+                "The County page links a Nuisance Abatement Procedures "
+                "PDF, but no property-level case list, bulk export, or "
+                "update cadence was found. Municipal code-enforcement "
+                "sources require separate review."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "McCulloch County Foreclosure Sales",
+            "directory_url": (
+                "https://www.co.mcculloch.tx.us/page/"
+                "mcculloch.NoticeofForeclosureSales"
+            ),
+            "source_url": (
+                "https://www.co.mcculloch.tx.us/page/"
+                "mcculloch.NoticeofForeclosureSales"
+            ),
+            "note": (
+                "The County says the Clerk's role is limited to filing and "
+                "maintaining notices; individual trustees conduct sales "
+                "and post notices. The page gives the sale location "
+                "but no current itemized roster or combined downloadable "
+                "notice list. No recurring-access terms were verified."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "McCulloch County Clerk real-property records",
+            "directory_url": (
+                "https://www.co.mcculloch.tx.us/page/"
+                "mcculloch.County.Clerk"
+            ),
+            "source_url": (
+                "https://www.co.mcculloch.tx.us/page/"
+                "mcculloch.County.Clerk"
+            ),
+            "note": (
+                "The Clerk links an LGS online-records search and lists "
+                "fees for recording lis pendens, but no public bulk export, "
+                "dedicated pre-foreclosure feed, API, or recurring-access "
+                "terms were verified."
+            ),
+        },
+    },
+    "McLennan": {
+        "assessor": {
+            "directory_name": "McLennan County Appraisal District Public Portal",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/mclennan.php"
+            ),
+            "source_url": "https://www.mclennancad.org/",
+            "note": (
+                "The CAD site is a client-rendered JavaScript Public "
+                "Portal. No countywide parcel CSV/ZIP download, public API, "
+                "or documented bulk export was verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "McLennan County November 2026 tax sale",
+            "directory_url": "https://mvbalaw.com/tax-sales/month-sales/",
+            "source_url": (
+                "https://liveauctions.govease.com/tx/txmclennan/1444/"
+                "standardauctions"
+            ),
+            "note": (
+                "The Comptroller identifies McLennan County as a collecting "
+                "unit. MVBA's November 3, 2026 schedule lists a GovEase "
+                "online sale; its direct auction link redirected to account "
+                "login, and bidder registration was required. No public "
+                "itemized list download or recurring automated-access "
+                "authorization was verified. County routes redirected to "
+                "mclennan.gov and returned HTTP 403."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "McLennan County code-enforcement source discovery",
+            "directory_url": "https://www.mclennan.gov/",
+            "source_url": "https://www.mclennan.gov/",
+            "status": "municipal_scope",
+            "note": (
+                "The County website returned HTTP 403 after redirect, and "
+                "no countywide property-level code or inspection feed was "
+                "verified. The access failure does not establish that "
+                "records do not exist; municipal enforcement needs separate "
+                "review."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "McLennan County foreclosure-sale source discovery",
+            "directory_url": "https://www.mclennan.gov/",
+            "source_url": "https://www.mclennan.gov/",
+            "note": (
+                "County routes redirected to mclennan.gov and returned "
+                "HTTP 403. No current foreclosure roster or downloadable "
+                "notices were verified; the access failure does not establish "
+                "that no notices exist."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "McLennan County Clerk real-property records",
+            "directory_url": "https://www.mclennan.gov/",
+            "source_url": "https://www.mclennan.gov/",
+            "note": (
+                "The County site returned HTTP 403 after redirect. No public "
+                "real-property index, dedicated lis-pendens/default feed, "
+                "bulk export, or recurring-access terms were verified; the "
+                "access failure does not establish that records do not exist."
+            ),
+        },
+    },
+    "McMullen": {
+        "assessor": {
+            "directory_name": "McMullen County Appraisal District eSearch",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/mcmullen.php"
+            ),
+            "source_url": "https://esearch.mcmullencad.org/",
+            "note": (
+                "The interactive Owner, Address, ID, and Advanced searches "
+                "are governed by terms prohibiting unauthorized data "
+                "scrubbing; a separate data subscription is offered. No "
+                "public bulk parcel export or authorized recurring access "
+                "was verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "McMullen County Tax Sales / Linebarger",
+            "directory_url": (
+                "https://mcmullencounty.org/county-tax-assessorcollector/"
+            ),
+            "source_url": "https://taxsales.lgbs.com/",
+            "note": (
+                "The County Tax Office and Clerk direct users to Linebarger "
+                "for tax-sale listings, but the linked sales host failed "
+                "transport-level retrieval. No current county roster or "
+                "downloadable data was verified. The County's substitute-"
+                "trustee notices are not confirmed tax-sale inventory."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "McMullen County code-enforcement source discovery",
+            "directory_url": "https://mcmullencounty.org/",
+            "source_url": "https://mcmullencounty.org/",
+            "status": "municipal_scope",
+            "note": (
+                "No countywide property-level code or inspection case feed, "
+                "bulk export, or update cadence was identified in the County "
+                "pages reviewed. Municipal enforcement requires separate "
+                "review."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "McMullen County Property Tax Sales / Notices of Sale",
+            "directory_url": (
+                "https://mcmullencounty.org/"
+                "property-tax-sale-notices-and-notices-of-sale/"
+            ),
+            "source_url": (
+                "https://mcmullencounty.org/"
+                "property-tax-sale-notices-and-notices-of-sale/"
+            ),
+            "note": (
+                "The page lists individual 2026 substitute-trustee sale "
+                "notices. A November 3, 2026 sample downloaded as a "
+                "1,137,098-byte, three-page PDF with no extractable text; "
+                "OCR is needed. It is not a confirmed tax-sale roster, and "
+                "no combined export or recurring-access authorization was "
+                "verified."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "McMullen County Clerk Official Public Records",
+            "directory_url": "https://mcmullencounty.org/county-clerk/",
+            "source_url": "https://www.uslandrecords.com/uslr/UslrApp/index.jsp",
+            "note": (
+                "The Clerk links an interactive Official Public Records "
+                "search at USLandRecords. No bulk export, dedicated "
+                "lis-pendens/default feed, API, or recurring-access terms "
+                "were verified."
+            ),
+        },
+    },
+    "Madison": {
+        "assessor": {
+            "directory_name": "Madison County Appraisal District eSearch",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/madison.php"
+            ),
+            "source_url": "https://esearch.madisoncad.org/",
+            "note": (
+                "The CAD provides interactive property searches. Its terms "
+                "prohibit unauthorized data scrubbing and offer a separate "
+                "data subscription; no public bulk parcel export or "
+                "authorized recurring access was verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Madison County Tax Assessor-Collector",
+            "directory_url": "https://www.madisontax.org/",
+            "source_url": "https://www.madisontax.org/",
+            "note": (
+                "The Comptroller identifies Madison County as a collecting "
+                "unit. The Tax Office site exposes property-search and "
+                "payment links but no current tax-sale docket or itemized "
+                "parcel list. The linked search is interactive and its terms "
+                "prohibit unauthorized data scrubbing; no bulk export or "
+                "recurring authorization was verified."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Madison County code-enforcement source discovery",
+            "directory_url": "https://www.madisoncountytx.org/",
+            "source_url": "https://www.madisoncountytx.org/",
+            "status": "municipal_scope",
+            "note": (
+                "The county-domain lookup timed out. No countywide "
+                "property-level code or inspection feed was verified; the "
+                "access failure does not establish that records do not "
+                "exist, and municipal enforcement requires separate review."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Madison County foreclosure-sale source discovery",
+            "directory_url": "https://www.madisoncountytx.org/",
+            "source_url": "https://www.madisoncountytx.org/",
+            "note": (
+                "The county-domain lookup timed out. No current county "
+                "foreclosure list or downloadable notices were verified; "
+                "the access failure does not establish that notices do not "
+                "exist."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Madison County Clerk real-property records",
+            "directory_url": "https://www.madisoncountytx.org/",
+            "source_url": "https://www.madisoncountytx.org/",
+            "note": (
+                "The county-domain lookup timed out. No public real-property "
+                "index, dedicated lis-pendens/default feed, bulk export, or "
+                "recurring-access terms were verified; the access failure "
+                "does not establish that records do not exist."
+            ),
+        },
+    },
+    "Marion": {
+        "assessor": {
+            "directory_name": "Marion County Appraisal District property search",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/marion.php"
+            ),
+            "source_url": "https://www.marioncad.org/",
+            "note": (
+                "The CAD uses a Pritchard & Abbott property-search portal. "
+                "No countywide parcel CSV/ZIP export or public API was "
+                "verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Marion County Tax Office Tax Sales",
+            "directory_url": "https://marioncountytaxoffice.com/",
+            "source_url": "https://marioncountytaxoffice.com/tax-sales/",
+            "note": (
+                "The Tax Office homepage says the next sale is in December "
+                "2026, but the Tax Sales page currently links only a "
+                "December 5, 2023 notice. That two-page, selectable-text "
+                "PDF is 9,651 bytes and lists eight properties with account "
+                "and legal-description details, adjudged values, and "
+                "minimum bids. No December 2026 parcel list, recurring "
+                "download authorization, or stable feed was verified."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Marion County code-enforcement source discovery",
+            "directory_url": "https://www.co.marion.tx.us/",
+            "source_url": "https://www.co.marion.tx.us/",
+            "status": "municipal_scope",
+            "note": (
+                "No countywide property-level code or inspection case feed, "
+                "bulk export, or update cadence was identified in the County "
+                "pages reviewed. Municipal enforcement requires separate "
+                "review."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Marion County Foreclosure Notices",
+            "directory_url": (
+                "https://www.co.marion.tx.us/page/marion.Foreclosures"
+            ),
+            "source_url": (
+                "https://www.co.marion.tx.us/page/marion.Foreclosures"
+            ),
+            "note": (
+                "The County page lists individual 2026 foreclosure PDFs. "
+                "A November 3, 2026 sample was 1,141,478 bytes and three "
+                "pages, with no extractable text; OCR is required. No "
+                "combined export or recurring-access authorization was "
+                "verified."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Marion County Clerk real-property records",
+            "directory_url": (
+                "https://www.co.marion.tx.us/page/marion.County.Clerk"
+            ),
+            "source_url": "https://www.texaslandrecords.com/",
+            "note": (
+                "The Clerk says online real-property records extend from "
+                "the present back to 1955; free searching is available, but "
+                "printing requires a credit card. No bulk export, dedicated "
+                "lis-pendens/default feed, API, or automated-access terms "
+                "were verified."
+            ),
+        },
+    },
+    "Martin": {
+        "assessor": {
+            "directory_name": "Martin County Appraisal District property search",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/martin.php"
+            ),
+            "source_url": "https://www.martincad.org/",
+            "note": (
+                "The CAD provides interactive Basic, Owner, Property, All "
+                "Criteria, and Advanced searches and says it collects for "
+                "some taxing units. No countywide parcel CSV/ZIP export or "
+                "public API was verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Martin County Tax Assessor-Collector",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/martin.php"
+            ),
+            "source_url": "http://www.co.martin.tx.us/",
+            "note": (
+                "The Comptroller identifies Martin County as a collecting "
+                "unit. The County root responds over HTTP, but the tested "
+                "Tax Assessor-Collector route returned HTTP 404 and no "
+                "current sale roster was found on the CAD site. Martin was "
+                "not on MVBA's November 3, 2026 list; this does not establish "
+                "that no local sale exists."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Martin County code-enforcement source discovery",
+            "directory_url": "https://comptroller.texas.gov/taxes/property-tax/county-directory/martin.php",
+            "source_url": "http://www.co.martin.tx.us/",
+            "status": "municipal_scope",
+            "note": (
+                "The County root exposed only a contact/address response in "
+                "this review. No countywide property-level code or inspection "
+                "feed was verified; municipal enforcement requires separate "
+                "review."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Martin County foreclosure-sale source discovery",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/martin.php"
+            ),
+            "source_url": "http://www.co.martin.tx.us/",
+            "note": (
+                "The tested Foreclosures route returned HTTP 404. No current "
+                "county foreclosure roster or downloadable notice list was "
+                "verified; the route failure does not establish that no "
+                "notices exist."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Martin County Clerk real-property records",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/martin.php"
+            ),
+            "source_url": "http://www.co.martin.tx.us/",
+            "note": (
+                "The tested County Clerk route returned HTTP 404. No public "
+                "real-property index, dedicated lis-pendens/default feed, "
+                "bulk export, or recurring-access terms were verified; the "
+                "route failure does not establish that records do not exist."
+            ),
+        },
+    },
+    "Mason": {
+        "assessor": {
+            "directory_name": "Mason County Appraisal District eSearch",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/mason.php"
+            ),
+            "source_url": "https://esearch.masoncad.org/",
+            "note": (
+                "The interactive Owner, Address, ID, and Advanced searches "
+                "are governed by terms prohibiting unauthorized data "
+                "scrubbing; a separate data subscription is offered. No "
+                "public bulk parcel export or authorized recurring access "
+                "was verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Mason County Tax Assessor-Collector",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/mason.php"
+            ),
+            "source_url": "https://www.co.mason.tx.us/page/TaxAssessorCollector",
+            "note": (
+                "The Comptroller says the County Tax Assessor-Collector "
+                "does not collect property taxes; the CAD may collect some "
+                "local taxes. The County Tax Assessor-Collector route "
+                "returned HTTP 403, and Mason was not on MVBA's November 3, "
+                "2026 list. No current sale roster or download was verified; "
+                "this does not establish that no local sale exists."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Mason County code-enforcement source discovery",
+            "directory_url": "https://www.co.mason.tx.us/",
+            "source_url": "https://www.co.mason.tx.us/",
+            "status": "municipal_scope",
+            "note": (
+                "No countywide property-level code or inspection case feed, "
+                "bulk export, or update cadence was identified in the County "
+                "pages reviewed. Municipal enforcement requires separate "
+                "review."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Mason County Foreclosure Sales source",
+            "directory_url": "https://www.co.mason.tx.us/",
+            "source_url": "https://www.co.mason.tx.us/page/Foreclosures",
+            "note": (
+                "The County's generic Foreclosures route served Hardin "
+                "County navigation/content and was excluded. The Mason "
+                "Sheriff page exposed contact information only; no current "
+                "Mason sale roster or downloadable notices were verified."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Mason County Clerk real-property records",
+            "directory_url": "https://www.co.mason.tx.us/page/mason.County.Clerk",
+            "source_url": "https://www.co.mason.tx.us/page/mason.County.Clerk",
+            "note": (
+                "The reviewed Clerk route displayed jury-service information "
+                "and no searchable real-property index or dedicated "
+                "lis-pendens/default feed. No bulk export, API, or "
+                "recurring-access terms were verified."
+            ),
+        },
+    },
+    "Matagorda": {
+        "assessor": {
+            "directory_name": "Matagorda County Appraisal District eSearch",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/matagorda.php"
+            ),
+            "source_url": "https://esearch.matagorda-cad.org/",
+            "note": (
+                "The interactive Owner, Address, ID, and Advanced searches "
+                "are governed by terms prohibiting unauthorized data "
+                "scrubbing; a separate data subscription is offered. The "
+                "site disclaims accuracy and currency warranties. No "
+                "authorized bulk export or recurring access was verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Matagorda County Tax Assessor-Collector",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/matagorda.php"
+            ),
+            "source_url": (
+                "https://www.matagordatx.gov/page/"
+                "County.Tax.Assessor.Collector"
+            ),
+            "note": (
+                "The Comptroller identifies Matagorda County as a collecting "
+                "unit. The County Tax Assessor-Collector route returned "
+                "HTTP 403, and Matagorda was not on MVBA's November 3, 2026 "
+                "list. No current county tax-sale docket or downloadable "
+                "parcel list was verified; this does not establish that no "
+                "local sale exists."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Matagorda County code-enforcement source discovery",
+            "directory_url": "https://www.matagordatx.gov/",
+            "source_url": "https://www.matagordatx.gov/",
+            "status": "municipal_scope",
+            "note": (
+                "No countywide property-level code or inspection case feed, "
+                "bulk export, or update cadence was identified in the "
+                "County pages reviewed. Municipal enforcement requires "
+                "separate review."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Matagorda County foreclosure-sale source discovery",
+            "directory_url": "https://www.matagordatx.gov/",
+            "source_url": "https://www.matagordatx.gov/page/Foreclosures",
+            "note": (
+                "The County Foreclosures route returned HTTP 403. The "
+                "Sheriff page exposed jail and contact information, not a "
+                "sale list; no current county foreclosure roster or "
+                "downloadable notices were verified."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Matagorda County Clerk real-property records",
+            "directory_url": "https://www.matagordatx.gov/page/County.Clerk",
+            "source_url": "https://www.matagordatx.gov/page/County.Clerk",
+            "note": (
+                "The reviewed Clerk page links online birth, death, and "
+                "marriage records, not a real-property index. No public "
+                "deed/lis-pendens search, bulk export, or recurring-access "
+                "terms were verified."
+            ),
+        },
+    },
+    "Maverick": {
+        "assessor": {
+            "directory_name": "Maverick County Appraisal District Public Portal",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/maverick.php"
+            ),
+            "source_url": "https://www.maverickcad.org/",
+            "note": (
+                "The CAD site is a client-rendered JavaScript Public Portal. "
+                "No countywide parcel CSV/ZIP download, public API, or "
+                "documented bulk export was verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Maverick County Tax Assessor-Collector",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/maverick.php"
+            ),
+            "source_url": "http://www.co.maverick.tx.us/",
+            "note": (
+                "The Comptroller identifies Maverick County as a collecting "
+                "unit, but its linked County website returned HTTP 404. "
+                "Maverick was not on MVBA's November 3, 2026 list; no "
+                "current itemized tax-sale roster or download was verified, "
+                "and the failed County link does not establish that no sale "
+                "exists."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Maverick County code-enforcement source discovery",
+            "directory_url": "https://comptroller.texas.gov/taxes/property-tax/county-directory/maverick.php",
+            "source_url": "http://www.co.maverick.tx.us/",
+            "status": "municipal_scope",
+            "note": (
+                "The Comptroller-linked County site returned HTTP 404. No "
+                "countywide property-level code or inspection feed was "
+                "verified; municipal enforcement requires separate review."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Maverick County foreclosure-sale source discovery",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/maverick.php"
+            ),
+            "source_url": "http://www.co.maverick.tx.us/",
+            "note": (
+                "The Comptroller-linked County site returned HTTP 404. No "
+                "current foreclosure roster or downloadable notices were "
+                "verified; the access failure does not establish that no "
+                "notices exist."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Maverick County Clerk real-property records",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/maverick.php"
+            ),
+            "source_url": "http://www.co.maverick.tx.us/",
+            "note": (
+                "The Comptroller-linked County site returned HTTP 404. No "
+                "public real-property index, dedicated lis-pendens/default "
+                "feed, bulk export, or recurring-access terms were verified; "
+                "the access failure does not establish that records do not "
+                "exist."
+            ),
+        },
+    },
+    "Medina": {
+        "assessor": {
+            "directory_name": "Medina County Appraisal District eSearch",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/medina.php"
+            ),
+            "source_url": "https://esearch.medinacad.org/",
+            "note": (
+                "The interactive Owner, Address, ID, and Advanced searches "
+                "are governed by terms prohibiting unauthorized data "
+                "scrubbing; a separate data subscription is offered. No "
+                "public bulk parcel export or authorized recurring access "
+                "was verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Medina County Tax Assessor-Collector",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/medina.php"
+            ),
+            "source_url": (
+                "https://www.medinatx.gov/page/"
+                "County.Tax.Assessor.Collector"
+            ),
+            "note": (
+                "The Comptroller identifies Medina County as a collecting "
+                "unit. The County Tax Assessor-Collector route returned "
+                "HTTP 403, and Medina was not on MVBA's November 3, 2026 "
+                "list. No current itemized tax-sale list or download was "
+                "verified; the route failure does not establish that no "
+                "local sale exists."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Medina County code-enforcement source discovery",
+            "directory_url": "https://www.medinatx.gov/",
+            "source_url": "https://www.medinatx.gov/",
+            "status": "municipal_scope",
+            "note": (
+                "No countywide property-level code or inspection case feed, "
+                "bulk export, or update cadence was identified in the "
+                "County pages reviewed. Municipal enforcement requires "
+                "separate review."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Medina County foreclosure-sale source discovery",
+            "directory_url": "https://www.medinatx.gov/",
+            "source_url": "https://www.medinatx.gov/page/Foreclosures",
+            "note": (
+                "The County Foreclosures route returned HTTP 403. The "
+                "Sheriff page exposed staff and contact information only; "
+                "no current sale roster or downloadable notices were "
+                "verified."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Medina County Clerk real-property records",
+            "directory_url": "https://www.medinatx.gov/page/County.Clerk",
+            "source_url": "https://www.medinatx.gov/page/County.Clerk",
+            "note": (
+                "The reviewed Clerk route contains campaign-finance "
+                "instructions, not real-property records. No searchable "
+                "deed/lis-pendens index, bulk export, or recurring-access "
+                "terms were verified."
+            ),
+        },
+    },
+    "Menard": {
+        "assessor": {
+            "directory_name": "Menard County Appraisal District property search",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/menard.php"
+            ),
+            "source_url": "https://www.menardcad.org/",
+            "note": (
+                "The CAD provides interactive Basic, Owner, Property, All "
+                "Criteria, and Advanced searches and says it collects for "
+                "most taxing units. No countywide parcel CSV/ZIP export or "
+                "public API was verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Menard County Tax Assessor-Collector",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/menard.php"
+            ),
+            "source_url": (
+                "https://www.co.menard.tx.us/page/TaxAssessorCollector"
+            ),
+            "note": (
+                "The Comptroller says the County Tax Assessor-Collector "
+                "does not collect property taxes; the CAD says it collects "
+                "for most taxing units. The County Tax Assessor-Collector "
+                "route served Hardin County content, including a June 2, "
+                "2026 sale PDF, and was excluded. Menard was not on MVBA's "
+                "November 3 list; no current Menard sale roster was verified."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Menard County code-enforcement source discovery",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/menard.php"
+            ),
+            "source_url": "https://www.co.menard.tx.us/",
+            "status": "municipal_scope",
+            "note": (
+                "No countywide property-level code or inspection case feed, "
+                "bulk export, or update cadence was identified in the "
+                "County pages reviewed. Municipal enforcement requires "
+                "separate review."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Menard County foreclosure-sale source discovery",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/menard.php"
+            ),
+            "source_url": "https://www.co.menard.tx.us/page/Foreclosures",
+            "note": (
+                "The County's generic Foreclosures route served Hardin "
+                "County navigation/content and was excluded. No current "
+                "Menard foreclosure roster or downloadable notices were "
+                "verified."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Menard County Clerk real-property records",
+            "directory_url": (
+                "https://www.co.menard.tx.us/page/menard.County.Clerk"
+            ),
+            "source_url": (
+                "https://www.co.menard.tx.us/page/menard.County.Clerk"
+            ),
+            "note": (
+                "The Clerk describes maintaining Official Public Records, "
+                "but no public real-property search index, dedicated "
+                "lis-pendens/default feed, bulk export, or recurring-access "
+                "terms were found. Probate record books are temporarily "
+                "off-site for digitization; that notice is not a land-records "
+                "export."
+            ),
+        },
+    },
+    "Midland": {
+        "assessor": {
+            "directory_name": "Midland Central Appraisal District property information",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/midland.php"
+            ),
+            "source_url": "https://www.midcad.org/",
+            "note": (
+                "The CAD page provides tax-transparency and taxing-unit "
+                "information, but no countywide parcel CSV/ZIP download or "
+                "public API was verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Midland County Tax Assessor-Collector and MVBA sale schedule",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/midland.php"
+            ),
+            "source_url": "https://mvbalaw.com/tax-sales/month-sales/",
+            "note": (
+                "The Comptroller identifies Midland County as a collecting "
+                "unit. The County site search returned general search "
+                "instructions, not a tax-sale docket, and Midland was not "
+                "on MVBA's November 3, 2026 schedule. No current itemized "
+                "sale list or downloadable roster was verified; omission "
+                "does not establish that no local sale exists."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Midland County code-enforcement source discovery",
+            "directory_url": "https://www.co.midland.tx.us/",
+            "source_url": "https://www.co.midland.tx.us/",
+            "status": "municipal_scope",
+            "note": (
+                "No countywide property-level code or inspection feed was "
+                "verified. A separate City of Midland inspections layer is "
+                "city-scoped, not a county feed; its latest observed edit "
+                "was March 4, 2026, so it is not a verified daily source."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Midland County Clerk foreclosure notices",
+            "directory_url": "https://www.co.midland.tx.us/175/County-Clerk",
+            "source_url": "https://www.co.midland.tx.us/175/County-Clerk",
+            "note": (
+                "The Clerk links an Official Public Records search but no "
+                "dedicated foreclosure notice list or current sale roster. "
+                "No combined download, bulk export, or recurring-access "
+                "authorization was verified."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Midland County Clerk Official Public Records Search",
+            "directory_url": "https://www.co.midland.tx.us/175/County-Clerk",
+            "source_url": "https://midland.tx.publicsearch.us/",
+            "note": (
+                "The County Clerk links this interactive Property Records "
+                "search, certified through October 29, 2026, with searches "
+                "by grantor/grantee, subdivision, document type, or number. "
+                "No bulk export, dedicated lis-pendens/default feed, or "
+                "automated-access terms were verified."
+            ),
+        },
+    },
+    "Milam": {
+        "assessor": {
+            "directory_name": "Milam County Appraisal District Public Portal",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/milam.php"
+            ),
+            "source_url": "https://www.milamad.org/",
+            "note": (
+                "The CAD is a client-rendered JavaScript Public Portal. No "
+                "countywide parcel CSV/ZIP download, public API, or "
+                "documented bulk export was verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Milam County Tax Assessor-Collector",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/milam.php"
+            ),
+            "source_url": "https://www.milamcounty.net/",
+            "note": (
+                "The Comptroller identifies Milam County as a collecting "
+                "unit. The County Tax Assessor-Collector route returned "
+                "HTTP 403, and Milam was not on MVBA's November 3, 2026 "
+                "list. No current county tax-sale docket or downloadable "
+                "parcel roster was verified; the access failure does not "
+                "establish that no local sale exists."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Milam County code-enforcement source discovery",
+            "directory_url": "https://www.milamcounty.net/",
+            "source_url": "https://www.milamcounty.net/",
+            "status": "municipal_scope",
+            "note": (
+                "No countywide property-level code or inspection case feed, "
+                "bulk export, or update cadence was identified on the "
+                "accessible County pages. Municipal enforcement requires "
+                "separate review."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Milam County foreclosure-sale source discovery",
+            "directory_url": "https://www.milamcounty.net/",
+            "source_url": "https://www.milamcounty.net/",
+            "note": (
+                "The accessible County homepage did not expose a current "
+                "foreclosure roster or downloadable notices. No dedicated "
+                "county sale-list page or recurring-access authorization "
+                "was verified."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Milam County Clerk real-property records",
+            "directory_url": "https://www.milamcounty.net/",
+            "source_url": "https://www.milamcounty.net/",
+            "note": (
+                "No searchable real-property index, dedicated "
+                "lis-pendens/default feed, bulk export, or recurring-access "
+                "terms were verified from the accessible County pages."
+            ),
+        },
+    },
+    "Mills": {
+        "assessor": {
+            "directory_name": "Mills Central Appraisal District property information",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/mills.php"
+            ),
+            "source_url": "https://millscad.org/",
+            "note": (
+                "The CAD site provides general district and property-tax "
+                "information, but no countywide parcel CSV/ZIP export or "
+                "public API was verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Mills Central Appraisal District Tax Sales",
+            "directory_url": "https://millscad.org/tax-sales/",
+            "source_url": "https://millscad.org/tax-sales/",
+            "note": (
+                "The page says upcoming sales are posted three weeks before "
+                "sale; its latest linked real-estate notice is for July 1, "
+                "2025. The 56,310-byte, one-page PDF has no extractable text, "
+                "so OCR is required. A separate May 2023 tax-warrant sale "
+                "was for business personal property, not real estate. No "
+                "current 2026 roster or recurring-download authorization "
+                "was verified."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Mills County code-enforcement source discovery",
+            "directory_url": "https://www.millscountytx.gov/",
+            "source_url": "https://www.millscountytx.gov/",
+            "status": "municipal_scope",
+            "note": (
+                "No countywide property-level code or inspection case feed, "
+                "bulk export, or update cadence was identified. Municipal "
+                "enforcement requires separate review."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Mills County foreclosure-sale source discovery",
+            "directory_url": "https://www.millscountytx.gov/",
+            "source_url": "https://www.millscountytx.gov/",
+            "note": (
+                "No current county foreclosure roster or downloadable "
+                "notices were identified on the County pages reviewed. "
+                "No recurring-access authorization was verified."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Mills County Clerk real-property records",
+            "directory_url": "https://www.millscountytx.gov/",
+            "source_url": "https://www.millscountytx.gov/",
+            "note": (
+                "No searchable public real-property index, dedicated "
+                "lis-pendens/default feed, bulk export, or recurring-access "
+                "terms were verified."
+            ),
+        },
+    },
+    "Mitchell": {
+        "assessor": {
+            "directory_name": "Mitchell County Appraisal District Public Portal",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/mitchell.php"
+            ),
+            "source_url": "https://mitchellcad.southwestdatasolutions.com/",
+            "note": (
+                "The Comptroller links a client-rendered Blazor Public "
+                "Portal. No countywide parcel CSV/ZIP download, public API, "
+                "or data-subscription terms were verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Mitchell County Tax Assessor-Collector",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/mitchell.php"
+            ),
+            "source_url": (
+                "https://www.co.mitchell.tx.us/page/Tax.Assessor.Collector"
+            ),
+            "note": (
+                "The Comptroller identifies Mitchell County as a collecting "
+                "unit. The County Tax Assessor-Collector route returned "
+                "HTTP 403, and Mitchell was not on MVBA's November 3, 2026 "
+                "list. No current itemized tax-sale roster or download was "
+                "verified; the access failure does not establish that no "
+                "local sale exists."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Mitchell County code-enforcement source discovery",
+            "directory_url": "https://www.co.mitchell.tx.us/",
+            "source_url": "https://www.co.mitchell.tx.us/",
+            "status": "municipal_scope",
+            "note": (
+                "No countywide property-level code or inspection case feed, "
+                "bulk export, or update cadence was identified in the "
+                "County pages reviewed. Municipal enforcement requires "
+                "separate review."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Mitchell County foreclosure-sale source discovery",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/mitchell.php"
+            ),
+            "source_url": "https://www.co.mitchell.tx.us/page/Foreclosures",
+            "note": (
+                "The County Foreclosures route returned HTTP 403. No current "
+                "foreclosure notice roster or downloadable sale documents "
+                "were verified; the access failure does not establish that "
+                "no notices exist."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Mitchell County Clerk real-property records",
+            "directory_url": "https://www.co.mitchell.tx.us/page/County.Clerk",
+            "source_url": "https://www.co.mitchell.tx.us/page/County.Clerk",
+            "note": (
+                "The County Clerk page exposes contact information only. "
+                "No public real-property index, dedicated lis-pendens/default "
+                "feed, bulk export, or recurring-access terms were verified."
+            ),
+        },
+    },
+    "Montague": {
+        "assessor": {
+            "directory_name": "Montague County Appraisal District public portal",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/montague.php"
+            ),
+            "source_url": "https://montaguecad.southwestdatasolutions.com/",
+            "note": (
+                "The Comptroller links a client-rendered Blazor Public Portal "
+                "through the legacy Southwest Data Solutions route. No "
+                "countywide parcel CSV/ZIP download, public API, or data "
+                "subscription terms were verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Montague County Tax Assessor-Collector",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/montague.php"
+            ),
+            "source_url": (
+                "https://www.co.montague.tx.us/page/"
+                "montague.Tax.Assessor.Collector"
+            ),
+            "note": (
+                "The Comptroller identifies Montague County as a collecting "
+                "unit. The County Tax Assessor-Collector route returned "
+                "HTTP 403. No current itemized tax-sale roster or direct "
+                "download was verified; the access failure does not establish "
+                "that no local sale exists."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Montague County code-enforcement source discovery",
+            "directory_url": "https://www.co.montague.tx.us/",
+            "source_url": "https://www.co.montague.tx.us/",
+            "status": "municipal_scope",
+            "note": (
+                "No countywide property-level code or inspection case feed, "
+                "bulk export, or update cadence was identified on the County "
+                "pages reviewed. Municipal enforcement requires separate "
+                "review."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Montague County foreclosure-sale source discovery",
+            "directory_url": "https://www.co.montague.tx.us/",
+            "source_url": "https://www.co.montague.tx.us/page/montague.Foreclosures",
+            "note": (
+                "The County Foreclosures route returned HTTP 403. No current "
+                "county foreclosure roster or downloadable notices were "
+                "verified; the access failure does not establish that no "
+                "notices exist."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Montague County Clerk real-property records",
+            "directory_url": "https://www.co.montague.tx.us/",
+            "source_url": "https://public.lgsonlinesolutions.com/ors.html",
+            "note": (
+                "The County links the LGS Online Records Search and a free "
+                "property-fraud alert. The records portal opens to a login "
+                "frame; no bulk export, dedicated lis-pendens/default feed, "
+                "or recurring automated-access terms were verified."
+            ),
+        },
+    },
+    "Montgomery": {
+        "assessor": {
+            "directory_name": "Montgomery Central Appraisal District Public Portal",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/montgomery.php"
+            ),
+            "source_url": "https://www.mcad-tx.org/",
+            "note": (
+                "The Comptroller-listed CAD opens a client-rendered Public "
+                "Portal. The County Tax Office links property-specific "
+                "truth-in-taxation notifications through the CAD portal, but "
+                "no countywide parcel CSV/ZIP, public API, or data-use "
+                "authorization was verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Montgomery County Tax Office tax-lien foreclosure sales",
+            "directory_url": (
+                "https://www.mctx.org/departments/departments_q_-_z/"
+                "tax_office/foreclosure_sales_and_resales.php"
+            ),
+            "source_url": (
+                "https://www.mctx.org/departments/departments_q_-_z/"
+                "tax_office/foreclosure_sales_and_resales.php"
+            ),
+            "note": (
+                "The official page says delinquent tax-lien sales and resales "
+                "run online on the first Tuesday monthly through Real Auction. "
+                "It offers LGBS opt-in notices with monthly sale information "
+                "and property-status changes. The Real Auction site returned "
+                "HTTP 403 and the LGBS host failed transport retrieval; no "
+                "current itemized list or direct download was verified. The "
+                "email-notification option is not authorization for automated "
+                "web scraping or mailbox ingestion."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Montgomery County code-enforcement source discovery",
+            "directory_url": "https://www.mctx.org/",
+            "source_url": "https://www.mctx.org/",
+            "status": "municipal_scope",
+            "note": (
+                "No countywide property-level code or inspection case feed, "
+                "bulk export, or update cadence was identified on the County "
+                "pages reviewed. Municipal enforcement requires separate "
+                "review."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Montgomery County Clerk foreclosure notices",
+            "directory_url": (
+                "https://www.mctx.org/index_clerk/public_records/"
+                "foreclosures/index.php"
+            ),
+            "source_url": "https://montgomery.tx.publicsearch.us/",
+            "note": (
+                "The Clerk says mortgage-sale notices are posted 21 days "
+                "before sale, searchable under Foreclosures in the interactive "
+                "Public Records portal, and removed after the sale. Tax-lien "
+                "sales instead use Real Auction. The portal was certified "
+                "through October 23, 2026; no bulk export or recurring "
+                "download authorization was verified."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Montgomery County Clerk official real-property records",
+            "directory_url": (
+                "https://www.mctx.org/index_clerk/public_records/property.php"
+            ),
+            "source_url": "https://montgomery.tx.publicsearch.us/",
+            "note": (
+                "The Clerk records deeds, deeds of trust, liens, and trustee "
+                "foreclosure notices; its public search is certified through "
+                "October 23, 2026 and covers records back to 1838. It is an "
+                "interactive general-records search, not a dedicated "
+                "lis-pendens/default feed; no bulk export or recurring "
+                "automated-access authorization was verified. The free "
+                "Property Alert is user-specific, not a bulk feed."
+            ),
+        },
+    },
+    "Moore": {
+        "assessor": {
+            "directory_name": "Moore County Appraisal District property search",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/moore.php"
+            ),
+            "source_url": "https://moorecad.org/",
+            "note": (
+                "The CAD site offers interactive Property Search and an "
+                "Interactive Map. No countywide parcel CSV/ZIP download, "
+                "public API, or documented bulk export was verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Moore County Tax Assessor-Collector",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/moore.php"
+            ),
+            "source_url": (
+                "https://www.co.moore.tx.us/page/moore.Tax.Assessor.Collector"
+            ),
+            "note": (
+                "The Comptroller identifies Moore County as a collecting "
+                "unit. The County Tax Assessor-Collector route returned "
+                "HTTP 403. No current itemized tax-sale roster or direct "
+                "download was verified; the access failure does not establish "
+                "that no local sale exists."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Moore County code-enforcement source discovery",
+            "directory_url": "https://www.co.moore.tx.us/",
+            "source_url": "https://www.co.moore.tx.us/",
+            "status": "municipal_scope",
+            "note": (
+                "No countywide property-level code or inspection case feed, "
+                "bulk export, or update cadence was identified on the County "
+                "pages reviewed. Municipal enforcement requires separate "
+                "review."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Moore County foreclosure-sale source discovery",
+            "directory_url": "https://www.co.moore.tx.us/",
+            "source_url": "https://www.co.moore.tx.us/page/moore.Foreclosures",
+            "note": (
+                "The County Foreclosures route returned HTTP 403. No current "
+                "county foreclosure roster or downloadable notices were "
+                "verified; the access failure does not establish that no "
+                "notices exist."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Moore County Clerk public real-property search",
+            "directory_url": "https://www.co.moore.tx.us/page/moore.County.Clerk",
+            "source_url": "http://www.lgs-hosted.com/rmtmoorecck.html",
+            "note": (
+                "The County Clerk page links a Public Inquiry at LGS, but the "
+                "portal failed transport retrieval. The Clerk also says staff "
+                "will not conduct searches beyond statutory duties. No bulk "
+                "export, dedicated lis-pendens/default feed, or recurring "
+                "access terms were verified."
+            ),
+        },
+    },
+    "Morris": {
+        "assessor": {
+            "directory_name": "Morris County Appraisal District property search",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/morris.php"
+            ),
+            "source_url": "https://www.morriscad.com/",
+            "note": (
+                "The CAD site offers an interactive property search and map. "
+                "No countywide parcel CSV/ZIP download, public API, or "
+                "documented bulk export was verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Morris County Appraisal District tax sales",
+            "directory_url": (
+                "https://www.morriscad.com/home/Custom?custurl=/home/taxsales"
+            ),
+            "source_url": (
+                "https://www.morriscad.com/home/Custom?custurl=/home/taxsales"
+            ),
+            "note": (
+                "The CAD Tax Sales page links a direct one-page scanned PDF "
+                "for the August 4, 2026 sale; the file has no extractable text "
+                "and requires OCR, and the sale date has passed. The County "
+                "Tax Assessor-Collector does not collect property taxes, and "
+                "the County's online-sale PDF is guidance rather than a "
+                "current roster. No newer itemized list or recurring "
+                "download authorization was verified."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Morris County code-enforcement source discovery",
+            "directory_url": "https://www.co.morris.tx.us/",
+            "source_url": "https://www.co.morris.tx.us/",
+            "status": "municipal_scope",
+            "note": (
+                "No countywide property-level code or inspection case feed, "
+                "bulk export, or update cadence was identified on the County "
+                "pages reviewed. Municipal enforcement requires separate "
+                "review."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Morris County foreclosure and trustee-sale notices",
+            "directory_url": "https://www.co.morris.tx.us/page/morris.Foreclosures",
+            "source_url": "https://www.co.morris.tx.us/page/morris.Foreclosures",
+            "note": (
+                "The official page displays a Foreclosure and Trustee Sale "
+                "Notices heading but no notices or current roster. No "
+                "downloadable countywide list or recurring-access "
+                "authorization was verified."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Morris County Clerk property records",
+            "directory_url": "https://www.co.morris.tx.us/page/morris.County.Clerk",
+            "source_url": "https://www.countygovernmentrecords.com/",
+            "note": (
+                "The County Clerk links County Government Records for property "
+                "records from 1965 forward. This is a general interactive "
+                "records search, not a dedicated lis-pendens/default feed; "
+                "no bulk export or recurring automated-access terms were "
+                "verified."
+            ),
+        },
+    },
+    "Motley": {
+        "assessor": {
+            "directory_name": "Motley County appraisal and tax information",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/motley.php"
+            ),
+            "source_url": "https://www.co.motley.tx.us/page/motley.Tax.AC",
+            "note": (
+                "The Comptroller lists Floyd County Appraisal District for "
+                "Motley County but provides no CAD website. The County Tax "
+                "Assessor-Collector links an interactive Southwest Data "
+                "Solutions tax lookup; no countywide parcel export or public "
+                "API was verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Motley County Tax Assessor-Collector tax sale",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/motley.php"
+            ),
+            "source_url": "https://www.co.motley.tx.us/page/motley.Tax.AC",
+            "note": (
+                "The County Tax Assessor-Collector page links a Notice of Sale "
+                "for January 6, 2026. The direct one-page PDF is image-only "
+                "with no extractable text, so OCR is required; that sale date "
+                "has passed and no current 2026 roster was verified. No "
+                "recurring-download authorization was established."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Motley County code-enforcement source discovery",
+            "directory_url": "https://www.co.motley.tx.us/",
+            "source_url": "https://www.co.motley.tx.us/",
+            "status": "municipal_scope",
+            "note": (
+                "No countywide property-level code or inspection case feed, "
+                "bulk export, or update cadence was identified on the County "
+                "pages reviewed. Municipal enforcement requires separate "
+                "review."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Motley County foreclosure-sale notices",
+            "directory_url": "https://www.co.motley.tx.us/page/motley.Foreclosures",
+            "source_url": "https://www.co.motley.tx.us/page/motley.Foreclosures",
+            "note": (
+                "The County lists individual 2026 trustee-sale notices dated "
+                "March 3 and September 1, plus the separate January 6 tax-sale "
+                "notice. The sampled September 1 notice is a seven-page "
+                "image-only PDF requiring OCR; the notice date has passed. "
+                "No combined export or recurring-download authorization was "
+                "verified."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Motley County Clerk real-property records",
+            "directory_url": "https://www.co.motley.tx.us/page/motley.County.Clerk",
+            "source_url": "https://www.co.motley.tx.us/page/motley.County.Clerk",
+            "note": (
+                "The County Clerk page provides office information and fee "
+                "schedules but no public real-property index or dedicated "
+                "lis-pendens/default feed. No bulk export or recurring-access "
+                "terms were verified."
+            ),
+        },
+    },
+    "Nacogdoches": {
+        "assessor": {
+            "directory_name": "Nacogdoches Central Appraisal District",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/nacogdoches.php"
+            ),
+            "source_url": "https://nacocad.org/",
+            "note": (
+                "The CAD describes its appraisal and tax-collection duties "
+                "and information about specific properties, but the reviewed "
+                "public pages exposed no countywide parcel CSV/ZIP download "
+                "or public API. No bulk data-use terms were verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Nacogdoches County tax-sale source discovery",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/nacogdoches.php"
+            ),
+            "source_url": "https://nacocad.org/",
+            "note": (
+                "The Comptroller says the County Tax Assessor-Collector does "
+                "not collect property taxes; the CAD says it collects for its "
+                "taxing units. No current itemized tax-sale roster or direct "
+                "download was found on the County or CAD pages reviewed. No "
+                "automated-access authorization was verified."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Nacogdoches County code-enforcement source discovery",
+            "directory_url": "https://www.nacogdochesco.gov/",
+            "source_url": "https://www.nacogdochesco.gov/",
+            "status": "municipal_scope",
+            "note": (
+                "The accessible County homepage exposes general alerts and "
+                "news, not a countywide property-level code or inspection "
+                "case feed. No bulk export or update cadence was identified; "
+                "municipal enforcement requires separate review."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Nacogdoches County foreclosure-sale source discovery",
+            "directory_url": "https://www.nacogdochesco.gov/",
+            "source_url": "https://nacogdoches.tx.publicsearch.us/",
+            "note": (
+                "The County's Official Records Search exposes an interactive "
+                "Real Property department, certified through October 26, "
+                "2026, but no dedicated foreclosure roster or bulk export "
+                "was verified. No current downloadable sale notices or "
+                "recurring-access authorization were found."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Nacogdoches County Clerk official real-property records",
+            "directory_url": "https://www.nacogdochesco.gov/",
+            "source_url": "https://nacogdoches.tx.publicsearch.us/",
+            "note": (
+                "The County's Official Records Search is certified through "
+                "October 26, 2026 and provides interactive Real Property "
+                "searches by grantor/grantee, subdivision, document type, or "
+                "number. No bulk export, dedicated lis-pendens/default feed, "
+                "or recurring automated-access terms were verified."
+            ),
+        },
+    },
+    "Navarro": {
+        "assessor": {
+            "directory_name": "Navarro Central Appraisal District",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/navarro.php"
+            ),
+            "source_url": "https://www.navarrocad.com/",
+            "note": (
+                "The CAD site provides an interactive map and property "
+                "information. No countywide parcel CSV/ZIP download, public "
+                "API, or documented bulk export was verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Navarro County Tax Assessor-Collector",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/navarro.php"
+            ),
+            "source_url": "https://www.co.navarro.tx.us/page/Tax.Assessor.Collector",
+            "note": (
+                "The Comptroller identifies Navarro County as a collecting "
+                "unit, but the County Tax Assessor-Collector route returned "
+                "HTTP 403. The CAD's Tax Sales route returned only its site "
+                "footer; no current itemized list or direct download was "
+                "verified. Access failures do not establish that no sale "
+                "exists."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Navarro County code-enforcement source discovery",
+            "directory_url": "https://www.co.navarro.tx.us/",
+            "source_url": "https://www.co.navarro.tx.us/",
+            "status": "municipal_scope",
+            "note": (
+                "No countywide property-level code or inspection case feed, "
+                "bulk export, or update cadence was identified on the County "
+                "pages reviewed. Municipal enforcement requires separate "
+                "review."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Navarro County foreclosure-sale source discovery",
+            "directory_url": "https://www.co.navarro.tx.us/",
+            "source_url": "https://www.co.navarro.tx.us/page/Foreclosures",
+            "note": (
+                "The County Foreclosures route returned HTTP 403. No current "
+                "foreclosure roster or downloadable notices were verified; "
+                "the access failure does not establish that no notices exist."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Navarro County Clerk real-property records",
+            "directory_url": "https://www.co.navarro.tx.us/page/County.Clerk",
+            "source_url": "https://www.co.navarro.tx.us/page/County.Clerk",
+            "note": (
+                "The accessible County Clerk page describes vital-record "
+                "services and does not link a public real-property index. No "
+                "dedicated lis-pendens/default feed, bulk export, or "
+                "recurring-access terms were verified."
+            ),
+        },
+    },
+    "Newton": {
+        "assessor": {
+            "directory_name": "Newton Central Appraisal District public service",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/newton.php"
+            ),
+            "source_url": "https://newtoncad.org/",
+            "note": (
+                "The CAD explicitly says its public internet service is for "
+                "interactive use and is not intended to support electronic "
+                "data transfer. No parcel export or public API was verified; "
+                "do not automate data transfer from this portal."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Newton County Tax Assessor-Collector",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/newton.php"
+            ),
+            "source_url": (
+                "https://www.co.newton.tx.us/page/"
+                "newton.County.Assessor.Collector"
+            ),
+            "note": (
+                "The Comptroller identifies Newton County as a collecting "
+                "unit. The County Tax Assessor-Collector page links tax "
+                "information and truth-in-taxation worksheets, not an "
+                "itemized sale list. No current tax-sale roster, direct "
+                "download, or recurring-access authorization was verified."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Newton County floodplain and code-enforcement source discovery",
+            "directory_url": "https://www.co.newton.tx.us/page/newton.FloodplainManagement",
+            "source_url": "https://www.co.newton.tx.us/page/newton.FloodplainManagement",
+            "status": "needs_feed_verification",
+            "note": (
+                "The County lists Floodplain Management, but the pages "
+                "reviewed exposed no property-level code, inspection, or "
+                "floodplain case feed, bulk export, or update cadence. "
+                "Additional departmental records remain unverified."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Newton County foreclosure-sale source discovery",
+            "directory_url": "https://www.co.newton.tx.us/",
+            "source_url": "https://www.co.newton.tx.us/page/newton.Foreclosures",
+            "note": (
+                "The County Foreclosures route returned HTTP 403. The County "
+                "Public Notices calendar showed only a 2022 demo event, not "
+                "a sale docket. No current downloadable foreclosure roster "
+                "or recurring-access authorization was verified."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Newton County Clerk real-property records",
+            "directory_url": "https://www.co.newton.tx.us/page/newton.County.Clerk",
+            "source_url": "https://www.texasonlinerecords.com/tor/",
+            "note": (
+                "The County Clerk links TexasOnlineRecords for online record "
+                "searches. This is an interactive public-records portal; no "
+                "bulk export, dedicated lis-pendens/default feed, or "
+                "recurring automated-access terms were verified."
+            ),
+        },
+    },
+    "Nolan": {
+        "assessor": {
+            "directory_name": "Nolan Central Appraisal District Property Search",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/nolan.php"
+            ),
+            "source_url": "https://www.nolan-cad.org/",
+            "note": (
+                "The CAD exposes interactive Basic, Owner, Property, and "
+                "Advanced searches. No countywide parcel CSV/ZIP download, "
+                "public API, or documented bulk export was verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Nolan County tax-sale source discovery",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/nolan.php"
+            ),
+            "source_url": "https://www.co.nolan.tx.us/page/nolan.County.Assessor.Collector",
+            "note": (
+                "The Comptroller says the County Tax Assessor-Collector does "
+                "not collect property taxes. The County tax-office page shows "
+                "contact information and rate worksheets, not a current "
+                "itemized sale list. No direct download or recurring-access "
+                "authorization was verified."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Nolan County code-enforcement source discovery",
+            "directory_url": "https://www.co.nolan.tx.us/",
+            "source_url": "https://www.co.nolan.tx.us/",
+            "status": "municipal_scope",
+            "note": (
+                "No countywide property-level code or inspection case feed, "
+                "bulk export, or update cadence was identified on the County "
+                "pages reviewed. Municipal enforcement requires separate "
+                "review."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Nolan County foreclosure-sale source discovery",
+            "directory_url": "https://www.co.nolan.tx.us/page/nolan.Public.Notices",
+            "source_url": "https://www.co.nolan.tx.us/page/nolan.Foreclosures",
+            "note": (
+                "The County Foreclosures route returned HTTP 403. The "
+                "accessible Public Notices calendar showed only a 2022 demo "
+                "event, not a current foreclosure or tax-sale roster. No "
+                "downloadable list or recurring authorization was verified."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Nolan County Clerk real-property records",
+            "directory_url": "https://www.co.nolan.tx.us/page/nolan.County.Clerk",
+            "source_url": "https://www.co.nolan.tx.us/page/nolan.County.Clerk",
+            "note": (
+                "The County Clerk page reviewed exposed office notices but no "
+                "public real-property index or dedicated lis-pendens/default "
+                "feed. No bulk export or recurring-access terms were verified."
+            ),
+        },
+    },
+    "Nueces": {
+        "assessor": {
+            "directory_name": "Nueces Central Appraisal District",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/nueces.php"
+            ),
+            "source_url": "https://nuecescad.net/",
+            "note": (
+                "The CAD site describes appraisal responsibility for real "
+                "and business personal property in the County. No countywide "
+                "parcel CSV/ZIP download, public API, or documented bulk "
+                "export was verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Nueces County Tax Assessor-Collector",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/nueces.php"
+            ),
+            "source_url": (
+                "https://www.nuecesco.com/county-services/"
+                "tax-assessor-collector"
+            ),
+            "note": (
+                "The Comptroller identifies Nueces County as a collecting "
+                "unit, but the County Tax Assessor-Collector route returned "
+                "HTTP 403. No current itemized tax-sale roster or direct "
+                "download was verified; the access failure does not establish "
+                "that no local sale exists."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Nueces County code-enforcement source discovery",
+            "directory_url": "https://www.nuecesco.com/",
+            "source_url": "https://www.nuecesco.com/",
+            "status": "needs_feed_verification",
+            "note": (
+                "The County homepage and office routes returned HTTP 403, "
+                "preventing verification of any property-level code or "
+                "inspection-case source. No bulk feed or update cadence was "
+                "verified; this access failure does not establish that no "
+                "county source exists."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Nueces County foreclosure-sale source discovery",
+            "directory_url": "https://www.nuecesco.com/county-services/county-clerk",
+            "source_url": "https://nueces.tx.publicsearch.us/",
+            "note": (
+                "The County Clerk route returned HTTP 403. The accessible "
+                "Official Records Search is an interactive Real Property "
+                "index certified through October 30, 2026, not a dedicated "
+                "foreclosure roster; no current sale list or bulk export was "
+                "verified."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Nueces County Clerk official real-property records",
+            "directory_url": "https://www.nuecesco.com/county-services/county-clerk",
+            "source_url": "https://nueces.tx.publicsearch.us/",
+            "note": (
+                "The Official Records Search is certified through October "
+                "30, 2026 and provides interactive Real Property searches. "
+                "No bulk export, dedicated lis-pendens/default feed, or "
+                "recurring automated-access authorization was verified."
+            ),
+        },
+    },
+    "Ochiltree": {
+        "assessor": {
+            "directory_name": "Ochiltree Central Appraisal District",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/ochiltree.php"
+            ),
+            "source_url": "https://www.ochiltreecad.org/",
+            "note": (
+                "The CAD provides interactive Basic, By Owner, By Property, "
+                "All Criteria, and Advanced searches. No countywide parcel "
+                "CSV/ZIP download, public API, or documented bulk export was "
+                "verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Ochiltree County tax-sale source discovery",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/ochiltree.php"
+            ),
+            "source_url": (
+                "https://www.co.ochiltree.tx.us/page/"
+                "ochiltree.County.Assessor.Collector"
+            ),
+            "note": (
+                "The Comptroller says the County Tax Assessor-Collector does "
+                "not collect property taxes; the CAD describes collections "
+                "for participating taxing units. The County tax-office page "
+                "has no itemized sale list, and its Public Notices calendar "
+                "showed only a 10/13/2022 demo event. No current downloadable "
+                "roster or recurring-access authorization was verified."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Ochiltree County code-enforcement source discovery",
+            "directory_url": "https://www.co.ochiltree.tx.us/",
+            "source_url": "https://www.co.ochiltree.tx.us/",
+            "status": "municipal_scope",
+            "note": (
+                "The County's listed offices do not include a code-"
+                "enforcement department, and the reviewed pages exposed no "
+                "countywide property-level code or inspection case feed, "
+                "bulk export, or update cadence. Municipal enforcement "
+                "requires separate review."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Ochiltree County foreclosure-notice source discovery",
+            "directory_url": "https://www.co.ochiltree.tx.us/page/ochiltree.Public.Notices",
+            "source_url": "https://www.co.ochiltree.tx.us/page/ochiltree.Public.Notices",
+            "note": (
+                "The County's Public Notices calendar displayed a 10/13/2022 "
+                "lightbox demo event and no current foreclosure notices; "
+                "the County site has no dedicated Foreclosures page in its "
+                "listed navigation. No current downloadable notice roster "
+                "or recurring-access authorization was verified."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Ochiltree County Clerk real-property records",
+            "directory_url": "https://www.co.ochiltree.tx.us/page/ochiltree.County.Clerk",
+            "source_url": "https://www.co.ochiltree.tx.us/page/ochiltree.County.Clerk",
+            "note": (
+                "The County Clerk page covers birth/death certificates, "
+                "marriage licenses, and military discharges; it does not "
+                "link a public real-property index or dedicated "
+                "lis-pendens/default feed. No bulk export or recurring "
+                "automated-access terms were verified."
+            ),
+        },
+    },
+    "Parmer": {
+        "assessor": {
+            "directory_name": "Parmer County Appraisal District eSearch",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/parmer.php"
+            ),
+            "source_url": "https://esearch.parmercad.org/",
+            "note": (
+                "The BIS eSearch portal offers interactive owner, address, "
+                "property-ID, and advanced searches. Its Terms of Use "
+                "prohibit unauthorized use and data scrubbing; automated "
+                "access is not permitted. No bulk export or public API was "
+                "verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Parmer County tax-sale source discovery",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/parmer.php"
+            ),
+            "source_url": "https://parmercad.org/pay-taxes/",
+            "note": (
+                "The Comptroller says the County Tax Assessor-Collector does "
+                "not collect property taxes. The CAD pay-taxes page links "
+                "payment information but no delinquent resale list or sale "
+                "calendar. No current itemized roster or direct download "
+                "was verified."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Parmer County code-enforcement source discovery",
+            "directory_url": "https://parmercounty.texas.gov/",
+            "source_url": "https://parmercounty.texas.gov/",
+            "status": "municipal_scope",
+            "note": (
+                "The County website is sparse and exposed no countywide "
+                "property-level code or inspection case feed, bulk export, "
+                "or update cadence. Guessed sitemap and clerk routes rendered "
+                "the homepage rather than a distinct page; municipal "
+                "enforcement requires separate review."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Parmer County foreclosure source discovery",
+            "directory_url": "https://parmercounty.texas.gov/",
+            "source_url": "https://parmercounty.texas.gov/",
+            "note": (
+                "No County foreclosure roster or notice list was located. "
+                "The guessed parmer.tx.publicsearch.us host failed DNS, and "
+                "guessed County Clerk paths rendered the homepage; these "
+                "access results do not establish that no notices exist."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Parmer County Clerk real-property source discovery",
+            "directory_url": "https://parmercounty.texas.gov/",
+            "source_url": "https://parmercounty.texas.gov/",
+            "note": (
+                "No County Clerk real-property index or dedicated "
+                "lis-pendens/default feed was verified. The guessed "
+                "parmer.tx.publicsearch.us host failed DNS and guessed "
+                "County Clerk paths rendered the homepage; bulk export and "
+                "recurring access remain unverified."
+            ),
+        },
+    },
+    "Pecos": {
+        "assessor": {
+            "directory_name": "Pecos Central Appraisal District Property Search",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/pecos.php"
+            ),
+            "source_url": "https://pecoscad.org/",
+            "note": (
+                "The CAD site intermittently exposes an interactive "
+                "ASP.NET/MVC Property Search; repeated direct retrievals "
+                "returned inconsistent content and one HTTP 503. This is an "
+                "access limitation, not evidence that the portal is absent. "
+                "No bulk parcel export or public API was verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Pecos County tax-sale source discovery",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/pecos.php"
+            ),
+            "source_url": "https://www.co.pecos.tx.us/tax-rates/",
+            "note": (
+                "The Comptroller identifies the County as a collecting unit. "
+                "The County tax-rates page displayed a courthouse address "
+                "but no tax-sale inventory; its certified-payments route "
+                "redirects to a payment processor, not a sale list. No "
+                "current itemized resale list or download was verified."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Pecos County code and floodplain source discovery",
+            "directory_url": "https://www.co.pecos.tx.us/",
+            "source_url": "https://www.co.pecos.tx.us/",
+            "status": "needs_feed_verification",
+            "note": (
+                "The County homepage posted a one-off floodplain public "
+                "notice and identifies a County floodplain-administration "
+                "role, but the reviewed sitemap and pages exposed no "
+                "property-level code, inspection, or floodplain case feed, "
+                "bulk export, or update cadence."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Pecos County Notices of Trustee's Sale",
+            "directory_url": "https://www.co.pecos.tx.us/foreclosure-notices/",
+            "source_url": "https://www.co.pecos.tx.us/foreclosure-notices/",
+            "note": (
+                "The County provides downloadable PDF Notices of Trustee's "
+                "Sale. On 2026-11-02, two notices were listed: filed "
+                "September 21 for a November 3, 2026 sale and filed October "
+                "22 for a December 1, 2026 sale. This is a notice-PDF page, "
+                "not an API or bulk feed; no automated-access terms were "
+                "posted."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Pecos County Clerk real-property source discovery",
+            "directory_url": "https://www.co.pecos.tx.us/",
+            "source_url": (
+                "https://www.co.pecos.tx.us/county-clerk-certified-payments/"
+            ),
+            "note": (
+                "No distinct lis-pendens/default-notice feed or public "
+                "real-property index was verified. The County Clerk route "
+                "reviewed redirects to a certified-payments processor, not "
+                "an online records search. No bulk export or recurring "
+                "automated-access terms were identified."
+            ),
+        },
+    },
+    "Polk": {
+        "assessor": {
+            "directory_name": "Polk Central Appraisal District Open Records",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/polk.php"
+            ),
+            "source_url": "https://polkcad.org/open-records",
+            "note": (
+                "The CAD Open Records page lists downloadable certified "
+                "appraisal rolls in Excel, parcel shapefiles, and an export "
+                "layout for tax years 2022-2026. These are structured bulk "
+                "files. The separate BIS eSearch Terms of Use prohibit "
+                "unauthorized data scrubbing; the download page states no "
+                "recurring automated-access terms, so permission for a "
+                "scheduled feed remains unverified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Polk County Tax Assessor-Collector",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/polk.php"
+            ),
+            "source_url": "https://polk-tax.com/",
+            "note": (
+                "The Comptroller identifies Polk County as a collecting "
+                "unit. The Tax Assessor-Collector site shows general "
+                "information; its delinquent-tax-sale route returned HTTP "
+                "404. No current itemized resale list or direct download "
+                "was verified."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Polk County code-enforcement source discovery",
+            "directory_url": "https://polk-tax.com/",
+            "source_url": "https://www.co.polk.tx.us/",
+            "status": "municipal_scope",
+            "note": (
+                "No county-level property code or inspection feed was "
+                "identified. Candidate County government domains failed DNS "
+                "resolution, so countywide source coverage remains "
+                "unverified; municipal enforcement requires separate review."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Polk County foreclosure source discovery",
+            "directory_url": "https://comptroller.texas.gov/taxes/property-tax/county-directory/polk.php",
+            "source_url": "https://polk.tx.publicsearch.us/",
+            "note": (
+                "The guessed official-records host failed DNS resolution; "
+                "candidate County government domains also failed DNS. No "
+                "alternate County Clerk foreclosure list or downloadable "
+                "notice roster was verified. These failures do not establish "
+                "that no local source exists."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Polk County Clerk real-property source discovery",
+            "directory_url": "https://comptroller.texas.gov/taxes/property-tax/county-directory/polk.php",
+            "source_url": "https://www.co.polk.tx.us/",
+            "note": (
+                "No public real-property index or dedicated lis-pendens/"
+                "default feed was located. Candidate County government and "
+                "official-records domains failed DNS resolution; a records "
+                "source may exist but was not verified."
+            ),
+        },
+    },
+    "Potter": {
+        "assessor": {
+            "directory_name": "Potter-Randall Appraisal District Public Portal",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/potter.php"
+            ),
+            "source_url": "https://www.prad.org/",
+            "note": (
+                "The shared Potter-Randall CAD site returns a client-rendered "
+                "React app shell to direct retrieval; the interactive search "
+                "and data could not be inspected without JavaScript execution. "
+                "No parcel download or API was verified, and the site's "
+                "Terms-of-Use route also returned only the app shell."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Potter County tax-sale source discovery",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/potter.php"
+            ),
+            "source_url": "https://www.co.potter.tx.us/",
+            "note": (
+                "The Comptroller identifies Potter County as a collecting "
+                "unit. The County site is minimal; the guessed tax-office "
+                "route returned HTTP 404. No current itemized tax-sale list "
+                "or direct download was verified."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Potter County code-enforcement source discovery",
+            "directory_url": "https://www.co.potter.tx.us/",
+            "source_url": "https://www.co.potter.tx.us/",
+            "status": "municipal_scope",
+            "note": (
+                "No County-level property code or inspection case feed was "
+                "identified. Amarillo is an independent city, so property "
+                "enforcement is expected to require municipal source review; "
+                "no bulk county feed was verified."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Potter County Clerk Official Record Search",
+            "directory_url": "https://potter.tx.publicsearch.us/",
+            "source_url": "https://potter.tx.publicsearch.us/",
+            "note": (
+                "The official County Clerk portal offers interactive Quick "
+                "and Advanced searches, index-only or OCR full-text search, "
+                "and cart/register/sign-in functions. It is not a bulk "
+                "foreclosure roster or download. The guessed /terms route "
+                "returned HTTP 404; automated-access permission is unverified."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Potter County Clerk Official Record Search",
+            "directory_url": "https://potter.tx.publicsearch.us/",
+            "source_url": "https://potter.tx.publicsearch.us/",
+            "note": (
+                "The County Clerk provides interactive Official Record "
+                "searches with index-only or OCR full-text options, not a "
+                "dedicated lis-pendens/default feed or bulk export. A Terms "
+                "of Service page was not located, so recurring automated "
+                "access is not authorized by the evidence reviewed."
+            ),
+        },
+    },
+    "Presidio": {
+        "assessor": {
+            "directory_name": "Presidio Central Appraisal District eSearch",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/presidio.php"
+            ),
+            "source_url": "https://esearch.presidiocad.org/",
+            "note": (
+                "The BIS portal offers interactive owner, address, and "
+                "advanced searches. Its Terms of Use prohibit unauthorized "
+                "use and data scrubbing; automated access is not permitted. "
+                "No bulk download or public API was verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Presidio County tax-sale source discovery",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/presidio.php"
+            ),
+            "source_url": "https://www.co.presidio.tx.us/",
+            "note": (
+                "The Comptroller identifies Presidio County as a collecting "
+                "unit. The County site loaded only a Reverse-911 sign-up "
+                "notice; no tax-sale list, calendar, or direct download was "
+                "located."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Presidio County code-enforcement source discovery",
+            "directory_url": "https://www.co.presidio.tx.us/",
+            "source_url": "https://www.co.presidio.tx.us/",
+            "status": "municipal_scope",
+            "note": (
+                "No countywide property-level code or inspection feed, bulk "
+                "export, or update cadence was identified on the County pages "
+                "reviewed. Municipal enforcement requires separate review."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Presidio County foreclosure source discovery",
+            "directory_url": "https://www.co.presidio.tx.us/",
+            "source_url": "https://presidio.tx.publicsearch.us/",
+            "note": (
+                "The guessed official-records host failed DNS resolution, "
+                "and guessed County Clerk/foreclosure paths returned HTTP "
+                "404. No current foreclosure list was verified; these access "
+                "failures do not establish that no notices exist."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Presidio County Clerk real-property source discovery",
+            "directory_url": "https://www.co.presidio.tx.us/",
+            "source_url": "https://presidio.tx.publicsearch.us/",
+            "note": (
+                "No public real-property index or dedicated lis-pendens/"
+                "default feed was verified. The guessed official-records host "
+                "failed DNS resolution, and guessed County Clerk paths "
+                "returned HTTP 404; bulk export and recurring access remain "
+                "unverified."
+            ),
+        },
+    },
+    "Rains": {
+        "assessor": {
+            "directory_name": "Rains Central Appraisal District",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/rains.php"
+            ),
+            "source_url": "https://rainscad.org/",
+            "note": (
+                "The CAD site is informational and links a client-rendered "
+                "truth-in-taxation application, not a parcel search. No "
+                "countywide parcel download, public API, or bulk export was "
+                "verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Rains County tax-sale source discovery",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/rains.php"
+            ),
+            "source_url": (
+                "https://www.co.rains.tx.us/page/"
+                "rains.Tax.Assessor.Collector"
+            ),
+            "note": (
+                "The Comptroller says the County Tax Assessor-Collector does "
+                "not collect property taxes. The County tax-office route and "
+                "other guessed sale pages returned HTTP 403; Rains County "
+                "was not listed on the MVBA November 3, 2026 sale calendar. "
+                "No current itemized list or direct download was verified."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Rains County code-enforcement source discovery",
+            "directory_url": "https://www.co.rains.tx.us/",
+            "source_url": "https://www.co.rains.tx.us/",
+            "status": "needs_feed_verification",
+            "note": (
+                "No County code or inspection department was verified; "
+                "guessed County department routes returned HTTP 403, "
+                "blocking further source checks. This access failure does "
+                "not establish that no County or municipal feed exists."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Rains County foreclosure-sale source discovery",
+            "directory_url": "https://www.co.rains.tx.us/page/rains.Sheriff",
+            "source_url": "https://www.co.rains.tx.us/page/rains.Foreclosures",
+            "note": (
+                "The Sheriff's Office page provides staff and jail "
+                "information but no sale calendar; the guessed Foreclosures "
+                "and Public Notices routes returned HTTP 403. No current "
+                "downloadable foreclosure roster was verified."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Rains County Clerk real-property source discovery",
+            "directory_url": "https://www.co.rains.tx.us/page/rains.County.Clerk",
+            "source_url": "https://www.co.rains.tx.us/page/rains.County.Clerk",
+            "note": (
+                "The County Clerk page covers birth and death certificates, "
+                "not a public real-property index. The guessed "
+                "rains.tx.publicsearch.us host failed DNS resolution; no "
+                "dedicated lis-pendens/default feed or bulk export was "
+                "verified."
+            ),
+        },
+    },
+    "Randall": {
+        "assessor": {
+            "directory_name": "Potter-Randall Appraisal District Public Portal",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/randall.php"
+            ),
+            "source_url": "https://www.prad.org/",
+            "note": (
+                "The shared CAD is a client-rendered React Public Portal; "
+                "direct retrieval returned only the app shell. No bulk "
+                "parcel export or API was verified. The County robots.txt "
+                "restricts selected search/map routes and named crawlers, "
+                "but does not grant bulk-collection permission."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Randall County Sheriff Sale and struck-off property lists",
+            "directory_url": "https://www.randallcounty.gov/293/Sheriff-Sale",
+            "source_url": "https://www.randallcounty.gov/293/Sheriff-Sale",
+            "note": (
+                "The County Sheriff Sale page describes semiannual April "
+                "and August sales and links a bidder-registration PDF, a "
+                "current sale flyer, and a struck-off Trustee Property list. "
+                "The flyer and property-list PDFs downloaded by GET; they "
+                "are documents, not a machine-readable feed. No recurring "
+                "automation permission was verified."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Randall County floodplain and code-enforcement source discovery",
+            "directory_url": "https://www.randallcounty.gov/276/Floodplain-Management",
+            "source_url": "https://www.randallcounty.gov/276/Floodplain-Management",
+            "status": "municipal_scope",
+            "note": (
+                "The County's Floodplain Management page concerns permitting, "
+                "not general code enforcement; no property-level code or "
+                "inspection feed was found in the County sitemap. Countywide "
+                "code enforcement remains unverified and likely requires "
+                "municipal source review."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Randall County Sheriff Sale notices",
+            "directory_url": "https://www.randallcounty.gov/293/Sheriff-Sale",
+            "source_url": "https://www.randallcounty.gov/293/Sheriff-Sale",
+            "note": (
+                "The County Sheriff Sale page links a current sale flyer and "
+                "struck-off Trustee Property PDF. The PDFs downloaded by "
+                "GET and contain embedded text objects, though text-layer "
+                "completeness was not verified. This is not a bulk/API feed; "
+                "no automated-access permission was stated."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Randall County Clerk real-property records",
+            "directory_url": "https://www.randallcounty.gov/182/County-Clerk",
+            "source_url": "https://www.randallcounty.gov/182/County-Clerk",
+            "note": (
+                "The County Clerk page provides office contact information "
+                "only; no online real-property index or dedicated "
+                "lis-pendens/default feed was found. No bulk export or "
+                "recurring access terms were verified."
+            ),
+        },
+    },
+    "Reagan": {
+        "assessor": {
+            "directory_name": "Reagan Central Appraisal District",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/reagan.php"
+            ),
+            "source_url": "https://www.reagancad.org/",
+            "note": (
+                "The CAD site describes appraisal duties, including "
+                "mineral and utility appraisal support, but no interactive "
+                "parcel search, public API, or bulk download was verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Reagan County tax-sale source discovery",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/reagan.php"
+            ),
+            "source_url": "https://www.co.reagan.tx.us/",
+            "note": (
+                "The Comptroller identifies Reagan County as a collecting "
+                "unit. Its accessible homepage provided general information, "
+                "but the Tax Assessor-Collector and other guessed sale routes "
+                "returned HTTP 403. Reagan County was not listed on the MVBA "
+                "November 3, 2026 sale calendar; no itemized list was verified."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Reagan County code-enforcement source discovery",
+            "directory_url": "https://www.co.reagan.tx.us/",
+            "source_url": "https://www.co.reagan.tx.us/",
+            "status": "needs_feed_verification",
+            "note": (
+                "County department routes returned HTTP 403, preventing "
+                "verification of any property-level code or inspection "
+                "source. This access limitation does not establish that no "
+                "County or municipal feed exists."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Reagan County foreclosure-sale source discovery",
+            "directory_url": "https://www.co.reagan.tx.us/",
+            "source_url": "https://www.co.reagan.tx.us/page/reagan.Foreclosures",
+            "note": (
+                "The County homepage was reachable, but the guessed "
+                "Foreclosures route returned HTTP 403. No current foreclosure "
+                "roster or downloadable sale notice was verified; the access "
+                "failure does not establish that notices do not exist."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Reagan County Clerk real-property source discovery",
+            "directory_url": "https://www.co.reagan.tx.us/",
+            "source_url": "https://www.co.reagan.tx.us/page/reagan.County.Clerk",
+            "note": (
+                "The guessed County Clerk route returned HTTP 403; no public "
+                "real-property index or dedicated lis-pendens/default feed "
+                "was verified. No bulk export or recurring-access terms "
+                "could be checked."
+            ),
+        },
+    },
+    "Real": {
+        "assessor": {
+            "directory_name": "Real Central Appraisal District",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/real.php"
+            ),
+            "source_url": "https://realcad.org/",
+            "note": (
+                "The CAD site provides general mission, taxing-entity, and "
+                "penalty information but no parcel-search interface or "
+                "countywide CSV/ZIP download was verified. Its robots.txt "
+                "only excludes the WordPress admin path; no data-use grant "
+                "for automation was found."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Real County tax-sale source discovery",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/real.php"
+            ),
+            "source_url": (
+                "https://www.co.real.tx.us/page/"
+                "real.County.Assessor.Collector"
+            ),
+            "note": (
+                "The Comptroller identifies Real County as a collecting "
+                "unit. The County Assessor/Collector route rendered "
+                "voter-registration content rather than tax or sale "
+                "inventory. No current itemized tax-sale list or direct "
+                "download was verified."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Real County code-enforcement source discovery",
+            "directory_url": "https://www.co.real.tx.us/",
+            "source_url": "https://www.co.real.tx.us/",
+            "status": "municipal_scope",
+            "note": (
+                "The County's listed site navigation exposed no code-"
+                "enforcement office or property-level code/inspection feed. "
+                "Municipal enforcement requires separate review; no bulk "
+                "county feed was verified."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Real County public-notice source discovery",
+            "directory_url": "https://www.co.real.tx.us/page/real.Public.Notices",
+            "source_url": "https://www.co.real.tx.us/page/real.Public.Notices",
+            "note": (
+                "The Public Notices route showed only a stale 10/13/2022 "
+                "demo event; the County News page linked from the homepage "
+                "showed a courthouse-holiday schedule. The full navigation "
+                "contains no dedicated Foreclosures entry. No current "
+                "downloadable sale notices were verified."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Real County Clerk real-property source discovery",
+            "directory_url": "https://www.co.real.tx.us/page/real.County.Clerk",
+            "source_url": "https://www.co.real.tx.us/page/real.County.Clerk",
+            "note": (
+                "The County Clerk page provides office and fee information "
+                "only; no online real-property index or dedicated "
+                "lis-pendens/default feed was found. No bulk export or "
+                "recurring automated-access terms were verified."
+            ),
+        },
+    },
+    "Red River": {
+        "assessor": {
+            "directory_name": "Red River Appraisal District Public Portal",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/redriver.php"
+            ),
+            "source_url": "https://redrivercad.southwestdatasolutions.com/",
+            "note": (
+                "The current CAD portal is a client-rendered Blazor/Radzen "
+                "search app with no bulk export or public API verified. Its "
+                "robots.txt signals reference use and no AI training and "
+                "disallows named AI/data bots; this is not a general "
+                "automation grant."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Red River County tax-sale properties",
+            "directory_url": (
+                "https://www.co.red-river.tx.us/page/"
+                "redriver.County.Assessor.Collector"
+            ),
+            "source_url": "https://taxsales.lgbs.com/",
+            "note": (
+                "The County Assessor/Collector page directs users to the "
+                "Linebarger LGBS map to view tax-sale properties and search "
+                "Red River County. The linked host failed DNS/connection/TLS "
+                "retrieval attempts, so the listing and download options "
+                "remain unverified; no recurring-access permission was found."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Red River County code-enforcement source discovery",
+            "directory_url": "https://www.co.red-river.tx.us/",
+            "source_url": "https://www.co.red-river.tx.us/",
+            "status": "municipal_scope",
+            "note": (
+                "The County's listed navigation includes Permits and "
+                "Hazard Mitigation but no code-enforcement department or "
+                "property-level case feed. Municipal enforcement requires "
+                "separate review; no bulk county feed was verified."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Red River County foreclosure-notice source discovery",
+            "directory_url": "https://www.co.red-river.tx.us/",
+            "source_url": "https://www.co.red-river.tx.us/page/redriver.Public.Notices",
+            "note": (
+                "The County navigation has no dedicated Foreclosures page; "
+                "Public Notices showed only a stale 10/13/2022 demo event, "
+                "and the Sheriff's page showed staff/jail links only. No "
+                "current downloadable foreclosure roster was verified."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Red River County Clerk Official Records Search",
+            "directory_url": "https://redriver.tx.publicsearch.us/",
+            "source_url": "https://redriver.tx.publicsearch.us/",
+            "note": (
+                "The County Clerk links an interactive Official Records "
+                "Search with grantor/grantee, subdivision, and document "
+                "searches, certified through October 30, 2026. Its robots.txt "
+                "explicitly disallows crawling of the search app; no bulk "
+                "export or automated access is permitted."
+            ),
+        },
+    },
+    "Reeves": {
+        "assessor": {
+            "directory_name": "Reeves Central Appraisal District Public Portal",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/reeves.php"
+            ),
+            "source_url": "https://www.reeves-cad.org/",
+            "note": (
+                "The CAD site is a client-rendered React Public Portal; "
+                "direct retrieval returned only the application shell. "
+                "Guessed robots.txt and sitemap.xml routes also returned "
+                "the app shell. No bulk parcel download or public API was "
+                "verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Reeves County tax-sale source discovery",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/reeves.php"
+            ),
+            "source_url": "https://www.reevescounty.org/",
+            "note": (
+                "The County site and robots.txt returned HTTP 403 on "
+                "reevescounty.org and reevescountytx.gov. The Linebarger "
+                "taxsales.lgbs.com host also failed DNS/connection/TLS "
+                "retrieval. No current itemized sale list or download was "
+                "verified; these access failures do not establish that no "
+                "source exists."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Reeves County code-enforcement source discovery",
+            "directory_url": "https://www.reevescounty.org/",
+            "source_url": "https://www.reevescounty.org/",
+            "status": "needs_feed_verification",
+            "note": (
+                "The County site and robots.txt returned HTTP 403, preventing "
+                "verification of any property-level code or inspection-case "
+                "source. This access failure does not establish that no "
+                "County or municipal feed exists."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Reeves County foreclosure-sale source discovery",
+            "directory_url": "https://www.reevescounty.org/",
+            "source_url": "https://www.reevescounty.org/",
+            "note": (
+                "The County site and alternate domain returned HTTP 403 on "
+                "all requests, so County Clerk, public-notice, and trustee-"
+                "sale pages could not be verified. No downloadable roster "
+                "was confirmed; access failure is not proof of absence."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Reeves County Clerk real-property source discovery",
+            "directory_url": "https://www.reevescounty.org/",
+            "source_url": "https://www.reevescounty.org/",
+            "note": (
+                "The County site returned HTTP 403, preventing verification "
+                "of a County Clerk real-property index or dedicated "
+                "lis-pendens/default feed. No bulk export or recurring "
+                "access terms could be checked."
+            ),
+        },
+    },
+    "Refugio": {
+        "assessor": {
+            "directory_name": "Refugio Central Appraisal District Property Search",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/refugio.php"
+            ),
+            "source_url": "https://www.refugiocad.org/",
+            "note": (
+                "The CAD homepage is an ASP.NET/MVC interactive Property "
+                "Search. Its Records | Data | Reports page loaded with only "
+                "the site footer; no bulk export or public API was found. "
+                "The robots.txt route returned HTTP 404, leaving automation "
+                "terms unverified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Refugio County Tax Assessor-Collector",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/refugio.php"
+            ),
+            "source_url": (
+                "https://www.co.refugio.tx.us/page/"
+                "refugio.County.Assessor.Collector"
+            ),
+            "note": (
+                "The County tax-office page lists taxing units and two "
+                "tax-rate PDFs, but no delinquent-tax-sale inventory, vendor "
+                "link, or payment/sale portal. A guessed Tax Assessor route "
+                "returned HTTP 403; no direct sale download was verified."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Refugio County code-enforcement source discovery",
+            "directory_url": "https://www.co.refugio.tx.us/",
+            "source_url": "https://www.co.refugio.tx.us/",
+            "status": "municipal_scope",
+            "note": (
+                "The reachable County pages reviewed (Home, Clerk, and "
+                "Sheriff) exposed no County code-enforcement or floodplain "
+                "case feed. Municipal enforcement requires separate review; "
+                "no bulk county feed was verified."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Refugio County foreclosure-notice source discovery",
+            "directory_url": "https://www.co.refugio.tx.us/",
+            "source_url": (
+                "https://www.co.refugio.tx.us/page/"
+                "refugio.Public.Notices"
+            ),
+            "note": (
+                "The County Public Notices routes returned HTTP 403, "
+                "preventing confirmation of current foreclosure notices or "
+                "a sale list. No downloadable roster was verified; the "
+                "access failure does not establish that no notices exist."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Refugio County Clerk on-site property-record search",
+            "directory_url": "https://www.co.refugio.tx.us/page/refugio.County.Clerk",
+            "source_url": "https://www.co.refugio.tx.us/page/refugio.County.Clerk",
+            "note": (
+                "The County Clerk states that public computers for property "
+                "searches are available in the office only. No remote "
+                "real-property index, dedicated lis-pendens/default feed, "
+                "or bulk export was verified."
+            ),
+        },
+    },
+    "Roberts": {
+        "assessor": {
+            "directory_name": "Roberts Central Appraisal District Public Portal",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/roberts.php"
+            ),
+            "source_url": "https://robertscad.southwestdatasolutions.com/",
+            "note": (
+                "The CAD redirects to a client-rendered Blazor/Radzen "
+                "Public Portal. Its robots.txt signals reference use and "
+                "no AI training and disallows named AI/data bots; this is "
+                "not a bulk-access grant. No parcel export or public API "
+                "was verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Roberts County Tax Assessor",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/roberts.php"
+            ),
+            "source_url": "https://www.co.roberts.tx.us/page/roberts.Tax.Assessor",
+            "note": (
+                "The County Tax Assessor page provides contact/address "
+                "information only; no tax-sale list or vendor link was "
+                "found. No current itemized sale roster or direct download "
+                "was verified."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Roberts County code-enforcement source discovery",
+            "directory_url": "https://www.co.roberts.tx.us/page/roberts.Public.Notices",
+            "source_url": "https://www.co.roberts.tx.us/page/roberts.Public.Notices",
+            "status": "municipal_scope",
+            "note": (
+                "The County's full department navigation has no code-"
+                "enforcement or floodplain entry. No property-level County "
+                "code feed was identified; municipal enforcement requires "
+                "separate review."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Roberts County foreclosure-notice source discovery",
+            "directory_url": (
+                "https://www.co.roberts.tx.us/page/"
+                "roberts.Public%20Notices%20and%20News"
+            ),
+            "source_url": (
+                "https://www.co.roberts.tx.us/page/"
+                "roberts.Public%20Notices%20and%20News"
+            ),
+            "note": (
+                "The County's Foreclosure Sales navigation item points to a "
+                "page that rendered only a Texas Association of Counties "
+                "logo; the Public Notice calendar showed only a stale "
+                "10/13/2022 demo event. No current foreclosure roster or "
+                "download was verified."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Roberts County Clerk real-property source discovery",
+            "directory_url": "https://www.co.roberts.tx.us/page/roberts.County.Clerk",
+            "source_url": "https://www.co.roberts.tx.us/page/roberts.County.Clerk",
+            "note": (
+                "The County Clerk page provides office contact information "
+                "only; no online real-property index or dedicated "
+                "lis-pendens/default feed was found. No bulk export or "
+                "recurring access terms were verified."
+            ),
+        },
+    },
+    "Robertson": {
+        "assessor": {
+            "directory_name": "Robertson Central Appraisal District Property Search",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/robertson.php"
+            ),
+            "source_url": "https://robertsoncad.com/",
+            "note": (
+                "The CAD homepage advertises interactive Property Search, "
+                "Interactive Map, and Online Protest. Its sitemap lists "
+                "informational pages but no bulk parcel download; "
+                "robots.txt excludes only the WordPress admin path. No "
+                "bulk export, public API, or data-use grant was verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Robertson County Tax Assessor-Collector delinquent-sale source",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/robertson.php"
+            ),
+            "source_url": (
+                "https://www.co.robertson.tx.us/page/"
+                "robertson.County.Assessor.Collector"
+            ),
+            "note": (
+                "The County Tax Assessor-Collector page links Linebarger "
+                "Goggan Blair & Sampson for delinquent-tax services, plus "
+                "Capitol Appraisal and a certified-payments portal. "
+                "Linebarger's taxsales.lgbs.com host failed DNS/connection/"
+                "TLS retrieval; the actual sale listing and terms remain "
+                "unverified."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Robertson County code-enforcement source discovery",
+            "directory_url": "https://www.co.robertson.tx.us/",
+            "source_url": "https://www.co.robertson.tx.us/",
+            "status": "needs_feed_verification",
+            "note": (
+                "The County homepage contains only a phone-number listing; "
+                "guessed Sheriff and Clerk pages fell back to identical "
+                "homepage content. No property-level code/floodplain feed "
+                "was verified, and page discovery remains incomplete."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Robertson County foreclosure-notice source discovery",
+            "directory_url": "https://www.co.robertson.tx.us/",
+            "source_url": "https://www.co.robertson.tx.us/page/robertson.Public.Notices",
+            "note": (
+                "The County Public Notices route returned HTTP 403, so "
+                "foreclosure notices could not be verified. No current "
+                "downloadable roster was found; this is an access limitation, "
+                "not evidence that no notices exist."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Robertson County Clerk real-property source discovery",
+            "directory_url": "https://www.co.robertson.tx.us/",
+            "source_url": "https://www.co.robertson.tx.us/page/robertson.County.Clerk",
+            "note": (
+                "No County Clerk real-property search page was located; "
+                "guessed Clerk routes fell back to the homepage or returned "
+                "HTTP 403. No online index or dedicated lis-pendens/default "
+                "feed was verified."
+            ),
+        },
+    },
+    "Rockwall": {
+        "assessor": {
+            "directory_name": "Rockwall Central Appraisal District Public Portal",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/rockwall.php"
+            ),
+            "source_url": "https://www.rockwallcad.com/",
+            "note": (
+                "The CAD is a client-rendered React Public Portal; static "
+                "retrieval returned only its application shell. Guessed "
+                "robots.txt and sitemap.xml routes also returned the shell. "
+                "No bulk parcel export or public API was verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Rockwall County trustee-sale notices",
+            "directory_url": "https://www.rockwallcountytexas.com/792/Foreclosure-Notices",
+            "source_url": "https://www.rockwallcountytexas.com/792/Foreclosure-Notices",
+            "note": (
+                "The County page says trustee sales occur on the first "
+                "Tuesday of each month at the courthouse and directs buyers "
+                "to the trustee named in each notice. It does not expose a "
+                "dedicated delinquent-tax-sale roster; the Foreclosure "
+                "Listings section had no records captured by static fetch."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Rockwall County development-permit and code source discovery",
+            "directory_url": "https://www.rockwallcountytexas.com/sitemap.xml",
+            "source_url": "https://www.rockwallcountytexas.com/1357",
+            "status": "needs_feed_verification",
+            "note": (
+                "The County sitemap had no dedicated Code Enforcement or "
+                "Floodplain page. Development Services covers plan review "
+                "and permits; the Fire Marshal page covers permit/inspection "
+                "requirements. No property-level violation or case feed, "
+                "bulk export, or update cadence was verified."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Rockwall County foreclosure listings",
+            "directory_url": "https://www.rockwallcountytexas.com/792/Foreclosure-Notices",
+            "source_url": "https://www.rockwallcountytexas.com/792/Foreclosure-Notices",
+            "note": (
+                "The County page verifies first-Tuesday monthly trustee "
+                "sales and has a Foreclosure Listings heading, but the "
+                "listing content did not appear in static retrieval and "
+                "may be a dynamic widget. No downloadable list or bulk "
+                "export was verified."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Rockwall County Official Public Records",
+            "directory_url": "https://www.rockwallcountytexas.com/113/Property-Records",
+            "source_url": "https://rockwalltx-web.tylerhost.net/web/",
+            "note": (
+                "The County Property Records page links to an interactive "
+                "Tyler Technologies Official Public Records search with "
+                "online eCertified copies. The portal states that some "
+                "information is redacted and the online database may not "
+                "reflect complete or unaltered official records. Its "
+                "robots.txt returned HTTP 404; no bulk export or "
+                "automated-access terms were verified."
+            ),
+        },
+    },
+    "Palo Pinto": {
+        "assessor": {
+            "directory_name": "Palo Pinto Appraisal District Property Search",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/palopinto.php"
+            ),
+            "source_url": (
+                "https://www.southwestdatasolution.com/"
+                "webindex.aspx?dbkey=PALOPINTOCAD"
+            ),
+            "note": (
+                "The CAD vendor portal provides interactive searches by "
+                "property address, legal description, Geographic ID, and "
+                "Property ID. No countywide parcel download, public API, or "
+                "bulk export was verified; automated-access terms were not "
+                "located."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Palo Pinto County Tax Assessor-Collector",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/palopinto.php"
+            ),
+            "source_url": (
+                "https://www.co.palo-pinto.tx.us/page/"
+                "County.Assessor.Collector"
+            ),
+            "note": (
+                "The Comptroller identifies the County as a collecting unit. "
+                "The current Tax Assessor-Collector page describes billing "
+                "and collection duties but no delinquent-tax-sale inventory. "
+                "The Public Notices page lists sealed bids for county "
+                "materials, not a tax-sale roster; no direct sale download "
+                "was verified."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Palo Pinto County floodplain and code source discovery",
+            "directory_url": "https://www.co.palo-pinto.tx.us/page/Emergency",
+            "source_url": "https://www.co.palo-pinto.tx.us/page/Emergency",
+            "status": "needs_feed_verification",
+            "note": (
+                "The County navigation lists a Flood Plain Administrator, "
+                "but its linked Emergency page exposed only the courthouse "
+                "footer. No property-level code, inspection, or floodplain "
+                "case feed, bulk export, or update cadence was verified."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Palo Pinto County foreclosure source discovery",
+            "directory_url": "https://www.co.palo-pinto.tx.us/page/PublicNotices",
+            "source_url": "https://www.co.palo-pinto.tx.us/page/Sheriff.Home",
+            "note": (
+                "The County Public Notices page lists sealed procurement "
+                "bids and grant notices, not foreclosure or trustee-sale "
+                "listings; the Sheriff's page covers jail/visitation and "
+                "shows no sale calendar. No current downloadable foreclosure "
+                "roster was verified."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Palo Pinto County Clerk official-records source discovery",
+            "directory_url": "https://www.co.palo-pinto.tx.us/page/County.Clerk",
+            "source_url": "https://www.co.palo-pinto.tx.us/page/County.Clerk",
+            "note": (
+                "The County Clerk page describes filing real-property "
+                "records but links no public online index or dedicated "
+                "lis-pendens/default feed. The guessed palopinto.tx.publicsearch.us "
+                "host failed DNS resolution; no bulk export was verified."
+            ),
+        },
+    },
+    "Oldham": {
+        "assessor": {
+            "directory_name": "Oldham Central Appraisal District eSearch",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/oldham.php"
+            ),
+            "source_url": "https://esearch.oldhamcad.org/",
+            "note": (
+                "The CAD provides interactive property search and a GIS map; "
+                "the forms page offers PDF forms but no parcel-data export. "
+                "The BIS Terms of Use prohibit unauthorized data scrubbing, "
+                "so automated access is not authorized."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Oldham County tax-sale source discovery",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/oldham.php"
+            ),
+            "source_url": "https://www.co.oldham.tx.us/",
+            "note": (
+                "The Comptroller says the County Tax Assessor-Collector "
+                "does not collect property taxes. The County website's "
+                "Government/Departments navigation has no tax-sale or "
+                "resale item, and the accessible homepage contains generic "
+                "boilerplate. No current itemized sale list or download "
+                "was verified."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Oldham County code-enforcement source discovery",
+            "directory_url": "https://www.co.oldham.tx.us/",
+            "source_url": "https://prod.i-info.com/documents/Home.aspx?pid=004B",
+            "status": "municipal_scope",
+            "note": (
+                "The County navigation has no Building, Code, or "
+                "Environmental department. Its Emergency Management link "
+                "opens a client-rendered portal that remained at "
+                "'Loading. Please wait...' in direct retrieval. No "
+                "property-level code/inspection feed was verified; "
+                "municipal enforcement requires separate review."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Oldham County foreclosure notices",
+            "directory_url": "https://www.co.oldham.tx.us/page/ForeclosureNotices",
+            "source_url": "https://www.co.oldham.tx.us/page/ForeclosureNotices",
+            "note": (
+                "The County's Public Notices navigation links a real "
+                "Foreclosure Notices page, but the page renders only "
+                "boilerplate with no current postings. No downloadable "
+                "foreclosure roster was available."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Oldham County Clerk real-property source discovery",
+            "directory_url": "https://www.co.oldham.tx.us/page/oldham.County.Clerk",
+            "source_url": "https://www.co.oldham.tx.us/page/oldham.County.Clerk",
+            "note": (
+                "The County Clerk page covers livestock marks and brands, "
+                "not a public real-property index or dedicated "
+                "lis-pendens/default feed. The guessed oldham.tx.publicsearch.us "
+                "host failed DNS resolution; no bulk export was verified."
+            ),
+        },
+    },
+    "Orange": {
+        "assessor": {
+            "directory_name": "Orange Central Appraisal District eSearch",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/orange.php"
+            ),
+            "source_url": "https://esearch.orangecad.net/",
+            "note": (
+                "The CAD search is interactive and displays certified 2026 "
+                "values; it also links a GIS map. The site's data-downloads "
+                "route is a Truth-in-Taxation information page, not a bulk "
+                "parcel export. BIS Terms of Use prohibit unauthorized data "
+                "scrubbing; automated access is not authorized."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Orange County online tax-sale auction",
+            "directory_url": "https://www.co.orange.tx.us/property-tax-sale-faqs",
+            "source_url": "https://orange.texas.sheriffsaleauctions.com/",
+            "note": (
+                "The County Tax Sale FAQ says sales are held online two to "
+                "three times a year, generally on the first Tuesday, and "
+                "directs bidders to the Sheriff's Sale Auctions portal. The "
+                "auction host returned HTTP 403; the FAQ says struck-off "
+                "trust-property listings are available from the Tax "
+                "Assessor-Collector office. No downloadable list or "
+                "automated-access permission was verified."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Orange County code-enforcement source discovery",
+            "directory_url": "https://www.co.orange.tx.us/departments",
+            "source_url": "https://www.co.orange.tx.us/departments",
+            "status": "municipal_scope",
+            "note": (
+                "The County's A-to-V department directory has no Code "
+                "Enforcement entry. Floodplain/OSSF PDFs appear in Public "
+                "Notices, but no property-level violation or case feed, "
+                "bulk export, or update cadence was verified; municipal "
+                "enforcement requires separate review."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Orange County Clerk official-records source discovery",
+            "directory_url": "https://www.co.orange.tx.us/departments/countyclerk",
+            "source_url": "http://207.80.115.100:8012/mrcjava/servlet/MRCPUBLIC.M00390s",
+            "note": (
+                "The County Clerk page has no working online index link; "
+                "the legacy records-search URL found on the County site "
+                "failed DNS/transport retrieval. The County's Public "
+                "Notices/News page exposed no foreclosure roster. No "
+                "downloadable notice list was verified."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Orange County Clerk real-property records",
+            "directory_url": "https://www.co.orange.tx.us/county-clerk-faqs",
+            "source_url": "http://207.80.115.100:8012/mrcjava/servlet/MRCPUBLIC.M00390s",
+            "note": (
+                "The County Clerk FAQ says deed copies must be requested "
+                "from the Clerk and points property-ownership questions to "
+                "the Tax Assessor/CAD; no remote real-property index or "
+                "lis-pendens feed was verified. The legacy records-search "
+                "host failed transport retrieval."
+            ),
+        },
+    },
+    "Panola": {
+        "assessor": {
+            "directory_name": "Panola Central Appraisal District Property Search",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/panola.php"
+            ),
+            "source_url": "https://www.panolacad.org/",
+            "note": (
+                "The CAD site is a JavaScript-dependent ASP.NET MVC-grid "
+                "Property Search. Its Records | Data | Reports page returned "
+                "only the footer; no bulk export or public API was found. "
+                "The robots.txt route returned HTTP 404, leaving automation "
+                "terms unverified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Panola County Tax Assessor-Collector",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/panola.php"
+            ),
+            "source_url": "https://www.co.panola.tx.us/1198/County-Tax-Assessor-Collector",
+            "note": (
+                "The County tax-office page links Panola County Tax to an "
+                "interactive pay/view-tax portal. The portal is a "
+                "JavaScript-dependent property-search app; the County "
+                "sitemap had no delinquent-sale, resale, or struck-off "
+                "property page. No itemized sale list or download was "
+                "verified."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Panola County code-enforcement source discovery",
+            "directory_url": "https://www.co.panola.tx.us/",
+            "source_url": "https://www.co.panola.tx.us/",
+            "status": "municipal_scope",
+            "note": (
+                "The County sitemap search returned no code, enforcement, "
+                "environmental, building, permit, or nuisance pages. No "
+                "countywide property-level case feed or bulk export was "
+                "verified; municipal enforcement requires separate review."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Panola County Clerk and Public Notices",
+            "directory_url": "https://www.co.panola.tx.us/1224/Public-Notices",
+            "source_url": "https://www.co.panola.tx.us/1224/Public-Notices",
+            "note": (
+                "The Public Notices page and County Clerk page were reviewed; "
+                "their document links were fee schedules, vital-record forms, "
+                "and unrelated county notices, not foreclosure or tax-sale "
+                "rosters. A guessed Foreclosures route returned HTTP 404; "
+                "no current downloadable list was verified."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Panola County Clerk real-property source discovery",
+            "directory_url": "https://www.co.panola.tx.us/1195/County-Clerk",
+            "source_url": "https://www.co.panola.tx.us/1195/County-Clerk",
+            "note": (
+                "The County Clerk page provides fee and vital-record "
+                "information but links no online real-property index or "
+                "dedicated lis-pendens/default feed. No bulk export or "
+                "recurring access terms were found."
+            ),
+        },
+    },
+    "Parker": {
+        "assessor": {
+            "directory_name": "Parker Central Appraisal District Property Search",
+            "directory_url": (
+                "https://comptroller.texas.gov/taxes/property-tax/"
+                "county-directory/parker.php"
+            ),
+            "source_url": (
+                "https://www.southwestdatasolution.com/"
+                "webSearchAddress.aspx?dbkey=PARKERCAD"
+            ),
+            "note": (
+                "The CAD vendor site provides interactive Name, Address, "
+                "Legal, GeoID, and Property ID searches, plus a GIS map. "
+                "No bulk parcel export or API was found. Vendor Terms of Use "
+                "and robots.txt routes returned HTTP 404; Parker County's "
+                "own robots.txt disallows selected search/map routes, and "
+                "no automation authorization was verified."
+            ),
+        },
+        "tax_sale": {
+            "directory_name": "Parker County Notice of Tax Sale",
+            "directory_url": (
+                "https://www.parkercountytx.gov/484/"
+                "Notice-of-Sale---Tex-Tax-Code-ch-33-34"
+            ),
+            "source_url": (
+                "https://www.parkercountytx.gov/484/"
+                "Notice-of-Sale---Tex-Tax-Code-ch-33-34"
+            ),
+            "note": (
+                "The County links current Notice of Tax Sale PDFs and a "
+                "Constable Sale page with notice PDFs and an email/SMS "
+                "subscription option. These are document notices, not a "
+                "bulk list or API; subscription does not establish "
+                "permission for automated mailbox or site ingestion."
+            ),
+        },
+        "code_enforcement": {
+            "directory_name": "Parker County Environmental Enforcement and permit sources",
+            "directory_url": "https://www.parkercountytx.gov/234/Complaint-Form",
+            "source_url": "https://www.parkercountytx.gov/234/Complaint-Form",
+            "status": "needs_feed_verification",
+            "note": (
+                "Environmental enforcement is handled by Constables; the "
+                "County exposes an online complaint form. Permitting covers "
+                "OSSF, floodplain, and stormwater, but no public violation/"
+                "case feed was verified. The external GovBuilt permit portal "
+                "returned HTTP 403; no bulk export or update cadence was "
+                "confirmed."
+            ),
+        },
+        "foreclosure": {
+            "directory_name": "Parker County foreclosure and public notices",
+            "directory_url": "https://www.parkercountytx.gov/371/Foreclosures",
+            "source_url": "https://www.parkercountytx.gov/371/Foreclosures",
+            "note": (
+                "The County Foreclosures and Public Notices pages were "
+                "verified but contain no page-specific content. The "
+                "linked Public Records search is hosted by LaredoAnywhere "
+                "and requires login; access was not bypassed. No current "
+                "foreclosure list or bulk download was verified."
+            ),
+        },
+        "pre_foreclosure": {
+            "directory_name": "Parker County Public Records search",
+            "directory_url": "https://www.parkercountytx.gov/114/Public-Records",
+            "source_url": "https://www.parkercountytx.gov/114/Public-Records",
+            "note": (
+                "The County's Public Records page links to a login-gated "
+                "LaredoAnywhere records search. The site was not accessed "
+                "past the login. No public real-property index, dedicated "
+                "lis-pendens/default feed, or bulk export was verified."
+            ),
+        },
+    },
 }
 
 ALABAMA_TAX_TRANSCRIPT_CODES = {
@@ -2222,7 +13650,17 @@ def county_source_links(
                 "included the county name; the Platte County site returned HTTP 403. "
                 "A county office/profile page is not a tax-sale calendar or feed."
             )
-        if state == "TX" and category == "tax_sale":
+        if (
+            state == "TX"
+            and category == "tax_sale"
+            and county_name in {"Harris", "Hill", "Live Oak", "Lubbock"}
+        ):
+            note = "Delinquent-property sales are handled locally by county officials."
+        if (
+            state == "TX"
+            and category == "tax_sale"
+            and county_name not in {"Harris", "Hill", "Live Oak", "Lubbock"}
+        ):
             directory_url = county_profiles["TX"]["assessor"]
             note += (
                 " The county-specific Texas Comptroller page links the local Tax "
@@ -2234,15 +13672,19 @@ def county_source_links(
             )
         if state == "TX" and county_name == "Harris" and category == "tax_sale":
             directory_name = "Harris County Tax Office sale property listings"
+            directory_url = "https://www.hctax.net/Property/TaxSales"
             source_url = "https://www.hctax.net/Property/listings/taxsalelisting"
             note += (
                 " The official Tax Office describes monthly delinquent-property "
-                "auctions and links this live sale list. The listing is rendered "
-                "as HTML with account/cause numbers, adjudged values, and minimum "
-                "bids; no CSV, XLS, PDF, or export control was found. The County "
-                "warns the list is updated regularly but may not reflect final "
-                "sale-day availability and recommends other sources for a complete "
-                "list. No permission for automated weekly collection was verified."
+                "auctions and links this live sale list. County-specific "
+                "source review checked 2026-11-02: the listing "
+                "returned HTTP 200 with the November 3, 2026 sale and "
+                "itemized account/cause numbers, adjudged values, and minimum "
+                "bids in HTML (2,701,910 bytes); it says the list is updated "
+                "daily but may not reflect final sale-day availability or "
+                "represent every property; no CSV, "
+                "XLS, PDF, or export control was found, and permission for "
+                "automated weekly collection was not verified."
             )
         if state == "OH" and category == "assessor":
             note += (
@@ -14004,6 +25446,7 @@ def county_source_links(
             directory_name = texas_county_override["directory_name"]
             directory_url = texas_county_override["directory_url"]
             source_url = texas_county_override["source_url"]
+            status = texas_county_override.get("status", status)
             note += (
                 " County-specific source review checked 2026-11-02: "
                 + texas_county_override["note"]

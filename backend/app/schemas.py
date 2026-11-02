@@ -27,8 +27,19 @@ Confidence = Literal[
     "provider_estimate",
     "unknown",
 ]
-DataFeedConnector = Literal["socrata", "arcgis", "json_api"]
-DataFeedTarget = Literal["property_leads", "property_enrichment"]
+DataFeedConnector = Literal[
+    "socrata",
+    "arcgis",
+    "json_api",
+    "csv_file",
+    "csv_zip",
+    "pdf_text",
+]
+DataFeedTarget = Literal[
+    "property_leads",
+    "property_enrichment",
+    "source_records",
+]
 DataFeedCategory = Literal[
     "assessor",
     "tax_sale",
@@ -90,16 +101,20 @@ class DataFeedCreate(BaseModel):
     source_category: DataFeedCategory = "other"
     source_type: SourceType
     county_fips: str | None = Field(default=None, pattern=r"^\d{5}$")
-    field_mapping: dict[IngestiblePropertyField, str]
+    field_mapping: dict[IngestiblePropertyField, str] = Field(default_factory=dict)
     enabled: bool = True
     confidence: Confidence = "official_record"
+    automation_authorized: bool = False
+    refresh_interval_days: int = Field(default=7, ge=1, le=365)
     domain: str | None = Field(default=None, max_length=255)
     dataset_id: str | None = Field(default=None, max_length=32)
     query_url: str | None = Field(default=None, max_length=2000)
     where: str | None = Field(default=None, max_length=2000)
-    max_records: int = Field(default=1000, ge=1, le=5000)
+    max_records: int = Field(default=1000, ge=1, le=100_000)
     record_id_field: str | None = Field(default=None, max_length=200)
     records_path: str | None = Field(default=None, max_length=200)
+    archive_member: str | None = Field(default=None, max_length=200)
+    file_encoding: Literal["utf-8-sig", "utf-8", "cp1252", "latin-1"] = "utf-8-sig"
     query_params: dict[str, str] = Field(default_factory=dict)
     auth_env_var: str | None = Field(default=None, pattern=r"^[A-Z][A-Z0-9_]{1,100}$")
     auth_query_param: str | None = Field(
@@ -113,6 +128,7 @@ class DataFeedCreate(BaseModel):
         "query_url",
         "record_id_field",
         "records_path",
+        "archive_member",
         "auth_query_param",
         "county_fips",
     )
@@ -122,12 +138,18 @@ class DataFeedCreate(BaseModel):
 
     @model_validator(mode="after")
     def validate_connector_configuration(self):
-        if not self.field_mapping:
-            raise ValueError("At least one field mapping is required")
+        if not self.automation_authorized:
+            raise ValueError(
+                "Confirm the source permits recurring automated downloads before saving a feed"
+            )
         if self.target == "property_leads":
+            if not self.field_mapping:
+                raise ValueError("At least one field mapping is required")
             if not {"address", "city", "state"}.issubset(self.field_mapping):
                 raise ValueError("Lead feed mapping must include address, city, and state")
-        else:
+        elif self.target == "property_enrichment":
+            if not self.field_mapping:
+                raise ValueError("At least one field mapping is required")
             matches_by_fips = "county_fips" in self.field_mapping or self.county_fips is not None
             matches_by_zip = {"zip_code", "state"}.issubset(self.field_mapping)
             matches_by_county = {"county", "state"}.issubset(self.field_mapping)
@@ -161,9 +183,26 @@ class DataFeedCreate(BaseModel):
                 raise ValueError(
                     "Enrichment feeds may only map area-level population, crime, rent, or PHA metrics"
                 )
+        elif self.field_mapping:
+            raise ValueError("Source-record feeds do not use property field mappings")
         if self.county_fips:
             if self.county_fips not in PRIORITY_COUNTY_FIPS:
                 raise ValueError("County FIPS must identify a county in a prioritized state")
+        if self.connector in {"csv_file", "csv_zip", "pdf_text"}:
+            if not self.query_url:
+                raise ValueError("Download feeds require a direct file URL")
+            _validate_public_https_url(self.query_url)
+            if self.target != "source_records":
+                raise ValueError("Download feeds must use the source-records target")
+            max_limit = 100_000 if self.connector in {"csv_file", "csv_zip"} else 500
+            if self.max_records > max_limit:
+                raise ValueError(
+                    f"{self.connector} feeds may contain at most {max_limit} records per run"
+                )
+            if self.connector == "pdf_text" and self.archive_member:
+                raise ValueError("PDF feeds do not accept an archive member")
+            if self.connector != "csv_zip" and self.archive_member:
+                raise ValueError("Only ZIP/CSV feeds accept an archive member")
         if self.connector == "socrata":
             if not self.domain or not self.dataset_id:
                 raise ValueError("Socrata sources require a domain and dataset ID")
@@ -178,10 +217,14 @@ class DataFeedCreate(BaseModel):
             if not self.query_url:
                 raise ValueError("ArcGIS sources require a FeatureServer layer URL")
             _validate_public_https_url(self.query_url)
-        else:
+        elif self.connector == "json_api":
             if not self.query_url:
                 raise ValueError("JSON API sources require an endpoint URL")
             _validate_public_https_url(self.query_url)
+        if self.connector in {"socrata", "arcgis", "json_api"} and self.max_records > 5000:
+            raise ValueError("API feeds may contain at most 5,000 records per run")
+        if self.connector == "pdf_text" and self.max_records > 500:
+            raise ValueError("PDF text feeds may contain at most 500 pages per run")
         if self.where and any(ord(character) < 32 for character in self.where):
             raise ValueError("Source filter contains invalid control characters")
         sensitive_parameter = re.compile(

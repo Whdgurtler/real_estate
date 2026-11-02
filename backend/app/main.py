@@ -12,7 +12,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse
 from pydantic import ValidationError
 from fastapi.staticfiles import StaticFiles
-from sqlalchemy import text
+from sqlalchemy import func, text
 from sqlalchemy.orm import Session
 
 from .automation import (
@@ -28,7 +28,15 @@ from .jurisdictions import (
     county_jurisdictions,
     county_source_links,
 )
-from .models import DataEvidence, DataFeed, DataFeedRecord, Property, SyncRun, utc_now
+from .models import (
+    DataEvidence,
+    DataFeed,
+    DataFeedRecord,
+    DataFeedSourceRecord,
+    Property,
+    SyncRun,
+    utc_now,
+)
 from .schemas import (
     PRIORITY_COUNTY_FIPS,
     DataFeedCreate,
@@ -247,6 +255,7 @@ def create_app(database_url: str | None = None):
             county_fips=data.county_fips,
             config=data_feed_config(data),
             enabled=data.enabled,
+            refresh_interval_days=data.refresh_interval_days,
         )
         db.add(feed)
         db.commit()
@@ -276,9 +285,65 @@ def create_app(database_url: str | None = None):
         db.query(DataFeedRecord).filter(DataFeedRecord.data_feed_id == feed_id).delete(
             synchronize_session=False
         )
+        db.query(DataFeedSourceRecord).filter(
+            DataFeedSourceRecord.data_feed_id == feed_id
+        ).delete(synchronize_session=False)
         db.delete(feed)
         db.commit()
         return None
+
+    @application.get("/api/data-feeds/{feed_id}/records")
+    def data_feed_records(
+        feed_id: int,
+        limit: int = Query(default=100, ge=1, le=500),
+        offset: int = Query(default=0, ge=0),
+        db: Session = Depends(get_db),
+    ):
+        feed = db.get(DataFeed, feed_id)
+        if feed is None:
+            raise HTTPException(status_code=404, detail="Data feed not found")
+        query = db.query(DataFeedSourceRecord).filter(
+            DataFeedSourceRecord.data_feed_id == feed_id
+        )
+        latest_snapshot_at = (
+            db.query(func.max(DataFeedSourceRecord.last_seen_at))
+            .filter(DataFeedSourceRecord.data_feed_id == feed_id)
+            .scalar()
+        )
+        if latest_snapshot_at is None:
+            return {
+                "feed_id": feed_id,
+                "records": [],
+                "total": 0,
+                "limit": limit,
+                "offset": offset,
+            }
+        snapshot_query = query.filter(
+            DataFeedSourceRecord.last_seen_at == latest_snapshot_at
+        )
+        total = snapshot_query.count()
+        records = (
+            snapshot_query.order_by(DataFeedSourceRecord.id)
+            .offset(offset)
+            .limit(limit)
+            .all()
+        )
+        return {
+            "feed_id": feed_id,
+            "records": [
+                {
+                    "id": record.id,
+                    "payload": record.payload,
+                    "first_seen_at": record.first_seen_at,
+                    "last_seen_at": record.last_seen_at,
+                }
+                for record in records
+            ],
+            "total": total,
+            "limit": limit,
+            "offset": offset,
+            "snapshot_at": latest_snapshot_at,
+        }
 
     @application.get("/api/sync/status")
     def sync_status(request: Request, db: Session = Depends(get_db)):

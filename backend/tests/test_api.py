@@ -1,3 +1,4 @@
+from datetime import datetime, timezone
 import time
 import unittest
 from unittest.mock import AsyncMock, patch
@@ -5,6 +6,7 @@ from unittest.mock import AsyncMock, patch
 from fastapi.testclient import TestClient
 
 from app.main import create_app
+from app.models import DataFeedSourceRecord
 
 
 class PropertyApiTests(unittest.TestCase):
@@ -230,6 +232,7 @@ class DataFeedApiTests(unittest.TestCase):
                 "name": "County tax-sale parcels",
                 "connector": "socrata",
                 "source_type": "tax_sale",
+                "automation_authorized": True,
                 "domain": "data.county.gov",
                 "dataset_id": "abcd-1234",
                 "record_id_field": "parcel_id",
@@ -266,6 +269,7 @@ class DataFeedApiTests(unittest.TestCase):
                 "name": "Incomplete source",
                 "connector": "socrata",
                 "source_type": "other",
+                "automation_authorized": True,
                 "domain": "data.county.gov",
                 "dataset_id": "abcd-1234",
                 "field_mapping": {"address": "address", "state": "state"},
@@ -279,6 +283,7 @@ class DataFeedApiTests(unittest.TestCase):
                 "name": "Private JSON endpoint",
                 "connector": "json_api",
                 "source_type": "other",
+                "automation_authorized": True,
                 "query_url": "https://127.0.0.1/data",
                 "field_mapping": {
                     "address": "address",
@@ -288,6 +293,53 @@ class DataFeedApiTests(unittest.TestCase):
             },
         )
         self.assertEqual(private_endpoint.status_code, 422)
+
+    def test_source_record_snapshot_api_returns_latest_records_and_paginates(self):
+        created = self.client.post(
+            "/api/data-feeds",
+            json={
+                "name": "County foreclosure list",
+                "connector": "csv_file",
+                "target": "source_records",
+                "source_type": "foreclosure",
+                "automation_authorized": True,
+                "query_url": "https://county.example/foreclosures.csv",
+                "refresh_interval_days": 14,
+                "max_records": 100,
+            },
+        )
+        self.assertEqual(created.status_code, 201)
+        feed = created.json()
+        self.assertEqual(feed["target"], "source_records")
+        self.assertEqual(feed["refresh_interval_days"], 14)
+
+        session = self.application.state.session_factory()
+        snapshot_at = datetime.now(timezone.utc)
+        session.add_all(
+            [
+                DataFeedSourceRecord(
+                    data_feed_id=feed["id"],
+                    record_key=f"record-{index}",
+                    payload={"case_id": str(index)},
+                    first_seen_at=snapshot_at,
+                    last_seen_at=snapshot_at,
+                )
+                for index in range(3)
+            ]
+        )
+        session.commit()
+        session.close()
+
+        first_page = self.client.get(
+            f"/api/data-feeds/{feed['id']}/records?limit=2"
+        )
+        self.assertEqual(first_page.status_code, 200)
+        self.assertEqual(first_page.json()["total"], 3)
+        self.assertEqual(len(first_page.json()["records"]), 2)
+        second_page = self.client.get(
+            f"/api/data-feeds/{feed['id']}/records?limit=2&offset=2"
+        )
+        self.assertEqual(len(second_page.json()["records"]), 1)
 
     def test_sync_status_exposes_scheduler_configuration(self):
         response = self.client.get("/api/sync/status")
@@ -416,6 +468,7 @@ class DataFeedApiTests(unittest.TestCase):
                 "source_category": "pre_foreclosure",
                 "source_type": "pre_foreclosure",
                 "county_fips": "48201",
+                "automation_authorized": True,
                 "query_url": "https://data.county.gov/notices",
                 "field_mapping": {
                     "address": "address",
@@ -470,6 +523,7 @@ class DataFeedApiTests(unittest.TestCase):
                 "source_category": "assessor",
                 "source_type": "other",
                 "county_fips": "05119",
+                "automation_authorized": True,
                 "domain": "data.county.gov",
                 "dataset_id": "abcd-1234",
                 "field_mapping": {
@@ -501,6 +555,7 @@ class DataFeedApiTests(unittest.TestCase):
                         "source_category": category,
                         "source_type": source_type,
                         "county_fips": "05119",
+                        "automation_authorized": True,
                         "query_url": "https://data.county.gov/foreclosure",
                         "field_mapping": {
                             "address": "address",
@@ -527,6 +582,7 @@ class DataFeedApiTests(unittest.TestCase):
                 "source_category": "assessor",
                 "source_type": "other",
                 "county_fips": "05120",
+                "automation_authorized": True,
                 "domain": "data.county.gov",
                 "dataset_id": "efgh-5678",
                 "field_mapping": {
